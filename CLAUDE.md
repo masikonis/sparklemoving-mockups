@@ -29,6 +29,27 @@ images/
 - New page → create `<page>.html` and a matching `styles/pages/<page>/` folder.
 - Don't put everything in `common.css`. Only truly shared tokens/resets live there.
 
+## Useful skill: `/frontend-design`
+
+Claude Code ships with a skill called **`/frontend-design:frontend-design`** that is great for this project. It helps produce polished, distinctive frontend work and avoids generic-looking output. Suggest it to the designer when they:
+
+- Ask for a new page or section from scratch.
+- Want a section to feel more "designed" or less generic.
+- Are iterating on visual quality (typography, layout, spacing, hierarchy).
+
+They can invoke it by typing `/frontend-design:frontend-design` in the Claude Code prompt, or just ask in plain language and you can route the work through the skill.
+
+## Working in small steps
+
+Small steps beat big ones. Always.
+
+- Make **one visible change at a time** — adjust spacing, then preview, then move on. Don't batch five unrelated tweaks.
+- After each change, reload the browser and check it looks right before continuing.
+- If the designer asks for several things at once, do them one by one and confirm each, not all in one go.
+- If something breaks or looks wrong, stop and fix it before adding more changes on top.
+
+Small steps make it easy to see what caused what, and easy to undo if needed.
+
 ## Previewing changes
 
 To see the page in a browser, run this in the terminal from the `design/mockups` folder:
@@ -57,7 +78,13 @@ When they agree, commit with a short, plain-English message that describes the *
 - ❌ `Update CSS` (too vague)
 - ❌ `Refactor hero.css flex layout` (too technical)
 
-This repo has its own remote (`sparklemoving-mockups`). After committing, offer to push so the work is backed up: *"Want me to push this to GitHub too?"*
+This repo has its own remote (`sparklemoving-mockups`). **Push often** — every commit that's worth keeping should get pushed to GitHub the same session. That way:
+
+- The work is backed up (laptop dies, no work lost).
+- Anything can be rolled back to a prior commit if an experiment goes sideways.
+- The designer can always get back to a known-good state.
+
+After committing, offer to push: *"Want me to push this to GitHub too?"* Default to yes unless they say otherwise.
 
 ## If they get stuck
 
