@@ -1,0 +1,83 @@
+/* ==========================================================================
+   Stats Bar
+   ========================================================================== */
+
+.stats-bar {
+  background-color: var(--color-white);
+  border-top: 3px solid var(--color-gold);
+  padding: 28px 0;
+}
+
+.stats-bar__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.stats-bar__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 0 var(--space-xl);
+}
+
+.stats-bar__item + .stats-bar__item {
+  border-left: 1px solid var(--color-navy-15);
+}
+
+.stats-bar__number {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--color-navy);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.stats-bar__label {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--color-navy-60);
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .stats-bar__item {
+    padding: 0 var(--space-md);
+  }
+
+  .stats-bar__number {
+    font-size: 18px;
+  }
+
+  .stats-bar__label {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-bar {
+    padding: 24px 0;
+  }
+
+  .stats-bar__list {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .stats-bar__item + .stats-bar__item {
+    border-left: none;
+    border-top: 1px solid var(--color-navy-08);
+    padding-top: 16px;
+  }
+
+  .stats-bar__item {
+    padding: 0;
+  }
+}

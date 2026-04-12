@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Pricing Preview — Center of gravity
+   ========================================================================== */
+
+.pricing {
+  background-color: var(--color-white);
+  padding: calc(var(--space-3xl) + 40px) 0 calc(var(--space-3xl) + 60px);
+}
+
+.pricing__headline {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1.2;
+  color: var(--color-navy);
+}
+
+.pricing__intro {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--color-navy-60);
+  margin-top: 12px;
+  margin-bottom: var(--space-xl);
+}
+
+/* Pricing tiers — editorial rate-card treatment */
+.pricing__table {
+  max-width: 660px;
+  border-top: 3px solid var(--color-navy);
+  border-bottom: 3px solid var(--color-navy);
+}
+
+.pricing__tier {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 24px 16px;
+  border-left: 3px solid transparent;
+  margin-left: -16px;
+  margin-right: -16px;
+  padding-left: 32px;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.pricing__tier:hover {
+  background-color: var(--color-navy-03);
+  border-left-color: var(--color-gold);
+}
+
+.pricing__tier + .pricing__tier {
+  border-top: 1px solid var(--color-navy-08);
+}
+
+.pricing__label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--color-navy-70);
+}
+
+.pricing__price {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 34px;
+  color: var(--color-navy);
+  letter-spacing: -0.01em;
+}
+
+.pricing__footnote {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--color-navy-60);
+  margin-top: var(--space-md);
+  line-height: 1.6;
+}
+
+.pricing__cta {
+  margin-top: var(--space-xl);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .pricing {
+    padding: var(--space-2xl) 0;
+  }
+
+  .pricing__headline {
+    font-size: 32px;
+  }
+
+  .pricing__table {
+    max-width: 100%;
+  }
+
+  .pricing__tier {
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 16px 16px 24px;
+    margin-left: -8px;
+    margin-right: 0;
+  }
+
+  .pricing__price {
+    font-size: 26px;
+  }
+}

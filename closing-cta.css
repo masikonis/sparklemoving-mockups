@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Closing CTA
+   ========================================================================== */
+
+.closing-cta {
+  position: relative;
+  background-color: var(--color-navy);
+  padding: var(--space-3xl) 0;
+  overflow: hidden;
+}
+
+/* Faint hero photo for bookend effect */
+.closing-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* Noise texture inherits from common.css ::after */
+
+.closing-cta__content {
+  position: relative;
+  z-index: 1;
+  max-width: 60%;
+}
+
+.closing-cta__headline {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1.2;
+  color: var(--color-white);
+}
+
+.closing-cta__subline {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--color-white-75);
+  margin-top: var(--space-sm);
+}
+
+.closing-cta__actions {
+  margin-top: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.closing-cta__phone {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--color-white-60);
+  transition: color 0.15s ease;
+}
+
+.closing-cta__phone:hover {
+  color: var(--color-white);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .closing-cta {
+    padding: var(--space-xl) 0;
+  }
+
+  .closing-cta__content {
+    max-width: 100%;
+  }
+
+  .closing-cta__headline {
+    font-size: 28px;
+  }
+
+  .closing-cta__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Credibility
+   ========================================================================== */
+
+.credibility {
+  background-color: var(--color-offwhite);
+  padding: var(--space-xl) 0 calc(var(--space-xl) + 8px);
+  text-align: center;
+}
+
+.credibility__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* Gold framing rules */
+.credibility__rule {
+  width: 120px;
+  height: 2px;
+  background-color: var(--color-gold);
+  opacity: 0.5;
+}
+
+.credibility__text {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--color-navy);
+  line-height: 1.7;
+}
+
+.credibility__text + .credibility__text {
+  margin-top: 2px;
+}

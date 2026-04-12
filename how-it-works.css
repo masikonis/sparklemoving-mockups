@@ -1,0 +1,93 @@
+/* ==========================================================================
+   How It Works
+   ========================================================================== */
+
+.how-it-works {
+  background-color: var(--color-white);
+  padding: var(--space-3xl) 0;
+  border-bottom: 1px solid var(--color-navy-08);
+}
+
+.how-it-works__heading {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 32px;
+  color: var(--color-navy);
+  margin-bottom: var(--space-xl);
+}
+
+.how-it-works__steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.how-it-works__step {
+  position: relative;
+  padding-top: var(--space-xs);
+}
+
+/* Gold accent bar above each step */
+.how-it-works__step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--color-gold);
+}
+
+/* Layered large number */
+.how-it-works__number {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 1;
+  color: var(--color-gold);
+  opacity: 0.18;
+  display: block;
+  margin-bottom: -20px;
+  margin-top: var(--space-sm);
+}
+
+.how-it-works__title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--color-navy);
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.how-it-works__desc {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--color-navy-60);
+  line-height: 1.6;
+  position: relative;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .how-it-works {
+    padding: var(--space-2xl) 0;
+  }
+
+  .how-it-works__heading {
+    font-size: 26px;
+    margin-bottom: var(--space-lg);
+  }
+
+  .how-it-works__steps {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .how-it-works__number {
+    font-size: 56px;
+    margin-bottom: -16px;
+  }
+}

@@ -1,0 +1,179 @@
+/* ==========================================================================
+   Common — Reset, Fonts, Design Tokens, Base Typography
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap');
+
+/* ---------- Design Tokens ---------- */
+
+:root {
+  /* Brand colors — extracted from logo SVGs */
+  --color-navy: #191C2B;
+  --color-gold: #EFC10C;
+  --color-white: #FFFFFF;
+
+  /* Extended palette */
+  --color-offwhite: #F5F5F3;
+  --color-navy-dark: #12141F;
+  --color-navy-03: rgba(25, 28, 43, 0.03);
+  --color-navy-05: rgba(25, 28, 43, 0.05);
+  --color-navy-08: rgba(25, 28, 43, 0.08);
+  --color-navy-10: rgba(25, 28, 43, 0.10);
+  --color-navy-15: rgba(25, 28, 43, 0.15);
+  --color-navy-60: rgba(25, 28, 43, 0.60);
+  --color-navy-70: rgba(25, 28, 43, 0.70);
+  --color-white-03: rgba(255, 255, 255, 0.03);
+  --color-white-05: rgba(255, 255, 255, 0.05);
+  --color-white-10: rgba(255, 255, 255, 0.10);
+  --color-white-50: rgba(255, 255, 255, 0.50);
+  --color-white-60: rgba(255, 255, 255, 0.60);
+  --color-white-75: rgba(255, 255, 255, 0.75);
+  --color-white-80: rgba(255, 255, 255, 0.80);
+  --color-gold-15: rgba(239, 193, 12, 0.15);
+
+  /* Typography */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* Layout */
+  --max-width: 1140px;
+  --side-padding: 24px;
+
+  /* Spacing scale */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+  --space-2xl: 80px;
+  --space-3xl: 100px;
+}
+
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- Base Typography ---------- */
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-navy);
+  background-color: var(--color-white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* ---------- Links & Buttons ---------- */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+.btn-primary {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 15px 34px;
+  background-color: var(--color-gold);
+  color: var(--color-navy);
+  border-radius: 4px;
+  letter-spacing: 0.01em;
+  box-shadow: 0 2px 8px rgba(239, 193, 12, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(239, 193, 12, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(239, 193, 12, 0.2);
+}
+
+/* ---------- Container ---------- */
+
+.container {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
+}
+
+/* ---------- Utility ---------- */
+
+.gold-link {
+  color: var(--color-gold);
+  text-decoration: none;
+  background-image: linear-gradient(var(--color-gold), var(--color-gold));
+  background-size: 0% 1px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease;
+}
+
+.gold-link:hover {
+  background-size: 100% 1px;
+}
+
+/* ---------- Noise texture for dark sections ---------- */
+
+.hero::after,
+.services::after,
+.service-area::after,
+.closing-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  :root {
+    --side-padding: 20px;
+  }
+}

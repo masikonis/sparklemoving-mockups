@@ -1,0 +1,134 @@
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  background-color: var(--color-navy);
+  padding-top: calc(84px + var(--space-3xl));
+  padding-bottom: var(--space-3xl);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Documentary photo background — visible on the right, fading to navy on the left */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center right;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Gradient overlay: solid navy on left (text area), transparent on right (photo shows through) */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    var(--color-navy) 0%,
+    var(--color-navy) 35%,
+    rgba(25, 28, 43, 0.6) 60%,
+    rgba(25, 28, 43, 0.35) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Noise texture inherits from common.css ::after */
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 58%;
+}
+
+.hero__headline {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: var(--color-white);
+}
+
+.hero__rule {
+  height: 3px;
+  background-color: var(--color-gold);
+  margin-top: var(--space-md);
+  width: 100%;
+  max-width: 560px;
+  box-shadow: 0 0 12px rgba(239, 193, 12, 0.2);
+}
+
+.hero__subline {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--color-white-75);
+  margin-top: 20px;
+}
+
+.hero__cta {
+  margin-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.hero__cta .btn-primary {
+  font-size: 17px;
+  padding: 16px 38px;
+}
+
+.hero__cta-supporting {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-white-50);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: calc(84px + var(--space-xl));
+    padding-bottom: var(--space-xl);
+    min-height: auto;
+  }
+
+  .hero__overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(25, 28, 43, 0.85) 0%,
+      rgba(25, 28, 43, 0.7) 100%
+    );
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .hero__headline {
+    font-size: 36px;
+  }
+
+  .hero__rule {
+    max-width: 280px;
+  }
+
+  .hero__subline {
+    font-size: 16px;
+  }
+
+  .hero__cta .btn-primary {
+    font-size: 16px;
+    padding: 15px 34px;
+  }
+}

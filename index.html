@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sparkle Moving &amp; Storage — Chicago Movers Since 2012</title>
+
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <!-- CSS Architecture: common tokens first, then chrome, then sections in page order -->
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="hero.css">
+  <link rel="stylesheet" href="stats-bar.css">
+  <link rel="stylesheet" href="pricing-preview.css">
+  <link rel="stylesheet" href="services.css">
+  <link rel="stylesheet" href="how-it-works.css">
+  <link rel="stylesheet" href="credibility.css">
+  <link rel="stylesheet" href="service-area.css">
+  <link rel="stylesheet" href="closing-cta.css">
+  <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+
+  <!-- ====== HEADER ====== -->
+  <header class="site-header" id="siteHeader">
+    <div class="site-header__inner">
+      <a href="/" class="site-header__logo">
+        <img src="../../assets/logo/final/dark-on-light-transparent.svg" alt="Sparkle Moving &amp; Storage" width="170" height="52">
+      </a>
+
+      <nav class="site-header__nav">
+        <ul class="site-header__nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#service-area">Areas</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+        <a href="tel:+1XXXXXXXXXX" class="site-header__phone">(312) 555-0199</a>
+        <a href="#quote" class="btn-primary site-header__cta">Start a Quote</a>
+      </nav>
+
+      <button class="site-header__hamburger" id="hamburgerBtn" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="site-header__mobile-menu" id="mobileMenu">
+      <ul class="site-header__mobile-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#service-area">Areas</a></li>
+        <li><a href="#">Reviews</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+      <a href="tel:+1XXXXXXXXXX" class="site-header__mobile-phone">(312) 555-0199</a>
+      <a href="#quote" class="btn-primary site-header__mobile-cta">Start a Quote</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ====== HERO ====== -->
+    <section class="hero">
+      <div class="hero__overlay"></div>
+      <div class="container">
+        <div class="hero__content">
+          <h1 class="hero__headline">Here's what your move costs.<br>Before you call.</h1>
+          <div class="hero__rule"></div>
+          <p class="hero__subline">Chicago movers since 2012. Real prices on the site.</p>
+          <div class="hero__cta">
+            <a href="#quote" class="btn-primary">Start a Quote</a>
+            <span class="hero__cta-supporting">Takes about 60 seconds.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== STATS BAR ====== -->
+    <section class="stats-bar">
+      <div class="container">
+        <ul class="stats-bar__list">
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">2012</span>
+            <span class="stats-bar__label">Established</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">10,000+</span>
+            <span class="stats-bar__label">Moves completed</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">Licensed &amp; Insured</span>
+            <span class="stats-bar__label">Illinois CC-MC</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ====== PRICING PREVIEW ====== -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <h2 class="pricing__headline">What moving costs in Chicago</h2>
+        <p class="pricing__intro">Here are real numbers.</p>
+
+        <div class="pricing__table">
+          <div class="pricing__tier">
+            <span class="pricing__label">Studio / 1-bedroom</span>
+            <span class="pricing__price">$400&ndash;$900</span>
+          </div>
+          <div class="pricing__tier">
+            <span class="pricing__label">2-bedroom</span>
+            <span class="pricing__price">$800&ndash;$1,500</span>
+          </div>
+          <div class="pricing__tier">
+            <span class="pricing__label">3+ bedroom</span>
+            <span class="pricing__price">$1,500&ndash;$3,000+</span>
+          </div>
+        </div>
+
+        <p class="pricing__footnote">Local moves. Rates are hourly, based on crew size. Full rate breakdown on the <a href="#" class="gold-link">Pricing page&nbsp;&rarr;</a></p>
+
+        <div class="pricing__cta">
+          <a href="#quote" class="btn-primary">Start a Quote &mdash; get your exact price.</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SERVICES ====== -->
+    <section class="services" id="services">
+      <div class="container">
+        <h2 class="services__heading">What we do</h2>
+        <div class="services__grid">
+          <div class="services__column">
+            <div class="services__item">
+              <h3 class="services__name">Residential Moving</h3>
+              <p class="services__desc">Houses, apartments, condos, senior moves, student moves, last-minute moves. Across Chicago and 40+ suburbs.</p>
+              <a href="#" class="gold-link services__link">View Residential Moving&nbsp;&rarr;</a>
+            </div>
+            <div class="services__item">
+              <h3 class="services__name">Commercial Moving</h3>
+              <p class="services__desc">Office relocations during business hours, after hours, or weekends. Internal moves within the same building.</p>
+              <a href="#" class="gold-link services__link">View Commercial Moving&nbsp;&rarr;</a>
+            </div>
+            <div class="services__item">
+              <h3 class="services__name">Long Distance Moving</h3>
+              <p class="services__desc">Interstate and cross-country moves with dedicated trucks, including Chicago to Florida and Chicago to Texas.</p>
+              <a href="#" class="gold-link services__link">View Long Distance Moving&nbsp;&rarr;</a>
+            </div>
+            <div class="services__item">
+              <h3 class="services__name">Junk Removal</h3>
+              <p class="services__desc">Furniture, appliances, mattresses, office cleanouts. Donation pickup and dropoff.</p>
+              <a href="#" class="gold-link services__link">View Junk Removal&nbsp;&rarr;</a>
+            </div>
+          </div>
+
+          <div class="services__column">
+            <div class="services__item">
+              <h3 class="services__name">Labor Services</h3>
+              <p class="services__desc">Loading and unloading for your truck, pod, or container. In-home furniture moving, rearranging, heavy items.</p>
+              <a href="#" class="gold-link services__link">View Labor Services&nbsp;&rarr;</a>
+            </div>
+            <div class="services__item">
+              <h3 class="services__name">Packing Services</h3>
+              <p class="services__desc">Full packing, partial packing, or unpacking after the move.</p>
+              <a href="#" class="gold-link services__link">View Packing Services&nbsp;&rarr;</a>
+            </div>
+            <div class="services__item">
+              <h3 class="services__name">Storage Services</h3>
+              <p class="services__desc">Short-term, long-term, climate-controlled, business storage. Storage during your move if dates don't line up.</p>
+              <a href="#" class="gold-link services__link">View Storage Services&nbsp;&rarr;</a>
+            </div>
+            <div class="services__item">
+              <h3 class="services__name">Additional Services</h3>
+              <p class="services__desc">Piano moving, safe moving, furniture assembly. Same-day movers, emergency moves, single-item delivery.</p>
+              <a href="#" class="gold-link services__link">View Additional Services&nbsp;&rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== HOW IT WORKS ====== -->
+    <section class="how-it-works">
+      <div class="container">
+        <h2 class="how-it-works__heading">How it works</h2>
+        <div class="how-it-works__steps">
+          <div class="how-it-works__step">
+            <span class="how-it-works__number">1</span>
+            <h3 class="how-it-works__title">Get a quote.</h3>
+            <p class="how-it-works__desc">Tell us your move details. Takes about 60 seconds.</p>
+          </div>
+          <div class="how-it-works__step">
+            <span class="how-it-works__number">2</span>
+            <h3 class="how-it-works__title">See your price.</h3>
+            <p class="how-it-works__desc">We send a breakdown: crew size, hours, total.</p>
+          </div>
+          <div class="how-it-works__step">
+            <span class="how-it-works__number">3</span>
+            <h3 class="how-it-works__title">We move you.</h3>
+            <p class="how-it-works__desc">Crew arrives on schedule, handles your move start to finish.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CREDIBILITY ====== -->
+    <section class="credibility">
+      <div class="container">
+        <div class="credibility__inner">
+          <div class="credibility__rule"></div>
+          <p class="credibility__text">Licensed and insured. Full details on the <a href="#" class="gold-link">Insurance &amp; Licensing page&nbsp;&rarr;</a></p>
+          <p class="credibility__text">Professional crews, fair pricing, no surprises on the invoice.</p>
+          <div class="credibility__rule"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SERVICE AREA ====== -->
+    <section class="service-area" id="service-area">
+      <div class="container">
+        <div class="service-area__inner">
+          <div class="service-area__text">
+            <h2 class="service-area__headline">Chicago and 40+ suburbs</h2>
+            <p class="service-area__body">Headquartered in Northbrook. Serving Chicago and surrounding communities including Evanston, Schaumburg, Naperville, and Arlington Heights.</p>
+            <a href="#" class="gold-link service-area__link">See all service areas&nbsp;&rarr;</a>
+          </div>
+          <div class="service-area__map">
+            <img src="images/service-area-map.jpg" alt="Map of Sparkle Moving service area covering Chicago and suburbs" width="460" height="460">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CLOSING CTA ====== -->
+    <section class="closing-cta">
+      <div class="container">
+        <div class="closing-cta__content">
+          <h2 class="closing-cta__headline">Get your quote. Takes 60 seconds.</h2>
+          <p class="closing-cta__subline">Just the cost of your move, upfront.</p>
+          <div class="closing-cta__actions">
+            <a href="#quote" class="btn-primary">Start a Quote</a>
+            <a href="tel:+1XXXXXXXXXX" class="closing-cta__phone">(312) 555-0199</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__company">
+          <a href="/" class="site-footer__logo">
+            <img src="../../assets/logo/final/white-on-dark-transparent.svg" alt="Sparkle Moving &amp; Storage" width="140" height="43">
+          </a>
+          <address class="site-footer__address">
+            Northbrook, IL<br>
+            Chicago Metropolitan Area
+          </address>
+          <a href="tel:+1XXXXXXXXXX" class="site-footer__contact-phone">(312) 555-0199</a>
+        </div>
+
+        <div class="site-footer__col">
+          <h4 class="site-footer__col-title">Services</h4>
+          <ul class="site-footer__links">
+            <li><a href="#">Residential Moving</a></li>
+            <li><a href="#">Commercial Moving</a></li>
+            <li><a href="#">Long Distance Moving</a></li>
+            <li><a href="#">Junk Removal</a></li>
+            <li><a href="#">Labor Services</a></li>
+            <li><a href="#">Packing Services</a></li>
+            <li><a href="#">Storage Services</a></li>
+            <li><a href="#">Additional Services</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h4 class="site-footer__col-title">Information</h4>
+          <ul class="site-footer__links">
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">How Moving Pricing Works</a></li>
+            <li><a href="#">Moving Process</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Insurance &amp; Licensing</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h4 class="site-footer__col-title">Company</h4>
+          <ul class="site-footer__links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Affiliate Program</a></li>
+            <li><a href="#">Service Areas</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__cta-col">
+          <p class="site-footer__cta-text">Get your exact moving cost.<br>Takes about 60 seconds.</p>
+          <a href="#quote" class="btn-primary">Start a Quote</a>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">&copy; 2026 Sparkle Moving &amp; Storage. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Minimal JS: header scroll state + mobile menu toggle -->
+  <script>
+    (function() {
+      var header = document.getElementById('siteHeader');
+      var hamburger = document.getElementById('hamburgerBtn');
+      var menu = document.getElementById('mobileMenu');
+
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 10) {
+          header.classList.add('site-header--scrolled');
+        } else {
+          header.classList.remove('site-header--scrolled');
+        }
+      });
+
+      hamburger.addEventListener('click', function() {
+        menu.classList.toggle('is-open');
+      });
+    })();
+  </script>
+
+</body>
+</html>

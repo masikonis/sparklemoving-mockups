@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--color-navy-dark);
+  padding: var(--space-xl) 0 var(--space-lg);
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+/* Company column */
+.site-footer__company {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.site-footer__logo img {
+  height: 40px;
+  width: auto;
+}
+
+.site-footer__address {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-white-50);
+}
+
+.site-footer__contact-phone {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-white-75);
+  transition: color 0.15s ease;
+}
+
+.site-footer__contact-phone:hover {
+  color: var(--color-gold);
+}
+
+/* Link columns */
+.site-footer__col-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-white-80);
+  margin-bottom: var(--space-sm);
+  letter-spacing: 0.03em;
+}
+
+.site-footer__links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.site-footer__links a {
+  font-size: 14px;
+  color: var(--color-white-50);
+  transition: color 0.15s ease;
+}
+
+.site-footer__links a:hover {
+  color: var(--color-gold);
+}
+
+/* CTA column */
+.site-footer__cta-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.site-footer__cta-text {
+  font-size: 14px;
+  color: var(--color-white-50);
+  line-height: 1.6;
+}
+
+.site-footer__cta-col .btn-primary {
+  text-align: center;
+  font-size: 14px;
+  padding: 12px 24px;
+}
+
+/* Bottom bar */
+.site-footer__bottom {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-white-10);
+}
+
+.site-footer__copyright {
+  font-size: 13px;
+  color: var(--color-white-50);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .site-footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg) var(--space-md);
+  }
+
+  .site-footer__company {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+  }
+}
