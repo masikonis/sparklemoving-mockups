@@ -50,6 +50,57 @@ Small steps beat big ones. Always.
 
 Small steps make it easy to see what caused what, and easy to undo if needed.
 
+## Starting a new page
+
+Right now there's only `index.html` (the homepage). When the designer wants a new page — say, an **About** page — here's the flow. Walk them through it; don't just do it silently.
+
+### 1. Create the HTML file at the root
+
+Every page is its own `.html` file at the top level. For About, that's `about.html`.
+
+### 2. Reuse what already exists
+
+Most pages share the **header** and **footer**, and all pages use **common.css** (colors, fonts, base styles). So the new file should pull those in exactly like `index.html` does:
+
+```html
+<link rel="stylesheet" href="styles/common.css">
+<link rel="stylesheet" href="styles/components/header.css">
+<!-- page-specific styles go here -->
+<link rel="stylesheet" href="styles/components/footer.css">
+```
+
+Then **copy the `<header>` and `<footer>` markup** from `index.html` into the new page. Same HTML, same CSS → it looks identical and stays consistent across the site.
+
+> **Rule of thumb:** if something appears on more than one page (header, footer, a button style, a card layout), it belongs in `styles/components/` and its markup gets copied between pages. If it's unique to one page, it goes in `styles/pages/<page-name>/`.
+
+### 3. Add page-specific styles
+
+For About-only sections, create a folder: `styles/pages/about/`. Make one CSS file per section, just like the homepage does (`hero.css`, `services.css`, etc.). Link them in the new HTML file between the header and footer styles.
+
+Example `about.html` head:
+
+```html
+<link rel="stylesheet" href="styles/common.css">
+<link rel="stylesheet" href="styles/components/header.css">
+<link rel="stylesheet" href="styles/pages/about/intro.css">
+<link rel="stylesheet" href="styles/pages/about/team.css">
+<link rel="stylesheet" href="styles/components/footer.css">
+```
+
+### 4. Spotting reusable pieces
+
+If while building a new page you notice a style or block that's **the same as something on another page**, stop and promote it:
+
+- Move the CSS into `styles/components/<name>.css`.
+- Link that new component file from both pages.
+- Use the same HTML markup on both.
+
+Don't copy-paste the CSS into two page folders — that's how things drift out of sync. Components exist so one change updates everywhere.
+
+### 5. Good first commit for a new page
+
+Once the new page loads in the browser with header + footer looking right (even if the middle is empty), **commit**. That's the "skeleton works" checkpoint. Then build the page section by section, committing as each section lands.
+
 ## Previewing changes
 
 To see the page in a browser, run this in the terminal from the `design/mockups` folder:
