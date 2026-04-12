@@ -1,5 +1,7 @@
 # Working with the designer
 
+This repo holds static HTML/CSS mockups for the **Sparkle Moving** marketing site (a residential moving service). The mockups are a design artifact — they'll later be translated into the real production site.
+
 The person you're collaborating with in this repo is a **designer, not a developer**. This is likely their first time using Claude Code. Keep that front of mind.
 
 ## How to talk to them
@@ -49,6 +51,16 @@ Small steps beat big ones. Always.
 - If something breaks or looks wrong, stop and fix it before adding more changes on top.
 
 Small steps make it easy to see what caused what, and easy to undo if needed.
+
+## Previewing changes
+
+The designer needs to see changes in a browser to judge them. From the `design/mockups` folder, run:
+
+```
+open index.html
+```
+
+You can run this yourself, or tell the designer to run it — either works. After any change, the designer must **reload the browser tab** to see it (you can't reload it for them). Always preview before committing. If something looks off, fix it first.
 
 ## Starting a new page
 
@@ -101,16 +113,6 @@ Don't copy-paste the CSS into two page folders — that's how things drift out o
 
 Once the new page loads in the browser with header + footer looking right (even if the middle is empty), **commit**. That's the "skeleton works" checkpoint. Then build the page section by section, committing as each section lands.
 
-## Previewing changes
-
-To see the page in a browser, run this in the terminal from the `design/mockups` folder:
-
-```
-open index.html
-```
-
-Always preview before committing. If something looks off, fix it first.
-
 ## Committing (saving progress)
 
 Git is how we save snapshots of the work. When the designer reaches something they might want to come back to, **remind them to commit** — don't wait for them to ask.
@@ -136,6 +138,17 @@ This repo has its own remote (`sparklemoving-mockups`). **Push often** — every
 - The designer can always get back to a known-good state.
 
 After committing, offer to push: *"Want me to push this to GitHub too?"* Default to yes unless they say otherwise.
+
+## Rolling back when something breaks
+
+The whole point of committing often is to make mistakes cheap. When the designer wants to undo, they'll ask in plain English: *"go back to before the pricing changes"*, *"undo the last thing"*, *"I liked the header from yesterday better"*.
+
+- Use `git log --oneline` to find the right commit.
+- For the most recent commit: `git revert HEAD` (keeps history clean, safe default).
+- For going back several commits, or discarding uncommitted work: confirm with the designer first, then use `git reset --hard <commit>` (destructive — make sure pushed work isn't lost).
+- If in doubt, ask: *"Want me to undo just the last change, or go all the way back to [earlier state]?"*
+
+Explain the result in visual terms (*"I've restored the hero back to the version from this morning — the big heading is back"*), not in git terms. The designer doesn't need to know what revert vs. reset means.
 
 ## If they get stuck
 
