@@ -7,13 +7,13 @@
   background-color: var(--color-navy);
   padding-top: calc(84px + var(--space-3xl));
   padding-bottom: var(--space-3xl);
-  min-height: 80vh;
+  min-height: 88vh;
   display: flex;
   align-items: center;
   overflow: hidden;
 }
 
-/* Documentary photo background — visible on the right, fading to navy on the left */
+/* Optional photo background — design works without it */
 .hero::before {
   content: '';
   position: absolute;
@@ -21,20 +21,20 @@
   background-image: url('images/hero-bg.jpg');
   background-size: cover;
   background-position: center right;
-  opacity: 0.35;
+  opacity: 0.2;
   pointer-events: none;
 }
 
-/* Gradient overlay: solid navy on left (text area), transparent on right (photo shows through) */
+/* Gradient overlay: solid navy on left, fades right */
 .hero__overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
     var(--color-navy) 0%,
-    var(--color-navy) 35%,
-    rgba(25, 28, 43, 0.6) 60%,
-    rgba(25, 28, 43, 0.35) 100%
+    var(--color-navy) 40%,
+    rgba(25, 28, 43, 0.85) 62%,
+    rgba(25, 28, 43, 0.7) 100%
   );
   pointer-events: none;
   z-index: 0;
@@ -42,18 +42,25 @@
 
 /* Noise texture inherits from common.css ::after */
 
-.hero__content {
+/* Two-column inner layout */
+.hero__inner {
   position: relative;
   z-index: 1;
-  max-width: 58%;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: var(--space-2xl);
+  align-items: center;
+  width: 100%;
 }
+
+/* ---------- Left: copy ---------- */
 
 .hero__headline {
   font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 56px;
-  line-height: 1.12;
-  letter-spacing: -0.015em;
+  font-weight: 700;
+  font-size: 66px;
+  line-height: 1.05;
+  letter-spacing: -0.022em;
   color: var(--color-white);
 }
 
@@ -62,30 +69,29 @@
   background-color: var(--color-gold);
   margin-top: var(--space-md);
   width: 100%;
-  max-width: 560px;
-  box-shadow: 0 0 12px rgba(239, 193, 12, 0.2);
+  max-width: 460px;
+  box-shadow: 0 0 16px rgba(239, 193, 12, 0.2);
 }
 
 .hero__subline {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: 19px;
+  line-height: 1.55;
   color: var(--color-white-75);
-  margin-top: 20px;
+  margin-top: var(--space-md);
 }
 
 .hero__cta {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-xl);
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
+  align-items: center;
+  gap: var(--space-md);
 }
 
 .hero__cta .btn-primary {
   font-size: 17px;
-  padding: 16px 38px;
+  padding: 17px 40px;
 }
 
 .hero__cta-supporting {
@@ -94,7 +100,95 @@
   color: var(--color-white-50);
 }
 
+/* ---------- Right: floating price card ---------- */
+
+.hero__aside {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero__price-card {
+  background-color: var(--color-white);
+  border-radius: 10px;
+  padding: 36px 32px 28px;
+  width: 100%;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.hero__price-card-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-navy-60);
+  margin-bottom: var(--space-md);
+}
+
+.hero__price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--color-navy-08);
+}
+
+.hero__price-row:first-of-type {
+  border-top: 2px solid var(--color-navy);
+}
+
+.hero__price-row-label {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-navy-60);
+}
+
+.hero__price-row-value {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-navy);
+  letter-spacing: -0.01em;
+}
+
+.hero__price-card-btn {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin-top: var(--space-md);
+  padding: 15px 24px;
+  font-size: 15px;
+}
+
+.hero__price-card-note {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--color-navy-60);
+  text-align: center;
+  margin-top: 10px;
+}
+
 /* ---------- Responsive ---------- */
+
+@media (max-width: 960px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .hero__aside {
+    justify-content: flex-start;
+  }
+
+  .hero__price-card {
+    max-width: 420px;
+  }
+
+  .hero__headline {
+    font-size: 50px;
+  }
+}
 
 @media (max-width: 768px) {
   .hero {
@@ -104,31 +198,20 @@
   }
 
   .hero__overlay {
-    background: linear-gradient(
-      to bottom,
-      rgba(25, 28, 43, 0.85) 0%,
-      rgba(25, 28, 43, 0.7) 100%
-    );
-  }
-
-  .hero__content {
-    max-width: 100%;
+    background: rgba(25, 28, 43, 0.88);
   }
 
   .hero__headline {
-    font-size: 36px;
+    font-size: 38px;
   }
 
-  .hero__rule {
-    max-width: 280px;
+  .hero__cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
-  .hero__subline {
-    font-size: 16px;
-  }
-
-  .hero__cta .btn-primary {
-    font-size: 16px;
-    padding: 15px 34px;
+  .hero__price-card {
+    max-width: 100%;
   }
 }

@@ -17,12 +17,36 @@
   <link rel="stylesheet" href="styles/pages/home/pricing-preview.css">
   <link rel="stylesheet" href="styles/pages/home/services.css">
   <link rel="stylesheet" href="styles/pages/home/how-it-works.css">
-  <link rel="stylesheet" href="styles/pages/home/credibility.css">
+  <link rel="stylesheet" href="styles/pages/home/reviews.css">
+  <link rel="stylesheet" href="styles/pages/home/trust-band.css">
   <link rel="stylesheet" href="styles/pages/home/service-area.css">
+  <link rel="stylesheet" href="styles/pages/home/faq.css">
   <link rel="stylesheet" href="styles/pages/home/closing-cta.css">
   <link rel="stylesheet" href="styles/components/footer.css">
 </head>
 <body>
+
+  <!-- SVG filter: turns the map image's dark background transparent via luminance masking -->
+  <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <filter id="map-transparent" color-interpolation-filters="sRGB">
+        <!-- Amplify contrast so dark navy → near-black, bright outlines → near-white -->
+        <feComponentTransfer in="SourceGraphic" result="boosted">
+          <feFuncR type="linear" slope="3" intercept="-0.15"/>
+          <feFuncG type="linear" slope="3" intercept="-0.15"/>
+          <feFuncB type="linear" slope="3" intercept="-0.15"/>
+        </feComponentTransfer>
+        <!-- Convert brightness into alpha: dark pixels get alpha≈0, bright pixels get alpha≈1 -->
+        <feColorMatrix type="luminanceToAlpha" in="boosted" result="lum"/>
+        <!-- Steepen the cutoff so the background drops to fully transparent -->
+        <feComponentTransfer in="lum" result="lum-sharp">
+          <feFuncA type="gamma" amplitude="1.2" exponent="2" offset="-0.05"/>
+        </feComponentTransfer>
+        <!-- Apply luminance-based alpha to the original image colours -->
+        <feComposite in="SourceGraphic" in2="lum-sharp" operator="in"/>
+      </filter>
+    </defs>
+  </svg>
 
   <!-- ====== HEADER ====== -->
   <header class="site-header" id="siteHeader">
@@ -69,13 +93,34 @@
     <section class="hero">
       <div class="hero__overlay"></div>
       <div class="container">
-        <div class="hero__content">
-          <h1 class="hero__headline">Here's what your move costs.<br>Before you call.</h1>
-          <div class="hero__rule"></div>
-          <p class="hero__subline">Chicago movers since 2012. Real prices on the site.</p>
-          <div class="hero__cta">
-            <a href="#quote" class="btn-primary">Start a Quote</a>
-            <span class="hero__cta-supporting">Takes about 60 seconds.</span>
+        <div class="hero__inner">
+          <div class="hero__content">
+            <h1 class="hero__headline">Here's what your move costs.<br>Before you call.</h1>
+            <div class="hero__rule"></div>
+            <p class="hero__subline">Chicago movers since 2012. Real prices on the site.</p>
+            <div class="hero__cta">
+              <a href="#quote" class="btn-primary">Start a Quote</a>
+              <span class="hero__cta-supporting">Takes about 60 seconds.</span>
+            </div>
+          </div>
+          <div class="hero__aside">
+            <div class="hero__price-card">
+              <p class="hero__price-card-eyebrow">Chicago pricing</p>
+              <div class="hero__price-row">
+                <span class="hero__price-row-label">Studio / 1-bedroom</span>
+                <strong class="hero__price-row-value">$400&ndash;$900</strong>
+              </div>
+              <div class="hero__price-row">
+                <span class="hero__price-row-label">2-bedroom</span>
+                <strong class="hero__price-row-value">$800&ndash;$1,500</strong>
+              </div>
+              <div class="hero__price-row">
+                <span class="hero__price-row-label">3+ bedroom</span>
+                <strong class="hero__price-row-value">$1,500&ndash;$3,000+</strong>
+              </div>
+              <a href="#quote" class="btn-primary hero__price-card-btn">Get Your Exact Price</a>
+              <p class="hero__price-card-note">Takes 60 seconds. No commitment.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -107,18 +152,25 @@
         <h2 class="pricing__headline">What moving costs in Chicago</h2>
         <p class="pricing__intro">Here are real numbers.</p>
 
-        <div class="pricing__table">
-          <div class="pricing__tier">
-            <span class="pricing__label">Studio / 1-bedroom</span>
-            <span class="pricing__price">$400&ndash;$900</span>
+        <div class="pricing__cards">
+          <div class="pricing__card">
+            <div class="pricing__card-tier">Studio / 1-bedroom</div>
+            <div class="pricing__card-price">$400&ndash;$900</div>
+            <div class="pricing__card-detail">2 movers &middot; 2&ndash;4 hours typical</div>
+            <a href="#quote" class="pricing__card-link">Get my exact price &rarr;</a>
           </div>
-          <div class="pricing__tier">
-            <span class="pricing__label">2-bedroom</span>
-            <span class="pricing__price">$800&ndash;$1,500</span>
+          <div class="pricing__card pricing__card--featured">
+            <div class="pricing__card-badge">Most common</div>
+            <div class="pricing__card-tier">2-bedroom</div>
+            <div class="pricing__card-price">$800&ndash;$1,500</div>
+            <div class="pricing__card-detail">3 movers &middot; 4&ndash;6 hours typical</div>
+            <a href="#quote" class="pricing__card-link pricing__card-link--light">Get my exact price &rarr;</a>
           </div>
-          <div class="pricing__tier">
-            <span class="pricing__label">3+ bedroom</span>
-            <span class="pricing__price">$1,500&ndash;$3,000+</span>
+          <div class="pricing__card">
+            <div class="pricing__card-tier">3+ bedroom</div>
+            <div class="pricing__card-price">$1,500&ndash;$3,000+</div>
+            <div class="pricing__card-detail">4 movers &middot; 6&ndash;10 hours typical</div>
+            <a href="#quote" class="pricing__card-link">Get my exact price &rarr;</a>
           </div>
         </div>
 
@@ -135,50 +187,53 @@
       <div class="container">
         <h2 class="services__heading">What we do</h2>
         <div class="services__grid">
-          <div class="services__column">
-            <div class="services__item">
-              <h3 class="services__name">Residential Moving</h3>
-              <p class="services__desc">Houses, apartments, condos, senior moves, student moves, last-minute moves. Across Chicago and 40+ suburbs.</p>
-              <a href="#" class="gold-link services__link">View Residential Moving&nbsp;&rarr;</a>
-            </div>
-            <div class="services__item">
-              <h3 class="services__name">Commercial Moving</h3>
-              <p class="services__desc">Office relocations during business hours, after hours, or weekends. Internal moves within the same building.</p>
-              <a href="#" class="gold-link services__link">View Commercial Moving&nbsp;&rarr;</a>
-            </div>
-            <div class="services__item">
-              <h3 class="services__name">Long Distance Moving</h3>
-              <p class="services__desc">Interstate and cross-country moves with dedicated trucks, including Chicago to Florida and Chicago to Texas.</p>
-              <a href="#" class="gold-link services__link">View Long Distance Moving&nbsp;&rarr;</a>
-            </div>
-            <div class="services__item">
-              <h3 class="services__name">Junk Removal</h3>
-              <p class="services__desc">Furniture, appliances, mattresses, office cleanouts. Donation pickup and dropoff.</p>
-              <a href="#" class="gold-link services__link">View Junk Removal&nbsp;&rarr;</a>
-            </div>
+          <div class="services__card">
+            <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H4a1 1 0 01-1-1V10.5z"/><rect x="9" y="13" width="6" height="9"/></svg>
+            <h3 class="services__name">Residential Moving</h3>
+            <p class="services__desc">Houses, apartments, condos, senior moves, student moves, last-minute moves. Across Chicago and 40+ suburbs.</p>
+            <a href="#" class="gold-link services__link">View Residential Moving&nbsp;&rarr;</a>
           </div>
-
-          <div class="services__column">
-            <div class="services__item">
-              <h3 class="services__name">Labor Services</h3>
-              <p class="services__desc">Loading and unloading for your truck, pod, or container. In-home furniture moving, rearranging, heavy items.</p>
-              <a href="#" class="gold-link services__link">View Labor Services&nbsp;&rarr;</a>
-            </div>
-            <div class="services__item">
-              <h3 class="services__name">Packing Services</h3>
-              <p class="services__desc">Full packing, partial packing, or unpacking after the move.</p>
-              <a href="#" class="gold-link services__link">View Packing Services&nbsp;&rarr;</a>
-            </div>
-            <div class="services__item">
-              <h3 class="services__name">Storage Services</h3>
-              <p class="services__desc">Short-term, long-term, climate-controlled, business storage. Storage during your move if dates don't line up.</p>
-              <a href="#" class="gold-link services__link">View Storage Services&nbsp;&rarr;</a>
-            </div>
-            <div class="services__item">
-              <h3 class="services__name">Additional Services</h3>
-              <p class="services__desc">Piano moving, safe moving, furniture assembly. Same-day movers, emergency moves, single-item delivery.</p>
-              <a href="#" class="gold-link services__link">View Additional Services&nbsp;&rarr;</a>
-            </div>
+          <div class="services__card">
+            <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="1"/><path d="M2 9h20M9 2v20M15 9v13"/><rect x="11" y="14" width="4" height="6"/></svg>
+            <h3 class="services__name">Commercial Moving</h3>
+            <p class="services__desc">Office relocations during business hours, after hours, or weekends. Internal moves within the same building.</p>
+            <a href="#" class="gold-link services__link">View Commercial Moving&nbsp;&rarr;</a>
+          </div>
+          <div class="services__card">
+            <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="5" width="14" height="12" rx="1"/><path d="M15 8h5l3 4v5h-8V8z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg>
+            <h3 class="services__name">Long Distance Moving</h3>
+            <p class="services__desc">Interstate and cross-country moves with dedicated trucks, including Chicago to Florida and Chicago to Texas.</p>
+            <a href="#" class="gold-link services__link">View Long Distance Moving&nbsp;&rarr;</a>
+          </div>
+          <div class="services__card">
+            <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+            <h3 class="services__name">Junk Removal</h3>
+            <p class="services__desc">Furniture, appliances, mattresses, office cleanouts. Donation pickup and dropoff.</p>
+            <a href="#" class="gold-link services__link">View Junk Removal&nbsp;&rarr;</a>
+          </div>
+          <div class="services__card">
+            <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            <h3 class="services__name">Labor Services</h3>
+            <p class="services__desc">Loading and unloading for your truck, pod, or container. In-home furniture moving, rearranging, heavy items.</p>
+            <a href="#" class="gold-link services__link">View Labor Services&nbsp;&rarr;</a>
+          </div>
+          <div class="services__card">
+            <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            <h3 class="services__name">Packing Services</h3>
+            <p class="services__desc">Full packing, partial packing, or unpacking after the move.</p>
+            <a href="#" class="gold-link services__link">View Packing Services&nbsp;&rarr;</a>
+          </div>
+          <div class="services__card">
+            <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="18" rx="1"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="2" y1="15" x2="22" y2="15"/><line x1="12" y1="9" x2="12" y2="21"/></svg>
+            <h3 class="services__name">Storage Services</h3>
+            <p class="services__desc">Short-term, long-term, climate-controlled, business storage. Storage during your move if dates don't line up.</p>
+            <a href="#" class="gold-link services__link">View Storage Services&nbsp;&rarr;</a>
+          </div>
+          <div class="services__card">
+            <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <h3 class="services__name">Additional Services</h3>
+            <p class="services__desc">Piano moving, safe moving, furniture assembly. Same-day movers, emergency moves, single-item delivery.</p>
+            <a href="#" class="gold-link services__link">View Additional Services&nbsp;&rarr;</a>
           </div>
         </div>
       </div>
@@ -208,15 +263,51 @@
       </div>
     </section>
 
-    <!-- ====== CREDIBILITY ====== -->
-    <section class="credibility">
+    <!-- ====== REVIEWS ====== -->
+    <section class="reviews">
       <div class="container">
-        <div class="credibility__inner">
-          <div class="credibility__rule"></div>
-          <p class="credibility__text">Licensed and insured. Full details on the <a href="#" class="gold-link">Insurance &amp; Licensing page&nbsp;&rarr;</a></p>
-          <p class="credibility__text">Professional crews, fair pricing, no surprises on the invoice.</p>
-          <div class="credibility__rule"></div>
+        <div class="reviews__header">
+          <h2 class="reviews__headline">What customers say</h2>
+          <div class="reviews__rating">
+            <span class="reviews__rating-score">4.9</span>
+            <div class="reviews__rating-detail">
+              <span class="reviews__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span class="reviews__rating-count">800+ reviews on Google</span>
+            </div>
+          </div>
         </div>
+        <div class="reviews__grid">
+          <div class="reviews__card">
+            <p class="reviews__quote">They showed up on time, packed everything carefully, and the price matched exactly what they quoted. No surprises on the invoice.</p>
+            <div class="reviews__attribution">
+              <strong class="reviews__name">Sarah M.</strong>
+              <span class="reviews__move-type">2-bedroom move &middot; Evanston to Chicago</span>
+            </div>
+          </div>
+          <div class="reviews__card">
+            <p class="reviews__quote">Called Monday, moved Wednesday. Three guys handled a 3-bedroom house in under 6 hours. I&rsquo;ve moved four times &mdash; this was the easiest.</p>
+            <div class="reviews__attribution">
+              <strong class="reviews__name">James K.</strong>
+              <span class="reviews__move-type">3-bedroom move &middot; Chicago to Naperville</span>
+            </div>
+          </div>
+          <div class="reviews__card">
+            <p class="reviews__quote">The quote showed crew size, hourly rate, and estimated hours. Exactly what I needed to compare against other companies. No back-and-forth.</p>
+            <div class="reviews__attribution">
+              <strong class="reviews__name">Maria L.</strong>
+              <span class="reviews__move-type">1-bedroom move &middot; Naperville</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== TRUST BAND ====== -->
+    <section class="trust-band">
+      <div class="container">
+        <p class="trust-band__line">Licensed and insured. Full details on the <a href="#" class="gold-link">Insurance &amp; Licensing page&nbsp;&rarr;</a></p>
+        <div class="trust-band__divider"></div>
+        <p class="trust-band__line">Professional crews, fair pricing, no surprises on the invoice.</p>
       </div>
     </section>
 
@@ -230,8 +321,56 @@
             <a href="#" class="gold-link service-area__link">See all service areas&nbsp;&rarr;</a>
           </div>
           <div class="service-area__map">
-            <img src="images/service-area-map.jpg" alt="Map of Sparkle Moving service area covering Chicago and suburbs" width="460" height="460">
+            <div class="service-area__map-wrap">
+              <img src="images/service-area-map.jpg" alt="Map of Sparkle Moving service area covering Chicago and suburbs" width="460" height="460">
+              <!-- Pulsating location pins — adjust left/top % to match map geography -->
+              <div class="service-area__pins">
+                <div class="service-area__pin" style="left:62%;top:50%" title="Chicago"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:64%;top:32%" title="Evanston"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:57%;top:22%" title="Northbrook"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:28%;top:60%" title="Naperville"><span></span><span></span></div>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FAQ ====== -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="faq__headline">Common questions</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">How does hourly pricing work?</summary>
+            <div class="faq__answer">
+              <p>You pay for the time the crew is working, from arrival to when the last item is placed. The rate depends on crew size &mdash; a 2-person crew costs less per hour but may take longer than a 3-person crew. Your quote shows the crew size, hourly rate, and estimated hours for your specific move.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What&rsquo;s included in the price?</summary>
+            <div class="faq__answer">
+              <p>The crew, the truck, furniture blankets, shrink wrap for mattresses and upholstered pieces, and standard dollies. Packing materials (boxes, tape, packing paper) are available as an add-on if you want full-service packing.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do you charge extra for stairs or long carries?</summary>
+            <div class="faq__answer">
+              <p>Stairs are part of the job &mdash; no extra charge. Long carries or elevator buildings may have a small additional fee. Any access charges are always disclosed in your quote before you book.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Can I get a firm price, not just an estimate?</summary>
+            <div class="faq__answer">
+              <p>For local moves, we provide a detailed estimate based on your inventory and move details. The final price reflects actual time, but our estimates are accurate. For long-distance moves, we can provide a binding quote.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Are you licensed and insured?</summary>
+            <div class="faq__answer">
+              <p>Yes. Sparkle Moving is licensed by the Illinois Commerce Commission (Illinois CC-MC) and fully insured. Full licensing and insurance details are on our <a href="#" class="gold-link">Insurance &amp; Licensing page&nbsp;&rarr;</a></p>
+            </div>
+          </details>
         </div>
       </div>
     </section>

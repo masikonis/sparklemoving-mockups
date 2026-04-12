@@ -9,7 +9,23 @@
   padding: var(--space-2xl) 0 var(--space-3xl);
 }
 
+/* Chicago cityscape background — dark overlay keeps text legible */
+.service-area::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('images/chicago-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+/* Noise texture inherits from common.css ::after */
+
 .service-area__inner {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-xl);
@@ -18,11 +34,12 @@
 
 .service-area__headline {
   font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 36px;
-  line-height: 1.2;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.15;
   color: var(--color-white);
   margin-bottom: var(--space-sm);
+  letter-spacing: -0.018em;
 }
 
 .service-area__body {
@@ -45,12 +62,75 @@
   justify-content: center;
 }
 
-.service-area__map img {
+/* ---------- Map image: luminance filter knocks out the dark background ---------- */
+
+.service-area__map-wrap {
+  position: relative;
+  display: inline-block;
   width: 100%;
-  max-width: 460px;
+  max-width: 608px;
+}
+
+.service-area__map-wrap img {
+  display: block;
+  width: 100%;
   height: auto;
-  border-radius: 6px;
-  box-shadow: 0 0 0 1px var(--color-white-10), 0 8px 32px rgba(0, 0, 0, 0.3);
+  /* SVG luminance filter: dark pixels → transparent, bright pixels → opaque.
+     This removes the image's navy background so it blends with the section. */
+  filter: url(#map-transparent);
+}
+
+/* ---------- Pulsating location pins ---------- */
+
+.service-area__pins {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.service-area__pin {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%, -50%);
+}
+
+/* Solid gold centre dot */
+.service-area__pin::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(239, 193, 12, 0.7);
+  z-index: 2;
+}
+
+/* Two rings per pin — each a <span> inside the pin div */
+.service-area__pin span {
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--color-gold);
+  border-radius: 50%;
+  animation: pin-pulse 2.8s ease-out infinite;
+}
+
+/* Second ring starts halfway through the cycle so one ring is always mid-pulse */
+.service-area__pin span:last-child {
+  animation-delay: -1.4s;
+}
+
+/* Gently stagger the four pins so they're not all in lockstep */
+.service-area__pin:nth-child(2) span       { animation-delay: -0.6s; }
+.service-area__pin:nth-child(2) span:last-child { animation-delay: -2.0s; }
+.service-area__pin:nth-child(3) span       { animation-delay: -1.2s; }
+.service-area__pin:nth-child(3) span:last-child { animation-delay: -2.6s; }
+.service-area__pin:nth-child(4) span       { animation-delay: -1.8s; }
+.service-area__pin:nth-child(4) span:last-child { animation-delay: -0.4s; }
+
+@keyframes pin-pulse {
+  0%   { transform: scale(1);   opacity: 0.85; }
+  100% { transform: scale(5);   opacity: 0;    }
 }
 
 /* ---------- Responsive ---------- */
@@ -65,7 +145,7 @@
     font-size: 28px;
   }
 
-  .service-area__map img {
-    max-width: 340px;
+  .service-area__map-wrap {
+    max-width: 100%;
   }
 }

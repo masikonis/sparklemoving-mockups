@@ -9,7 +9,7 @@
 
 .site-footer__grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1.5fr;
   gap: var(--space-lg);
 }
 
@@ -84,9 +84,11 @@
 }
 
 .site-footer__cta-col .btn-primary {
+  display: block;
   text-align: center;
+  width: 100%;
   font-size: 14px;
-  padding: 12px 24px;
+  padding: 12px 20px;
 }
 
 /* Bottom bar */

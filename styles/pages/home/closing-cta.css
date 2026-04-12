@@ -5,11 +5,12 @@
 .closing-cta {
   position: relative;
   background-color: var(--color-navy);
-  padding: var(--space-3xl) 0;
+  padding: var(--space-3xl) 0 calc(var(--space-3xl) + 20px);
   overflow: hidden;
+  text-align: center;
 }
 
-/* Faint hero photo for bookend effect */
+/* Faint photo layer */
 .closing-cta::before {
   content: '';
   position: absolute;
@@ -17,7 +18,7 @@
   background-image: url('images/hero-bg.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.12;
+  opacity: 0.1;
   pointer-events: none;
 }
 
@@ -26,36 +27,55 @@
 .closing-cta__content {
   position: relative;
   z-index: 1;
-  max-width: 60%;
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+/* Gold accent rule above the headline */
+.closing-cta__content::before {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background-color: var(--color-gold);
+  margin: 0 auto var(--space-lg);
+  box-shadow: 0 0 16px rgba(239, 193, 12, 0.3);
 }
 
 .closing-cta__headline {
   font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 40px;
-  line-height: 1.2;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 1.08;
   color: var(--color-white);
+  letter-spacing: -0.022em;
 }
 
 .closing-cta__subline {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 18px;
+  font-size: 19px;
   color: var(--color-white-75);
-  margin-top: var(--space-sm);
+  margin-top: var(--space-md);
 }
 
 .closing-cta__actions {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-xl);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-md);
+}
+
+.closing-cta__actions .btn-primary {
+  font-size: 17px;
+  padding: 17px 40px;
 }
 
 .closing-cta__phone {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 16px;
+  font-size: 17px;
   color: var(--color-white-60);
   transition: color 0.15s ease;
 }
@@ -71,16 +91,13 @@
     padding: var(--space-xl) 0;
   }
 
-  .closing-cta__content {
-    max-width: 100%;
-  }
-
   .closing-cta__headline {
-    font-size: 28px;
+    font-size: 36px;
   }
 
   .closing-cta__actions {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: var(--space-sm);
   }
 }

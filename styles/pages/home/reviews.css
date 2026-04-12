@@ -1,0 +1,165 @@
+/* ==========================================================================
+   Reviews — replaces the credibility section
+   ========================================================================== */
+
+.reviews {
+  background-color: var(--color-offwhite);
+  padding: var(--space-3xl) 0 calc(var(--space-3xl) + 20px);
+}
+
+/* Header row: headline left, rating right */
+.reviews__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.reviews__headline {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 44px;
+  color: var(--color-navy);
+  letter-spacing: -0.018em;
+  line-height: 1.1;
+}
+
+/* Right side: 4.9 ★★★★★ 800+ reviews */
+.reviews__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-shrink: 0;
+  padding-bottom: 6px; /* align baseline with headline */
+}
+
+.reviews__rating-score {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 60px;
+  color: var(--color-navy);
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+.reviews__rating-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.reviews__stars {
+  font-size: 20px;
+  color: var(--color-gold);
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.reviews__rating-count {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-navy-60);
+  white-space: nowrap;
+}
+
+/* Three quote cards */
+.reviews__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.reviews__card {
+  background-color: var(--color-white);
+  border-radius: 10px;
+  padding: 36px 32px;
+  border: 1px solid var(--color-navy-08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-xl);
+}
+
+/* Large decorative opening quote mark */
+.reviews__card::before {
+  content: '\201C';
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 64px;
+  color: var(--color-gold);
+  line-height: 0.6;
+  display: block;
+  margin-bottom: 4px;
+  opacity: 0.7;
+}
+
+.reviews__quote {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--color-navy);
+  line-height: 1.72;
+  flex-grow: 1;
+}
+
+.reviews__attribution {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-navy-08);
+}
+
+.reviews__name {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--color-navy);
+}
+
+.reviews__move-type {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-navy-60);
+}
+
+/* Credibility line below cards */
+.reviews__credibility {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-navy-60);
+  margin-top: var(--space-xl);
+  text-align: center;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .reviews__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .reviews__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews {
+    padding: var(--space-2xl) 0;
+  }
+
+  .reviews__headline {
+    font-size: 32px;
+  }
+
+  .reviews__rating-score {
+    font-size: 48px;
+  }
+
+  .reviews__card {
+    padding: 28px 24px;
+  }
+}
