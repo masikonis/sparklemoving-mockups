@@ -10,15 +10,16 @@
   text-align: center;
 }
 
-/* Faint photo layer */
+/* Background photo + dark navy overlay for legibility */
 .closing-cta::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('../../../images/chicago-bg.webp');
+  background-image:
+    linear-gradient(rgba(25, 28, 43, 0.78), rgba(25, 28, 43, 0.78)),
+    url('../../../images/bottom-cta.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.1;
   pointer-events: none;
 }
 
