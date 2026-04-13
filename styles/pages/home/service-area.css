@@ -6,7 +6,7 @@
   position: relative;
   overflow: hidden;
   background-color: var(--color-navy);
-  background-image: url('../../../images/chicago-bg.jpg');
+  background-image: url('../../../images/chicago-bg.webp');
   background-size: cover;
   background-position: center;
   padding: var(--space-2xl) 0 var(--space-3xl);
