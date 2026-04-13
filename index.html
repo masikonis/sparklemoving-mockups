@@ -91,36 +91,56 @@
 
     <!-- ====== HERO ====== -->
     <section class="hero">
-      <div class="hero__overlay"></div>
       <div class="container">
         <div class="hero__inner">
-          <div class="hero__content">
-            <h1 class="hero__headline">Here's what your move costs.<br>Before you call.</h1>
-            <div class="hero__rule"></div>
-            <p class="hero__subline">Chicago movers since 2012. Real prices on the site.</p>
-            <div class="hero__cta">
-              <a href="#quote" class="btn-primary">Start a Quote</a>
-              <span class="hero__cta-supporting">Takes about 60 seconds.</span>
+          <div class="hero__media">
+            <div class="hero__media-main">
+              <img src="images/hero-left.jpg" alt="Sparkle moving crew loading a truck">
+            </div>
+            <div class="hero__media-side">
+              <img src="images/hero-right.jpg" alt="Sparkle moving crew at work">
+            </div>
+            <div class="hero__media-badge" aria-hidden="true">
+              <span class="hero__media-badge-top">Licensed</span>
+              <span class="hero__media-badge-mid">&amp; Insured</span>
+              <span class="hero__media-badge-bot">since 2012</span>
             </div>
           </div>
-          <div class="hero__aside">
-            <div class="hero__price-card">
-              <p class="hero__price-card-eyebrow">Chicago pricing</p>
-              <div class="hero__price-row">
-                <span class="hero__price-row-label">Studio / 1-bedroom</span>
-                <strong class="hero__price-row-value">$400&ndash;$900</strong>
+
+          <div class="hero__content">
+            <h1 class="hero__headline">Here&rsquo;s what your move costs &mdash; <em>before you call.</em></h1>
+            <p class="hero__subline">Chicago movers since 2012. Real prices on the site, no calls or waiting around.</p>
+
+            <form class="hero__quote" action="#quote" onsubmit="return false">
+              <label class="hero__quote-label" for="hero-service">I need help with</label>
+              <div class="hero__quote-row">
+                <div class="hero__quote-field">
+                  <select id="hero-service" class="hero__quote-select" aria-label="Service type">
+                    <option>Moving</option>
+                    <option>Storage</option>
+                  </select>
+                </div>
+                <div class="hero__quote-field hero__quote-field--wide">
+                  <select class="hero__quote-select" aria-label="Where in Chicago">
+                    <option value="" selected disabled>Where in Chicago?</option>
+                    <option>Chicago &mdash; North Side</option>
+                    <option>Chicago &mdash; South Side</option>
+                    <option>Chicago &mdash; West Loop</option>
+                    <option>Evanston</option>
+                    <option>Northbrook</option>
+                    <option>Schaumburg</option>
+                    <option>Naperville</option>
+                    <option>Arlington Heights</option>
+                    <option>Other suburb</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn-primary hero__quote-btn">Get Pricing<span class="arrow">&rarr;</span></button>
               </div>
-              <div class="hero__price-row">
-                <span class="hero__price-row-label">2-bedroom</span>
-                <strong class="hero__price-row-value">$800&ndash;$1,500</strong>
+              <div class="hero__quote-meta">
+                <a href="#" class="gold-link hero__quote-learn">Learn more about moving<span class="arrow">&rarr;</span></a>
+                <span class="hero__quote-time">Takes about 60 seconds.</span>
               </div>
-              <div class="hero__price-row">
-                <span class="hero__price-row-label">3+ bedroom</span>
-                <strong class="hero__price-row-value">$1,500&ndash;$3,000+</strong>
-              </div>
-              <a href="#quote" class="btn-primary hero__price-card-btn">Get Your Exact Price</a>
-              <p class="hero__price-card-note">Takes 60 seconds. No commitment.</p>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -131,11 +151,11 @@
       <div class="container">
         <ul class="stats-bar__list">
           <li class="stats-bar__item">
-            <span class="stats-bar__number">2012</span>
+            <span class="stats-bar__number count-up">2012</span>
             <span class="stats-bar__label">Established</span>
           </li>
           <li class="stats-bar__item">
-            <span class="stats-bar__number">10,000+</span>
+            <span class="stats-bar__number count-up">10,000+</span>
             <span class="stats-bar__label">Moves completed</span>
           </li>
           <li class="stats-bar__item">
@@ -155,26 +175,26 @@
         <div class="pricing__cards">
           <div class="pricing__card">
             <div class="pricing__card-tier">Studio / 1-bedroom</div>
-            <div class="pricing__card-price">$400&ndash;$900</div>
+            <div class="pricing__card-price count-up">$400&ndash;$900</div>
             <div class="pricing__card-detail">2 movers &middot; 2&ndash;4 hours typical</div>
-            <a href="#quote" class="pricing__card-link">Get my exact price &rarr;</a>
+            <a href="#quote" class="pricing__card-link">Get my exact price<span class="arrow">&rarr;</span></a>
           </div>
           <div class="pricing__card pricing__card--featured">
             <div class="pricing__card-badge">Most common</div>
             <div class="pricing__card-tier">2-bedroom</div>
-            <div class="pricing__card-price">$800&ndash;$1,500</div>
+            <div class="pricing__card-price count-up">$800&ndash;$1,500</div>
             <div class="pricing__card-detail">3 movers &middot; 4&ndash;6 hours typical</div>
-            <a href="#quote" class="pricing__card-link pricing__card-link--light">Get my exact price &rarr;</a>
+            <a href="#quote" class="pricing__card-link pricing__card-link--light">Get my exact price<span class="arrow">&rarr;</span></a>
           </div>
           <div class="pricing__card">
             <div class="pricing__card-tier">3+ bedroom</div>
-            <div class="pricing__card-price">$1,500&ndash;$3,000+</div>
+            <div class="pricing__card-price count-up">$1,500&ndash;$3,000+</div>
             <div class="pricing__card-detail">4 movers &middot; 6&ndash;10 hours typical</div>
-            <a href="#quote" class="pricing__card-link">Get my exact price &rarr;</a>
+            <a href="#quote" class="pricing__card-link">Get my exact price<span class="arrow">&rarr;</span></a>
           </div>
         </div>
 
-        <p class="pricing__footnote">Local moves. Rates are hourly, based on crew size. Full rate breakdown on the <a href="#" class="gold-link">Pricing page&nbsp;&rarr;</a></p>
+        <p class="pricing__footnote">Local moves. Rates are hourly, based on crew size. Full rate breakdown on the <a href="#" class="gold-link">Pricing page<span class="arrow">&rarr;</span></a></p>
 
         <div class="pricing__cta">
           <a href="#quote" class="btn-primary">Start a Quote &mdash; get your exact price.</a>
@@ -191,49 +211,49 @@
             <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H4a1 1 0 01-1-1V10.5z"/><rect x="9" y="13" width="6" height="9"/></svg>
             <h3 class="services__name">Residential Moving</h3>
             <p class="services__desc">Houses, apartments, condos, senior moves, student moves, last-minute moves. Across Chicago and 40+ suburbs.</p>
-            <a href="#" class="gold-link services__link">View Residential Moving&nbsp;&rarr;</a>
+            <a href="#" class="gold-link services__link">View Residential Moving<span class="arrow">&rarr;</span></a>
           </div>
           <div class="services__card">
             <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="1"/><path d="M2 9h20M9 2v20M15 9v13"/><rect x="11" y="14" width="4" height="6"/></svg>
             <h3 class="services__name">Commercial Moving</h3>
             <p class="services__desc">Office relocations during business hours, after hours, or weekends. Internal moves within the same building.</p>
-            <a href="#" class="gold-link services__link">View Commercial Moving&nbsp;&rarr;</a>
+            <a href="#" class="gold-link services__link">View Commercial Moving<span class="arrow">&rarr;</span></a>
           </div>
           <div class="services__card">
             <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="5" width="14" height="12" rx="1"/><path d="M15 8h5l3 4v5h-8V8z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg>
             <h3 class="services__name">Long Distance Moving</h3>
             <p class="services__desc">Interstate and cross-country moves with dedicated trucks, including Chicago to Florida and Chicago to Texas.</p>
-            <a href="#" class="gold-link services__link">View Long Distance Moving&nbsp;&rarr;</a>
+            <a href="#" class="gold-link services__link">View Long Distance Moving<span class="arrow">&rarr;</span></a>
           </div>
           <div class="services__card">
             <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
             <h3 class="services__name">Junk Removal</h3>
             <p class="services__desc">Furniture, appliances, mattresses, office cleanouts. Donation pickup and dropoff.</p>
-            <a href="#" class="gold-link services__link">View Junk Removal&nbsp;&rarr;</a>
+            <a href="#" class="gold-link services__link">View Junk Removal<span class="arrow">&rarr;</span></a>
           </div>
           <div class="services__card">
             <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
             <h3 class="services__name">Labor Services</h3>
             <p class="services__desc">Loading and unloading for your truck, pod, or container. In-home furniture moving, rearranging, heavy items.</p>
-            <a href="#" class="gold-link services__link">View Labor Services&nbsp;&rarr;</a>
+            <a href="#" class="gold-link services__link">View Labor Services<span class="arrow">&rarr;</span></a>
           </div>
           <div class="services__card">
             <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
             <h3 class="services__name">Packing Services</h3>
             <p class="services__desc">Full packing, partial packing, or unpacking after the move.</p>
-            <a href="#" class="gold-link services__link">View Packing Services&nbsp;&rarr;</a>
+            <a href="#" class="gold-link services__link">View Packing Services<span class="arrow">&rarr;</span></a>
           </div>
           <div class="services__card">
             <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="18" rx="1"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="2" y1="15" x2="22" y2="15"/><line x1="12" y1="9" x2="12" y2="21"/></svg>
             <h3 class="services__name">Storage Services</h3>
             <p class="services__desc">Short-term, long-term, climate-controlled, business storage. Storage during your move if dates don't line up.</p>
-            <a href="#" class="gold-link services__link">View Storage Services&nbsp;&rarr;</a>
+            <a href="#" class="gold-link services__link">View Storage Services<span class="arrow">&rarr;</span></a>
           </div>
           <div class="services__card">
             <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             <h3 class="services__name">Additional Services</h3>
             <p class="services__desc">Piano moving, safe moving, furniture assembly. Same-day movers, emergency moves, single-item delivery.</p>
-            <a href="#" class="gold-link services__link">View Additional Services&nbsp;&rarr;</a>
+            <a href="#" class="gold-link services__link">View Additional Services<span class="arrow">&rarr;</span></a>
           </div>
         </div>
       </div>
@@ -245,17 +265,26 @@
         <h2 class="how-it-works__heading">How it works</h2>
         <div class="how-it-works__steps">
           <div class="how-it-works__step">
-            <span class="how-it-works__number">1</span>
+            <div class="how-it-works__image">
+              <img src="images/step1.jpg" alt="Get a quote on your phone">
+              <span class="how-it-works__number">1</span>
+            </div>
             <h3 class="how-it-works__title">Get a quote.</h3>
             <p class="how-it-works__desc">Tell us your move details. Takes about 60 seconds.</p>
           </div>
           <div class="how-it-works__step">
-            <span class="how-it-works__number">2</span>
+            <div class="how-it-works__image">
+              <img src="images/step2.jpg" alt="See your price breakdown">
+              <span class="how-it-works__number">2</span>
+            </div>
             <h3 class="how-it-works__title">See your price.</h3>
             <p class="how-it-works__desc">We send a breakdown: crew size, hours, total.</p>
           </div>
           <div class="how-it-works__step">
-            <span class="how-it-works__number">3</span>
+            <div class="how-it-works__image">
+              <img src="images/step3.jpg" alt="Sparkle crew moving day">
+              <span class="how-it-works__number">3</span>
+            </div>
             <h3 class="how-it-works__title">We move you.</h3>
             <p class="how-it-works__desc">Crew arrives on schedule, handles your move start to finish.</p>
           </div>
@@ -305,9 +334,9 @@
     <!-- ====== TRUST BAND ====== -->
     <section class="trust-band">
       <div class="container">
-        <p class="trust-band__line">Licensed and insured. Full details on the <a href="#" class="gold-link">Insurance &amp; Licensing page&nbsp;&rarr;</a></p>
-        <div class="trust-band__divider"></div>
-        <p class="trust-band__line">Professional crews, fair pricing, no surprises on the invoice.</p>
+        <h2 class="trust-band__headline">Licensed and insured.</h2>
+        <p class="trust-band__body">Professional crews, fair pricing, no surprises on the invoice.</p>
+        <a href="#" class="gold-link trust-band__cta">Full details on the Insurance &amp; Licensing page<span class="arrow">&rarr;</span></a>
       </div>
     </section>
 
@@ -318,17 +347,20 @@
           <div class="service-area__text">
             <h2 class="service-area__headline">Chicago and 40+ suburbs</h2>
             <p class="service-area__body">Headquartered in Northbrook. Serving Chicago and surrounding communities including Evanston, Schaumburg, Naperville, and Arlington Heights.</p>
-            <a href="#" class="gold-link service-area__link">See all service areas&nbsp;&rarr;</a>
+            <a href="#" class="gold-link service-area__link">See all service areas<span class="arrow">&rarr;</span></a>
           </div>
           <div class="service-area__map">
             <div class="service-area__map-wrap">
               <img src="images/service-area-map.jpg" alt="Map of Sparkle Moving service area covering Chicago and suburbs" width="460" height="460">
-              <!-- Pulsating location pins — adjust left/top % to match map geography -->
+              <!-- Pulsating location pins — spread so the rings never touch -->
               <div class="service-area__pins">
-                <div class="service-area__pin" style="left:62%;top:50%" title="Chicago"><span></span><span></span></div>
-                <div class="service-area__pin" style="left:64%;top:32%" title="Evanston"><span></span><span></span></div>
-                <div class="service-area__pin" style="left:57%;top:22%" title="Northbrook"><span></span><span></span></div>
-                <div class="service-area__pin" style="left:28%;top:60%" title="Naperville"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:28%;top:30%"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:46%;top:28%"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:62%;top:32%"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:22%;top:48%"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:44%;top:50%"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:30%;top:64%"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:68%;top:60%"><span></span><span></span></div>
               </div>
             </div>
           </div>
@@ -368,7 +400,7 @@
           <details class="faq__item">
             <summary class="faq__question">Are you licensed and insured?</summary>
             <div class="faq__answer">
-              <p>Yes. Sparkle Moving is licensed by the Illinois Commerce Commission (Illinois CC-MC) and fully insured. Full licensing and insurance details are on our <a href="#" class="gold-link">Insurance &amp; Licensing page&nbsp;&rarr;</a></p>
+              <p>Yes. Sparkle Moving is licensed by the Illinois Commerce Commission (Illinois CC-MC) and fully insured. Full licensing and insurance details are on our <a href="#" class="gold-link">Insurance &amp; Licensing page<span class="arrow">&rarr;</span></a></p>
             </div>
           </details>
         </div>
@@ -474,6 +506,71 @@
       hamburger.addEventListener('click', function() {
         menu.classList.toggle('is-open');
       });
+    })();
+
+    // Count-up animation: numbers tick from 0 to their final value when scrolled in
+    (function() {
+      function animate(el) {
+        var finalText = el.getAttribute('data-count-to');
+        var parts = finalText.split(/(\d[\d,]*)/);
+        var tokens = parts.map(function(p) {
+          if (/^\d[\d,]*$/.test(p)) {
+            return { num: true, value: parseInt(p.replace(/,/g, ''), 10), hasComma: p.indexOf(',') !== -1 };
+          }
+          return { num: false, value: p };
+        });
+        if (!tokens.some(function(t) { return t.num; })) return;
+
+        var duration = 1400;
+        var start = performance.now();
+
+        function render(progress) {
+          el.textContent = tokens.map(function(t) {
+            if (!t.num) return t.value;
+            var v = Math.round(t.value * progress);
+            return (t.hasComma || t.value >= 1000) ? v.toLocaleString('en-US') : String(v);
+          }).join('');
+        }
+
+        function frame(now) {
+          var t = Math.min(1, (now - start) / duration);
+          var eased = 1 - Math.pow(1 - t, 3);
+          render(eased);
+          if (t < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      }
+
+      var targets = document.querySelectorAll('.count-up');
+      if (!targets.length) return;
+
+      // Stash the final text, lock in the natural rendered width so the row
+      // doesn't reflow as digits tick up, then render zero
+      targets.forEach(function(el) {
+        el.setAttribute('data-count-to', el.textContent);
+        // Force tabular figures so each digit is the same width
+        el.style.fontVariantNumeric = 'tabular-nums';
+        // Measure the final width with the real text in place
+        el.style.display = 'inline-block';
+        el.style.minWidth = el.getBoundingClientRect().width + 'px';
+        el.style.textAlign = 'center';
+        // Now zero it out for the count-up to begin
+        el.textContent = el.textContent.replace(/\d[\d,]*/g, '0');
+      });
+
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting) {
+              animate(e.target);
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.35 });
+        targets.forEach(function(el) { io.observe(el); });
+      } else {
+        targets.forEach(animate);
+      }
     })();
   </script>
 

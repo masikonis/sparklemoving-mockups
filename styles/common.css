@@ -154,6 +154,23 @@ button {
   background-size: 100% 1px;
 }
 
+/* ---------- Arrow slide-on-hover ---------- */
+/* Wrap any inline → in <span class="arrow"> to get the slide effect */
+
+.arrow {
+  display: inline-block;
+  margin-left: 4px;
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+
+a:hover .arrow,
+button:hover .arrow,
+.btn-primary:hover .arrow,
+summary:hover .arrow {
+  transform: translateX(5px);
+}
+
 /* ---------- Noise texture for dark sections ---------- */
 
 .hero::after,

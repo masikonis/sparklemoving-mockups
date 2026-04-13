@@ -17,53 +17,53 @@
   text-align: center;
 }
 
-/* Steps grid — connector line runs through the number circles */
 .how-it-works__steps {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: var(--space-xl);
-  position: relative;
-}
-
-/* Horizontal connector line between the three circles */
-.how-it-works__steps::before {
-  content: '';
-  position: absolute;
-  top: 28px; /* vertically centered on the 56px circles */
-  left: calc(56px / 2);
-  right: calc(56px / 2);
-  height: 2px;
-  background: linear-gradient(
-    to right,
-    var(--color-gold) 0%,
-    var(--color-gold) 100%
-  );
-  opacity: 0.25;
-  z-index: 0;
 }
 
 .how-it-works__step {
   position: relative;
-  z-index: 1;
 }
 
-/* Step number: gold-bordered circle */
+/* Image with the number badge anchored to its top-left */
+.how-it-works__image {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background-color: var(--color-navy-05);
+  margin-bottom: var(--space-md);
+  box-shadow: 0 16px 40px rgba(25, 28, 43, 0.1);
+}
+
+.how-it-works__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Step number: gold circle floating over the image */
 .how-it-works__number {
+  position: absolute;
+  top: 16px;
+  left: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background-color: var(--color-white);
-  border: 2px solid var(--color-gold);
+  background-color: var(--color-gold);
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 22px;
+  font-size: 20px;
   color: var(--color-navy);
-  margin-bottom: var(--space-lg);
   line-height: 1;
-  box-shadow: 0 0 0 6px var(--color-white); /* punches through the connector line */
+  box-shadow: 0 6px 16px rgba(25, 28, 43, 0.25);
+  z-index: 1;
 }
 
 .how-it-works__title {
@@ -71,7 +71,8 @@
   font-weight: 600;
   font-size: 22px;
   color: var(--color-navy);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  margin-top: 4px;
 }
 
 .how-it-works__desc {
@@ -97,23 +98,5 @@
   .how-it-works__steps {
     grid-template-columns: 1fr;
     gap: var(--space-xl);
-  }
-
-  /* Hide connector on mobile — steps stack vertically */
-  .how-it-works__steps::before {
-    display: none;
-  }
-
-  /* Horizontal layout per step on mobile */
-  .how-it-works__step {
-    display: flex;
-    gap: var(--space-md);
-    align-items: flex-start;
-  }
-
-  .how-it-works__number {
-    flex-shrink: 0;
-    margin-bottom: 0;
-    margin-top: 2px;
   }
 }
