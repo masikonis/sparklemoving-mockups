@@ -57,14 +57,31 @@
 
       <nav class="site-header__nav">
         <ul class="site-header__nav-links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#service-area">Areas</a></li>
+          <li>
+            <a href="#services" id="trigger-services" class="site-header__nav-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="menu-services">Services</a>
+          </li>
+          <li><a href="#">Pricing</a></li>
+          <li>
+            <a href="#service-area" id="trigger-areas" class="site-header__nav-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="menu-areas">Areas</a>
+          </li>
           <li><a href="#">Reviews</a></li>
-          <li><a href="#">About</a></li>
+          <li>
+            <a href="#" id="trigger-about" class="site-header__nav-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="menu-about">About</a>
+            <div class="nav-popover" id="menu-about" aria-labelledby="trigger-about">
+              <a href="#">About</a>
+              <a href="#">Moving Process</a>
+              <a href="#">FAQ</a>
+              <a href="#">Insurance &amp; Licensing</a>
+              <div class="nav-popover__divider" aria-hidden="true"></div>
+              <a href="#">Careers</a>
+              <a href="#">Affiliate Program</a>
+              <a href="#">Blog</a>
+              <a href="#">Contact</a>
+            </div>
+          </li>
         </ul>
         <a href="tel:+1XXXXXXXXXX" class="site-header__phone">(312) 555-0199</a>
-        <a href="#quote" class="btn-primary site-header__cta">Start a Quote</a>
+        <a href="#quote" class="btn-primary site-header__cta">Get a Quote</a>
       </nav>
 
       <button class="site-header__hamburger" id="hamburgerBtn" aria-label="Open menu">
@@ -74,16 +91,121 @@
       </button>
     </div>
 
+    <!-- ====== MEGA PANELS (desktop) ====== -->
+    <div class="nav-mega" id="menu-services" aria-labelledby="trigger-services">
+      <div class="container nav-mega__inner">
+        <div class="nav-mega__grid">
+          <a href="#" class="nav-mega__card">
+            <span class="nav-mega__card-title">Residential Moving</span>
+            <span class="nav-mega__card-desc">Homes, apartments, condos</span>
+          </a>
+          <a href="#" class="nav-mega__card">
+            <span class="nav-mega__card-title">Commercial Moving</span>
+            <span class="nav-mega__card-desc">Office relocations</span>
+          </a>
+          <a href="#" class="nav-mega__card">
+            <span class="nav-mega__card-title">Long Distance Moving</span>
+            <span class="nav-mega__card-desc">Interstate and cross-country</span>
+          </a>
+          <a href="#" class="nav-mega__card">
+            <span class="nav-mega__card-title">Junk Removal</span>
+            <span class="nav-mega__card-desc">Furniture, appliances, cleanouts</span>
+          </a>
+          <a href="#" class="nav-mega__card">
+            <span class="nav-mega__card-title">Labor Services</span>
+            <span class="nav-mega__card-desc">Loading, unloading, POD</span>
+          </a>
+          <a href="#" class="nav-mega__card">
+            <span class="nav-mega__card-title">Packing Services</span>
+            <span class="nav-mega__card-desc">Full, partial, unpacking</span>
+          </a>
+          <a href="#" class="nav-mega__card">
+            <span class="nav-mega__card-title">Storage Services</span>
+            <span class="nav-mega__card-desc">Short-term, long-term, climate</span>
+          </a>
+          <a href="#" class="nav-mega__card">
+            <span class="nav-mega__card-title">Additional Services</span>
+            <span class="nav-mega__card-desc">Piano, safe, same-day, delivery</span>
+          </a>
+        </div>
+        <div class="nav-mega__footer">
+          <a href="#" class="gold-link nav-mega__more">View all services<span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-mega" id="menu-areas" aria-labelledby="trigger-areas">
+      <div class="container nav-mega__inner">
+        <div class="nav-mega__header">
+          <p class="nav-mega__lead">Chicago and 40+ suburbs serviced from Northbrook.</p>
+          <a href="#" class="gold-link nav-mega__more">See all 40 service areas<span class="arrow">&rarr;</span></a>
+        </div>
+        <div class="nav-mega__cities">
+          <a href="#" class="nav-mega__city">Chicago</a>
+          <a href="#" class="nav-mega__city">Evanston</a>
+          <a href="#" class="nav-mega__city">Naperville</a>
+          <a href="#" class="nav-mega__city">Schaumburg</a>
+          <a href="#" class="nav-mega__city">Arlington Heights</a>
+          <a href="#" class="nav-mega__city">Northbrook</a>
+        </div>
+      </div>
+    </div>
+
     <div class="site-header__mobile-menu" id="mobileMenu">
       <ul class="site-header__mobile-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#service-area">Areas</a></li>
+        <li class="site-header__mobile-accordion">
+          <button class="site-header__mobile-accordion-header" aria-expanded="false" aria-controls="m-sub-services">
+            Services
+            <span class="site-header__mobile-accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <ul class="site-header__mobile-accordion-list" id="m-sub-services">
+            <li><a href="#">Residential Moving</a></li>
+            <li><a href="#">Commercial Moving</a></li>
+            <li><a href="#">Long Distance Moving</a></li>
+            <li><a href="#">Junk Removal</a></li>
+            <li><a href="#">Labor Services</a></li>
+            <li><a href="#">Packing Services</a></li>
+            <li><a href="#">Storage Services</a></li>
+            <li><a href="#">Additional Services</a></li>
+            <li><a href="#" class="site-header__mobile-accordion-more">View all services &rarr;</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Pricing</a></li>
+        <li class="site-header__mobile-accordion">
+          <button class="site-header__mobile-accordion-header" aria-expanded="false" aria-controls="m-sub-areas">
+            Areas
+            <span class="site-header__mobile-accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <ul class="site-header__mobile-accordion-list" id="m-sub-areas">
+            <li><a href="#">Chicago</a></li>
+            <li><a href="#">Evanston</a></li>
+            <li><a href="#">Naperville</a></li>
+            <li><a href="#">Schaumburg</a></li>
+            <li><a href="#">Arlington Heights</a></li>
+            <li><a href="#">Northbrook</a></li>
+            <li><a href="#" class="site-header__mobile-accordion-more">See all 40 service areas &rarr;</a></li>
+          </ul>
+        </li>
         <li><a href="#">Reviews</a></li>
-        <li><a href="#">About</a></li>
+        <li class="site-header__mobile-accordion">
+          <button class="site-header__mobile-accordion-header" aria-expanded="false" aria-controls="m-sub-about">
+            About
+            <span class="site-header__mobile-accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <ul class="site-header__mobile-accordion-list" id="m-sub-about">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Moving Process</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Insurance &amp; Licensing</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Affiliate Program</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </li>
       </ul>
       <a href="tel:+1XXXXXXXXXX" class="site-header__mobile-phone">(312) 555-0199</a>
-      <a href="#quote" class="btn-primary site-header__mobile-cta">Start a Quote</a>
+      <a href="#quote" class="btn-primary site-header__mobile-cta">Get a Quote</a>
     </div>
   </header>
 
@@ -111,7 +233,7 @@
             <h1 class="hero__headline">Here&rsquo;s what your move costs &mdash; <em>before you call.</em></h1>
             <p class="hero__subline">Chicago movers since 2012. Real prices on the site, no calls or waiting around.</p>
 
-            <form class="hero__quote" action="#quote" onsubmit="return false">
+            <form class="hero__quote" id="quote" action="#quote" onsubmit="return false">
               <label class="hero__quote-label" for="hero-service">I need help with</label>
               <div class="hero__quote-row">
                 <div class="hero__quote-field">
@@ -120,9 +242,9 @@
                     <option>Storage</option>
                   </select>
                 </div>
-                <div class="hero__quote-field hero__quote-field--wide">
+                <div class="hero__quote-field">
                   <select class="hero__quote-select" aria-label="Where in Chicago">
-                    <option value="" selected disabled>Where in Chicago?</option>
+                    <option value="" selected disabled>Pickup area</option>
                     <option>Chicago &mdash; North Side</option>
                     <option>Chicago &mdash; South Side</option>
                     <option>Chicago &mdash; West Loop</option>
@@ -134,10 +256,10 @@
                     <option>Other suburb</option>
                   </select>
                 </div>
-                <button type="submit" class="btn-primary hero__quote-btn">Get Pricing<span class="arrow">&rarr;</span></button>
+                <button type="submit" class="btn-primary hero__quote-btn">Get a Quote<span class="arrow">&rarr;</span></button>
               </div>
               <div class="hero__quote-meta">
-                <a href="#" class="gold-link hero__quote-learn">Learn more about moving<span class="arrow">&rarr;</span></a>
+                <a href="#" class="gold-link hero__quote-learn">How our pricing works<span class="arrow">&rarr;</span></a>
                 <span class="hero__quote-time">Takes about 60 seconds.</span>
               </div>
             </form>
@@ -151,11 +273,11 @@
       <div class="container">
         <ul class="stats-bar__list">
           <li class="stats-bar__item">
-            <span class="stats-bar__number count-up">2012</span>
+            <span class="stats-bar__number">2012</span>
             <span class="stats-bar__label">Established</span>
           </li>
           <li class="stats-bar__item">
-            <span class="stats-bar__number count-up">10,000+</span>
+            <span class="stats-bar__number">10,000+</span>
             <span class="stats-bar__label">Moves completed</span>
           </li>
           <li class="stats-bar__item">
@@ -175,29 +297,29 @@
         <div class="pricing__cards">
           <div class="pricing__card">
             <div class="pricing__card-tier">Studio / 1-bedroom</div>
-            <div class="pricing__card-price count-up">$400&ndash;$900</div>
+            <div class="pricing__card-price">$400&ndash;$900</div>
             <div class="pricing__card-detail">2 movers &middot; 2&ndash;4 hours typical</div>
-            <a href="#quote" class="pricing__card-link">Get my exact price<span class="arrow">&rarr;</span></a>
+            <a href="#quote" class="pricing__card-link">Get a Quote<span class="arrow">&rarr;</span></a>
           </div>
           <div class="pricing__card pricing__card--featured">
             <div class="pricing__card-badge">Most common</div>
             <div class="pricing__card-tier">2-bedroom</div>
-            <div class="pricing__card-price count-up">$800&ndash;$1,500</div>
+            <div class="pricing__card-price">$800&ndash;$1,500</div>
             <div class="pricing__card-detail">3 movers &middot; 4&ndash;6 hours typical</div>
-            <a href="#quote" class="pricing__card-link pricing__card-link--light">Get my exact price<span class="arrow">&rarr;</span></a>
+            <a href="#quote" class="pricing__card-link pricing__card-link--light">Get a Quote<span class="arrow">&rarr;</span></a>
           </div>
           <div class="pricing__card">
             <div class="pricing__card-tier">3+ bedroom</div>
-            <div class="pricing__card-price count-up">$1,500&ndash;$3,000+</div>
+            <div class="pricing__card-price">$1,500&ndash;$3,000+</div>
             <div class="pricing__card-detail">4 movers &middot; 6&ndash;10 hours typical</div>
-            <a href="#quote" class="pricing__card-link">Get my exact price<span class="arrow">&rarr;</span></a>
+            <a href="#quote" class="pricing__card-link">Get a Quote<span class="arrow">&rarr;</span></a>
           </div>
         </div>
 
         <p class="pricing__footnote">Local moves. Rates are hourly, based on crew size. Full rate breakdown on the <a href="#" class="gold-link">Pricing page<span class="arrow">&rarr;</span></a></p>
 
         <div class="pricing__cta">
-          <a href="#quote" class="btn-primary">Start a Quote &mdash; get your exact price.</a>
+          <a href="#quote" class="btn-primary">Get a Quote</a>
         </div>
       </div>
     </section>
@@ -286,7 +408,7 @@
               <span class="how-it-works__number">3</span>
             </div>
             <h3 class="how-it-works__title">We move you.</h3>
-            <p class="how-it-works__desc">Crew arrives on schedule, handles your move start to finish.</p>
+            <p class="how-it-works__desc">Crew arrives on schedule. Loads, transports, unloads, places.</p>
           </div>
         </div>
       </div>
@@ -394,7 +516,7 @@
           <details class="faq__item">
             <summary class="faq__question">Can I get a firm price, not just an estimate?</summary>
             <div class="faq__answer">
-              <p>For local moves, we provide a detailed estimate based on your inventory and move details. The final price reflects actual time, but our estimates are accurate. For long-distance moves, we can provide a binding quote.</p>
+              <p>For local moves, we provide a detailed estimate based on your inventory and move details. The final price reflects actual time on the job, within the estimated hour range. For long-distance moves, we can provide a binding quote.</p>
             </div>
           </details>
           <details class="faq__item">
@@ -414,7 +536,7 @@
           <h2 class="closing-cta__headline">Get your quote. Takes 60 seconds.</h2>
           <p class="closing-cta__subline">Just the cost of your move, upfront.</p>
           <div class="closing-cta__actions">
-            <a href="#quote" class="btn-primary">Start a Quote</a>
+            <a href="#quote" class="btn-primary">Get a Quote</a>
             <a href="tel:+1XXXXXXXXXX" class="closing-cta__phone">(312) 555-0199</a>
           </div>
         </div>
@@ -478,7 +600,7 @@
 
         <div class="site-footer__cta-col">
           <p class="site-footer__cta-text">Get your exact moving cost.<br>Takes about 60 seconds.</p>
-          <a href="#quote" class="btn-primary">Start a Quote</a>
+          <a href="#quote" class="btn-primary">Get a Quote</a>
         </div>
       </div>
 
@@ -508,70 +630,128 @@
       });
     })();
 
-    // Count-up animation: numbers tick from 0 to their final value when scrolled in
+    // Desktop dropdowns: hover-intent + click + keyboard, single-open-at-a-time
     (function() {
-      function animate(el) {
-        var finalText = el.getAttribute('data-count-to');
-        var parts = finalText.split(/(\d[\d,]*)/);
-        var tokens = parts.map(function(p) {
-          if (/^\d[\d,]*$/.test(p)) {
-            return { num: true, value: parseInt(p.replace(/,/g, ''), 10), hasComma: p.indexOf(',') !== -1 };
-          }
-          return { num: false, value: p };
-        });
-        if (!tokens.some(function(t) { return t.num; })) return;
+      var header = document.getElementById('siteHeader');
+      var triggers = header.querySelectorAll('.site-header__nav-trigger');
+      var OPEN_DELAY = 120;
+      var CLOSE_DELAY = 200;
+      var openTimer = null;
+      var closeTimer = null;
+      var currentId = null;
 
-        var duration = 1400;
-        var start = performance.now();
-
-        function render(progress) {
-          el.textContent = tokens.map(function(t) {
-            if (!t.num) return t.value;
-            var v = Math.round(t.value * progress);
-            return (t.hasComma || t.value >= 1000) ? v.toLocaleString('en-US') : String(v);
-          }).join('');
-        }
-
-        function frame(now) {
-          var t = Math.min(1, (now - start) / duration);
-          var eased = 1 - Math.pow(1 - t, 3);
-          render(eased);
-          if (t < 1) requestAnimationFrame(frame);
-        }
-        requestAnimationFrame(frame);
+      function panelFor(trigger) {
+        return document.getElementById(trigger.getAttribute('aria-controls'));
       }
 
-      var targets = document.querySelectorAll('.count-up');
-      if (!targets.length) return;
+      function closeAll() {
+        triggers.forEach(function(t) {
+          t.setAttribute('aria-expanded', 'false');
+          var li = t.parentNode;
+          if (li) li.classList.remove('is-open');
+        });
+        header.querySelectorAll('.nav-mega.is-open, .nav-popover.is-open').forEach(function(p) {
+          p.classList.remove('is-open');
+        });
+        currentId = null;
+      }
 
-      // Stash the final text, lock in the natural rendered width so the row
-      // doesn't reflow as digits tick up, then render zero
-      targets.forEach(function(el) {
-        el.setAttribute('data-count-to', el.textContent);
-        // Force tabular figures so each digit is the same width
-        el.style.fontVariantNumeric = 'tabular-nums';
-        // Measure the final width with the real text in place
-        el.style.display = 'inline-block';
-        el.style.minWidth = el.getBoundingClientRect().width + 'px';
-        el.style.textAlign = 'center';
-        // Now zero it out for the count-up to begin
-        el.textContent = el.textContent.replace(/\d[\d,]*/g, '0');
+      function openPanel(trigger) {
+        var id = trigger.getAttribute('aria-controls');
+        if (currentId === id) return;
+        closeAll();
+        var panel = panelFor(trigger);
+        if (!panel) return;
+        trigger.setAttribute('aria-expanded', 'true');
+        trigger.parentNode.classList.add('is-open');
+        panel.classList.add('is-open');
+        currentId = id;
+      }
+
+      triggers.forEach(function(trigger) {
+        var panel = panelFor(trigger);
+
+        trigger.addEventListener('mouseenter', function() {
+          clearTimeout(closeTimer);
+          clearTimeout(openTimer);
+          openTimer = setTimeout(function() { openPanel(trigger); }, OPEN_DELAY);
+        });
+
+        trigger.addEventListener('mouseleave', function() {
+          clearTimeout(openTimer);
+          clearTimeout(closeTimer);
+          closeTimer = setTimeout(closeAll, CLOSE_DELAY);
+        });
+
+        trigger.addEventListener('click', function(e) {
+          e.preventDefault();
+          clearTimeout(openTimer);
+          if (trigger.getAttribute('aria-expanded') === 'true') {
+            closeAll();
+          } else {
+            openPanel(trigger);
+          }
+        });
+
+        trigger.addEventListener('keydown', function(e) {
+          if (e.key === ' ' || e.key === 'Spacebar') {
+            e.preventDefault();
+            trigger.click();
+          }
+        });
+
+        if (panel) {
+          panel.addEventListener('mouseenter', function() {
+            clearTimeout(closeTimer);
+          });
+          panel.addEventListener('mouseleave', function() {
+            clearTimeout(closeTimer);
+            closeTimer = setTimeout(closeAll, CLOSE_DELAY);
+          });
+        }
       });
 
-      if ('IntersectionObserver' in window) {
-        var io = new IntersectionObserver(function(entries) {
-          entries.forEach(function(e) {
-            if (e.isIntersecting) {
-              animate(e.target);
-              io.unobserve(e.target);
-            }
-          });
-        }, { threshold: 0.35 });
-        targets.forEach(function(el) { io.observe(el); });
-      } else {
-        targets.forEach(animate);
-      }
+      document.addEventListener('click', function(e) {
+        if (!header.contains(e.target) && currentId) closeAll();
+      });
+
+      window.addEventListener('scroll', function() {
+        if (currentId) closeAll();
+      }, { passive: true });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && currentId) {
+          var t = document.querySelector('[aria-controls="' + currentId + '"]');
+          closeAll();
+          if (t) t.focus();
+        }
+      });
+
+      document.addEventListener('focusin', function(e) {
+        if (!header.contains(e.target) && currentId) closeAll();
+      });
     })();
+
+    // Mobile accordions in the hamburger drawer
+    (function() {
+      var headers = document.querySelectorAll('.site-header__mobile-accordion-header');
+      headers.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var parent = btn.parentNode;
+          var wasOpen = parent.classList.contains('is-open');
+          document.querySelectorAll('.site-header__mobile-accordion.is-open').forEach(function(a) {
+            a.classList.remove('is-open');
+            var b = a.querySelector('.site-header__mobile-accordion-header');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          });
+          if (!wasOpen) {
+            parent.classList.add('is-open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    })();
+
   </script>
 
 </body>

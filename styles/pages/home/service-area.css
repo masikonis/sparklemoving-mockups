@@ -113,31 +113,31 @@
   inset: 0;
   border: 2px solid var(--color-gold);
   border-radius: 50%;
-  animation: pin-pulse 2.8s ease-out infinite;
+  animation: pin-pulse 4.5s ease-out infinite;
 }
 
 /* Second ring starts halfway through the cycle so one ring is always mid-pulse */
 .service-area__pin span:last-child {
-  animation-delay: -1.4s;
+  animation-delay: -2.3s;
 }
 
 /* Gently stagger each pin so they're not all in lockstep */
-.service-area__pin:nth-child(2) span            { animation-delay: -0.4s; }
-.service-area__pin:nth-child(2) span:last-child { animation-delay: -1.8s; }
-.service-area__pin:nth-child(3) span            { animation-delay: -0.8s; }
-.service-area__pin:nth-child(3) span:last-child { animation-delay: -2.2s; }
-.service-area__pin:nth-child(4) span            { animation-delay: -1.2s; }
-.service-area__pin:nth-child(4) span:last-child { animation-delay: -2.6s; }
-.service-area__pin:nth-child(5) span            { animation-delay: -1.6s; }
-.service-area__pin:nth-child(5) span:last-child { animation-delay: -0.2s; }
-.service-area__pin:nth-child(6) span            { animation-delay: -2.0s; }
-.service-area__pin:nth-child(6) span:last-child { animation-delay: -0.6s; }
-.service-area__pin:nth-child(7) span            { animation-delay: -2.4s; }
-.service-area__pin:nth-child(7) span:last-child { animation-delay: -1.0s; }
+.service-area__pin:nth-child(2) span            { animation-delay: -0.6s; }
+.service-area__pin:nth-child(2) span:last-child { animation-delay: -2.9s; }
+.service-area__pin:nth-child(3) span            { animation-delay: -1.3s; }
+.service-area__pin:nth-child(3) span:last-child { animation-delay: -3.5s; }
+.service-area__pin:nth-child(4) span            { animation-delay: -1.9s; }
+.service-area__pin:nth-child(4) span:last-child { animation-delay: -4.2s; }
+.service-area__pin:nth-child(5) span            { animation-delay: -2.6s; }
+.service-area__pin:nth-child(5) span:last-child { animation-delay: -0.3s; }
+.service-area__pin:nth-child(6) span            { animation-delay: -3.2s; }
+.service-area__pin:nth-child(6) span:last-child { animation-delay: -1.0s; }
+.service-area__pin:nth-child(7) span            { animation-delay: -3.9s; }
+.service-area__pin:nth-child(7) span:last-child { animation-delay: -1.6s; }
 
 @keyframes pin-pulse {
-  0%   { transform: scale(1);   opacity: 0.85; }
-  100% { transform: scale(3.5); opacity: 0;    }
+  0%   { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(2); opacity: 0;   }
 }
 
 /* ---------- Responsive ---------- */

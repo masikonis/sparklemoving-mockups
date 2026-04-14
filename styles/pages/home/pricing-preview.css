@@ -42,12 +42,11 @@
   padding: 40px 28px;
   border: 1px solid var(--color-navy-08);
   position: relative;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition: box-shadow 0.2s ease;
 }
 
 .pricing__card:hover {
-  box-shadow: 0 12px 40px rgba(25, 28, 43, 0.1);
-  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(25, 28, 43, 0.08);
 }
 
 /* Featured (middle) card — navy background */
@@ -58,8 +57,7 @@
 }
 
 .pricing__card--featured:hover {
-  box-shadow: 0 28px 72px rgba(25, 28, 43, 0.3);
-  transform: translateY(-3px);
+  box-shadow: 0 24px 60px rgba(25, 28, 43, 0.26);
 }
 
 .pricing__card-badge {
@@ -165,12 +163,7 @@
   }
 
   .pricing__card--featured {
-    transform: none;
     order: -1;
-  }
-
-  .pricing__card--featured:hover {
-    transform: translateY(-3px);
   }
 }
 
