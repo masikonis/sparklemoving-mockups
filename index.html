@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="styles/pages/home/faq.css">
   <link rel="stylesheet" href="styles/pages/home/closing-cta.css">
   <link rel="stylesheet" href="styles/components/footer.css">
+  <link rel="stylesheet" href="styles/components/modal.css">
 </head>
 <body>
 
@@ -233,30 +234,12 @@
             <h1 class="hero__headline">Here&rsquo;s what your move costs &mdash; <em>before you call.</em></h1>
             <p class="hero__subline">Chicago movers since 2012. Real prices on the site, no calls or waiting around.</p>
 
-            <form class="hero__quote" id="quote" action="#quote" onsubmit="return false">
-              <label class="hero__quote-label" for="hero-service">I need help with</label>
+            <form class="hero__quote" id="quote" action="#quote">
+              <label class="hero__quote-label" for="hero-zip-from">Where are you moving?</label>
               <div class="hero__quote-row">
-                <div class="hero__quote-field">
-                  <select id="hero-service" class="hero__quote-select" aria-label="Service type">
-                    <option>Moving</option>
-                    <option>Storage</option>
-                  </select>
-                </div>
-                <div class="hero__quote-field">
-                  <select class="hero__quote-select" aria-label="Where in Chicago">
-                    <option value="" selected disabled>Pickup area</option>
-                    <option>Chicago &mdash; North Side</option>
-                    <option>Chicago &mdash; South Side</option>
-                    <option>Chicago &mdash; West Loop</option>
-                    <option>Evanston</option>
-                    <option>Northbrook</option>
-                    <option>Schaumburg</option>
-                    <option>Naperville</option>
-                    <option>Arlington Heights</option>
-                    <option>Other suburb</option>
-                  </select>
-                </div>
-                <button type="submit" class="btn-primary hero__quote-btn">Get a Quote<span class="arrow">&rarr;</span></button>
+                <input id="hero-zip-from" name="zip_from" type="text" inputmode="numeric" pattern="\d{5}" maxlength="5" class="hero__quote-input" placeholder="ZIP from" aria-label="Moving from ZIP code" required>
+                <input id="hero-zip-to" name="zip_to" type="text" inputmode="numeric" pattern="\d{5}" maxlength="5" class="hero__quote-input" placeholder="ZIP to" aria-label="Moving to ZIP code" required>
+                <button type="submit" id="hero-quote-submit" class="btn-primary hero__quote-btn">Get a Quote<span class="arrow">&rarr;</span></button>
               </div>
               <div class="hero__quote-meta">
                 <a href="#" class="gold-link hero__quote-learn">How our pricing works<span class="arrow">&rarr;</span></a>
@@ -610,6 +593,61 @@
     </div>
   </footer>
 
+  <!-- Quote modal — opens when the hero form is submitted with valid ZIPs -->
+  <dialog class="modal" id="quote-modal" aria-labelledby="quote-modal-title">
+    <div class="modal__panel">
+      <div class="modal__form-wrapper">
+        <header class="modal__header">
+          <h2 class="modal__title" id="quote-modal-title">Tell us a bit more</h2>
+          <button class="modal__close" type="button" aria-label="Close" data-close-modal>&times;</button>
+        </header>
+        <p class="modal__subtitle">We&rsquo;ll send your quote to your inbox within a few hours.</p>
+        <form class="modal__form" id="modal-quote-form">
+          <div class="modal__field">
+            <label for="modal-zip-from">Moving from</label>
+            <input id="modal-zip-from" name="zip_from" type="text" inputmode="numeric" pattern="\d{5}" maxlength="5" required>
+          </div>
+          <div class="modal__field">
+            <label for="modal-zip-to">Moving to</label>
+            <input id="modal-zip-to" name="zip_to" type="text" inputmode="numeric" pattern="\d{5}" maxlength="5" required>
+          </div>
+          <div class="modal__field modal__field--full">
+            <label for="modal-name">Name</label>
+            <input id="modal-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="modal__field">
+            <label for="modal-email">Email</label>
+            <input id="modal-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="modal__field">
+            <label for="modal-phone">Phone</label>
+            <input id="modal-phone" name="phone" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="modal__field">
+            <label for="modal-address">Pickup address</label>
+            <input id="modal-address" name="address" type="text" autocomplete="street-address" required>
+          </div>
+          <div class="modal__field">
+            <label for="modal-size">Home size</label>
+            <select id="modal-size" name="size" required>
+              <option value="" disabled selected>Select size</option>
+              <option>Studio</option>
+              <option>1 bedroom</option>
+              <option>2 bedroom</option>
+              <option>3 bedroom</option>
+              <option>4+ bedroom</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary modal__submit">Submit my request<span class="arrow">&rarr;</span></button>
+        </form>
+      </div>
+      <div class="modal__success" hidden>
+        <p class="modal__success-title">Thanks &mdash; request received.</p>
+        <p class="modal__success-text">We&rsquo;ll send your quote shortly.</p>
+      </div>
+    </div>
+  </dialog>
+
   <!-- Minimal JS: header scroll state + mobile menu toggle -->
   <script>
     (function() {
@@ -749,6 +787,69 @@
             btn.setAttribute('aria-expanded', 'true');
           }
         });
+      });
+    })();
+
+    // Hero quote form → modal flow
+    (function() {
+      var heroForm      = document.getElementById('quote');
+      var heroZipFrom   = document.getElementById('hero-zip-from');
+      var heroZipTo     = document.getElementById('hero-zip-to');
+      var modal         = document.getElementById('quote-modal');
+      var modalForm     = document.getElementById('modal-quote-form');
+      var modalZipFrom  = document.getElementById('modal-zip-from');
+      var modalZipTo    = document.getElementById('modal-zip-to');
+      var modalName     = document.getElementById('modal-name');
+      var formWrapper   = modal.querySelector('.modal__form-wrapper');
+      var successPanel  = modal.querySelector('.modal__success');
+
+      function openQuoteModal() {
+        modalZipFrom.value = heroZipFrom.value || '';
+        modalZipTo.value   = heroZipTo.value   || '';
+        // Point autofocus at the first empty field BEFORE opening,
+        // so the browser's dialog focus step lands there directly — no race, no flicker.
+        var target = !modalZipFrom.value ? modalZipFrom
+                   : !modalZipTo.value   ? modalZipTo
+                   : modalName;
+        [modalZipFrom, modalZipTo, modalName].forEach(function(el) { el.autofocus = false; });
+        target.autofocus = true;
+        modal.showModal();
+      }
+
+      heroForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (!heroForm.reportValidity()) return;
+        openQuoteModal();
+      });
+
+      // Every "Get a Quote" CTA across the page opens this modal
+      document.querySelectorAll('a[href="#quote"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          openQuoteModal();
+        });
+      });
+
+      modal.querySelectorAll('[data-close-modal]').forEach(function(el) {
+        el.addEventListener('click', function() { modal.close(); });
+      });
+
+      // Clicking the backdrop (the dialog element itself, outside the panel) closes it
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) modal.close();
+      });
+
+      modalForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (!modalForm.reportValidity()) return;
+        formWrapper.hidden = true;
+        successPanel.hidden = false;
+        setTimeout(function() {
+          modal.close();
+          modalForm.reset();
+          formWrapper.hidden = false;
+          successPanel.hidden = true;
+        }, 2000);
       });
     })();
 

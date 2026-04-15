@@ -1,0 +1,178 @@
+/* ==========================================================================
+   Modal — native <dialog>, used by the hero quote flow
+   ========================================================================== */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  padding: 0;
+  border: none;
+  border-radius: 16px;
+  max-width: 540px;
+  width: calc(100% - 48px);
+  max-height: calc(100vh - 48px);
+  overflow: hidden;
+  background-color: var(--color-white);
+  color: var(--color-navy);
+  box-shadow: 0 32px 80px rgba(25, 28, 43, 0.28);
+}
+
+.modal::backdrop {
+  background-color: rgba(25, 28, 43, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.modal__panel {
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  padding: 22px 28px 26px;
+  box-sizing: border-box;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-bottom: 4px;
+}
+
+.modal__title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--color-navy);
+  margin: 0;
+}
+
+.modal__close {
+  background: none;
+  border: none;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--color-navy-60);
+  cursor: pointer;
+  padding: 4px 8px;
+  margin: -4px -8px 0 0;
+  transition: color 0.15s ease;
+}
+
+.modal__close:hover,
+.modal__close:focus-visible {
+  color: var(--color-navy);
+  outline: none;
+}
+
+.modal__subtitle {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-navy-60);
+  margin: 0 0 14px;
+}
+
+.modal__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 12px;
+}
+
+.modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.modal__field--full {
+  grid-column: 1 / -1;
+}
+
+.modal__field label {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--color-navy);
+  letter-spacing: -0.005em;
+}
+
+.modal__field input,
+.modal__field select {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-navy);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-navy-15);
+  border-radius: 6px;
+  padding: 10px 14px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease;
+}
+
+.modal__field select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 38px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%23191C2B' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='1 1.5 6 6.5 11 1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+.modal__field input:hover,
+.modal__field select:hover,
+.modal__field input:focus,
+.modal__field select:focus,
+.modal__field input:focus-visible,
+.modal__field select:focus-visible {
+  border-color: var(--color-navy);
+  outline: none;
+}
+
+.modal__submit {
+  grid-column: 1 / -1;
+  margin-top: 14px;
+  width: 100%;
+  justify-content: center;
+  font-size: 15px;
+  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal__success {
+  padding: 18px 0 4px;
+  text-align: center;
+}
+
+.modal__success-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--color-navy);
+  margin: 0 0 8px;
+}
+
+.modal__success-text {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-navy-60);
+  margin: 0;
+}
+
+@media (max-width: 520px) {
+  .modal__form {
+    grid-template-columns: 1fr;
+  }
+  .modal__panel {
+    padding: 20px 18px 22px;
+  }
+  .modal__title {
+    font-size: 20px;
+  }
+}
