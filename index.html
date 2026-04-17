@@ -621,11 +621,20 @@
           </div>
           <div class="modal__field">
             <label for="modal-phone">Phone</label>
-            <input id="modal-phone" name="phone" type="tel" autocomplete="tel" required>
+            <input id="modal-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(555) 555-5555" maxlength="14" required>
           </div>
-          <div class="modal__field">
+          <div class="modal__field modal__field--full">
             <label for="modal-address">Pickup address</label>
             <input id="modal-address" name="address" type="text" autocomplete="street-address" required>
+          </div>
+          <div class="modal__field">
+            <label for="modal-move-type">Type of move</label>
+            <select id="modal-move-type" name="move_type" required>
+              <option value="" disabled selected>Select type</option>
+              <option>Local</option>
+              <option>Long distance</option>
+              <option>Labor only</option>
+            </select>
           </div>
           <div class="modal__field">
             <label for="modal-size">Home size</label>
@@ -800,8 +809,19 @@
       var modalZipFrom  = document.getElementById('modal-zip-from');
       var modalZipTo    = document.getElementById('modal-zip-to');
       var modalName     = document.getElementById('modal-name');
+      var modalPhone    = document.getElementById('modal-phone');
       var formWrapper   = modal.querySelector('.modal__form-wrapper');
       var successPanel  = modal.querySelector('.modal__success');
+
+      // Auto-format phone as (XXX) XXX-XXXX while typing
+      modalPhone.addEventListener('input', function() {
+        var digits = modalPhone.value.replace(/\D/g, '').slice(0, 10);
+        var out = '';
+        if (digits.length > 0) out = '(' + digits.slice(0, 3);
+        if (digits.length >= 4) out += ') ' + digits.slice(3, 6);
+        if (digits.length >= 7) out += '-' + digits.slice(6, 10);
+        modalPhone.value = out;
+      });
 
       function openQuoteModal() {
         modalZipFrom.value = heroZipFrom.value || '';
