@@ -2,6 +2,10 @@
 
 This repo holds static HTML/CSS mockups for the **Sparkle Moving** marketing site (a residential moving service). The mockups are a design artifact — they'll later be translated into the real production site.
 
+## Brand direction (always load this)
+
+Before making any design or copy decision, read [`brand-direction.md`](./brand-direction.md). It defines the voice, visual language, and positioning the site is built around (pricing transparency as the core differentiator, mid to upper-mid market, straightforward no-nonsense tone, navy/red/yellow palette, etc.). Every choice — typography, spacing, imagery, microcopy — should quietly reinforce it. When a change would pull against the brand direction, flag it before doing it.
+
 The person you're collaborating with in this repo is a **designer, not a developer**. This is likely their first time using Claude Code. Keep that front of mind.
 
 ## How to talk to them
