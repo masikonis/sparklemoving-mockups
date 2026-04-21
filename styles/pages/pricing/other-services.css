@@ -1,0 +1,200 @@
+/* ==========================================================================
+   Other services (tabs) — combines "Long distance moves" and "Storage"
+   into one tabbed section. Pill-style tabs above, one active panel below.
+   Inspired by Clutter's "A fresh take on storage & moving".
+   ========================================================================== */
+
+.other-services {
+  background-color: var(--color-white);
+  padding: var(--space-3xl) 0;
+  border-top: 1px solid var(--color-navy-08);
+}
+
+.other-services__head {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.other-services__eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.other-services__headline {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.12;
+  letter-spacing: -0.018em;
+  color: var(--color-navy);
+}
+
+.other-services__body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  color: var(--color-navy-60);
+  margin-top: var(--space-sm);
+}
+
+/* ---------- Tab strip ---------- */
+
+.other-services__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: var(--space-lg);
+  padding: 6px;
+  background-color: var(--color-offwhite);
+  border: 1px solid var(--color-navy-08);
+  border-radius: 999px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.other-services__tab {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 24px;
+  border-radius: 999px;
+  color: var(--color-navy-60);
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  letter-spacing: -0.005em;
+}
+
+.other-services__tab:hover {
+  color: var(--color-navy);
+}
+
+.other-services__tab[aria-selected="true"] {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+/* ---------- Panels ---------- */
+
+.other-services__panels {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.other-services__panel {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.other-services__panel[data-active="true"] {
+  display: grid;
+}
+
+.other-services__panel-head {
+  /* */
+}
+
+.other-services__panel-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.15;
+  color: var(--color-navy);
+  letter-spacing: -0.015em;
+  margin-bottom: var(--space-md);
+}
+
+.other-services__panel-body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--color-navy-60);
+  max-width: 480px;
+}
+
+.other-services__panel-side {
+  padding-top: 4px;
+}
+
+.other-services__panel-side-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: var(--color-navy);
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+.other-services__panel-list {
+  list-style: none;
+  border-top: 1px solid var(--color-navy-15);
+  margin-bottom: var(--space-lg);
+}
+
+.other-services__panel-list li {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-navy-15);
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-navy);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-md);
+}
+
+.other-services__panel-list li strong {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--color-navy);
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+}
+
+.other-services__panel-link {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .other-services {
+    padding: var(--space-2xl) 0;
+  }
+
+  .other-services__headline {
+    font-size: 28px;
+  }
+
+  .other-services__tabs {
+    width: 100%;
+  }
+
+  .other-services__tab {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .other-services__panel[data-active="true"] {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .other-services__panel-title {
+    font-size: 26px;
+  }
+}

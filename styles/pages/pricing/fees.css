@@ -1,0 +1,126 @@
+/* ==========================================================================
+   Fees and add-ons — beige section, cards with gold icon + title + body.
+   Same card rhythm as the reviews section on the homepage.
+   ========================================================================== */
+
+.fees-section {
+  background-color: var(--color-offwhite);
+  padding: var(--space-3xl) 0 calc(var(--space-3xl) + 20px);
+}
+
+.fees-section__head {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.fees-section__eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.fees-section__headline {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.12;
+  letter-spacing: -0.018em;
+  color: var(--color-navy);
+}
+
+.fees-section__body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  color: var(--color-navy-60);
+  margin-top: var(--space-sm);
+}
+
+/* ---------- Card grid (matches reviews__grid rhythm) ---------- */
+
+.fees-section__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.fees-section__item {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-navy-08);
+  border-radius: 10px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.fees-section__item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(25, 28, 43, 0.08);
+}
+
+.fees-section__item-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background-color: var(--color-gold-15);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fees-section__item-icon svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.fees-section__item-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--color-navy);
+  letter-spacing: -0.005em;
+}
+
+.fees-section__item-body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-navy-60);
+}
+
+.fees-section__item-body a {
+  color: var(--color-gold);
+  font-weight: 500;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 960px) {
+  .fees-section__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .fees-section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .fees-section__headline {
+    font-size: 28px;
+  }
+
+  .fees-section__grid {
+    grid-template-columns: 1fr;
+  }
+}

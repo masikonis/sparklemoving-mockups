@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Sample bill — a compact receipt-style card. This is the literal "show the
+   math" moment on the page, so the total row is navy to give it weight.
+   ========================================================================== */
+
+.sample-bill {
+  background-color: var(--color-offwhite);
+  padding: var(--space-3xl) 0;
+}
+
+.sample-bill__head {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.sample-bill__eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.sample-bill__headline {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.12;
+  letter-spacing: -0.018em;
+  color: var(--color-navy);
+}
+
+.sample-bill__body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  color: var(--color-navy-60);
+  margin-top: var(--space-sm);
+}
+
+.sample-bill__card {
+  max-width: 560px;
+  margin: 0 auto;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-navy-15);
+  border-radius: 14px;
+  box-shadow: 0 20px 44px rgba(25, 28, 43, 0.08);
+  overflow: hidden;
+}
+
+.sample-bill__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+}
+
+.sample-bill__table td,
+.sample-bill__table th {
+  padding: 18px 28px;
+  text-align: left;
+  font-size: 16px;
+  color: var(--color-navy);
+  border-bottom: 1px solid var(--color-navy-08);
+  vertical-align: middle;
+}
+
+.sample-bill__table td:last-child,
+.sample-bill__table th:last-child {
+  text-align: right;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+/* Total row: navy background, white text */
+.sample-bill__table tr:last-child td,
+.sample-bill__table tr:last-child th {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  border-bottom: none;
+  padding: 22px 28px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+
+.sample-bill__footnote {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-navy-60);
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .sample-bill {
+    padding: var(--space-2xl) 0;
+  }
+
+  .sample-bill__headline {
+    font-size: 28px;
+  }
+
+  .sample-bill__table td,
+  .sample-bill__table th {
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+
+  .sample-bill__table tr:last-child td,
+  .sample-bill__table tr:last-child th {
+    padding: 18px 20px;
+    font-size: 17px;
+  }
+}

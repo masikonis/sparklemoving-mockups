@@ -12,7 +12,15 @@
   <!-- Shared chrome: common tokens, header, reused closing-cta, footer, modal -->
   <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/components/header.css">
-  <!-- Page-specific pricing styles go here once the designer creates them -->
+  <!-- Page-specific pricing styles -->
+  <link rel="stylesheet" href="styles/pages/pricing/hero.css">
+  <link rel="stylesheet" href="styles/pages/pricing/rate-tables.css">
+  <link rel="stylesheet" href="styles/pages/pricing/info-blocks.css">
+  <link rel="stylesheet" href="styles/pages/pricing/fees.css">
+  <link rel="stylesheet" href="styles/pages/pricing/sample-bill.css">
+  <link rel="stylesheet" href="styles/pages/pricing/other-services.css">
+  <!-- FAQ is shared with the homepage -->
+  <link rel="stylesheet" href="styles/pages/home/faq.css">
   <link rel="stylesheet" href="styles/pages/home/closing-cta.css">
   <link rel="stylesheet" href="styles/components/footer.css">
   <link rel="stylesheet" href="styles/components/modal.css">
@@ -182,230 +190,357 @@
 
   <main>
 
-    <!-- ==========================================================
-         Middle sections below are intentionally NAKED.
-         Each <section> holds pure content only. No classes, no
-         layout, no styling. The designer shapes these into
-         structures and styles them in styles/pages/pricing/.
-         ========================================================== -->
-
-    <!-- SECTION: Page intro -->
-    <section>
-      <h1>Here&rsquo;s our pricing. All of it.</h1>
-      <p>Hourly rates, minimums, and real totals. No quote form to see the numbers.</p>
-      <a href="#quote">Start a Quote</a>
-      <p>Takes about 60 seconds.</p>
+    <!-- ====== PRICING HERO ====== -->
+    <section class="pricing-hero">
+      <div class="container pricing-hero__inner">
+        <div class="pricing-hero__content">
+          <span class="pricing-hero__eyebrow">Pricing</span>
+          <h1 class="pricing-hero__headline">Here&rsquo;s our pricing.<br><em>All of it.</em></h1>
+          <p class="pricing-hero__body">Hourly rates, minimums, and real totals. No quote form to see the numbers.</p>
+        </div>
+        <div class="pricing-hero__media">
+          <img src="images/hero-right.webp" alt="Professional moving crew at work" width="520" height="640">
+        </div>
+      </div>
     </section>
 
-    <!-- SECTION: Hourly rates by crew size -->
-    <section>
-      <h2>Hourly rates by crew size</h2>
-      <p>Local moves are billed hourly, from the crew&rsquo;s arrival to the last item placed. The rate depends on how many movers are on the job.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Crew size</th>
-            <th>Hourly crew rate</th>
-            <th>Minimum</th>
-            <th>Typically used for</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2 movers, 1 truck</td>
-            <td>$139/hr</td>
-            <td>2 hours</td>
-            <td>Studio, 1-bedroom</td>
-          </tr>
-          <tr>
-            <td>3 movers, 1 truck</td>
-            <td>$169/hr</td>
-            <td>3 hours</td>
-            <td>2-bedroom apartments and condos</td>
-          </tr>
-          <tr>
-            <td>4 movers, 1&ndash;2 trucks</td>
-            <td>$199/hr</td>
-            <td>3 hours</td>
-            <td>3-bedroom homes and houses</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>Rates are for the full crew, not per mover. Same rate every day of the week. No weekend or after-hours surcharge.</p>
+    <!-- ====== HOURLY RATES BY CREW SIZE ====== -->
+    <section class="rate-section">
+      <div class="container">
+        <div class="rate-section__header">
+          <span class="rate-section__eyebrow">Local moves</span>
+          <h2 class="rate-section__headline">Hourly rates by crew size</h2>
+          <p class="rate-section__body">Local moves are billed hourly, from the crew&rsquo;s arrival to the last item placed. The rate depends on how many movers are on the job.</p>
+        </div>
+        <div class="rate-table">
+          <table class="rate-table__table">
+            <thead>
+              <tr>
+                <th>Crew size</th>
+                <th>Hourly crew rate</th>
+                <th>Minimum</th>
+                <th>Typically used for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2 movers, 1 truck</td>
+                <td>$139/hr</td>
+                <td>2 hours</td>
+                <td>Studio, 1-bedroom</td>
+              </tr>
+              <tr>
+                <td>3 movers, 1 truck</td>
+                <td>$169/hr</td>
+                <td>3 hours</td>
+                <td>2-bedroom apartments and condos</td>
+              </tr>
+              <tr>
+                <td>4 movers, 1&ndash;2 trucks</td>
+                <td>$199/hr</td>
+                <td>3 hours</td>
+                <td>3-bedroom homes and houses</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="rate-section__footnote">Rates are for the full crew, not per mover. Same rate every day of the week. No weekend or after-hours surcharge.</p>
+      </div>
     </section>
 
-    <!-- SECTION: Real totals by home size -->
-    <section>
-      <h2>Real totals by home size</h2>
-      <p>These are real ranges for local moves. They include crew time, truck, travel, and standard equipment. The range reflects how much stuff is in the home and how quickly the crew can work.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Home size</th>
-            <th>Typical total</th>
-            <th>Crew</th>
-            <th>Hours</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Studio / 1-bedroom</td>
-            <td>$400&ndash;$900</td>
-            <td>2 movers</td>
-            <td>2&ndash;4 hrs</td>
-          </tr>
-          <tr>
-            <td>2-bedroom</td>
-            <td>$800&ndash;$1,500</td>
-            <td>3 movers</td>
-            <td>4&ndash;6 hrs</td>
-          </tr>
-          <tr>
-            <td>3+ bedroom</td>
-            <td>$1,500&ndash;$3,000+</td>
-            <td>4 movers</td>
-            <td>6&ndash;10 hrs</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>Larger homes, long carries, or unusual access can push the total higher. Your quote shows the specifics for your move.</p>
-      <a href="#quote">Start a Quote &mdash; get your exact price.</a>
+    <!-- ====== REAL TOTALS BY HOME SIZE ====== -->
+    <section class="rate-section rate-section--offwhite">
+      <div class="container">
+        <div class="rate-section__header">
+          <span class="rate-section__eyebrow">Expected totals</span>
+          <h2 class="rate-section__headline">Real totals by home size</h2>
+          <p class="rate-section__body">These are real ranges for local moves. They include crew time, truck, travel, and standard equipment. The range reflects how much stuff is in the home and how quickly the crew can work.</p>
+        </div>
+        <div class="rate-table">
+          <table class="rate-table__table">
+            <thead>
+              <tr>
+                <th>Home size</th>
+                <th>Typical total</th>
+                <th>Crew</th>
+                <th>Hours</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Studio / 1-bedroom</td>
+                <td>$400&ndash;$900</td>
+                <td>2 movers</td>
+                <td>2&ndash;4 hrs</td>
+              </tr>
+              <tr>
+                <td>2-bedroom</td>
+                <td>$800&ndash;$1,500</td>
+                <td>3 movers</td>
+                <td>4&ndash;6 hrs</td>
+              </tr>
+              <tr>
+                <td>3+ bedroom</td>
+                <td>$1,500&ndash;$3,000+</td>
+                <td>4 movers</td>
+                <td>6&ndash;10 hrs</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="rate-section__footnote">Larger homes, long carries, or unusual access can push the total higher. Your quote shows the specifics for your move.</p>
+        <div class="rate-section__cta-row">
+          <a href="#quote" class="btn-primary rate-section__cta">Start a Quote<span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
     </section>
 
-    <!-- SECTION: What&rsquo;s included in every move -->
-    <section>
-      <h2>What&rsquo;s included in every move</h2>
-      <ul>
-        <li>Professional crew</li>
-        <li>Clean, fully-equipped truck</li>
-        <li>Furniture blankets for wood and upholstered pieces</li>
-        <li>Shrink wrap for mattresses and soft goods</li>
-        <li>Standard dollies, straps, and hand tools</li>
-        <li>Disassembly and reassembly of standard furniture</li>
-        <li>Basic liability coverage (licensed and insured)</li>
-      </ul>
+    <!-- ====== WHAT'S INCLUDED IN EVERY MOVE ====== -->
+    <section class="info-section">
+      <div class="container info-section__inner info-section__inner--media info-section__inner--media-left">
+        <div class="info-section__media">
+          <img src="images/hero-left.webp" alt="Moving crew loading a truck" width="520" height="420">
+        </div>
+        <div>
+          <div class="info-section__head">
+            <span class="info-section__eyebrow">Included</span>
+            <h2 class="info-section__headline">What&rsquo;s included in every move</h2>
+            <p class="info-section__body">Every move ships with this, at no extra charge.</p>
+          </div>
+          <ul class="check-list">
+            <li>Professional crew</li>
+            <li>Clean, fully-equipped truck</li>
+            <li>Furniture blankets for wood and upholstered pieces</li>
+            <li>Shrink wrap for mattresses and soft goods</li>
+            <li>Standard dollies, straps, and hand tools</li>
+            <li>Disassembly and reassembly of standard furniture</li>
+            <li>Basic liability coverage (licensed and insured)</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <!-- SECTION: Fees and add-ons -->
-    <section>
-      <h2>Fees and add-ons</h2>
-      <p>The only charges that aren&rsquo;t in the hourly rate:</p>
+    <!-- ====== FEES AND ADD-ONS ====== -->
+    <section class="fees-section">
+      <div class="container">
+        <div class="fees-section__head">
+          <span class="fees-section__eyebrow">Transparent charges</span>
+          <h2 class="fees-section__headline">Fees and add-ons</h2>
+          <p class="fees-section__body">The only charges that aren&rsquo;t in the hourly rate.</p>
+        </div>
+        <div class="fees-section__grid">
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 17h2l2-6h10l2 6h2"/>
+                <circle cx="7" cy="17" r="2"/>
+                <circle cx="17" cy="17" r="2"/>
+                <path d="M9 11V5h6v6"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Travel fee</h3>
+            <p class="fees-section__item-body">One flat charge equal to one hour of crew time. Covers drive time to your pickup and back from your destination. Billed once, not each way.</p>
+          </div>
 
-      <h3>Travel fee</h3>
-      <p>One flat charge equal to one hour of crew time. Covers drive time to your pickup and back from your destination. Billed once, not each way.</p>
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18"/>
+                <path d="M5 21V10l7-6 7 6v11"/>
+                <path d="M10 21v-6h4v6"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Access fees</h3>
+            <p class="fees-section__item-body">Stairs are free. Long carries over 75 feet from truck to door, or unusual access like freight elevators with wait times, are $25 flat. Disclosed in your quote before you book.</p>
+          </div>
 
-      <h3>Access fees</h3>
-      <p>Stairs are free. Long carries over 75 feet from truck to door, or unusual access like freight elevators with wait times, are $25 flat. Disclosed in your quote before you book.</p>
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 8L12 3 3 8v8l9 5 9-5V8z"/>
+                <path d="M3 8l9 5 9-5"/>
+                <path d="M12 13v8"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Packing supplies</h3>
+            <p class="fees-section__item-body">Only if you want us to pack. Standard boxes start at $2.50. Wardrobe boxes $12. Full packing is quoted separately.</p>
+          </div>
 
-      <h3>Packing supplies</h3>
-      <p>Only if you want us to pack. Standard boxes start at $2.50. Wardrobe boxes $12. Full packing is quoted separately.</p>
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3 2"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Overtime</h3>
+            <p class="fees-section__item-body">Hours past the estimate are billed at the same hourly rate. No overtime multiplier.</p>
+          </div>
 
-      <h3>Overtime</h3>
-      <p>Hours past the estimate are billed at the same hourly rate. No overtime multiplier.</p>
-
-      <h3>Specialty items</h3>
-      <p>Pianos, safes, and items over 400 lbs are quoted separately. See <a href="#">Additional Services</a>.</p>
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.1 8.3 22 9.3 17 14.1 18.2 21 12 17.8 5.8 21 7 14.1 2 9.3 8.9 8.3 12 2"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Specialty items</h3>
+            <p class="fees-section__item-body">Pianos, safes, and items over 400 lbs are quoted separately. See <a href="#">Additional Services</a>.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- SECTION: What you won&rsquo;t pay for -->
-    <section>
-      <h2>What you won&rsquo;t pay for</h2>
-      <p>Not on your invoice:</p>
-      <ul>
-        <li>No fuel surcharge</li>
-        <li>No weekend or after-hours premium</li>
-        <li>No gratuity required (tipping is optional, never assumed)</li>
-        <li>No rescheduling fee with 48 hours notice</li>
-        <li>No &ldquo;heavy item&rdquo; charge for standard furniture</li>
-        <li>No credit card processing fee</li>
-      </ul>
+    <!-- ====== WHAT YOU WON'T PAY FOR ====== -->
+    <section class="info-section">
+      <div class="container info-section__inner info-section__inner--media info-section__inner--media-right">
+        <div>
+          <div class="info-section__head">
+            <span class="info-section__eyebrow">Not on your invoice</span>
+            <h2 class="info-section__headline">What you won&rsquo;t pay for</h2>
+            <p class="info-section__body">Charges other movers add that never show up on yours.</p>
+          </div>
+          <ul class="check-list check-list--x">
+            <li>No fuel surcharge</li>
+            <li>No weekend or after-hours premium</li>
+            <li>No gratuity required (tipping is optional, never assumed)</li>
+            <li>No rescheduling fee with 48 hours notice</li>
+            <li>No &ldquo;heavy item&rdquo; charge for standard furniture</li>
+            <li>No credit card processing fee</li>
+          </ul>
+        </div>
+        <div class="info-section__media">
+          <img src="images/step2.webp" alt="Movers carrying furniture into a home" width="520" height="420">
+        </div>
+      </div>
     </section>
 
-    <!-- SECTION: Sample bill -->
-    <section>
-      <h2>Sample bill</h2>
-      <p>A typical 2-bedroom move in Chicago, 5 hours with a 3-mover crew:</p>
-      <table>
-        <tbody>
-          <tr>
-            <td>Crew: 3 movers, 5 hours</td>
-            <td>$845</td>
-          </tr>
-          <tr>
-            <td>Travel (1 hour crew time)</td>
-            <td>$169</td>
-          </tr>
-          <tr>
-            <td>Wardrobe boxes (2)</td>
-            <td>$24</td>
-          </tr>
-          <tr>
-            <th>Total</th>
-            <td>$1,038</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>That&rsquo;s the invoice. Nothing added after the fact.</p>
+    <!-- ====== SAMPLE BILL ====== -->
+    <section class="sample-bill">
+      <div class="container">
+        <div class="sample-bill__head">
+          <span class="sample-bill__eyebrow">The receipt</span>
+          <h2 class="sample-bill__headline">Sample bill</h2>
+          <p class="sample-bill__body">A typical 2-bedroom move in Chicago, 5 hours with a 3-mover crew.</p>
+        </div>
+        <div class="sample-bill__card">
+          <table class="sample-bill__table">
+            <tbody>
+              <tr>
+                <td>Crew: 3 movers, 5 hours</td>
+                <td>$845</td>
+              </tr>
+              <tr>
+                <td>Travel (1 hour crew time)</td>
+                <td>$169</td>
+              </tr>
+              <tr>
+                <td>Wardrobe boxes (2)</td>
+                <td>$24</td>
+              </tr>
+              <tr>
+                <th>Total</th>
+                <td>$1,038</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sample-bill__footnote">That&rsquo;s the invoice. Nothing added after the fact.</p>
+      </div>
     </section>
 
-    <!-- SECTION: Long distance moves -->
-    <section>
-      <h2>Long distance moves</h2>
-      <p>Long-distance pricing doesn&rsquo;t work hourly. You get a binding quote based on weight, distance, and truck space. Nothing changes between the quote and the invoice.</p>
-      <p>Common routes starting from:</p>
-      <ul>
-        <li>Chicago to Florida: from $3,800</li>
-        <li>Chicago to Texas: from $4,200</li>
-        <li>Other destinations: quoted individually</li>
-      </ul>
-      <p><a href="#">See Long Distance Moving</a> for route details.</p>
+    <!-- ====== OTHER SERVICES (TABS: Long distance / Storage) ====== -->
+    <section class="other-services">
+      <div class="container">
+        <div class="other-services__head">
+          <span class="other-services__eyebrow">Beyond local moves</span>
+          <h2 class="other-services__headline">Other services, same pricing rules</h2>
+          <p class="other-services__body">The same transparency applies to long distance and storage. Real numbers up front.</p>
+        </div>
+
+        <div class="other-services__tabs" role="tablist">
+          <button class="other-services__tab" role="tab" aria-selected="true" aria-controls="panel-longdistance" id="tab-longdistance" data-tab-target="longdistance">Long distance moves</button>
+          <button class="other-services__tab" role="tab" aria-selected="false" aria-controls="panel-storage" id="tab-storage" data-tab-target="storage">Storage</button>
+        </div>
+
+        <div class="other-services__panels">
+          <div class="other-services__panel" role="tabpanel" id="panel-longdistance" aria-labelledby="tab-longdistance" data-tab-panel="longdistance" data-active="true">
+            <div class="other-services__panel-head">
+              <h3 class="other-services__panel-title">Long distance moves</h3>
+              <p class="other-services__panel-body">Long-distance pricing doesn&rsquo;t work hourly. You get a binding quote based on weight, distance, and truck space. Nothing changes between the quote and the invoice.</p>
+            </div>
+            <div class="other-services__panel-side">
+              <p class="other-services__panel-side-title">Common routes starting from</p>
+              <ul class="other-services__panel-list">
+                <li>Chicago to Florida <strong>from $3,800</strong></li>
+                <li>Chicago to Texas <strong>from $4,200</strong></li>
+                <li>Other destinations <strong>Quoted individually</strong></li>
+              </ul>
+              <a href="#" class="gold-link other-services__panel-link">See Long Distance Moving<span class="arrow">&rarr;</span></a>
+            </div>
+          </div>
+
+          <div class="other-services__panel" role="tabpanel" id="panel-storage" aria-labelledby="tab-storage" data-tab-panel="storage" data-active="false">
+            <div class="other-services__panel-head">
+              <h3 class="other-services__panel-title">Storage</h3>
+              <p class="other-services__panel-body">If your move-in and move-out dates don&rsquo;t line up, we can hold your items in our Northbrook warehouse.</p>
+            </div>
+            <div class="other-services__panel-side">
+              <p class="other-services__panel-side-title">Options and pricing</p>
+              <ul class="other-services__panel-list">
+                <li>Short-term during a move (up to 30 days) <strong>Free</strong></li>
+                <li>Monthly storage, small unit <strong>from $95/mo</strong></li>
+                <li>Climate-controlled <strong>Add-on fee</strong></li>
+              </ul>
+              <a href="#" class="gold-link other-services__panel-link">See Storage Services<span class="arrow">&rarr;</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- SECTION: Storage -->
-    <section>
-      <h2>Storage</h2>
-      <p>If your move-in and move-out dates don&rsquo;t line up, we can hold your items in our Northbrook warehouse.</p>
-      <ul>
-        <li>Short-term during a move (up to 30 days): included free</li>
-        <li>Monthly storage: from $95/month for a small unit</li>
-        <li>Climate-controlled: available for an additional fee</li>
-      </ul>
-      <p><a href="#">See Storage Services</a> for unit sizes and full pricing.</p>
-    </section>
-
-    <!-- SECTION: FAQ -->
-    <section>
-      <h2>Frequently asked questions</h2>
-
-      <details>
-        <summary>Can I get a firm price before I book?</summary>
-        <p>For local moves, we send a detailed estimate with crew size, hourly rate, and hour range. Final price reflects actual time on the job, within that range. For long-distance moves, we provide a binding quote.</p>
-      </details>
-
-      <details>
-        <summary>What if my move takes longer than estimated?</summary>
-        <p>You&rsquo;re billed at the same hourly rate for actual time worked. No overtime multiplier. If the crew finishes early, you&rsquo;re billed for actual hours only.</p>
-      </details>
-
-      <details>
-        <summary>Do you require a deposit?</summary>
-        <p>No. You pay in full at the end of the move, once everything is placed.</p>
-      </details>
-
-      <details>
-        <summary>How do I pay?</summary>
-        <p>Cash, check, or credit card. No processing fee on cards.</p>
-      </details>
-
-      <details>
-        <summary>Can I change my move date?</summary>
-        <p>Yes, with 48 hours notice and no fee. Same-day changes depend on crew availability.</p>
-      </details>
-
-      <details>
-        <summary>Is tipping expected?</summary>
-        <p>Tips are appreciated, never assumed. Common range is $20&ndash;$40 per mover for a typical local move.</p>
-      </details>
+    <!-- ====== FAQ ====== -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="faq__headline">Frequently asked questions</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">Can I get a firm price before I book?</summary>
+            <div class="faq__answer">
+              <p>For local moves, we send a detailed estimate with crew size, hourly rate, and hour range. Final price reflects actual time on the job, within that range. For long-distance moves, we provide a binding quote.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What if my move takes longer than estimated?</summary>
+            <div class="faq__answer">
+              <p>You&rsquo;re billed at the same hourly rate for actual time worked. No overtime multiplier. If the crew finishes early, you&rsquo;re billed for actual hours only.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do you require a deposit?</summary>
+            <div class="faq__answer">
+              <p>No. You pay in full at the end of the move, once everything is placed.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">How do I pay?</summary>
+            <div class="faq__answer">
+              <p>Cash, check, or credit card. No processing fee on cards.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Can I change my move date?</summary>
+            <div class="faq__answer">
+              <p>Yes, with 48 hours notice and no fee. Same-day changes depend on crew availability.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Is tipping expected?</summary>
+            <div class="faq__answer">
+              <p>Tips are appreciated, never assumed. Common range is $20&ndash;$40 per mover for a typical local move.</p>
+            </div>
+          </details>
+        </div>
+      </div>
     </section>
 
     <!-- ====== CLOSING CTA (copied verbatim from index.html) ====== -->
@@ -691,6 +826,24 @@
             parent.classList.add('is-open');
             btn.setAttribute('aria-expanded', 'true');
           }
+        });
+      });
+    })();
+
+    // Other services tabs: Long distance / Storage
+    (function() {
+      var tabs = document.querySelectorAll('.other-services__tab');
+      var panels = document.querySelectorAll('.other-services__panel');
+      if (!tabs.length) return;
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          var target = tab.getAttribute('data-tab-target');
+          tabs.forEach(function(t) {
+            t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+          });
+          panels.forEach(function(p) {
+            p.setAttribute('data-active', p.getAttribute('data-tab-panel') === target ? 'true' : 'false');
+          });
         });
       });
     })();
