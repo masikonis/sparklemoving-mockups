@@ -1,0 +1,136 @@
+/* ==========================================================================
+   Common scenarios — 2x2 grid of real-world examples. Same layout cadence
+   as how-it-works (image + title + body) but no numbered badges.
+   ========================================================================== */
+
+.common-scenarios {
+  background-color: var(--color-white);
+  padding: var(--space-3xl) 0;
+}
+
+.common-scenarios__head {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.common-scenarios__eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.common-scenarios__headline {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.12;
+  letter-spacing: -0.018em;
+  color: var(--color-navy);
+}
+
+.common-scenarios__body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  color: var(--color-navy-60);
+  margin-top: var(--space-sm);
+}
+
+/* ---------- The 2x2 grid ---------- */
+
+.common-scenarios__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.common-scenarios__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.common-scenarios__image {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  margin-bottom: var(--space-md);
+  background-color: var(--color-navy-05);
+  box-shadow: 0 16px 36px rgba(25, 28, 43, 0.08);
+}
+
+.common-scenarios__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.common-scenarios__title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 1.3;
+  color: var(--color-navy);
+  letter-spacing: -0.005em;
+  margin-bottom: 8px;
+}
+
+.common-scenarios__copy {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-navy-60);
+}
+
+.common-scenarios__total {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-navy);
+  letter-spacing: -0.005em;
+}
+
+.common-scenarios__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.common-scenarios__footnote {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-navy-60);
+  text-align: center;
+  margin: 0;
+}
+
+.common-scenarios__cta {
+  font-size: 16px;
+  padding: 14px 32px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .common-scenarios {
+    padding: var(--space-2xl) 0;
+  }
+
+  .common-scenarios__headline {
+    font-size: 28px;
+  }
+
+  .common-scenarios__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}

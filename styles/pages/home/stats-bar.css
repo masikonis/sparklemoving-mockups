@@ -5,6 +5,7 @@
 .stats-bar {
   background-color: var(--color-white);
   border-top: 3px solid var(--color-gold);
+  border-bottom: 1px solid var(--color-navy-08);
   padding: 52px 0;
 }
 

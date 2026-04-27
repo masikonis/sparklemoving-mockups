@@ -9,13 +9,47 @@
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-  <!-- Shared chrome only. Page sections below are unstyled on purpose: ready for design. -->
+  <!-- Shared chrome -->
   <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/components/header.css">
+
+  <!-- Residential page-specific -->
+  <link rel="stylesheet" href="styles/pages/residential-moving/hero.css">
+
+  <!-- Reused homepage section styles -->
+  <link rel="stylesheet" href="styles/pages/home/stats-bar.css">
+  <link rel="stylesheet" href="styles/pages/home/how-it-works.css">
+  <link rel="stylesheet" href="styles/pages/home/service-area.css">
+  <link rel="stylesheet" href="styles/pages/home/faq.css">
+  <link rel="stylesheet" href="styles/pages/home/closing-cta.css">
+
+  <!-- Reused pricing section styles -->
+  <link rel="stylesheet" href="styles/pages/pricing/rate-tables.css">
+  <link rel="stylesheet" href="styles/pages/pricing/fees.css">
+  <link rel="stylesheet" href="styles/pages/pricing/info-blocks.css">
+
   <link rel="stylesheet" href="styles/components/footer.css">
   <link rel="stylesheet" href="styles/components/modal.css">
 </head>
 <body>
+
+  <!-- SVG filter: turns the map image's dark background transparent via luminance masking -->
+  <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <filter id="map-transparent" color-interpolation-filters="sRGB">
+        <feComponentTransfer in="SourceGraphic" result="boosted">
+          <feFuncR type="linear" slope="3" intercept="-0.15"/>
+          <feFuncG type="linear" slope="3" intercept="-0.15"/>
+          <feFuncB type="linear" slope="3" intercept="-0.15"/>
+        </feComponentTransfer>
+        <feColorMatrix type="luminanceToAlpha" in="boosted" result="lum"/>
+        <feComponentTransfer in="lum" result="lum-sharp">
+          <feFuncA type="gamma" amplitude="1.2" exponent="2" offset="-0.05"/>
+        </feComponentTransfer>
+        <feComposite in="SourceGraphic" in2="lum-sharp" operator="in"/>
+      </filter>
+    </defs>
+  </svg>
 
   <!-- ====== HEADER (copied verbatim from index.html) ====== -->
   <header class="site-header" id="siteHeader">
@@ -177,188 +211,344 @@
     </div>
   </header>
 
-  <!-- ====== NAKED PAGE CONTENT (no page-specific styles yet) ====== -->
-  <main style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
+  <main>
 
-    <!-- Hero -->
-    <section>
-      <h1>Here&rsquo;s what residential moves cost. By home size.</h1>
-      <p>Hourly rates. Local moves across Chicago and 40+ suburbs.</p>
-      <p><a href="#quote">Start a Quote</a> &middot; Takes about 60 seconds.</p>
-      <p>Phone: <a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
+    <!-- ====== HERO ====== -->
+    <section class="residential-hero">
+      <div class="container residential-hero__inner">
+        <div class="residential-hero__content">
+          <span class="residential-hero__eyebrow">Residential Moving</span>
+          <h1 class="residential-hero__headline">We handle the move from arrival to <em>last item placed.</em></h1>
+          <p class="residential-hero__body">Studios to 4-bedroom houses. Apartments, condos, walk-ups, high-rises.</p>
+          <div class="residential-hero__actions">
+            <a href="#quote" class="btn-primary residential-hero__cta">Start a quote<span class="arrow">&rarr;</span></a>
+            <a href="#services" class="residential-hero__scroll">Pick a service below <span class="residential-hero__scroll-arrow" aria-hidden="true">&darr;</span></a>
+          </div>
+        </div>
+        <div class="residential-hero__media">
+          <img src="images/hero-left.webp" alt="Sparkle moving crew at a Chicago residence" width="640" height="400">
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Stats Bar -->
-    <section>
-      <p>Since 2012 &middot; 10,000+ Moves &middot; Licensed &amp; Insured</p>
+    <!-- ====== STATS BAR ====== -->
+    <section class="stats-bar">
+      <div class="container">
+        <ul class="stats-bar__list">
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">2012</span>
+            <span class="stats-bar__label">Established</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">10,000+</span>
+            <span class="stats-bar__label">Moves completed</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">Licensed &amp; Insured</span>
+            <span class="stats-bar__label">Illinois CC-MC</span>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Category Overview -->
-    <section>
-      <p>Studios to 4-bedroom houses. Apartments, condos, walk-ups, high-rises. We handle the move from arrival to last item placed.</p>
-      <p>Pick a service below. Or start a quote and we&rsquo;ll figure out which fits.</p>
+    <!-- ====== REAL RANGES, BY HOME SIZE ====== -->
+    <section class="rate-section">
+      <div class="container">
+        <div class="rate-section__header">
+          <span class="rate-section__eyebrow">Local moves</span>
+          <h2 class="rate-section__headline">Real ranges, by home size</h2>
+          <p class="rate-section__body">These are typical totals for local residential moves. They include crew time, truck, travel, and standard equipment.</p>
+        </div>
+        <div class="rate-table">
+          <table class="rate-table__table">
+            <thead>
+              <tr>
+                <th>Home size</th>
+                <th>Typical total</th>
+                <th>Crew</th>
+                <th>Hours</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Studio / 1-bedroom</td>
+                <td>$400&ndash;$900</td>
+                <td>2 movers</td>
+                <td>2&ndash;4 hrs</td>
+              </tr>
+              <tr>
+                <td>2-bedroom</td>
+                <td>$800&ndash;$1,500</td>
+                <td>3 movers</td>
+                <td>4&ndash;6 hrs</td>
+              </tr>
+              <tr>
+                <td>3+ bedroom</td>
+                <td>$1,500&ndash;$3,000+</td>
+                <td>4 movers</td>
+                <td>6&ndash;10 hrs</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="rate-section__footnote">Hourly billing. Full breakdown on the <a href="pricing.html" class="gold-link">Pricing page<span class="arrow">&rarr;</span></a></p>
+        <div class="rate-section__cta-row">
+          <a href="#quote" class="btn-primary rate-section__cta">Start a Quote<span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
     </section>
 
-    <hr>
+    <!-- ====== RESIDENTIAL SERVICES (cards with icons, beige bg) ====== -->
+    <section class="fees-section" id="services">
+      <div class="container">
+        <div class="fees-section__head">
+          <span class="fees-section__eyebrow">Service breakdown</span>
+          <h2 class="fees-section__headline">Residential services</h2>
+          <p class="fees-section__body">Whatever you live in, we move it.</p>
+        </div>
+        <div class="fees-section__grid">
+          <a href="local-residential-moving.html" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 17h2l2-6h10l2 6h2"/>
+                <circle cx="7" cy="17" r="2"/>
+                <circle cx="17" cy="17" r="2"/>
+                <path d="M9 11V5h6v6"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Local Residential Moving</h3>
+            <p class="fees-section__item-body">Houses, apartments, and condos across Chicago and 40+ suburbs. Hourly rates, same crew start to finish.</p>
+          </a>
 
-    <!-- Pricing for Residential -->
-    <section>
-      <h2>Real ranges, by home size</h2>
-      <p>These are typical totals for local residential moves. They include crew time, truck, travel, and standard equipment.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Home size</th>
-            <th>Typical total</th>
-            <th>Crew</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Studio / 1-bedroom</td>
-            <td>$400&ndash;$900</td>
-            <td>2 movers</td>
-          </tr>
-          <tr>
-            <td>2-bedroom</td>
-            <td>$800&ndash;$1,500</td>
-            <td>3 movers</td>
-          </tr>
-          <tr>
-            <td>3+ bedroom</td>
-            <td>$1,500&ndash;$3,000+</td>
-            <td>4 movers</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>Hourly billing. Full breakdown on the <a href="pricing.html">Pricing page &rarr;</a></p>
-      <p><a href="#quote">Start a Quote</a> &mdash; get your exact price.</p>
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 11l9-7 9 7"/>
+                <path d="M5 10v10h14V10"/>
+                <path d="M10 20v-6h4v6"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">House Moving</h3>
+            <p class="fees-section__item-body">Single-family homes, two-story or more. Garages, basements, attics. Larger crews and multiple trucks for bigger homes.</p>
+          </a>
+
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="3" width="14" height="18" rx="1"/>
+                <path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/>
+                <path d="M11 21v-3h2v3"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Apartment Moving</h3>
+            <p class="fees-section__item-body">Walk-ups, mid-rises, and high-rises. COIs, elevator bookings, and parking permits handled by us.</p>
+          </a>
+
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="6" width="8" height="15"/>
+                <rect x="13" y="3" width="8" height="18"/>
+                <path d="M5 10h4M5 14h4M5 18h4M15 7h4M15 11h4M15 15h4M15 19h4"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Condo Moving</h3>
+            <p class="fees-section__item-body">HOA paperwork, freight elevator reservations, loading dock scheduling. We coordinate with the building.</p>
+          </a>
+
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Senior Moving</h3>
+            <p class="fees-section__item-body">Downsizing and assisted-living moves. Slower pace when needed. Adult children welcome on the call.</p>
+          </a>
+
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10L12 4 2 10l10 6 10-6z"/>
+                <path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Student Moving</h3>
+            <p class="fees-section__item-body">Dorm and off-campus moves. Small loads, short timelines, weekend availability.</p>
+          </a>
+
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 4 14 11 14 10 22 20 10 13 10 13 2"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Last Minute Moving</h3>
+            <p class="fees-section__item-body">Same-day or next-day moves when crew availability allows. Same hourly rates, no rush surcharge.</p>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Residential Services -->
-    <section>
-      <h2>Residential services</h2>
-
-      <h3>Local Residential Moving</h3>
-      <p>Houses, apartments, and condos across Chicago and 40+ suburbs. Hourly rates, same crew start to finish.</p>
-      <p><a href="local-residential-moving.html">View Local Residential Moving &rarr;</a></p>
-
-      <h3>House Moving</h3>
-      <p>Single-family homes, two-story or more. Garages, basements, attics. Larger crews and multiple trucks for bigger homes.</p>
-      <p><a href="#">View House Moving &rarr;</a></p>
-
-      <h3>Apartment Moving</h3>
-      <p>Walk-ups, mid-rises, and high-rises. COIs, elevator bookings, and parking permits handled by us.</p>
-      <p><a href="#">View Apartment Moving &rarr;</a></p>
-
-      <h3>Condo Moving</h3>
-      <p>HOA paperwork, freight elevator reservations, loading dock scheduling. We coordinate with the building.</p>
-      <p><a href="#">View Condo Moving &rarr;</a></p>
-
-      <h3>Senior Moving</h3>
-      <p>Downsizing and assisted-living moves. Slower pace when needed. Adult children welcome on the call.</p>
-      <p><a href="#">View Senior Moving &rarr;</a></p>
-
-      <h3>Student Moving</h3>
-      <p>Dorm and off-campus moves. Small loads, short timelines, weekend availability.</p>
-      <p><a href="#">View Student Moving &rarr;</a></p>
-
-      <h3>Last Minute Moving</h3>
-      <p>Same-day or next-day moves when crew availability allows. Same hourly rates, no rush surcharge.</p>
-      <p><a href="#">View Last Minute Moving &rarr;</a></p>
+    <!-- ====== HOW IT WORKS ====== -->
+    <section class="how-it-works">
+      <div class="container">
+        <h2 class="how-it-works__heading">How it works</h2>
+        <div class="how-it-works__steps">
+          <div class="how-it-works__step">
+            <div class="how-it-works__image">
+              <img src="images/step1.webp" alt="Get a quote on your phone">
+              <span class="how-it-works__number">1</span>
+            </div>
+            <h3 class="how-it-works__title">Get a quote.</h3>
+            <p class="how-it-works__desc">Tell us your move details. Takes about 60 seconds.</p>
+          </div>
+          <div class="how-it-works__step">
+            <div class="how-it-works__image">
+              <img src="images/step2.webp" alt="See your price breakdown">
+              <span class="how-it-works__number">2</span>
+            </div>
+            <h3 class="how-it-works__title">See your price.</h3>
+            <p class="how-it-works__desc">We send a breakdown: crew size, hours, total.</p>
+          </div>
+          <div class="how-it-works__step">
+            <div class="how-it-works__image">
+              <img src="images/step3.webp" alt="Sparkle crew moving day">
+              <span class="how-it-works__number">3</span>
+            </div>
+            <h3 class="how-it-works__title">We move you.</h3>
+            <p class="how-it-works__desc">Crew arrives on schedule, handles your move start to finish.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- How It Works -->
-    <section>
-      <h2>How it works</h2>
-      <ol>
-        <li><strong>Get a quote.</strong> Tell us your move details. Takes about 60 seconds.</li>
-        <li><strong>See your price.</strong> We send a breakdown: crew size, hours, total.</li>
-        <li><strong>We move you.</strong> Crew arrives on schedule, handles your move start to finish.</li>
-      </ol>
+    <!-- ====== WHY SPARKLE FOR RESIDENTIAL ====== -->
+    <section class="info-section">
+      <div class="container info-section__inner info-section__inner--media info-section__inner--media-left info-section__inner--stretch">
+        <div class="info-section__media">
+          <img src="images/hero-right.webp" alt="Sparkle crew member loading a customer's furniture" width="520" height="420">
+        </div>
+        <div>
+          <div class="info-section__head">
+            <span class="info-section__eyebrow">Why Sparkle</span>
+            <h2 class="info-section__headline">Why Sparkle for residential</h2>
+            <p class="info-section__body">What makes the difference on a Chicago residential move.</p>
+          </div>
+          <ul class="check-list">
+            <li>Chicago buildings, handled &mdash; high-rises, walk-ups, freight elevators, COIs, parking permits</li>
+            <li>Same rate every day &mdash; no weekend or after-hours surcharge</li>
+            <li>No &ldquo;heavy item&rdquo; tricks &mdash; standard furniture is in the hourly rate</li>
+            <li>Disassembly and reassembly included for beds, tables, and dressers</li>
+            <li>Same crew start to finish &mdash; the team that loads is the team that unloads</li>
+            <li>Pianos, safes, and 400+ lb items quoted upfront, never sprung at the door</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Why Sparkle for Residential -->
-    <section>
-      <h2>Why Sparkle for residential</h2>
-
-      <h3>Chicago buildings, handled.</h3>
-      <p>High-rises, walk-ups, tight stairwells, freight elevators. We&rsquo;ve seen them. COIs and parking permits sit on our side, not yours.</p>
-
-      <h3>Same rate, every day.</h3>
-      <p>No weekend or after-hours surcharge. Saturday is the same hourly rate as Tuesday.</p>
-
-      <h3>No &ldquo;heavy item&rdquo; tricks.</h3>
-      <p>Standard furniture is in the hourly rate. Pianos, safes, and items over 400 lbs are quoted upfront, never sprung on you at the door.</p>
-
-      <h3>Disassembly and reassembly included.</h3>
-      <p>Beds, tables, dressers come apart and go back together at no extra charge.</p>
+    <!-- ====== SERVICE AREA ====== -->
+    <section class="service-area" id="service-area">
+      <div class="container">
+        <div class="service-area__inner">
+          <div class="service-area__text">
+            <h2 class="service-area__headline">Chicago and 40+ suburbs</h2>
+            <p class="service-area__body">Headquartered in Northbrook. Serving Chicago and surrounding communities including Evanston, Schaumburg, Naperville, and Arlington Heights.</p>
+            <a href="#" class="gold-link service-area__link">See all service areas<span class="arrow">&rarr;</span></a>
+          </div>
+          <div class="service-area__map">
+            <div class="service-area__map-wrap">
+              <img src="images/service-area-map.jpg" alt="Map of Sparkle Moving service area covering Chicago and suburbs" width="460" height="460">
+              <div class="service-area__pins">
+                <div class="service-area__pin" style="left:28%;top:30%"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:46%;top:28%"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:62%;top:32%"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:22%;top:48%"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:44%;top:50%"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:30%;top:64%"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:68%;top:60%"><span></span><span></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- FAQ -->
-    <section>
-      <h2>FAQ</h2>
-
-      <details>
-        <summary><strong>How long does a residential move usually take?</strong></summary>
-        <p>A 1-bedroom typically runs 2&ndash;4 hours with a 2-person crew. A 2-bedroom runs 4&ndash;6 hours with 3 movers. A 3-bedroom house runs 6&ndash;10 hours with 4 movers. Your quote shows the estimate for your specific move.</p>
-      </details>
-
-      <details>
-        <summary><strong>Do you charge extra for stairs?</strong></summary>
-        <p>No. Stairs are free.</p>
-      </details>
-
-      <details>
-        <summary><strong>What if I live in a high-rise with a COI requirement?</strong></summary>
-        <p>Send us the building&rsquo;s requirements when you book. We file the certificate of insurance and confirm the elevator booking before move day.</p>
-      </details>
-
-      <details>
-        <summary><strong>Do you supply packing materials?</strong></summary>
-        <p>Boxes, wardrobes, and tape are available. Full or partial packing is a separate service. See <a href="#">Packing Services &rarr;</a></p>
-      </details>
-
-      <details>
-        <summary><strong>Will I have the same crew the whole move?</strong></summary>
-        <p>Yes. The crew that loads is the crew that unloads.</p>
-      </details>
-
-      <details>
-        <summary><strong>What happens if my move takes longer than estimated?</strong></summary>
-        <p>You&rsquo;re billed at the same hourly rate for actual time worked. No overtime multiplier. If the crew finishes early, you&rsquo;re billed for actual hours only.</p>
-      </details>
+    <!-- ====== FAQ ====== -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="faq__headline">Frequently asked questions</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">How long does a residential move usually take?</summary>
+            <div class="faq__answer">
+              <p>A 1-bedroom typically runs 2&ndash;4 hours with a 2-person crew. A 2-bedroom runs 4&ndash;6 hours with 3 movers. A 3-bedroom house runs 6&ndash;10 hours with 4 movers. Your quote shows the estimate for your specific move.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do you charge extra for stairs?</summary>
+            <div class="faq__answer">
+              <p>No. Stairs are free.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What if I live in a high-rise with a COI requirement?</summary>
+            <div class="faq__answer">
+              <p>Send us the building&rsquo;s requirements when you book. We file the certificate of insurance and confirm the elevator booking before move day.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do you supply packing materials?</summary>
+            <div class="faq__answer">
+              <p>Boxes, wardrobes, and tape are available. Full or partial packing is a separate service. See <a href="#">Packing Services</a>.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Will I have the same crew the whole move?</summary>
+            <div class="faq__answer">
+              <p>Yes. The crew that loads is the crew that unloads.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What happens if my move takes longer than estimated?</summary>
+            <div class="faq__answer">
+              <p>You&rsquo;re billed at the same hourly rate for actual time worked. No overtime multiplier. If the crew finishes early, you&rsquo;re billed for actual hours only.</p>
+            </div>
+          </details>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Service Area -->
-    <section id="service-area">
-      <h2>Chicago and 40+ suburbs</h2>
-      <p>Headquartered in Northbrook. Serving Chicago and surrounding communities including Evanston, Schaumburg, Naperville, and Arlington Heights.</p>
-      <p><a href="#">See all service areas &rarr;</a></p>
-    </section>
-
-    <hr>
-
-    <!-- Closing CTA -->
-    <section>
-      <h2>Get your exact price.</h2>
-      <p>Enter your ZIPs and move details. We&rsquo;ll send a full breakdown within a few hours.</p>
-      <p><a href="#quote">Start a Quote</a></p>
-      <p>Phone: <a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
+    <!-- ====== CLOSING CTA (with two dropdowns) ====== -->
+    <section class="closing-cta">
+      <div class="container">
+        <div class="closing-cta__content">
+          <h2 class="closing-cta__headline">Get your exact price.</h2>
+          <p class="closing-cta__subline">Pick your ZIP and home size. Full breakdown within a few hours.</p>
+          <form class="closing-cta__form" action="#quote">
+            <select class="closing-cta__select" name="zip" required>
+              <option value="" disabled selected>Moving from ZIP</option>
+              <option>60601 &mdash; Chicago Loop</option>
+              <option>60201 &mdash; Evanston</option>
+              <option>60540 &mdash; Naperville</option>
+              <option>60173 &mdash; Schaumburg</option>
+              <option>60004 &mdash; Arlington Heights</option>
+              <option>60062 &mdash; Northbrook</option>
+              <option>Other ZIP</option>
+            </select>
+            <select class="closing-cta__select" name="size" required>
+              <option value="" disabled selected>Home size</option>
+              <option>Studio</option>
+              <option>1 bedroom</option>
+              <option>2 bedroom</option>
+              <option>3 bedroom</option>
+              <option>4+ bedroom</option>
+            </select>
+            <a href="#quote" class="btn-primary">Get a Quote<span class="arrow">&rarr;</span></a>
+          </form>
+          <a href="tel:+1XXXXXXXXXX" class="closing-cta__phone">(312) 555-0199</a>
+        </div>
+      </div>
     </section>
 
   </main>

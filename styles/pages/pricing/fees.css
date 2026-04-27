@@ -8,6 +8,10 @@
   padding: var(--space-3xl) 0 calc(var(--space-3xl) + 20px);
 }
 
+.fees-section--white {
+  background-color: var(--color-white);
+}
+
 .fees-section__head {
   max-width: 760px;
   margin: 0 auto 32px;
@@ -47,6 +51,15 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
+}
+
+/* 4-up variant — for when the section has exactly four cards */
+.fees-section__grid--4col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.fees-section__grid--4col .fees-section__item {
+  padding: 28px 24px;
 }
 
 .fees-section__item {
@@ -106,7 +119,8 @@
 /* ---------- Responsive ---------- */
 
 @media (max-width: 960px) {
-  .fees-section__grid {
+  .fees-section__grid,
+  .fees-section__grid--4col {
     grid-template-columns: 1fr 1fr;
   }
 }

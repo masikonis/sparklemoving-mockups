@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Residential Moving Hero — same shape as the pricing hero (image right,
+   copy left) but with a primary CTA and a "scroll to services" anchor.
+   ========================================================================== */
+
+.residential-hero {
+  position: relative;
+  background-color: var(--color-white);
+  padding-top: calc(84px + var(--space-xl));
+  padding-bottom: var(--space-2xl);
+  overflow: hidden;
+}
+
+.residential-hero__inner {
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.residential-hero__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.residential-hero__eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+.residential-hero__headline {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 1.05;
+  letter-spacing: -0.022em;
+  color: var(--color-navy);
+}
+
+.residential-hero__headline em {
+  font-style: normal;
+  color: var(--color-gold);
+  font-weight: 700;
+}
+
+.residential-hero__body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--color-navy-60);
+  margin-top: var(--space-md);
+  max-width: 480px;
+}
+
+/* CTA row: primary button + secondary "pick a service below" anchor */
+.residential-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.residential-hero__cta {
+  font-size: 17px;
+  padding: 16px 36px;
+}
+
+.residential-hero__scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-gold);
+  letter-spacing: -0.005em;
+}
+
+.residential-hero__scroll-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.residential-hero__scroll:hover .residential-hero__scroll-arrow {
+  transform: translateY(4px);
+}
+
+/* Right-side media block — same wide ratio as pricing hero */
+.residential-hero__media {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 8 / 5;
+  background-color: var(--color-navy-05);
+  box-shadow: 0 24px 48px rgba(25, 28, 43, 0.12);
+}
+
+.residential-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 960px) {
+  .residential-hero__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .residential-hero__headline {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 640px) {
+  .residential-hero {
+    padding-top: calc(84px + var(--space-lg));
+    padding-bottom: var(--space-xl);
+  }
+
+  .residential-hero__headline {
+    font-size: 32px;
+  }
+
+  .residential-hero__body {
+    font-size: 17px;
+  }
+
+  .residential-hero__cta {
+    width: 100%;
+    text-align: center;
+  }
+}

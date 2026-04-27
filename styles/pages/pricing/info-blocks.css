@@ -37,6 +37,17 @@
   align-items: center;
 }
 
+/* Stretch variant: image matches the full height of the content column.
+   Drop the fixed aspect ratio so the row height comes from the content. */
+.info-section__inner--media.info-section__inner--stretch {
+  align-items: stretch;
+}
+
+.info-section__inner--stretch .info-section__media {
+  aspect-ratio: auto;
+  height: 100%;
+}
+
 .info-section__inner--media-left {
   grid-template-columns: 0.95fr 1.05fr;
 }
