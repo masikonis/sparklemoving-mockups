@@ -9,13 +9,48 @@
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-  <!-- Shared chrome only. Page sections below are unstyled on purpose: ready for design. -->
+  <!-- Shared chrome -->
   <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/components/header.css">
+
+  <!-- Reused homepage section styles -->
+  <link rel="stylesheet" href="styles/pages/home/stats-bar.css">
+  <link rel="stylesheet" href="styles/pages/home/how-it-works.css">
+  <link rel="stylesheet" href="styles/pages/home/service-area.css">
+  <link rel="stylesheet" href="styles/pages/home/faq.css">
+  <link rel="stylesheet" href="styles/pages/home/closing-cta.css">
+
+  <!-- Reused pricing section styles -->
+  <link rel="stylesheet" href="styles/pages/pricing/hero.css">
+  <link rel="stylesheet" href="styles/pages/pricing/rate-tables.css">
+  <link rel="stylesheet" href="styles/pages/pricing/fees.css">
+  <link rel="stylesheet" href="styles/pages/pricing/info-blocks.css">
+
+  <!-- Icon-list pattern from local-residential -->
+  <link rel="stylesheet" href="styles/pages/local-residential-moving/why-local.css">
+
   <link rel="stylesheet" href="styles/components/footer.css">
   <link rel="stylesheet" href="styles/components/modal.css">
 </head>
 <body>
+
+  <!-- SVG filter: luminance mask used by the service-area map -->
+  <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <filter id="map-transparent" color-interpolation-filters="sRGB">
+        <feComponentTransfer in="SourceGraphic" result="boosted">
+          <feFuncR type="linear" slope="3" intercept="-0.15"/>
+          <feFuncG type="linear" slope="3" intercept="-0.15"/>
+          <feFuncB type="linear" slope="3" intercept="-0.15"/>
+        </feComponentTransfer>
+        <feColorMatrix type="luminanceToAlpha" in="boosted" result="lum"/>
+        <feComponentTransfer in="lum" result="lum-sharp">
+          <feFuncA type="gamma" amplitude="1.2" exponent="2" offset="-0.05"/>
+        </feComponentTransfer>
+        <feComposite in="SourceGraphic" in2="lum-sharp" operator="in"/>
+      </filter>
+    </defs>
+  </svg>
 
   <!-- ====== HEADER (copied verbatim from index.html) ====== -->
   <header class="site-header" id="siteHeader">
@@ -177,184 +212,380 @@
     </div>
   </header>
 
-  <!-- ====== NAKED PAGE CONTENT ====== -->
-  <main style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
+  <main>
 
-    <!-- Hero -->
-    <section>
-      <h1>Here&rsquo;s what long distance moves cost. By route.</h1>
-      <p>Binding quotes. Dedicated trucks. No shared loads.</p>
-      <p><a href="#quote">Start a Quote</a> &middot; Takes about 60 seconds.</p>
-      <p>Phone: <a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
+    <!-- ====== HERO ====== -->
+    <section class="pricing-hero">
+      <div class="container pricing-hero__inner">
+        <div class="pricing-hero__content">
+          <span class="pricing-hero__eyebrow">Long Distance Moving</span>
+          <h1 class="pricing-hero__headline">Long distance moves. <em>Binding quotes</em>, no shared loads.</h1>
+          <p class="pricing-hero__body">Interstate moves out of Illinois. Florida, Texas, the East Coast, the West Coast. Dedicated trucks on every job.</p>
+        </div>
+        <div class="pricing-hero__media">
+          <img src="images/hero-right.webp" alt="Sparkle moving truck on a long-distance route" width="640" height="400">
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Stats Bar -->
-    <section>
-      <p>Since 2012 &middot; 10,000+ Moves &middot; Licensed &amp; Insured</p>
+    <!-- ====== STATS BAR ====== -->
+    <section class="stats-bar">
+      <div class="container">
+        <ul class="stats-bar__list">
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">2012</span>
+            <span class="stats-bar__label">Established</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">10,000+</span>
+            <span class="stats-bar__label">Moves completed</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">Licensed &amp; Insured</span>
+            <span class="stats-bar__label">Illinois CC-MC</span>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Category Overview -->
-    <section>
-      <p>Interstate moves out of Illinois. Florida, Texas, the East Coast, the West Coast. Dedicated trucks, no shared loads, binding quotes.</p>
-      <p>Pick a service below. Or start a quote and we&rsquo;ll match a route.</p>
+    <!-- ====== REAL ROUTE PRICES ====== -->
+    <section class="rate-section">
+      <div class="container">
+        <div class="rate-section__header">
+          <span class="rate-section__eyebrow">Out of state</span>
+          <h2 class="rate-section__headline">Real route prices</h2>
+          <p class="rate-section__body">Long distance moves aren&rsquo;t billed hourly. Pricing depends on weight, distance, and truck space. We send a binding quote upfront. The number you see is the number on the invoice.</p>
+        </div>
+        <div class="rate-table">
+          <table class="rate-table__table">
+            <thead>
+              <tr>
+                <th>Route</th>
+                <th>Starting from</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Chicago to Florida</td>
+                <td>from $3,800</td>
+              </tr>
+              <tr>
+                <td>Chicago to Texas</td>
+                <td>from $4,200</td>
+              </tr>
+              <tr>
+                <td>Other destinations</td>
+                <td>quoted individually</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="rate-section__footnote">Coast-to-coast routes run higher. Full pricing model on the <a href="pricing.html" class="gold-link">Pricing page<span class="arrow">&rarr;</span></a></p>
+        <div class="rate-section__cta-row">
+          <a href="#quote" class="btn-primary rate-section__cta">Start a Quote<span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
     </section>
 
-    <hr>
+    <!-- ====== LONG DISTANCE SERVICES (icon cards, beige bg) ====== -->
+    <section class="fees-section" id="services">
+      <div class="container">
+        <div class="fees-section__head">
+          <span class="fees-section__eyebrow">Service breakdown</span>
+          <h2 class="fees-section__headline">Long distance services</h2>
+          <p class="fees-section__body">Whatever route, whatever distance &mdash; same dedicated truck, same binding quote.</p>
+        </div>
+        <div class="fees-section__grid">
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 3l-6 3v15l6-3 6 3 6-3V3l-6 3-6-3z"/>
+                <path d="M9 3v15M15 6v15"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Interstate Moving</h3>
+            <p class="fees-section__item-body">Any move across state lines. From Illinois to anywhere in the lower 48.</p>
+          </a>
 
-    <!-- Pricing for Long Distance -->
-    <section>
-      <h2>Real route prices</h2>
-      <p>Long distance moves aren&rsquo;t billed hourly. Pricing depends on weight, distance, and truck space. We send a binding quote upfront. The number you see is the number on the invoice.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Route</th>
-            <th>Starting from</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Chicago to Florida</td>
-            <td>from $3,800</td>
-          </tr>
-          <tr>
-            <td>Chicago to Texas</td>
-            <td>from $4,200</td>
-          </tr>
-          <tr>
-            <td>Other destinations</td>
-            <td>quoted individually</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>Coast-to-coast routes run higher. Full pricing model on the <a href="pricing.html">Pricing page &rarr;</a></p>
-      <p><a href="#quote">Start a Quote</a> &mdash; get your exact price.</p>
+          <a href="cross-country-moving.html" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12h18"/>
+                <path d="M16 6l5 6-5 6"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Cross-Country Moving</h3>
+            <p class="fees-section__item-body">Coast-to-coast and long-haul moves. Multi-day transit, dedicated truck, fixed delivery window.</p>
+          </a>
+
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">State-to-State Moving</h3>
+            <p class="fees-section__item-body">State-line moves of any distance. Same dedicated truck and binding quote as cross-country.</p>
+          </a>
+
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="1"/>
+                <path d="M9 9h2M13 9h2M9 13h2M13 13h2M9 17h2M13 17h2"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Long Distance Office Moving</h3>
+            <p class="fees-section__item-body">Office relocations across state lines. Coordinated with minimal downtime, weekend or after-hours pickup available.</p>
+          </a>
+
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Chicago to Florida Moving</h3>
+            <p class="fees-section__item-body">Established route to Miami, Orlando, Tampa, and the rest of the state. Predictable timing, regular service.</p>
+          </a>
+
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.1 8.3 22 9.3 17 14.1 18.2 21 12 17.8 5.8 21 7 14.1 2 9.3 8.9 8.3 12 2"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Chicago to Texas Moving</h3>
+            <p class="fees-section__item-body">Dallas, Austin, Houston, San Antonio. Regular runs south, dedicated truck on every job.</p>
+          </a>
+
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 17h2l2-6h10l2 6h2"/>
+                <circle cx="7" cy="17" r="2"/>
+                <circle cx="17" cy="17" r="2"/>
+                <path d="M9 11V5h6v6"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Dedicated Truck Moving</h3>
+            <p class="fees-section__item-body">Your shipment alone on the truck. No co-mingled inventory, faster delivery, no risk of items ending up on a different customer&rsquo;s load.</p>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Long Distance Services -->
-    <section>
-      <h2>Long distance services</h2>
-
-      <h3>Interstate Moving</h3>
-      <p>Any move across state lines. From Illinois to anywhere in the lower 48.</p>
-      <p><a href="#">View Interstate Moving &rarr;</a></p>
-
-      <h3>Cross-Country Moving</h3>
-      <p>Coast-to-coast and long-haul moves. Multi-day transit, dedicated truck, fixed delivery window.</p>
-      <p><a href="cross-country-moving.html">View Cross-Country Moving &rarr;</a></p>
-
-      <h3>State-to-State Moving</h3>
-      <p>State-line moves of any distance. Same dedicated truck and binding quote as cross-country.</p>
-      <p><a href="#">View State-to-State Moving &rarr;</a></p>
-
-      <h3>Long Distance Office Moving</h3>
-      <p>Office relocations across state lines. Coordinated with minimal downtime, weekend or after-hours pickup available.</p>
-      <p><a href="#">View Long Distance Office Moving &rarr;</a></p>
-
-      <h3>Chicago to Florida Moving</h3>
-      <p>Established route to Miami, Orlando, Tampa, and the rest of the state. Predictable timing, regular service.</p>
-      <p><a href="#">View Chicago to Florida Moving &rarr;</a></p>
-
-      <h3>Chicago to Texas Moving</h3>
-      <p>Dallas, Austin, Houston, San Antonio. Regular runs south, dedicated truck on every job.</p>
-      <p><a href="#">View Chicago to Texas Moving &rarr;</a></p>
-
-      <h3>Dedicated Truck Moving</h3>
-      <p>Your shipment alone on the truck. No co-mingled inventory, faster delivery, no risk of items ending up on a different customer&rsquo;s load.</p>
-      <p><a href="#">View Dedicated Truck Moving &rarr;</a></p>
+    <!-- ====== HOW IT WORKS ====== -->
+    <section class="how-it-works">
+      <div class="container">
+        <h2 class="how-it-works__heading">How it works</h2>
+        <div class="how-it-works__steps">
+          <div class="how-it-works__step">
+            <div class="how-it-works__image">
+              <img src="images/step1.webp" alt="Get a quote on your phone">
+              <span class="how-it-works__number">1</span>
+            </div>
+            <h3 class="how-it-works__title">Get a quote.</h3>
+            <p class="how-it-works__desc">Tell us your route and what you&rsquo;re moving.</p>
+          </div>
+          <div class="how-it-works__step">
+            <div class="how-it-works__image">
+              <img src="images/step2.webp" alt="See your binding price">
+              <span class="how-it-works__number">2</span>
+            </div>
+            <h3 class="how-it-works__title">See your binding price.</h3>
+            <p class="how-it-works__desc">Total cost, weight allowance, delivery window. All locked in.</p>
+          </div>
+          <div class="how-it-works__step">
+            <div class="how-it-works__image">
+              <img src="images/step3.webp" alt="Sparkle crew on delivery day">
+              <span class="how-it-works__number">3</span>
+            </div>
+            <h3 class="how-it-works__title">We move you.</h3>
+            <p class="how-it-works__desc">Pickup day, transit, delivery. Same crew, same truck, start to finish.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <hr>
+    <!-- ====== WHY SPARKLE FOR LONG DISTANCE ====== -->
+    <section class="info-section info-section--offwhite">
+      <div class="container info-section__inner info-section__inner--media info-section__inner--media-left info-section__inner--stretch">
+        <div class="info-section__media">
+          <img src="images/hero-left.webp" alt="Sparkle long-distance crew loading a dedicated truck">
+        </div>
+        <div>
+          <div class="info-section__head">
+            <span class="info-section__eyebrow">Why Sparkle</span>
+            <h2 class="info-section__headline">Why Sparkle for long distance</h2>
+          </div>
+          <ul class="icon-list">
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L4 5v7c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Binding quote, no surprises.</h3>
+                <p class="icon-list__body">The number we send is the number on the invoice. No fuel surcharge. No weight surprises at the warehouse.</p>
+              </div>
+            </li>
 
-    <!-- How It Works -->
-    <section>
-      <h2>How it works</h2>
-      <ol>
-        <li><strong>Get a quote.</strong> Tell us your route and what you&rsquo;re moving.</li>
-        <li><strong>See your binding price.</strong> Total cost, weight allowance, delivery window. All locked in.</li>
-        <li><strong>We move you.</strong> Pickup day, transit, delivery. Same crew, same truck, start to finish.</li>
-      </ol>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="6" width="14" height="11" rx="1"/>
+                  <path d="M15 9h4l3 4v4h-7V9z"/>
+                  <circle cx="6" cy="18.5" r="2"/>
+                  <circle cx="18" cy="18.5" r="2"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Dedicated truck, every move.</h3>
+                <p class="icon-list__body">Your shipment is on its own truck. No co-mingled inventory. No &ldquo;we&rsquo;ll get to your delivery when we can&rdquo; runaround.</p>
+              </div>
+            </li>
+
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="5" width="18" height="16" rx="1"/>
+                  <path d="M3 10h18M8 3v4M16 3v4"/>
+                  <circle cx="12" cy="14" r="2"/>
+                  <path d="M12 13v1l1 1"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Real delivery windows.</h3>
+                <p class="icon-list__body">Three-day window at booking, not an open-ended &ldquo;sometime in two to three weeks.&rdquo;</p>
+              </div>
+            </li>
+
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="8" r="3"/>
+                  <circle cx="17" cy="9" r="2.5"/>
+                  <path d="M3 20c0-3 3-5 6-5s6 2 6 5"/>
+                  <path d="M14 20c0-2 2-4 4-4s3.5 1 3.5 4"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Same crew, start to finish.</h3>
+                <p class="icon-list__body">The team that loads in Chicago is the team that delivers, or works directly with the driver. One point of contact, not a handoff to a stranger.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Why Sparkle for Long Distance -->
-    <section>
-      <h2>Why Sparkle for long distance</h2>
-
-      <h3>Binding quote, no surprises.</h3>
-      <p>The number we send is the number on the invoice. No fuel surcharge. No weight surprises at the warehouse.</p>
-
-      <h3>Dedicated truck, every move.</h3>
-      <p>Your shipment is on its own truck. No co-mingled inventory. No &ldquo;we&rsquo;ll get to your delivery when we can&rdquo; runaround.</p>
-
-      <h3>Real delivery windows.</h3>
-      <p>Three-day window at booking, not an open-ended &ldquo;sometime in two to three weeks.&rdquo;</p>
-
-      <h3>Same crew, start to finish.</h3>
-      <p>The team that loads in Chicago is the team that delivers, or works directly with the driver. One point of contact, not a handoff to a stranger.</p>
+    <!-- ====== SERVICE AREA ====== -->
+    <section class="service-area" id="service-area">
+      <div class="container">
+        <div class="service-area__inner">
+          <div class="service-area__text">
+            <h2 class="service-area__headline">Pickup from Chicago and 40+ suburbs. Delivery anywhere in the lower 48.</h2>
+            <p class="service-area__body">Hawaii, Alaska, and overseas moves are quoted separately.</p>
+            <a href="locations.html" class="gold-link service-area__link">See all service areas<span class="arrow">&rarr;</span></a>
+          </div>
+          <div class="service-area__map">
+            <div class="service-area__map-wrap">
+              <img src="images/service-area-map.jpg" alt="Map of Sparkle Moving service area covering Chicago and suburbs" width="460" height="460">
+              <div class="service-area__pins">
+                <div class="service-area__pin" style="left:28%;top:30%"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:46%;top:28%"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:62%;top:32%"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:22%;top:48%"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:44%;top:50%"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:30%;top:64%"><span></span><span></span></div>
+                <div class="service-area__pin" style="left:68%;top:60%"><span></span><span></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- FAQ -->
-    <section>
-      <h2>FAQ</h2>
-
-      <details>
-        <summary><strong>How is a binding quote different from a non-binding estimate?</strong></summary>
-        <p>A binding quote locks in price, weight allowance, and delivery window. It doesn&rsquo;t change between booking and delivery. Most long-distance movers give non-binding estimates that go up at delivery. Ours doesn&rsquo;t.</p>
-      </details>
-
-      <details>
-        <summary><strong>How long does a long distance move take?</strong></summary>
-        <p>Depends on the route. Florida and East Coast: 3&ndash;5 days. Texas: 2&ndash;4 days. West Coast and Pacific Northwest: 5&ndash;8 days. Your quote shows the specific window.</p>
-      </details>
-
-      <details>
-        <summary><strong>Will my stuff be on a shared truck?</strong></summary>
-        <p>No. Every Sparkle long-distance move uses a dedicated truck. Nothing else on it.</p>
-      </details>
-
-      <details>
-        <summary><strong>Do you offer packing for long distance?</strong></summary>
-        <p>Yes. Full or partial packing is available, quoted with the move. See <a href="#">Packing Services &rarr;</a></p>
-      </details>
-
-      <details>
-        <summary><strong>What if my dates change after I book?</strong></summary>
-        <p>Seven days notice or more: no fee. Less than seven days: depends on truck availability and route.</p>
-      </details>
-
-      <details>
-        <summary><strong>Is everything insured during transit?</strong></summary>
-        <p>Standard liability coverage is included. Higher-value coverage is available for high-end items, quoted with the move.</p>
-      </details>
+    <!-- ====== FAQ ====== -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="faq__headline">Frequently asked questions</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">How is a binding quote different from a non-binding estimate?</summary>
+            <div class="faq__answer">
+              <p>A binding quote locks in price, weight allowance, and delivery window. It doesn&rsquo;t change between booking and delivery. Most long-distance movers give non-binding estimates that go up at delivery. Ours doesn&rsquo;t.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">How long does a long distance move take?</summary>
+            <div class="faq__answer">
+              <p>Depends on the route. Florida and East Coast: 3&ndash;5 days. Texas: 2&ndash;4 days. West Coast and Pacific Northwest: 5&ndash;8 days. Your quote shows the specific window.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Will my stuff be on a shared truck?</summary>
+            <div class="faq__answer">
+              <p>No. Every Sparkle long-distance move uses a dedicated truck. Nothing else on it.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do you offer packing for long distance?</summary>
+            <div class="faq__answer">
+              <p>Yes. Full or partial packing is available, quoted with the move. See <a href="#">Packing Services</a>.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What if my dates change after I book?</summary>
+            <div class="faq__answer">
+              <p>Seven days notice or more: no fee. Less than seven days: depends on truck availability and route.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Is everything insured during transit?</summary>
+            <div class="faq__answer">
+              <p>Standard liability coverage is included. Higher-value coverage is available for high-end items, quoted with the move.</p>
+            </div>
+          </details>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Service Area -->
-    <section id="service-area">
-      <h2>Pickup from Chicago and 40+ suburbs. Delivery anywhere in the lower 48.</h2>
-      <p>Hawaii, Alaska, and overseas moves are quoted separately.</p>
-      <p><a href="locations.html">See all service areas &rarr;</a></p>
-    </section>
-
-    <hr>
-
-    <!-- Closing CTA -->
-    <section>
-      <h2>Get your exact price.</h2>
-      <p>Enter your ZIPs and move details. We&rsquo;ll send a full breakdown within a few hours.</p>
-      <p><a href="#quote">Start a Quote</a></p>
-      <p>Phone: <a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
+    <!-- ====== CLOSING CTA (with two dropdowns) ====== -->
+    <section class="closing-cta">
+      <div class="container">
+        <div class="closing-cta__content">
+          <h2 class="closing-cta__headline">Get your exact price.</h2>
+          <p class="closing-cta__subline">Pick your ZIP and home size. Full breakdown within a few hours.</p>
+          <form class="closing-cta__form" action="#quote">
+            <select class="closing-cta__select" name="zip" required>
+              <option value="" disabled selected>Moving from ZIP</option>
+              <option>60601 &mdash; Chicago Loop</option>
+              <option>60201 &mdash; Evanston</option>
+              <option>60540 &mdash; Naperville</option>
+              <option>60173 &mdash; Schaumburg</option>
+              <option>60004 &mdash; Arlington Heights</option>
+              <option>60062 &mdash; Northbrook</option>
+              <option>Other ZIP</option>
+            </select>
+            <select class="closing-cta__select" name="size" required>
+              <option value="" disabled selected>Home size</option>
+              <option>Studio</option>
+              <option>1 bedroom</option>
+              <option>2 bedroom</option>
+              <option>3 bedroom</option>
+              <option>4+ bedroom</option>
+            </select>
+            <a href="#quote" class="btn-primary">Get a Quote<span class="arrow">&rarr;</span></a>
+          </form>
+          <a href="tel:+1XXXXXXXXXX" class="closing-cta__phone">(312) 555-0199</a>
+        </div>
+      </div>
     </section>
 
   </main>

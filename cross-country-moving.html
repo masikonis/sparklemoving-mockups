@@ -9,9 +9,26 @@
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-  <!-- Shared chrome only. Page sections below are unstyled on purpose: ready for design. -->
+  <!-- Shared chrome -->
   <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/components/header.css">
+
+  <!-- Reused homepage section styles -->
+  <link rel="stylesheet" href="styles/pages/home/stats-bar.css">
+  <link rel="stylesheet" href="styles/pages/home/how-it-works.css">
+  <link rel="stylesheet" href="styles/pages/home/faq.css">
+  <link rel="stylesheet" href="styles/pages/home/closing-cta.css">
+
+  <!-- Reused pricing section styles -->
+  <link rel="stylesheet" href="styles/pages/pricing/hero.css">
+  <link rel="stylesheet" href="styles/pages/pricing/rate-tables.css">
+  <link rel="stylesheet" href="styles/pages/pricing/fees.css">
+  <link rel="stylesheet" href="styles/pages/pricing/info-blocks.css">
+
+  <!-- Reused local-residential patterns -->
+  <link rel="stylesheet" href="styles/pages/local-residential-moving/common-scenarios.css">
+  <link rel="stylesheet" href="styles/pages/local-residential-moving/why-local.css">
+
   <link rel="stylesheet" href="styles/components/footer.css">
   <link rel="stylesheet" href="styles/components/modal.css">
 </head>
@@ -177,202 +194,486 @@
     </div>
   </header>
 
-  <!-- ====== NAKED PAGE CONTENT ====== -->
-  <main style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
+  <main>
 
-    <!-- Hero -->
-    <section>
-      <h1>Cross-country moves. Binding quote before you load.</h1>
-      <p>Dedicated truck, fixed delivery window, no shared loads. Pickup from Chicago, delivery anywhere in the lower 48.</p>
-      <p><a href="#quote">Start a Quote</a> &middot; Takes about 60 seconds.</p>
-      <p>Phone: <a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
+    <!-- ====== HERO ====== -->
+    <section class="pricing-hero">
+      <div class="container pricing-hero__inner">
+        <div class="pricing-hero__content">
+          <span class="pricing-hero__eyebrow">Cross-Country Moving</span>
+          <h1 class="pricing-hero__headline">Cross-country moves. <em>Binding quote</em> before you load.</h1>
+          <p class="pricing-hero__body">Dedicated truck, fixed delivery window, no shared loads. Pickup from Chicago, delivery anywhere in the lower 48.</p>
+        </div>
+        <div class="pricing-hero__media">
+          <img src="images/hero-right.webp" alt="Sparkle Moving truck on a cross-country route" width="640" height="400">
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Stats Bar -->
-    <section>
-      <p>Since 2012 &middot; 10,000+ Moves &middot; Licensed &amp; Insured</p>
+    <!-- ====== STATS BAR ====== -->
+    <section class="stats-bar">
+      <div class="container">
+        <ul class="stats-bar__list">
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">2012</span>
+            <span class="stats-bar__label">Established</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">10,000+</span>
+            <span class="stats-bar__label">Moves completed</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">Licensed &amp; Insured</span>
+            <span class="stats-bar__label">Illinois CC-MC</span>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <hr>
+    <!-- ====== WHAT'S INCLUDED (icon cards, white bg, no body copy) ====== -->
+    <section class="fees-section fees-section--white">
+      <div class="container">
+        <div class="fees-section__head">
+          <span class="fees-section__eyebrow">Every move</span>
+          <h2 class="fees-section__headline">What&rsquo;s included</h2>
+        </div>
+        <div class="fees-section__grid">
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="6" width="14" height="11" rx="1"/>
+                <path d="M15 9h4l3 4v4h-7V9z"/>
+                <circle cx="6" cy="18.5" r="2"/>
+                <circle cx="18" cy="18.5" r="2"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Dedicated truck</h3>
+            <p class="fees-section__item-body">Your shipment only. No co-mingled inventory, no shared loads.</p>
+          </div>
 
-    <!-- What's Included -->
-    <section>
-      <h2>What&rsquo;s included</h2>
-      <p>Every cross-country move includes:</p>
-      <ul>
-        <li>Dedicated truck for your shipment only, no co-mingled inventory</li>
-        <li>Binding quote: total price, weight allowance, and delivery window locked in</li>
-        <li>Furniture blankets for wood and upholstered pieces</li>
-        <li>Shrink wrap for mattresses and soft goods</li>
-        <li>Standard dollies, straps, and hand tools</li>
-        <li>Loading at origin, transit, unloading at destination</li>
-        <li>Same crew handling pickup and delivery, or a coordinated handoff to the destination crew</li>
-        <li>Fuel and tolls (no fuel surcharge)</li>
-        <li>Standard liability coverage during transit</li>
-      </ul>
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L4 5v7c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Binding quote</h3>
+            <p class="fees-section__item-body">Total price, weight allowance, and delivery window locked in at booking.</p>
+          </div>
+
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 11V7a3 3 0 013-3h8a3 3 0 013 3v4"/>
+                <rect x="3" y="11" width="18" height="6" rx="2"/>
+                <path d="M5 17v2"/>
+                <path d="M19 17v2"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Furniture blankets</h3>
+            <p class="fees-section__item-body">Wood and upholstered pieces wrapped before they move.</p>
+          </div>
+
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 8L12 3 3 8v8l9 5 9-5V8z"/>
+                <path d="M3 8l9 5 9-5"/>
+                <path d="M12 13v8"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Shrink wrap</h3>
+            <p class="fees-section__item-body">Mattresses and soft goods sealed against transit dust and moisture.</p>
+          </div>
+
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Dollies, straps, hand tools</h3>
+            <p class="fees-section__item-body">Standard equipment for safe loading and unloading at both ends.</p>
+          </div>
+
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12h18"/>
+                <path d="M16 6l5 6-5 6"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Door-to-door service</h3>
+            <p class="fees-section__item-body">Loading at origin, transit, unloading at destination.</p>
+          </div>
+
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="8" r="3"/>
+                <circle cx="17" cy="9" r="2.5"/>
+                <path d="M3 20c0-3 3-5 6-5s6 2 6 5"/>
+                <path d="M14 20c0-2 2-4 4-4s3.5 1 3.5 4"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Same crew or coordinated handoff</h3>
+            <p class="fees-section__item-body">The team that loads handles delivery, or works directly with the destination crew.</p>
+          </div>
+
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="2" x2="12" y2="22"/>
+                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Fuel and tolls included</h3>
+            <p class="fees-section__item-body">No fuel surcharge, no toll passthroughs. What you see is what you pay.</p>
+          </div>
+
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L4 5v7c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Liability coverage</h3>
+            <p class="fees-section__item-body">Standard transit coverage on every move. Higher-value coverage available.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Pricing -->
-    <section>
-      <h2>Binding quotes by route</h2>
-      <p>Cross-country moves are priced by weight, distance, and truck space. We send a binding quote upfront. The number you see is the number on the invoice.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Route</th>
-            <th>Starting from</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Chicago to Florida</td>
-            <td>from $3,800</td>
-          </tr>
-          <tr>
-            <td>Chicago to Texas</td>
-            <td>from $4,200</td>
-          </tr>
-          <tr>
-            <td>Coast-to-coast</td>
-            <td>quoted individually</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>Coast-to-coast routes run higher than the published floors above. Your binding quote shows the exact total.</p>
-      <p>Full pricing model and route examples on the <a href="long-distance-moving.html">Long Distance Moving &rarr;</a> hub.</p>
-      <p><a href="#quote">Start a Quote</a> &mdash; get your exact price.</p>
+    <!-- ====== BINDING QUOTES BY ROUTE ====== -->
+    <section class="rate-section rate-section--offwhite">
+      <div class="container">
+        <div class="rate-section__header">
+          <span class="rate-section__eyebrow">Out of state</span>
+          <h2 class="rate-section__headline">Binding quotes by route</h2>
+          <p class="rate-section__body">Cross-country moves are priced by weight, distance, and truck space. We send a binding quote upfront. The number you see is the number on the invoice.</p>
+        </div>
+        <div class="rate-table">
+          <table class="rate-table__table">
+            <thead>
+              <tr>
+                <th>Route</th>
+                <th>Starting from</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Chicago to Florida</td>
+                <td>from $3,800</td>
+              </tr>
+              <tr>
+                <td>Chicago to Texas</td>
+                <td>from $4,200</td>
+              </tr>
+              <tr>
+                <td>Coast-to-coast</td>
+                <td>quoted individually</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="rate-section__footnote">Coast-to-coast routes run higher than the published floors above. Full pricing model and route examples on the <a href="long-distance-moving.html" class="gold-link">Long Distance Moving<span class="arrow">&rarr;</span></a> hub.</p>
+        <div class="rate-section__cta-row">
+          <a href="#quote" class="btn-primary rate-section__cta">Start a Quote<span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
     </section>
 
-    <hr>
+    <!-- ====== COMMON SCENARIOS (2x2) ====== -->
+    <section class="common-scenarios">
+      <div class="container">
+        <div class="common-scenarios__head">
+          <span class="common-scenarios__eyebrow">Real moves</span>
+          <h2 class="common-scenarios__headline">Common scenarios</h2>
+          <p class="common-scenarios__body">A few examples of how cross-country moves break down. Real ranges, not bait pricing.</p>
+        </div>
+        <div class="common-scenarios__grid">
+          <div class="common-scenarios__item">
+            <div class="common-scenarios__image">
+              <img src="images/step1.webp" alt="1-bedroom Chicago to Miami move">
+            </div>
+            <h3 class="common-scenarios__title">1-bedroom apartment, Chicago to Florida (Miami).</h3>
+            <p class="common-scenarios__copy">~4,500 lbs, dedicated truck, 4-day delivery window. <span class="common-scenarios__total">From $3,800.</span></p>
+          </div>
 
-    <!-- Common Scenarios -->
-    <section>
-      <h2>Common scenarios</h2>
-      <p>A few examples of how cross-country moves break down. Real ranges, not bait pricing.</p>
+          <div class="common-scenarios__item">
+            <div class="common-scenarios__image">
+              <img src="images/step2.webp" alt="1-bedroom Chicago to Dallas move">
+            </div>
+            <h3 class="common-scenarios__title">1-bedroom apartment, Chicago to Texas (Dallas).</h3>
+            <p class="common-scenarios__copy">~4,500 lbs, dedicated truck, 3-day delivery window. <span class="common-scenarios__total">From $4,200.</span></p>
+          </div>
 
-      <h3>1-bedroom apartment, Chicago to Florida (Miami).</h3>
-      <p>~4,500 lbs, dedicated truck, 4-day delivery window. From $3,800.</p>
+          <div class="common-scenarios__item">
+            <div class="common-scenarios__image">
+              <img src="images/step3.webp" alt="2-bedroom Chicago to Los Angeles move">
+            </div>
+            <h3 class="common-scenarios__title">2-bedroom condo, Chicago to West Coast (LA).</h3>
+            <p class="common-scenarios__copy">~7,000 lbs, dedicated truck, 6-day delivery window. <span class="common-scenarios__total">Quoted individually.</span></p>
+          </div>
 
-      <h3>1-bedroom apartment, Chicago to Texas (Dallas).</h3>
-      <p>~4,500 lbs, dedicated truck, 3-day delivery window. From $4,200.</p>
-
-      <h3>2-bedroom condo, Chicago to West Coast (LA).</h3>
-      <p>~7,000 lbs, dedicated truck, 6-day delivery window. Quoted individually based on access at both ends.</p>
-
-      <h3>3-bedroom house, Chicago to East Coast (Boston, DC).</h3>
-      <p>~10,000 lbs, dedicated truck, 4-day delivery window. Quoted individually.</p>
-
-      <p>Your binding quote shows the math for your specific route and household.</p>
+          <div class="common-scenarios__item">
+            <div class="common-scenarios__image">
+              <img src="images/hero-left.webp" alt="3-bedroom Chicago to East Coast move">
+            </div>
+            <h3 class="common-scenarios__title">3-bedroom house, Chicago to East Coast (Boston, DC).</h3>
+            <p class="common-scenarios__copy">~10,000 lbs, dedicated truck, 4-day delivery window. <span class="common-scenarios__total">Quoted individually.</span></p>
+          </div>
+        </div>
+        <div class="common-scenarios__footer">
+          <p class="common-scenarios__footnote">Your binding quote shows the math for your specific route and household.</p>
+          <a href="#quote" class="btn-primary common-scenarios__cta">Start a Quote<span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- How It Works -->
-    <section>
-      <h2>How it works</h2>
-      <ol>
-        <li><strong>Get a quote.</strong> Tell us your route and what you&rsquo;re moving.</li>
-        <li><strong>See your binding price.</strong> Total cost, weight allowance, delivery window. All locked in.</li>
-        <li><strong>We move you.</strong> Pickup day, transit, delivery. Same crew, same truck, start to finish.</li>
-      </ol>
+    <!-- ====== HOW IT WORKS ====== -->
+    <section class="how-it-works">
+      <div class="container">
+        <h2 class="how-it-works__heading">How it works</h2>
+        <div class="how-it-works__steps">
+          <div class="how-it-works__step">
+            <div class="how-it-works__image">
+              <img src="images/step1.webp" alt="Get a quote on your phone">
+              <span class="how-it-works__number">1</span>
+            </div>
+            <h3 class="how-it-works__title">Get a quote.</h3>
+            <p class="how-it-works__desc">Tell us your route and what you&rsquo;re moving.</p>
+          </div>
+          <div class="how-it-works__step">
+            <div class="how-it-works__image">
+              <img src="images/step2.webp" alt="See your binding price">
+              <span class="how-it-works__number">2</span>
+            </div>
+            <h3 class="how-it-works__title">See your binding price.</h3>
+            <p class="how-it-works__desc">Total cost, weight allowance, delivery window. All locked in.</p>
+          </div>
+          <div class="how-it-works__step">
+            <div class="how-it-works__image">
+              <img src="images/step3.webp" alt="Sparkle crew on delivery day">
+              <span class="how-it-works__number">3</span>
+            </div>
+            <h3 class="how-it-works__title">We move you.</h3>
+            <p class="how-it-works__desc">Pickup day, transit, delivery. Same crew, same truck, start to finish.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <hr>
+    <!-- ====== WHY SPARKLE FOR CROSS-COUNTRY ====== -->
+    <section class="info-section info-section--offwhite">
+      <div class="container info-section__inner info-section__inner--media info-section__inner--media-left info-section__inner--stretch">
+        <div class="info-section__media">
+          <img src="images/hero-left.webp" alt="Sparkle long-haul crew loading a dedicated truck">
+        </div>
+        <div>
+          <div class="info-section__head">
+            <span class="info-section__eyebrow">Why Sparkle</span>
+            <h2 class="info-section__headline">Why Sparkle for cross-country</h2>
+          </div>
+          <ul class="icon-list">
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="5" width="18" height="16" rx="1"/>
+                  <path d="M3 10h18M8 3v4M16 3v4"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">12 years of long-haul moves out of Chicago.</h3>
+                <p class="icon-list__body">We know the routes, the weigh stations, the seasonal traffic. The driver running your truck has done this trip before.</p>
+              </div>
+            </li>
 
-    <!-- Why Sparkle for Cross-Country -->
-    <section>
-      <h2>Why Sparkle for cross-country</h2>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L4 5v7c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Binding quote, no surprises.</h3>
+                <p class="icon-list__body">The number we send is the number on the invoice. No fuel surcharge. No weight surprises at the warehouse. No &ldquo;we hit traffic&rdquo; upcharges.</p>
+              </div>
+            </li>
 
-      <h3>12 years of long-haul moves out of Chicago.</h3>
-      <p>We know the routes, the weigh stations, the seasonal traffic. The driver running your truck has done this trip before.</p>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="6" width="14" height="11" rx="1"/>
+                  <path d="M15 9h4l3 4v4h-7V9z"/>
+                  <circle cx="6" cy="18.5" r="2"/>
+                  <circle cx="18" cy="18.5" r="2"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Dedicated truck, every time.</h3>
+                <p class="icon-list__body">Your shipment is alone on the truck. No co-mingled inventory. No risk of items ending up on a different customer&rsquo;s delivery.</p>
+              </div>
+            </li>
 
-      <h3>Binding quote, no surprises.</h3>
-      <p>The number we send is the number on the invoice. No fuel surcharge. No weight surprises at the warehouse. No &ldquo;we hit traffic&rdquo; upcharges.</p>
-
-      <h3>Dedicated truck, every time.</h3>
-      <p>Your shipment is alone on the truck. No co-mingled inventory. No risk of items ending up on a different customer&rsquo;s delivery.</p>
-
-      <h3>Real delivery windows.</h3>
-      <p>Three-day window at booking, not an open-ended &ldquo;sometime in two to three weeks.&rdquo; We hit it.</p>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M12 7v5l3 2"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Real delivery windows.</h3>
+                <p class="icon-list__body">Three-day window at booking, not an open-ended &ldquo;sometime in two to three weeks.&rdquo; We hit it.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <hr>
+    <!-- ====== RELATED SERVICES (4-up, white bg) ====== -->
+    <section class="fees-section fees-section--white">
+      <div class="container">
+        <div class="fees-section__head">
+          <span class="fees-section__eyebrow">Related services</span>
+          <h2 class="fees-section__headline">More we can do for you</h2>
+        </div>
+        <div class="fees-section__grid fees-section__grid--4col">
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 8L12 3 3 8v8l9 5 9-5V8z"/>
+                <path d="M3 8l9 5 9-5"/>
+                <path d="M12 13v8"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Packing Services</h3>
+            <p class="fees-section__item-body">Full or partial packing for long-distance moves. Quoted with the move.</p>
+          </a>
 
-    <!-- FAQ -->
-    <section>
-      <h2>FAQ</h2>
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="6" width="18" height="14" rx="1"/>
+                <path d="M3 11h18M8 6V4h8v2"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Storage Services</h3>
+            <p class="fees-section__item-body">Holding at origin or destination. Up to 30 days included free.</p>
+          </a>
 
-      <details>
-        <summary><strong>How is cross-country different from interstate moving?</strong></summary>
-        <p>Both cross state lines. Cross-country specifically means longer hauls, typically 1,500+ miles, coast-to-coast or near it. Interstate covers any state-line move, near or far. Same crew, same truck, same binding quote either way.</p>
-      </details>
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Chicago to Florida Moving</h3>
+            <p class="fees-section__item-body">Established route, regular runs, predictable timing.</p>
+          </a>
 
-      <details>
-        <summary><strong>How long does a cross-country move take?</strong></summary>
-        <p>5&ndash;8 days for coast-to-coast routes. 3&ndash;5 days for closer cross-country destinations like the East Coast or Florida. Your binding quote shows the specific window.</p>
-      </details>
-
-      <details>
-        <summary><strong>Will I have the same crew at both ends?</strong></summary>
-        <p>Most of the time, yes. The team that loads in Chicago unloads at the destination. On the longest routes (West Coast, Pacific Northwest), the driver may meet the destination crew at delivery. Either way, you have one point of contact start to finish.</p>
-      </details>
-
-      <details>
-        <summary><strong>What if I need to store some items at the destination?</strong></summary>
-        <p>We can hold your shipment at the destination for up to 30 days, billed monthly. See <a href="#">Storage Services &rarr;</a></p>
-      </details>
-
-      <details>
-        <summary><strong>Do I need to be there at pickup and delivery?</strong></summary>
-        <p>You or someone you authorize. Doesn&rsquo;t have to be the same person at both ends. The driver coordinates timing the day before each.</p>
-      </details>
-
-      <details>
-        <summary><strong>Is there an extra fee for stairs or long carries at delivery?</strong></summary>
-        <p>No. Stairs and standard carries are included.</p>
-      </details>
-
-      <details>
-        <summary><strong>What if I add or remove items between booking and pickup?</strong></summary>
-        <p>Inventory adjustments at booking are free. Adjustments after the binding quote is signed are quoted upfront. No surprises at the truck.</p>
-      </details>
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="6" width="14" height="11" rx="1"/>
+                <path d="M15 9h4l3 4v4h-7V9z"/>
+                <circle cx="6" cy="18.5" r="2"/>
+                <circle cx="18" cy="18.5" r="2"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Dedicated Truck Moving</h3>
+            <p class="fees-section__item-body">Your shipment alone on the truck. The default for every Sparkle long-distance move.</p>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Related Services -->
-    <section>
-      <h2>Related services</h2>
-
-      <h3>Packing Services</h3>
-      <p>Full or partial packing for long-distance moves. Quoted with the move.</p>
-      <p><a href="#">View Packing Services &rarr;</a></p>
-
-      <h3>Storage Services</h3>
-      <p>Holding at origin or destination. Up to 30 days included free.</p>
-      <p><a href="#">View Storage Services &rarr;</a></p>
-
-      <h3>Chicago to Florida Moving</h3>
-      <p>Established route, regular runs, predictable timing.</p>
-      <p><a href="#">View Chicago to Florida Moving &rarr;</a></p>
-
-      <h3>Dedicated Truck Moving</h3>
-      <p>Your shipment alone on the truck. The default for every Sparkle long-distance move.</p>
-      <p><a href="#">View Dedicated Truck Moving &rarr;</a></p>
+    <!-- ====== FAQ ====== -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="faq__headline">Frequently asked questions</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">How is cross-country different from interstate moving?</summary>
+            <div class="faq__answer">
+              <p>Both cross state lines. Cross-country specifically means longer hauls, typically 1,500+ miles, coast-to-coast or near it. Interstate covers any state-line move, near or far. Same crew, same truck, same binding quote either way.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">How long does a cross-country move take?</summary>
+            <div class="faq__answer">
+              <p>5&ndash;8 days for coast-to-coast routes. 3&ndash;5 days for closer cross-country destinations like the East Coast or Florida. Your binding quote shows the specific window.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Will I have the same crew at both ends?</summary>
+            <div class="faq__answer">
+              <p>Most of the time, yes. The team that loads in Chicago unloads at the destination. On the longest routes (West Coast, Pacific Northwest), the driver may meet the destination crew at delivery. Either way, you have one point of contact start to finish.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What if I need to store some items at the destination?</summary>
+            <div class="faq__answer">
+              <p>We can hold your shipment at the destination for up to 30 days, billed monthly. See <a href="#">Storage Services</a>.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do I need to be there at pickup and delivery?</summary>
+            <div class="faq__answer">
+              <p>You or someone you authorize. Doesn&rsquo;t have to be the same person at both ends. The driver coordinates timing the day before each.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Is there an extra fee for stairs or long carries at delivery?</summary>
+            <div class="faq__answer">
+              <p>No. Stairs and standard carries are included.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What if I add or remove items between booking and pickup?</summary>
+            <div class="faq__answer">
+              <p>Inventory adjustments at booking are free. Adjustments after the binding quote is signed are quoted upfront. No surprises at the truck.</p>
+            </div>
+          </details>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Closing CTA -->
-    <section>
-      <h2>Get your exact price.</h2>
-      <p>Enter your ZIPs and move details. We&rsquo;ll send a full breakdown within a few hours.</p>
-      <p><a href="#quote">Start a Quote</a></p>
-      <p>Phone: <a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
+    <!-- ====== CLOSING CTA (with two dropdowns) ====== -->
+    <section class="closing-cta">
+      <div class="container">
+        <div class="closing-cta__content">
+          <h2 class="closing-cta__headline">Get your exact price.</h2>
+          <p class="closing-cta__subline">Pick your ZIP and home size. Full breakdown within a few hours.</p>
+          <form class="closing-cta__form" action="#quote">
+            <select class="closing-cta__select" name="zip" required>
+              <option value="" disabled selected>Moving from ZIP</option>
+              <option>60601 &mdash; Chicago Loop</option>
+              <option>60201 &mdash; Evanston</option>
+              <option>60540 &mdash; Naperville</option>
+              <option>60173 &mdash; Schaumburg</option>
+              <option>60004 &mdash; Arlington Heights</option>
+              <option>60062 &mdash; Northbrook</option>
+              <option>Other ZIP</option>
+            </select>
+            <select class="closing-cta__select" name="size" required>
+              <option value="" disabled selected>Home size</option>
+              <option>Studio</option>
+              <option>1 bedroom</option>
+              <option>2 bedroom</option>
+              <option>3 bedroom</option>
+              <option>4+ bedroom</option>
+            </select>
+            <a href="#quote" class="btn-primary">Get a Quote<span class="arrow">&rarr;</span></a>
+          </form>
+          <a href="tel:+1XXXXXXXXXX" class="closing-cta__phone">(312) 555-0199</a>
+        </div>
+      </div>
     </section>
 
   </main>

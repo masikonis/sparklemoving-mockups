@@ -9,9 +9,25 @@
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-  <!-- Shared chrome only. Page sections below are unstyled on purpose: ready for design. -->
+  <!-- Shared chrome -->
   <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/components/header.css">
+
+  <!-- Reused homepage section styles -->
+  <link rel="stylesheet" href="styles/pages/home/stats-bar.css">
+  <link rel="stylesheet" href="styles/pages/home/how-it-works.css">
+  <link rel="stylesheet" href="styles/pages/home/faq.css">
+  <link rel="stylesheet" href="styles/pages/home/closing-cta.css">
+
+  <!-- Reused pricing section styles -->
+  <link rel="stylesheet" href="styles/pages/pricing/hero.css">
+  <link rel="stylesheet" href="styles/pages/pricing/rate-tables.css">
+  <link rel="stylesheet" href="styles/pages/pricing/fees.css">
+  <link rel="stylesheet" href="styles/pages/pricing/info-blocks.css">
+
+  <!-- Icon-list pattern from local-residential -->
+  <link rel="stylesheet" href="styles/pages/local-residential-moving/why-local.css">
+
   <link rel="stylesheet" href="styles/components/footer.css">
   <link rel="stylesheet" href="styles/components/modal.css">
 </head>
@@ -177,202 +193,450 @@
     </div>
   </header>
 
-  <!-- ====== NAKED PAGE CONTENT ====== -->
-  <main style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
+  <main>
 
-    <!-- Hero -->
-    <section>
-      <h1>Here&rsquo;s where we move. Chicago and 40+ suburbs.</h1>
-      <p>Same hourly rate everywhere we serve. Pick a city for the local details.</p>
-      <p><a href="#quote">Start a Quote</a> &middot; Takes about 60 seconds.</p>
-      <p>Phone: <a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
+    <!-- ====== HERO ====== -->
+    <section class="pricing-hero">
+      <div class="container pricing-hero__inner">
+        <div class="pricing-hero__content">
+          <span class="pricing-hero__eyebrow">Service Areas</span>
+          <h1 class="pricing-hero__headline">Here&rsquo;s where we move. <em>Chicago and 40+ suburbs.</em></h1>
+          <p class="pricing-hero__body">Same hourly rate everywhere we serve. Pick a city for the local details.</p>
+        </div>
+        <div class="pricing-hero__media">
+          <img src="images/hero-right.webp" alt="Sparkle Moving truck on a Chicago metro route" width="640" height="400">
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Stats Bar -->
-    <section>
-      <p>Since 2012 &middot; 10,000+ Moves &middot; Licensed &amp; Insured</p>
+    <!-- ====== STATS BAR ====== -->
+    <section class="stats-bar">
+      <div class="container">
+        <ul class="stats-bar__list">
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">2012</span>
+            <span class="stats-bar__label">Established</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">10,000+</span>
+            <span class="stats-bar__label">Moves completed</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">Licensed &amp; Insured</span>
+            <span class="stats-bar__label">Illinois CC-MC</span>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Overview -->
-    <section>
-      <p>Headquartered in Northbrook. Serving Chicago and 40+ suburbs across the metro. Local hourly rates don&rsquo;t change by city. Long distance leaves from any of them.</p>
-      <p>Pick your city below. Or start a quote and we&rsquo;ll match it.</p>
+    <!-- ====== PRICING ACROSS THE METRO ====== -->
+    <section class="rate-section">
+      <div class="container">
+        <div class="rate-section__header">
+          <span class="rate-section__eyebrow">Coverage</span>
+          <h2 class="rate-section__headline">Pricing across the metro</h2>
+          <p class="rate-section__body">Headquartered in Northbrook. Serving Chicago and 40+ suburbs across the metro. Local hourly rates don&rsquo;t change by city &mdash; the one-time travel fee adjusts for distance from HQ to your pickup. Long distance leaves from any of them.</p>
+        </div>
+        <div class="rate-section__media">
+          <img src="images/outside-logistics-retailer-warehouse-with-female-manager-using-tablet-computer-worker-loading-delivery-truck-with-cardboard-boxes-online-orders-purchases-ecommerce-goods-merchandise.jpg" alt="Sparkle crew loading a moving truck outside the Northbrook warehouse" width="1200" height="514">
+          <span class="rate-section__badge">Serving Chicago and 40+ suburbs</span>
+        </div>
+        <p class="rate-section__footnote"><strong>Local moves:</strong> hourly rates from $139, plus a one-time travel fee equal to one hour of crew time.<br><strong>Long distance:</strong> binding quote by route. Full breakdown on the <a href="pricing.html" class="gold-link">Pricing page<span class="arrow">&rarr;</span></a></p>
+        <div class="rate-section__cta-row">
+          <a href="#quote" class="btn-primary rate-section__cta">Start a Quote<span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
     </section>
 
-    <hr>
+    <!-- ====== CITIES SERVED (region cards, beige) ====== -->
+    <section class="fees-section">
+      <div class="container">
+        <div class="fees-section__head">
+          <span class="fees-section__eyebrow">By region</span>
+          <h2 class="fees-section__headline">Cities served</h2>
+          <p class="fees-section__body">Pick your city for local details. Or start a quote and we&rsquo;ll match it.</p>
+        </div>
 
-    <!-- Pricing across the metro -->
-    <section>
-      <h2>Pricing across the metro</h2>
-      <p>Local moves: hourly rates from $139, plus a one-time travel fee equal to one hour of crew time. Same rate from Chicago to Naperville to Evanston. The travel fee adjusts based on distance from our Northbrook HQ to your pickup.</p>
-      <p>Long distance: binding quote by route from any of the cities below.</p>
-      <p>Full breakdown on the <a href="pricing.html">Pricing page &rarr;</a></p>
-      <p><a href="#quote">Start a Quote</a> &mdash; get your exact price.</p>
+        <div class="fees-section__grid">
+          <div class="fees-section__item fees-section__item--static">
+            <div class="fees-section__item-image">
+              <img src="images/view-skyline-from-water-with-sun-setting-it.jpg" alt="Chicago skyline at sunset over the water">
+            </div>
+            <h3 class="fees-section__item-title fees-section__item-title--with-pin">
+              <span class="fees-section__item-pin" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              Chicago
+            </h3>
+            <ul class="fees-section__item-list">
+              <li><a href="#">Chicago &amp; city neighborhoods <span class="arrow">&rarr;</span></a></li>
+            </ul>
+          </div>
+
+          <div class="fees-section__item fees-section__item--static">
+            <div class="fees-section__item-image">
+              <img src="images/view-skyline-from-water-with-sun-setting-it.jpg" alt="Chicago skyline at sunset over the water">
+            </div>
+            <h3 class="fees-section__item-title fees-section__item-title--with-pin">
+              <span class="fees-section__item-pin" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              North Shore
+            </h3>
+            <ul class="fees-section__item-list">
+              <li><a href="evanston.html">Evanston <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Wilmette <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Winnetka <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Glencoe <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Highland Park <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Lake Forest <span class="arrow">&rarr;</span></a></li>
+            </ul>
+          </div>
+
+          <div class="fees-section__item fees-section__item--static">
+            <div class="fees-section__item-image">
+              <img src="images/view-skyline-from-water-with-sun-setting-it.jpg" alt="Chicago skyline at sunset over the water">
+            </div>
+            <h3 class="fees-section__item-title fees-section__item-title--with-pin">
+              <span class="fees-section__item-pin" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              Near North suburbs
+            </h3>
+            <ul class="fees-section__item-list">
+              <li><a href="#">Skokie <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Lincolnwood <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Park Ridge <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Niles <span class="arrow">&rarr;</span></a></li>
+            </ul>
+          </div>
+
+          <div class="fees-section__item fees-section__item--static">
+            <div class="fees-section__item-image">
+              <img src="images/view-skyline-from-water-with-sun-setting-it.jpg" alt="Chicago skyline at sunset over the water">
+            </div>
+            <h3 class="fees-section__item-title fees-section__item-title--with-pin">
+              <span class="fees-section__item-pin" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              North &amp; Northwest
+            </h3>
+            <ul class="fees-section__item-list">
+              <li><a href="#">Northbrook <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Glenview <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Deerfield <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Buffalo Grove <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Wheeling <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Northfield <span class="arrow">&rarr;</span></a></li>
+            </ul>
+          </div>
+
+          <div class="fees-section__item fees-section__item--static">
+            <div class="fees-section__item-image">
+              <img src="images/view-skyline-from-water-with-sun-setting-it.jpg" alt="Chicago skyline at sunset over the water">
+            </div>
+            <h3 class="fees-section__item-title fees-section__item-title--with-pin">
+              <span class="fees-section__item-pin" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              Northwest suburbs
+            </h3>
+            <ul class="fees-section__item-list">
+              <li><a href="#">Schaumburg <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Arlington Heights <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Mount Prospect <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Palatine <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Hoffman Estates <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Rolling Meadows <span class="arrow">&rarr;</span></a></li>
+            </ul>
+          </div>
+
+          <div class="fees-section__item fees-section__item--static">
+            <div class="fees-section__item-image">
+              <img src="images/view-skyline-from-water-with-sun-setting-it.jpg" alt="Chicago skyline at sunset over the water">
+            </div>
+            <h3 class="fees-section__item-title fees-section__item-title--with-pin">
+              <span class="fees-section__item-pin" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              West suburbs
+            </h3>
+            <ul class="fees-section__item-list">
+              <li><a href="#">Oak Park <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">River Forest <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Elmhurst <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Forest Park <span class="arrow">&rarr;</span></a></li>
+            </ul>
+          </div>
+
+          <div class="fees-section__item fees-section__item--static">
+            <div class="fees-section__item-image">
+              <img src="images/view-skyline-from-water-with-sun-setting-it.jpg" alt="Chicago skyline at sunset over the water">
+            </div>
+            <h3 class="fees-section__item-title fees-section__item-title--with-pin">
+              <span class="fees-section__item-pin" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              DuPage County
+            </h3>
+            <ul class="fees-section__item-list">
+              <li><a href="#">Naperville <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Wheaton <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Downers Grove <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Lombard <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Glen Ellyn <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Hinsdale <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Oak Brook <span class="arrow">&rarr;</span></a></li>
+            </ul>
+          </div>
+
+          <div class="fees-section__item fees-section__item--static">
+            <div class="fees-section__item-image">
+              <img src="images/view-skyline-from-water-with-sun-setting-it.jpg" alt="Chicago skyline at sunset over the water">
+            </div>
+            <h3 class="fees-section__item-title fees-section__item-title--with-pin">
+              <span class="fees-section__item-pin" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              Far west
+            </h3>
+            <ul class="fees-section__item-list">
+              <li><a href="#">Aurora <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">St. Charles <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Geneva <span class="arrow">&rarr;</span></a></li>
+            </ul>
+          </div>
+
+          <div class="fees-section__item fees-section__item--static">
+            <div class="fees-section__item-image">
+              <img src="images/view-skyline-from-water-with-sun-setting-it.jpg" alt="Chicago skyline at sunset over the water">
+            </div>
+            <h3 class="fees-section__item-title fees-section__item-title--with-pin">
+              <span class="fees-section__item-pin" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              South suburbs
+            </h3>
+            <ul class="fees-section__item-list">
+              <li><a href="#">Orland Park <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Tinley Park <span class="arrow">&rarr;</span></a></li>
+              <li><a href="#">Oak Lawn <span class="arrow">&rarr;</span></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="fees-section__footnote"><strong>Don&rsquo;t see your city?</strong> We take jobs outside this list at a custom travel fee. Ask when you book.</p>
+        <div class="rate-section__cta-row">
+          <a href="#quote" class="btn-primary rate-section__cta">Start a Quote<span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Cities served -->
-    <section>
-      <h2>Cities served</h2>
-
-      <h3>Chicago and the city neighborhoods</h3>
-      <p><a href="#">Chicago &rarr;</a></p>
-
-      <h3>North Shore</h3>
-      <p>
-        <a href="evanston.html">Evanston &rarr;</a> &middot;
-        <a href="#">Wilmette &rarr;</a> &middot;
-        <a href="#">Winnetka &rarr;</a> &middot;
-        <a href="#">Glencoe &rarr;</a> &middot;
-        <a href="#">Highland Park &rarr;</a> &middot;
-        <a href="#">Lake Forest &rarr;</a>
-      </p>
-
-      <h3>Near North suburbs</h3>
-      <p>
-        <a href="#">Skokie &rarr;</a> &middot;
-        <a href="#">Lincolnwood &rarr;</a> &middot;
-        <a href="#">Park Ridge &rarr;</a> &middot;
-        <a href="#">Niles &rarr;</a>
-      </p>
-
-      <h3>North &amp; Northwest</h3>
-      <p>
-        <a href="#">Northbrook &rarr;</a> &middot;
-        <a href="#">Glenview &rarr;</a> &middot;
-        <a href="#">Deerfield &rarr;</a> &middot;
-        <a href="#">Buffalo Grove &rarr;</a> &middot;
-        <a href="#">Wheeling &rarr;</a> &middot;
-        <a href="#">Northfield &rarr;</a>
-      </p>
-
-      <h3>Northwest suburbs</h3>
-      <p>
-        <a href="#">Schaumburg &rarr;</a> &middot;
-        <a href="#">Arlington Heights &rarr;</a> &middot;
-        <a href="#">Mount Prospect &rarr;</a> &middot;
-        <a href="#">Palatine &rarr;</a> &middot;
-        <a href="#">Hoffman Estates &rarr;</a> &middot;
-        <a href="#">Rolling Meadows &rarr;</a>
-      </p>
-
-      <h3>West suburbs</h3>
-      <p>
-        <a href="#">Oak Park &rarr;</a> &middot;
-        <a href="#">River Forest &rarr;</a> &middot;
-        <a href="#">Elmhurst &rarr;</a> &middot;
-        <a href="#">Forest Park &rarr;</a>
-      </p>
-
-      <h3>DuPage County</h3>
-      <p>
-        <a href="#">Naperville &rarr;</a> &middot;
-        <a href="#">Wheaton &rarr;</a> &middot;
-        <a href="#">Downers Grove &rarr;</a> &middot;
-        <a href="#">Lombard &rarr;</a> &middot;
-        <a href="#">Glen Ellyn &rarr;</a> &middot;
-        <a href="#">Hinsdale &rarr;</a> &middot;
-        <a href="#">Oak Brook &rarr;</a>
-      </p>
-
-      <h3>Far west</h3>
-      <p>
-        <a href="#">Aurora &rarr;</a> &middot;
-        <a href="#">St. Charles &rarr;</a> &middot;
-        <a href="#">Geneva &rarr;</a>
-      </p>
-
-      <h3>South suburbs</h3>
-      <p>
-        <a href="#">Orland Park &rarr;</a> &middot;
-        <a href="#">Tinley Park &rarr;</a> &middot;
-        <a href="#">Oak Lawn &rarr;</a>
-      </p>
-
-      <p>Don&rsquo;t see your city? We take jobs outside this list at a custom travel fee. Ask when you book.</p>
+    <!-- ====== HOW IT WORKS ====== -->
+    <section class="how-it-works">
+      <div class="container">
+        <h2 class="how-it-works__heading">How it works</h2>
+        <div class="how-it-works__steps">
+          <div class="how-it-works__step">
+            <div class="how-it-works__image">
+              <img src="images/step1.webp" alt="Get a quote on your phone">
+              <span class="how-it-works__number">1</span>
+            </div>
+            <h3 class="how-it-works__title">Get a quote.</h3>
+            <p class="how-it-works__desc">Tell us your move details. Takes about 60 seconds.</p>
+          </div>
+          <div class="how-it-works__step">
+            <div class="how-it-works__image">
+              <img src="images/step2.webp" alt="See your price breakdown">
+              <span class="how-it-works__number">2</span>
+            </div>
+            <h3 class="how-it-works__title">See your price.</h3>
+            <p class="how-it-works__desc">We send a breakdown: crew size, hours, total.</p>
+          </div>
+          <div class="how-it-works__step">
+            <div class="how-it-works__image">
+              <img src="images/step3.webp" alt="Sparkle crew moving day">
+              <span class="how-it-works__number">3</span>
+            </div>
+            <h3 class="how-it-works__title">We move you.</h3>
+            <p class="how-it-works__desc">Crew arrives on schedule, handles your move start to finish.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <hr>
+    <!-- ====== WHY SPARKLE ACROSS THE CHICAGO METRO ====== -->
+    <section class="info-section info-section--offwhite">
+      <div class="container info-section__inner info-section__inner--media info-section__inner--media-left info-section__inner--stretch">
+        <div class="info-section__media">
+          <img src="images/hero-left.webp" alt="Sparkle Moving truck heading out from Northbrook HQ">
+        </div>
+        <div>
+          <div class="info-section__head">
+            <span class="info-section__eyebrow">Why Sparkle</span>
+            <h2 class="info-section__headline">Why Sparkle across the Chicago metro</h2>
+          </div>
+          <ul class="icon-list">
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="2" x2="12" y2="22"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Same rate, anywhere we go.</h3>
+                <p class="icon-list__body">No zone surcharge for far-out suburbs. The hourly rate is the same in Chicago, Naperville, and Evanston. Travel fee adjusts for distance, nothing else.</p>
+              </div>
+            </li>
 
-    <!-- How It Works -->
-    <section>
-      <h2>How it works</h2>
-      <ol>
-        <li><strong>Get a quote.</strong> Tell us your move details. Takes about 60 seconds.</li>
-        <li><strong>See your price.</strong> We send a breakdown: crew size, hours, total.</li>
-        <li><strong>We move you.</strong> Crew arrives on schedule, handles your move start to finish.</li>
-      </ol>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Northbrook HQ, central dispatch.</h3>
+                <p class="icon-list__body">Trucks leave from one place, ten miles north of the city. Most North Shore and Northwest suburbs are inside a 30-minute drive.</p>
+              </div>
+            </li>
+
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L4 5v7c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Local logistics handled.</h3>
+                <p class="icon-list__body">Building COIs, freight elevator bookings, permit parking, HOA paperwork. The requirements vary by city. We know them.</p>
+              </div>
+            </li>
+
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="6" width="14" height="11" rx="1"/>
+                  <path d="M15 9h4l3 4v4h-7V9z"/>
+                  <circle cx="6" cy="18.5" r="2"/>
+                  <circle cx="18" cy="18.5" r="2"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Long distance from any of them.</h3>
+                <p class="icon-list__body">Pickup from any city on the list, binding quote by route, dedicated truck. No re-routing through a depot.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Why Sparkle across the Chicago metro -->
-    <section>
-      <h2>Why Sparkle across the Chicago metro</h2>
-
-      <h3>Same rate, anywhere we go.</h3>
-      <p>No zone surcharge for far-out suburbs. The hourly rate is the same in Chicago, Naperville, and Evanston. Travel fee adjusts for distance, nothing else.</p>
-
-      <h3>Northbrook HQ, central dispatch.</h3>
-      <p>Trucks leave from one place, ten miles north of the city. Most North Shore and Northwest suburbs are inside a 30-minute drive.</p>
-
-      <h3>Local logistics handled.</h3>
-      <p>Building COIs, freight elevator bookings, permit parking, HOA paperwork. The requirements vary by city. We know them.</p>
-
-      <h3>Long distance from any of them.</h3>
-      <p>Pickup from any city on the list, binding quote by route, dedicated truck. No re-routing through a depot.</p>
+    <!-- ====== FAQ ====== -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="faq__headline">Frequently asked questions</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">Do you charge more for moves in farther suburbs?</summary>
+            <div class="faq__answer">
+              <p>No. The hourly rate is the same everywhere we serve. The one-time travel fee scales with distance from our Northbrook HQ to your pickup and back.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">How is the travel fee calculated?</summary>
+            <div class="faq__answer">
+              <p>One flat charge equal to one hour of crew time at your hourly rate. Covers drive time to pickup and from your destination back to base. Billed once, not each way.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What if I&rsquo;m moving between two suburbs you serve?</summary>
+            <div class="faq__answer">
+              <p>Same crew handles pickup at one and delivery at the other. Hourly billing covers travel between them.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do you serve downtown Chicago and the high-rises?</summary>
+            <div class="faq__answer">
+              <p>Yes. COIs, freight elevator bookings, and dock scheduling are handled by us, not you.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Where are your trucks dispatched from?</summary>
+            <div class="faq__answer">
+              <p>Northbrook, IL. Centrally located between the North Shore and the Northwest suburbs.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What if my city isn&rsquo;t on the list?</summary>
+            <div class="faq__answer">
+              <p>We take jobs outside the list at a custom travel fee, depending on distance. Ask when you book.</p>
+            </div>
+          </details>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- FAQ -->
-    <section>
-      <h2>FAQ</h2>
-
-      <details>
-        <summary><strong>Do you charge more for moves in farther suburbs?</strong></summary>
-        <p>No. The hourly rate is the same everywhere we serve. The one-time travel fee scales with distance from our Northbrook HQ to your pickup and back.</p>
-      </details>
-
-      <details>
-        <summary><strong>How is the travel fee calculated?</strong></summary>
-        <p>One flat charge equal to one hour of crew time at your hourly rate. Covers drive time to pickup and from your destination back to base. Billed once, not each way.</p>
-      </details>
-
-      <details>
-        <summary><strong>What if I&rsquo;m moving between two suburbs you serve?</strong></summary>
-        <p>Same crew handles pickup at one and delivery at the other. Hourly billing covers travel between them.</p>
-      </details>
-
-      <details>
-        <summary><strong>Do you serve downtown Chicago and the high-rises?</strong></summary>
-        <p>Yes. COIs, freight elevator bookings, and dock scheduling are handled by us, not you.</p>
-      </details>
-
-      <details>
-        <summary><strong>Where are your trucks dispatched from?</strong></summary>
-        <p>Northbrook, IL. Centrally located between the North Shore and the Northwest suburbs.</p>
-      </details>
-
-      <details>
-        <summary><strong>What if my city isn&rsquo;t on the list?</strong></summary>
-        <p>We take jobs outside the list at a custom travel fee, depending on distance. Ask when you book.</p>
-      </details>
-    </section>
-
-    <hr>
-
-    <!-- Closing CTA -->
-    <section>
-      <h2>Get your exact price.</h2>
-      <p>Enter your ZIPs and move details. We&rsquo;ll send a full breakdown within a few hours.</p>
-      <p><a href="#quote">Start a Quote</a></p>
-      <p>Phone: <a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
+    <!-- ====== CLOSING CTA (with two dropdowns) ====== -->
+    <section class="closing-cta">
+      <div class="container">
+        <div class="closing-cta__content">
+          <h2 class="closing-cta__headline">Get your exact price.</h2>
+          <p class="closing-cta__subline">Pick your ZIP and home size. Full breakdown within a few hours.</p>
+          <form class="closing-cta__form" action="#quote">
+            <select class="closing-cta__select" name="zip" required>
+              <option value="" disabled selected>Moving from ZIP</option>
+              <option>60601 &mdash; Chicago Loop</option>
+              <option>60201 &mdash; Evanston</option>
+              <option>60540 &mdash; Naperville</option>
+              <option>60173 &mdash; Schaumburg</option>
+              <option>60004 &mdash; Arlington Heights</option>
+              <option>60062 &mdash; Northbrook</option>
+              <option>Other ZIP</option>
+            </select>
+            <select class="closing-cta__select" name="size" required>
+              <option value="" disabled selected>Home size</option>
+              <option>Studio</option>
+              <option>1 bedroom</option>
+              <option>2 bedroom</option>
+              <option>3 bedroom</option>
+              <option>4+ bedroom</option>
+            </select>
+            <a href="#quote" class="btn-primary">Get a Quote<span class="arrow">&rarr;</span></a>
+          </form>
+          <a href="tel:+1XXXXXXXXXX" class="closing-cta__phone">(312) 555-0199</a>
+        </div>
+      </div>
     </section>
 
   </main>

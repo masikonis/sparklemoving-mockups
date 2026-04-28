@@ -90,6 +90,23 @@
   flex-shrink: 0;
 }
 
+/* Full-bleed image at the top of a card (offsets the card's 32×28 padding) */
+.fees-section__item-image {
+  margin: -32px -28px 6px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-navy-05);
+}
+
+.fees-section__item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .fees-section__item-icon svg {
   width: 24px;
   height: 24px;
@@ -104,6 +121,34 @@
   letter-spacing: -0.005em;
 }
 
+/* When the card title has a leading icon (e.g. map pin on the locations page) */
+.fees-section__item-title--with-pin {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+}
+
+.fees-section__item-pin {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: var(--color-gold-15);
+  color: var(--color-gold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fees-section__item-pin svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .fees-section__item-body {
   font-family: var(--font-body);
   font-size: 15px;
@@ -114,6 +159,57 @@
 .fees-section__item-body a {
   color: var(--color-gold);
   font-weight: 500;
+}
+
+/* Stacked link list inside a card (used for the locations page region cards) */
+.fees-section__item-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.fees-section__item-list a {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-navy);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.15s ease;
+}
+
+.fees-section__item-list a:hover {
+  color: var(--color-gold);
+}
+
+.fees-section__item-list a .arrow {
+  color: var(--color-navy-60);
+  font-size: 12px;
+  transition: color 0.15s ease;
+}
+
+.fees-section__item-list a:hover .arrow {
+  color: var(--color-gold);
+}
+
+/* Static card variant: no hover lift (when the card itself isn't a link) */
+.fees-section__item--static:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Centered footnote below the card grid */
+.fees-section__footnote {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-navy-60);
+  text-align: center;
+  margin: var(--space-lg) auto 0;
+  max-width: 760px;
 }
 
 /* ---------- Responsive ---------- */

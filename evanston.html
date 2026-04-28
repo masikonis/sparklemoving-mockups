@@ -9,9 +9,25 @@
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-  <!-- Shared chrome only. Page sections below are unstyled on purpose: ready for design. -->
+  <!-- Shared chrome -->
   <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/components/header.css">
+
+  <!-- Reused homepage section styles -->
+  <link rel="stylesheet" href="styles/pages/home/stats-bar.css">
+  <link rel="stylesheet" href="styles/pages/home/how-it-works.css">
+  <link rel="stylesheet" href="styles/pages/home/faq.css">
+  <link rel="stylesheet" href="styles/pages/home/closing-cta.css">
+
+  <!-- Reused pricing section styles -->
+  <link rel="stylesheet" href="styles/pages/pricing/hero.css">
+  <link rel="stylesheet" href="styles/pages/pricing/rate-tables.css">
+  <link rel="stylesheet" href="styles/pages/pricing/fees.css">
+  <link rel="stylesheet" href="styles/pages/pricing/info-blocks.css">
+
+  <!-- Icon-list pattern from local-residential -->
+  <link rel="stylesheet" href="styles/pages/local-residential-moving/why-local.css">
+
   <link rel="stylesheet" href="styles/components/footer.css">
   <link rel="stylesheet" href="styles/components/modal.css">
 </head>
@@ -177,202 +193,445 @@
     </div>
   </header>
 
-  <!-- ====== NAKED PAGE CONTENT ====== -->
-  <main style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
+  <main>
 
-    <!-- Hero -->
-    <section>
-      <h1>Evanston movers. Real prices, local know-how.</h1>
-      <p>Same hourly rate as the rest of the metro. Building permits, COIs, and elevator bookings handled by us.</p>
-      <p><a href="#quote">Start a Quote</a> &middot; Takes about 60 seconds.</p>
-      <p>Phone: <a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
+    <!-- ====== HERO ====== -->
+    <section class="pricing-hero">
+      <div class="container pricing-hero__inner">
+        <div class="pricing-hero__content">
+          <span class="pricing-hero__eyebrow">Evanston</span>
+          <h1 class="pricing-hero__headline">Evanston movers. <em>Real prices,</em> local know-how.</h1>
+          <p class="pricing-hero__body">Same hourly rate as the rest of the metro. Building permits, COIs, and elevator bookings handled by us.</p>
+        </div>
+        <div class="pricing-hero__media">
+          <img src="images/hero-right.webp" alt="Sparkle Moving crew on a job in Evanston" width="640" height="400">
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Stats Bar -->
-    <section>
-      <p>Since 2012 &middot; 10,000+ Moves &middot; Licensed &amp; Insured</p>
+    <!-- ====== STATS BAR ====== -->
+    <section class="stats-bar">
+      <div class="container">
+        <ul class="stats-bar__list">
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">2012</span>
+            <span class="stats-bar__label">Established</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">10,000+</span>
+            <span class="stats-bar__label">Moves completed</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">Licensed &amp; Insured</span>
+            <span class="stats-bar__label">Illinois CC-MC</span>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Sparkle in Evanston -->
-    <section>
-      <h2>Sparkle in Evanston</h2>
-      <p>Evanston is one of our most-moved cities. Lakefront high-rises, the Northwestern campus, single-family blocks west of Ridge. We know the neighborhoods, the buildings, and the parking quirks. Same crews dispatch from our Northbrook HQ, ten miles out.</p>
+    <!-- ====== SPARKLE IN EVANSTON (intro, image left + content right) ====== -->
+    <section class="info-section">
+      <div class="container info-section__inner info-section__inner--media info-section__inner--media-left">
+        <div class="info-section__media info-section__media--square">
+          <img src="images/hero-right.webp" alt="Sparkle Moving crew working in Evanston">
+        </div>
+        <div>
+          <div class="info-section__head">
+            <span class="info-section__eyebrow">Local know-how</span>
+            <h2 class="info-section__headline">Sparkle in Evanston</h2>
+            <p class="info-section__body">Evanston is one of our most-moved cities. Lakefront high-rises, the Northwestern campus, single-family blocks west of Ridge. We know the neighborhoods, the buildings, and the parking quirks. Same crews dispatch from our Northbrook HQ, ten miles out.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Pricing -->
-    <section>
-      <h2>Hourly rates by crew size</h2>
-      <p>Local moves are billed hourly, from the crew&rsquo;s arrival to the last item placed. Same rates in Evanston as the rest of the Chicago metro.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Crew size</th>
-            <th>Hourly rate</th>
-            <th>Minimum</th>
-            <th>Typical home</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2 movers, 1 truck</td>
-            <td>$139/hr</td>
-            <td>2 hours</td>
-            <td>Studio, 1-bedroom</td>
-          </tr>
-          <tr>
-            <td>3 movers, 1 truck</td>
-            <td>$169/hr</td>
-            <td>3 hours</td>
-            <td>2-bedroom</td>
-          </tr>
-          <tr>
-            <td>4 movers, 1&ndash;2 trucks</td>
-            <td>$199/hr</td>
-            <td>3 hours</td>
-            <td>3+ bedroom</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>Plus a one-time travel fee equal to one hour of crew time. No zone surcharge for Evanston.</p>
-      <p>Full fees, add-ons, and a sample bill on the <a href="pricing.html">Pricing page &rarr;</a></p>
-      <p><a href="#quote">Start a Quote</a> &mdash; get your exact price.</p>
+    <!-- ====== HOURLY RATES BY CREW SIZE ====== -->
+    <section class="rate-section rate-section--offwhite">
+      <div class="container">
+        <div class="rate-section__header">
+          <span class="rate-section__eyebrow">Local moves</span>
+          <h2 class="rate-section__headline">Hourly rates by crew size</h2>
+          <p class="rate-section__body">Local moves are billed hourly, from the crew&rsquo;s arrival to the last item placed. Same rates in Evanston as the rest of the Chicago metro.</p>
+        </div>
+        <div class="rate-table">
+          <table class="rate-table__table">
+            <thead>
+              <tr>
+                <th>Crew size</th>
+                <th>Hourly rate</th>
+                <th>Minimum</th>
+                <th>Typical home</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2 movers, 1 truck</td>
+                <td>$139/hr</td>
+                <td>2 hours</td>
+                <td>Studio, 1-bedroom</td>
+              </tr>
+              <tr>
+                <td>3 movers, 1 truck</td>
+                <td>$169/hr</td>
+                <td>3 hours</td>
+                <td>2-bedroom</td>
+              </tr>
+              <tr>
+                <td>4 movers, 1&ndash;2 trucks</td>
+                <td>$199/hr</td>
+                <td>3 hours</td>
+                <td>3+ bedroom</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="rate-section__footnote">Plus a one-time travel fee equal to one hour of crew time. No zone surcharge for Evanston. Full fees, add-ons, and a sample bill on the <a href="pricing.html" class="gold-link">Pricing page<span class="arrow">&rarr;</span></a></p>
+        <div class="rate-section__cta-row">
+          <a href="#quote" class="btn-primary rate-section__cta">Start a Quote<span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
     </section>
 
-    <hr>
+    <!-- ====== SERVICES IN EVANSTON ====== -->
+    <section class="fees-section fees-section--white">
+      <div class="container">
+        <div class="fees-section__head">
+          <span class="fees-section__eyebrow">Service breakdown</span>
+          <h2 class="fees-section__headline">Services in Evanston</h2>
+        </div>
+        <div class="fees-section__grid">
+          <a href="residential-moving.html" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 11l9-7 9 7"/>
+                <path d="M5 10v10h14V10"/>
+                <path d="M10 20v-6h4v6"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Residential Moving</h3>
+            <p class="fees-section__item-body">Houses, apartments, condos, and high-rises across Evanston. Same hourly rates as the rest of the metro.</p>
+          </a>
 
-    <!-- Services in Evanston -->
-    <section>
-      <h2>Services in Evanston</h2>
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="1"/>
+                <path d="M9 9h2M13 9h2M9 13h2M13 13h2M9 17h2M13 17h2"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Commercial Moving</h3>
+            <p class="fees-section__item-body">Office relocations along Davis, Sherman, and the downtown business district. After-hours and weekend pickups available.</p>
+          </a>
 
-      <h3>Residential Moving</h3>
-      <p>Houses, apartments, condos, and high-rises across Evanston. Same hourly rates as the rest of the metro.</p>
-      <p><a href="residential-moving.html">View Residential Moving &rarr;</a></p>
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 6h18"/>
+                <path d="M8 6V4h8v2"/>
+                <path d="M5 6l1 14a2 2 0 002 2h8a2 2 0 002-2l1-14"/>
+                <path d="M10 11v6M14 11v6"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Junk Removal</h3>
+            <p class="fees-section__item-body">Furniture, appliances, mattresses, full cleanouts. Donation drop-off included where possible.</p>
+          </a>
 
-      <h3>Commercial Moving</h3>
-      <p>Office relocations along Davis, Sherman, and the downtown business district. After-hours and weekend pickups available.</p>
-      <p><a href="#">View Commercial Moving &rarr;</a></p>
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Labor Services</h3>
+            <p class="fees-section__item-body">Loading, unloading, in-home rearranging. Useful for PODs, rentals, and partial moves.</p>
+          </a>
 
-      <h3>Junk Removal</h3>
-      <p>Furniture, appliances, mattresses, full cleanouts. Donation drop-off included where possible.</p>
-      <p><a href="#">View Junk Removal &rarr;</a></p>
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 8L12 3 3 8v8l9 5 9-5V8z"/>
+                <path d="M3 8l9 5 9-5"/>
+                <path d="M12 13v8"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Packing Services</h3>
+            <p class="fees-section__item-body">Full or partial packing in Evanston homes and apartments. Boxes and supplies available.</p>
+          </a>
 
-      <h3>Labor Services</h3>
-      <p>Loading, unloading, in-home rearranging. Useful for PODs, rentals, and partial moves.</p>
-      <p><a href="#">View Labor Services &rarr;</a></p>
-
-      <h3>Packing Services</h3>
-      <p>Full or partial packing in Evanston homes and apartments. Boxes and supplies available.</p>
-      <p><a href="#">View Packing Services &rarr;</a></p>
-
-      <h3>Storage Services</h3>
-      <p>Short-term during a move (up to 30 days included free), or long-term in our Northbrook warehouse.</p>
-      <p><a href="#">View Storage Services &rarr;</a></p>
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="6" width="18" height="14" rx="1"/>
+                <path d="M3 11h18M8 6V4h8v2"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Storage Services</h3>
+            <p class="fees-section__item-body">Short-term during a move (up to 30 days included free), or long-term in our Northbrook warehouse.</p>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <hr>
+    <!-- ====== LOCAL LOGISTICS (centered head, image left + icon-list right) ====== -->
+    <section class="info-section info-section--offwhite">
+      <div class="container">
+        <div class="info-section__head info-section__head--centered">
+          <span class="info-section__eyebrow">Local logistics</span>
+          <h2 class="info-section__headline">What it takes to move in Evanston</h2>
+          <p class="info-section__body">A few neighborhood details we already handle, so you don&rsquo;t have to.</p>
+        </div>
+        <div class="info-section__inner info-section__inner--media info-section__inner--media-left info-section__inner--stretch">
+          <div class="info-section__media">
+            <img src="images/step2.webp" alt="Sparkle crew working in an Evanston neighborhood">
+          </div>
+          <div>
+            <ul class="icon-list">
+          <li class="icon-list__item">
+            <span class="icon-list__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="3" width="16" height="18" rx="1"/>
+                <path d="M8 7h8M8 11h8M8 15h5"/>
+              </svg>
+            </span>
+            <div>
+              <h3 class="icon-list__title">Buildings and COIs.</h3>
+              <p class="icon-list__body">Most Evanston multi-unit buildings require a certificate of insurance to use the freight elevator. We file the COI directly with the building before move day.</p>
+            </div>
+          </li>
 
-    <!-- Local logistics -->
-    <section>
-      <h2>Local logistics</h2>
+          <li class="icon-list__item">
+            <span class="icon-list__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                <path d="M9 16V8h4a3 3 0 010 6h-4"/>
+              </svg>
+            </span>
+            <div>
+              <h3 class="icon-list__title">Permit parking.</h3>
+              <p class="icon-list__body">Many residential streets in Evanston are sticker-permit zones. We check the rules for your block and arrange permitted parking when needed, so the truck has a legal spot the day of.</p>
+            </div>
+          </li>
 
-      <h3>Buildings and COIs.</h3>
-      <p>Most Evanston multi-unit buildings require a certificate of insurance to use the freight elevator. We file the COI directly with the building before move day.</p>
+          <li class="icon-list__item">
+            <span class="icon-list__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10L12 4 2 10l10 6 10-6z"/>
+                <path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/>
+              </svg>
+            </span>
+            <div>
+              <h3 class="icon-list__title">Northwestern moves.</h3>
+              <p class="icon-list__body">Move-in week in late August and move-out in mid-June fill up fast. Book three weeks ahead for those dates if possible. Same-day university moves are doable when crew is available.</p>
+            </div>
+          </li>
 
-      <h3>Permit parking.</h3>
-      <p>Many residential streets in Evanston are sticker-permit zones. We check the rules for your block and arrange permitted parking when needed, so the truck has a legal spot the day of.</p>
+          <li class="icon-list__item">
+            <span class="icon-list__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="6" width="8" height="15"/>
+                <rect x="13" y="3" width="8" height="18"/>
+                <path d="M5 10h4M5 14h4M5 18h4M15 7h4M15 11h4M15 15h4M15 19h4"/>
+              </svg>
+            </span>
+            <div>
+              <h3 class="icon-list__title">Lakefront high-rises.</h3>
+              <p class="icon-list__body">Sherman Plaza, the Optima buildings, and similar high-rises run on scheduled elevator slots and tight loading docks. We coordinate the slot with the building, not the customer.</p>
+            </div>
+          </li>
 
-      <h3>Northwestern moves.</h3>
-      <p>Move-in week in late August and move-out in mid-June fill up fast. Book three weeks ahead for those dates if possible. Same-day university moves are doable when crew is available.</p>
-
-      <h3>Lakefront high-rises.</h3>
-      <p>Sherman Plaza, the Optima buildings, and similar high-rises run on scheduled elevator slots and tight loading docks. We coordinate the slot with the building, not the customer.</p>
-
-      <h3>One-way streets and tight blocks.</h3>
-      <p>Central Evanston has narrow side streets and several one-ways. The crew does a route check before dispatch so the truck arrives the right way.</p>
+          <li class="icon-list__item">
+            <span class="icon-list__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12h18"/>
+                <path d="M16 6l5 6-5 6"/>
+                <path d="M8 18l-5-6 5-6"/>
+              </svg>
+            </span>
+            <div>
+              <h3 class="icon-list__title">One-way streets and tight blocks.</h3>
+              <p class="icon-list__body">Central Evanston has narrow side streets and several one-ways. The crew does a route check before dispatch so the truck arrives the right way.</p>
+            </div>
+          </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- How It Works -->
-    <section>
-      <h2>How it works</h2>
-      <ol>
-        <li><strong>Get a quote.</strong> Tell us your move details. Takes about 60 seconds.</li>
-        <li><strong>See your price.</strong> We send a breakdown: crew size, hours, total.</li>
-        <li><strong>We move you.</strong> Crew arrives on schedule, handles your move start to finish.</li>
-      </ol>
+    <!-- ====== HOW IT WORKS ====== -->
+    <section class="how-it-works">
+      <div class="container">
+        <h2 class="how-it-works__heading">How it works</h2>
+        <div class="how-it-works__steps">
+          <div class="how-it-works__step">
+            <div class="how-it-works__image">
+              <img src="images/step1.webp" alt="Get a quote on your phone">
+              <span class="how-it-works__number">1</span>
+            </div>
+            <h3 class="how-it-works__title">Get a quote.</h3>
+            <p class="how-it-works__desc">Tell us your move details. Takes about 60 seconds.</p>
+          </div>
+          <div class="how-it-works__step">
+            <div class="how-it-works__image">
+              <img src="images/step2.webp" alt="See your price breakdown">
+              <span class="how-it-works__number">2</span>
+            </div>
+            <h3 class="how-it-works__title">See your price.</h3>
+            <p class="how-it-works__desc">We send a breakdown: crew size, hours, total.</p>
+          </div>
+          <div class="how-it-works__step">
+            <div class="how-it-works__image">
+              <img src="images/step3.webp" alt="Sparkle crew moving day">
+              <span class="how-it-works__number">3</span>
+            </div>
+            <h3 class="how-it-works__title">We move you.</h3>
+            <p class="how-it-works__desc">Crew arrives on schedule, handles your move start to finish.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <hr>
+    <!-- ====== WHY SPARKLE IN EVANSTON ====== -->
+    <section class="info-section info-section--offwhite">
+      <div class="container info-section__inner info-section__inner--media info-section__inner--media-left info-section__inner--stretch">
+        <div class="info-section__media">
+          <img src="images/hero-left.webp" alt="Sparkle Moving truck heading to an Evanston job">
+        </div>
+        <div>
+          <div class="info-section__head">
+            <span class="info-section__eyebrow">Why Sparkle</span>
+            <h2 class="info-section__headline">Why Sparkle in Evanston</h2>
+          </div>
+          <ul class="icon-list">
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">10 miles from our Northbrook HQ.</h3>
+                <p class="icon-list__body">Trucks reach Evanston in under 30 minutes. Faster dispatch, lower travel fee than crews coming from the South Side or far west.</p>
+              </div>
+            </li>
 
-    <!-- Why Sparkle in Evanston -->
-    <section>
-      <h2>Why Sparkle in Evanston</h2>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.1 8.3 22 9.3 17 14.1 18.2 21 12 17.8 5.8 21 7 14.1 2 9.3 8.9 8.3 12 2"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">500+ Evanston moves and counting.</h3>
+                <p class="icon-list__body">[Placeholder &mdash; confirm number with Mike.] The crews have done the buildings, the streets, and the campus blocks before.</p>
+              </div>
+            </li>
 
-      <h3>10 miles from our Northbrook HQ.</h3>
-      <p>Trucks reach Evanston in under 30 minutes. Faster dispatch, lower travel fee than crews coming from the South Side or far west.</p>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="2" x2="12" y2="22"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">No zone surcharge.</h3>
+                <p class="icon-list__body">Same hourly rate as Chicago. Travel fee covers the drive, nothing more.</p>
+              </div>
+            </li>
 
-      <h3>500+ Evanston moves and counting.</h3>
-      <p>[Placeholder &mdash; confirm number with Mike.] The crews have done the buildings, the streets, and the campus blocks before.</p>
-
-      <h3>No zone surcharge.</h3>
-      <p>Same hourly rate as Chicago. Travel fee covers the drive, nothing more.</p>
-
-      <h3>COIs and parking permits filed by us.</h3>
-      <p>That work is on our side, not yours. No phone calls to the building manager from your end.</p>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L4 5v7c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">COIs and parking permits filed by us.</h3>
+                <p class="icon-list__body">That work is on our side, not yours. No phone calls to the building manager from your end.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- FAQ -->
-    <section>
-      <h2>FAQ</h2>
-
-      <details>
-        <summary><strong>Do you charge a zone fee for Evanston?</strong></summary>
-        <p>No. Same hourly rate as the rest of the metro. The travel fee covers drive time, nothing else.</p>
-      </details>
-
-      <details>
-        <summary><strong>How long does an Evanston-to-Chicago move take?</strong></summary>
-        <p>A 1-bedroom typically runs 2&ndash;4 hours. A 2-bedroom runs 4&ndash;6 hours. A 3-bedroom house runs 6&ndash;10 hours. The drive itself is usually 30&ndash;45 minutes each way.</p>
-      </details>
-
-      <details>
-        <summary><strong>Can you handle a same-day move in Evanston?</strong></summary>
-        <p>Often yes, depending on crew availability. See <a href="#">Last Minute Moving &rarr;</a></p>
-      </details>
-
-      <details>
-        <summary><strong>What about Northwestern dorm or off-campus moves?</strong></summary>
-        <p>Yes. We work weekends during move-in and move-out weeks. Book three weeks ahead in late August and mid-June if possible.</p>
-      </details>
-
-      <details>
-        <summary><strong>Do you serve all Evanston neighborhoods?</strong></summary>
-        <p>Yes. Downtown, the lakefront, North Evanston, Central Street, west of Ridge, all of it.</p>
-      </details>
-
-      <details>
-        <summary><strong>Where do trucks dispatch from?</strong></summary>
-        <p>Northbrook, IL. About ten miles north of Evanston.</p>
-      </details>
+    <!-- ====== FAQ ====== -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="faq__headline">Frequently asked questions</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">Do you charge a zone fee for Evanston?</summary>
+            <div class="faq__answer">
+              <p>No. Same hourly rate as the rest of the metro. The travel fee covers drive time, nothing else.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">How long does an Evanston-to-Chicago move take?</summary>
+            <div class="faq__answer">
+              <p>A 1-bedroom typically runs 2&ndash;4 hours. A 2-bedroom runs 4&ndash;6 hours. A 3-bedroom house runs 6&ndash;10 hours. The drive itself is usually 30&ndash;45 minutes each way.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Can you handle a same-day move in Evanston?</summary>
+            <div class="faq__answer">
+              <p>Often yes, depending on crew availability. See <a href="#">Last Minute Moving</a>.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What about Northwestern dorm or off-campus moves?</summary>
+            <div class="faq__answer">
+              <p>Yes. We work weekends during move-in and move-out weeks. Book three weeks ahead in late August and mid-June if possible.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do you serve all Evanston neighborhoods?</summary>
+            <div class="faq__answer">
+              <p>Yes. Downtown, the lakefront, North Evanston, Central Street, west of Ridge, all of it.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Where do trucks dispatch from?</summary>
+            <div class="faq__answer">
+              <p>Northbrook, IL. About ten miles north of Evanston.</p>
+            </div>
+          </details>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <!-- Closing CTA -->
-    <section>
-      <h2>Get your exact price.</h2>
-      <p>Enter your ZIPs and move details. We&rsquo;ll send a full breakdown within a few hours.</p>
-      <p><a href="#quote">Start a Quote</a></p>
-      <p>Phone: <a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
+    <!-- ====== CLOSING CTA (with two dropdowns) ====== -->
+    <section class="closing-cta">
+      <div class="container">
+        <div class="closing-cta__content">
+          <h2 class="closing-cta__headline">Get your exact price.</h2>
+          <p class="closing-cta__subline">Pick your ZIP and home size. Full breakdown within a few hours.</p>
+          <form class="closing-cta__form" action="#quote">
+            <select class="closing-cta__select" name="zip" required>
+              <option value="" disabled selected>Moving from ZIP</option>
+              <option>60201 &mdash; Evanston (South)</option>
+              <option>60202 &mdash; Evanston (Central)</option>
+              <option>60203 &mdash; Evanston (North)</option>
+              <option>60601 &mdash; Chicago Loop</option>
+              <option>60062 &mdash; Northbrook</option>
+              <option>Other ZIP</option>
+            </select>
+            <select class="closing-cta__select" name="size" required>
+              <option value="" disabled selected>Home size</option>
+              <option>Studio</option>
+              <option>1 bedroom</option>
+              <option>2 bedroom</option>
+              <option>3 bedroom</option>
+              <option>4+ bedroom</option>
+            </select>
+            <a href="#quote" class="btn-primary">Get a Quote<span class="arrow">&rarr;</span></a>
+          </form>
+          <a href="tel:+1XXXXXXXXXX" class="closing-cta__phone">(312) 555-0199</a>
+        </div>
+      </div>
     </section>
 
   </main>
