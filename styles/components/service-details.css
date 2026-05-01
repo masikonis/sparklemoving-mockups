@@ -1,16 +1,20 @@
 /* ==========================================================================
-   Component: Service details — per-service expanded info blocks
-   Used on category hub pages (residential-moving, long-distance-moving, etc.)
+   Component: Service details — alternating "zigzag" service blocks
+   Each item is image on one side and content on the other; the image side
+   flips left/right between items. No dividers between items.
+   Used on category hub pages (long-distance-moving, residential-moving, etc.)
    ========================================================================== */
 
 .service-details {
-  padding: var(--space-2xl) 0;
+  padding: var(--space-3xl) 0;
   background: var(--color-white);
 }
 
+/* ---------- Section head ---------- */
+
 .service-details__head {
-  max-width: 720px;
-  margin: 0 auto var(--space-xl);
+  max-width: 760px;
+  margin: 0 auto var(--space-2xl);
   text-align: center;
 }
 
@@ -18,94 +22,208 @@
   display: inline-block;
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 0.12em;
+  font-size: 15px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-navy-60);
+  color: var(--color-gold);
   margin-bottom: var(--space-sm);
 }
 
 .service-details__headline {
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 40px;
   line-height: 1.1;
+  letter-spacing: -0.018em;
   color: var(--color-navy);
   margin-bottom: var(--space-md);
 }
 
 .service-details__body {
+  font-family: var(--font-body);
   font-size: 18px;
-  line-height: 1.5;
-  color: var(--color-navy-70);
+  line-height: 1.55;
+  color: var(--color-navy-60);
 }
+
+/* ---------- Zigzag list ---------- */
 
 .service-details__list {
   display: grid;
-  gap: var(--space-xl);
+  gap: 125px; /* 25% larger than var(--space-3xl) (100px); only affects spacing between zigzag rows */
 }
 
 .service-details__item {
-  border-top: 1px solid var(--color-navy-08);
-  padding-top: var(--space-lg);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: stretch;
+  scroll-margin-top: 96px; /* anchor offset for fixed header */
+}
+
+/* Reverse columns on every other item (image right, content left) */
+.service-details__item:nth-child(even) .service-details__media {
+  order: 2;
+}
+
+/* ---------- Media side ---------- */
+
+.service-details__media {
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: var(--color-navy-05);
+  box-shadow: 0 24px 48px rgba(25, 28, 43, 0.12);
+  min-height: 360px;
+}
+
+.service-details__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Content side ---------- */
+
+.service-details__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-details__item-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: var(--space-sm);
+}
+
+.service-details__item-icon {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: var(--color-gold-15);
+  color: var(--color-gold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-details__item-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .service-details__item-title {
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 28px;
-  line-height: 1.2;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
   color: var(--color-navy);
-  margin-bottom: var(--space-md);
+  margin: 0;
 }
 
 .service-details__item-body {
+  font-family: var(--font-body);
   font-size: 17px;
-  line-height: 1.55;
-  color: var(--color-navy-70);
+  line-height: 1.6;
+  color: var(--color-navy-60);
   margin-bottom: var(--space-lg);
-  max-width: 720px;
+  max-width: 520px;
 }
+
+/* ---------- Sub-columns: What's included / Why hire pros ---------- */
 
 .service-details__cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
 }
 
 .service-details__sub-title {
+  display: inline-block;
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0.06em;
+  font-size: 13px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-navy);
-  margin-bottom: var(--space-sm);
+  color: var(--color-gold);
+  margin-bottom: var(--space-md);
 }
 
 .service-details__sub-list {
-  list-style: disc;
-  padding-left: 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
 }
 
 .service-details__sub-list li {
-  font-size: 16px;
+  position: relative;
+  padding-left: 30px;
+  font-family: var(--font-body);
+  font-size: 15px;
   line-height: 1.55;
-  color: var(--color-navy-70);
-  margin-bottom: var(--space-xs);
+  color: var(--color-navy);
 }
 
-@media (max-width: 720px) {
-  .service-details__cols {
+/* Gold checkmark in a tinted circle (matches .check-list bullets elsewhere) */
+.service-details__sub-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--color-gold-15);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M5 10.5l3 3 7-7' stroke='%23EFC10C' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 12px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .service-details__item {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
   }
 
+  /* On mobile, image always sits above content */
+  .service-details__item:nth-child(even) .service-details__media {
+    order: 0;
+  }
+
+  .service-details__media {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    max-width: 600px;
+  }
+
+  .service-details__list {
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 640px) {
   .service-details__headline {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .service-details__item-title {
-    font-size: 24px;
+    font-size: 22px;
+  }
+
+  .service-details__cols {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
   }
 }
