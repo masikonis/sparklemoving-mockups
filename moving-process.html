@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How a Move Goes | Sparkle Moving &amp; Storage</title>
+  <meta name="description" content="From the first quote to the last item placed. The 9-step Sparkle moving process, plus how the hourly clock works.">
+
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="styles/common.css">
+  <link rel="stylesheet" href="styles/components/header.css">
+  <link rel="stylesheet" href="styles/components/footer.css">
+  <link rel="stylesheet" href="styles/components/modal.css">
+</head>
+<body>
+
+  <!-- ====== HEADER ====== -->
+  <header class="site-header" id="siteHeader">
+    <div class="site-header__inner">
+      <a href="/" class="site-header__logo">
+        <img src="images/logo/dark-on-light-transparent.svg" alt="Sparkle Moving &amp; Storage" width="170" height="52">
+      </a>
+
+      <nav class="site-header__nav">
+        <ul class="site-header__nav-links">
+          <li>
+            <a href="#services" id="trigger-services" class="site-header__nav-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="menu-services">Services</a>
+          </li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li>
+            <a href="locations.html" id="trigger-areas" class="site-header__nav-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="menu-areas">Areas</a>
+          </li>
+          <li><a href="#">Reviews</a></li>
+          <li>
+            <a href="#" id="trigger-about" class="site-header__nav-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="menu-about">About</a>
+            <div class="nav-popover" id="menu-about" aria-labelledby="trigger-about">
+              <a href="about.html">About</a>
+              <a href="moving-process.html">Moving Process</a>
+              <a href="faq.html">FAQ</a>
+              <a href="insurance-and-licensing.html">Insurance &amp; Licensing</a>
+              <div class="nav-popover__divider" aria-hidden="true"></div>
+              <a href="#">Careers</a>
+              <a href="#">Affiliate Program</a>
+              <a href="#">Blog</a>
+              <a href="#">Contact</a>
+            </div>
+          </li>
+        </ul>
+        <a href="tel:+1XXXXXXXXXX" class="site-header__phone">(312) 555-0199</a>
+        <a href="#quote" class="btn-primary site-header__cta">Get a Quote</a>
+      </nav>
+
+      <button class="site-header__hamburger" id="hamburgerBtn" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="nav-mega" id="menu-services" aria-labelledby="trigger-services">
+      <div class="container nav-mega__inner">
+        <div class="nav-mega__grid">
+          <a href="residential-moving.html" class="nav-mega__card">
+            <span class="nav-mega__card-title">Residential Moving</span>
+            <span class="nav-mega__card-desc">Homes, apartments, condos</span>
+          </a>
+          <a href="#" class="nav-mega__card">
+            <span class="nav-mega__card-title">Commercial Moving</span>
+            <span class="nav-mega__card-desc">Office relocations</span>
+          </a>
+          <a href="long-distance-moving.html" class="nav-mega__card">
+            <span class="nav-mega__card-title">Long Distance Moving</span>
+            <span class="nav-mega__card-desc">Interstate and cross-country</span>
+          </a>
+          <a href="#" class="nav-mega__card">
+            <span class="nav-mega__card-title">Junk Removal</span>
+            <span class="nav-mega__card-desc">Furniture, appliances, cleanouts</span>
+          </a>
+          <a href="#" class="nav-mega__card">
+            <span class="nav-mega__card-title">Labor Services</span>
+            <span class="nav-mega__card-desc">Loading, unloading, POD</span>
+          </a>
+          <a href="#" class="nav-mega__card">
+            <span class="nav-mega__card-title">Packing Services</span>
+            <span class="nav-mega__card-desc">Full, partial, unpacking</span>
+          </a>
+          <a href="#" class="nav-mega__card">
+            <span class="nav-mega__card-title">Storage Services</span>
+            <span class="nav-mega__card-desc">Short-term, long-term, climate</span>
+          </a>
+          <a href="#" class="nav-mega__card">
+            <span class="nav-mega__card-title">Additional Services</span>
+            <span class="nav-mega__card-desc">Piano, safe, same-day, delivery</span>
+          </a>
+        </div>
+        <div class="nav-mega__footer">
+          <a href="#" class="gold-link nav-mega__more">View all services<span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-mega" id="menu-areas" aria-labelledby="trigger-areas">
+      <div class="container nav-mega__inner">
+        <div class="nav-mega__header">
+          <p class="nav-mega__lead">Chicago and 40+ suburbs serviced from Northbrook.</p>
+          <a href="locations.html" class="gold-link nav-mega__more">See all 40 service areas<span class="arrow">&rarr;</span></a>
+        </div>
+        <div class="nav-mega__cities">
+          <a href="#" class="nav-mega__city">Chicago</a>
+          <a href="evanston.html" class="nav-mega__city">Evanston</a>
+          <a href="#" class="nav-mega__city">Naperville</a>
+          <a href="#" class="nav-mega__city">Schaumburg</a>
+          <a href="#" class="nav-mega__city">Arlington Heights</a>
+          <a href="#" class="nav-mega__city">Northbrook</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-header__mobile-menu" id="mobileMenu">
+      <ul class="site-header__mobile-links">
+        <li class="site-header__mobile-accordion">
+          <button class="site-header__mobile-accordion-header" aria-expanded="false" aria-controls="m-sub-services">
+            Services
+            <span class="site-header__mobile-accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <ul class="site-header__mobile-accordion-list" id="m-sub-services">
+            <li><a href="residential-moving.html">Residential Moving</a></li>
+            <li><a href="#">Commercial Moving</a></li>
+            <li><a href="long-distance-moving.html">Long Distance Moving</a></li>
+            <li><a href="#">Junk Removal</a></li>
+            <li><a href="#">Labor Services</a></li>
+            <li><a href="#">Packing Services</a></li>
+            <li><a href="#">Storage Services</a></li>
+            <li><a href="#">Additional Services</a></li>
+            <li><a href="#" class="site-header__mobile-accordion-more">View all services &rarr;</a></li>
+          </ul>
+        </li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li class="site-header__mobile-accordion">
+          <button class="site-header__mobile-accordion-header" aria-expanded="false" aria-controls="m-sub-areas">
+            Areas
+            <span class="site-header__mobile-accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <ul class="site-header__mobile-accordion-list" id="m-sub-areas">
+            <li><a href="#">Chicago</a></li>
+            <li><a href="evanston.html">Evanston</a></li>
+            <li><a href="#">Naperville</a></li>
+            <li><a href="#">Schaumburg</a></li>
+            <li><a href="#">Arlington Heights</a></li>
+            <li><a href="#">Northbrook</a></li>
+            <li><a href="locations.html" class="site-header__mobile-accordion-more">See all 40 service areas &rarr;</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Reviews</a></li>
+        <li class="site-header__mobile-accordion">
+          <button class="site-header__mobile-accordion-header" aria-expanded="false" aria-controls="m-sub-about">
+            About
+            <span class="site-header__mobile-accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <ul class="site-header__mobile-accordion-list" id="m-sub-about">
+            <li><a href="about.html">About</a></li>
+            <li><a href="moving-process.html">Moving Process</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="insurance-and-licensing.html">Insurance &amp; Licensing</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Affiliate Program</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a href="tel:+1XXXXXXXXXX" class="site-header__mobile-phone">(312) 555-0199</a>
+      <a href="#quote" class="btn-primary site-header__mobile-cta">Get a Quote</a>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <article>
+      <!-- ====== HERO ====== -->
+      <section>
+        <h1>Here&rsquo;s how a move with us actually goes.</h1>
+        <p>From the first quote to the last item placed. No surprises in between.</p>
+        <a href="#quote" class="btn-primary">Get a Quote</a>
+        <p>Takes about 60 seconds.</p>
+        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
+      </section>
+
+      <!-- ====== STATS BAR ====== -->
+      <section>
+        <ul>
+          <li>Since 2012</li>
+          <li>10,000+ Moves</li>
+          <li>Licensed &amp; Insured</li>
+        </ul>
+      </section>
+
+      <!-- ====== AT A GLANCE ====== -->
+      <section>
+        <h2>The whole process, at a glance</h2>
+        <table>
+          <thead>
+            <tr><th>Step</th><th>When</th><th>Who&rsquo;s doing it</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1. Quote</td><td>About 60 seconds online</td><td>You + our office</td></tr>
+            <tr><td>2. Booking</td><td>Same day or next</td><td>Our office locks the date</td></tr>
+            <tr><td>3. Pre-move week</td><td>2&ndash;7 days out</td><td>Our office files COIs and permits</td></tr>
+            <tr><td>4. Crew arrives</td><td>Move day, on schedule</td><td>Sparkle crew</td></tr>
+            <tr><td>5. Walkthrough</td><td>First 10 minutes</td><td>Crew lead + you</td></tr>
+            <tr><td>6. Loading</td><td>Hourly</td><td>Crew</td></tr>
+            <tr><td>7. Transit</td><td>Hourly</td><td>Crew</td></tr>
+            <tr><td>8. Unload and placement</td><td>Hourly</td><td>Crew + you</td></tr>
+            <tr><td>9. Final invoice</td><td>At completion</td><td>Crew lead</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ====== STEP DETAILS ====== -->
+      <section>
+        <h2>1. Quote</h2>
+        <p>Enter your ZIPs and a few details: home size, type of move, date. About 60 seconds.</p>
+        <p>For local moves, you get a breakdown: crew size, hourly rate, minimum, and an hour range. For long-distance moves, you get a binding quote &mdash; total cost, weight allowance, and delivery window all locked in.</p>
+        <p>If anything&rsquo;s missing or the move&rsquo;s unusual (piano, tight access, freight elevator, two-leg trip), we&rsquo;ll send a couple of follow-up questions before quoting.</p>
+      </section>
+
+      <section>
+        <h2>2. Booking</h2>
+        <p>You confirm the date and pay nothing upfront. No deposit.</p>
+        <p>Our office sends the booking confirmation, the quote, and a list of anything we need from you: building requirements, COI requests, parking notes.</p>
+      </section>
+
+      <section>
+        <h2>3. Pre-move week</h2>
+        <p>Building paperwork is on us. We file the COI with your building, book the freight elevator slot, and pull the parking permit if your block needs one. You don&rsquo;t call the building manager.</p>
+        <p>If your dates change, seven days notice or more is no fee. Less than seven days depends on crew availability.</p>
+      </section>
+
+      <section>
+        <h2>4. Crew arrival</h2>
+        <p>The crew arrives within a one-hour window on move day. The crew lead calls ahead with an exact ETA. Same crew that&rsquo;s on the booking, no last-minute substitution.</p>
+      </section>
+
+      <section>
+        <h2>5. Walkthrough</h2>
+        <p>Ten minutes, before anything moves. The crew lead walks the home with you, confirms what&rsquo;s going and what&rsquo;s staying, and notes anything fragile or oversized.</p>
+        <p>Floor protection goes down. Door jambs and rails get padded. Then loading starts &mdash; the hourly clock starts here.</p>
+      </section>
+
+      <section>
+        <h2>6. Loading</h2>
+        <p>Furniture wrapped in blankets. Mattresses and soft goods shrink-wrapped. Boxes loaded in stacks, heaviest at the bottom.</p>
+        <p>Disassembly is included. Beds, tables, dressers, flat-pack furniture come apart and the hardware goes in a labeled bag, taped to the piece.</p>
+        <p>You don&rsquo;t lift anything. If something needs a decision (which couch goes first, what stays), the crew lead asks.</p>
+      </section>
+
+      <section>
+        <h2>7. Transit</h2>
+        <p>The crew drives. You don&rsquo;t ride in the truck &mdash; meet us at the destination on your own schedule.</p>
+        <p>For local moves, transit is part of the hourly rate. For long-distance, transit is included in the binding quote, with a delivery window that doesn&rsquo;t move.</p>
+      </section>
+
+      <section>
+        <h2>8. Unload and placement</h2>
+        <p>Reverse of loading. Floor protection, then placement. The crew lead walks the new place with you and confirms where each piece goes.</p>
+        <p>Reassembly is included. Beds get put back together, tables go back upright, dressers get drawers reset.</p>
+        <p>We don&rsquo;t leave until you&rsquo;ve checked the truck. Final walkthrough catches anything missed.</p>
+      </section>
+
+      <section>
+        <h2>9. Final invoice</h2>
+        <p>The crew lead writes up the final invoice on site. Hours worked, travel fee, any add-ons (boxes, supplies). You pay in full at the end &mdash; cash, check, or card. No processing fee on cards.</p>
+        <p>If the crew finishes early, you&rsquo;re billed for actual hours only. If the move runs long, you&rsquo;re billed at the same hourly rate. No overtime multiplier.</p>
+      </section>
+
+      <!-- ====== HOURLY CLOCK ====== -->
+      <section>
+        <h2>The hourly clock &mdash; where it starts and stops</h2>
+        <p>The clock starts when the crew arrives at your pickup and is ready to load. It stops when the last item is placed at the destination and the walkthrough is done.</p>
+
+        <h3>On the clock</h3>
+        <ul>
+          <li>Loading at pickup</li>
+          <li>Drive time between addresses</li>
+          <li>Unloading and placement at destination</li>
+          <li>Disassembly and reassembly of standard furniture</li>
+        </ul>
+
+        <h3>Not on the clock</h3>
+        <ul>
+          <li>The drive from our warehouse to your pickup</li>
+          <li>The drive from your destination back to our warehouse</li>
+        </ul>
+
+        <p>Both are covered by the one-time travel fee, equal to one hour of crew time.</p>
+        <p>Long-distance moves don&rsquo;t run on a clock. The binding quote covers everything end to end.</p>
+      </section>
+
+      <!-- ====== FAQ ====== -->
+      <section>
+        <h2>FAQ</h2>
+        <details>
+          <summary>How long does a typical move take?</summary>
+          <p>1-bedroom: 2&ndash;4 hours, 2-mover crew. 2-bedroom: 4&ndash;6 hours, 3-mover crew. 3-bedroom: 6&ndash;10 hours, 4-mover crew. Your quote shows the estimate for your specific move.</p>
+        </details>
+        <details>
+          <summary>Do I need to be there the whole time?</summary>
+          <p>Yes for the start (walkthrough) and the end (placement and walkthrough). Middle of the day, you don&rsquo;t need to ride in the truck.</p>
+        </details>
+        <details>
+          <summary>Do you wrap and protect everything?</summary>
+          <p>Yes. Wood and upholstered furniture get blanket-wrapped. Mattresses and soft goods get shrink-wrapped. Floor protection goes down at both ends.</p>
+        </details>
+        <details>
+          <summary>What if I find damage after the crew leaves?</summary>
+          <p>Document it and let us know within 14 days. Claims process is on the <a href="insurance-and-licensing.html">Insurance &amp; Licensing page &rarr;</a>.</p>
+        </details>
+        <details>
+          <summary>Can I add stops to the move?</summary>
+          <p>Yes. Extra stops are billed at the same hourly rate &mdash; they&rsquo;re just more crew time. Tell us during the quote so we can plan the route.</p>
+        </details>
+        <details>
+          <summary>What about pianos, safes, and oversized items?</summary>
+          <p>Quoted separately so you see the cost upfront. See <a href="#">Additional Services &rarr;</a>.</p>
+        </details>
+      </section>
+
+      <!-- ====== CLOSING CTA ====== -->
+      <section>
+        <h2>Get your exact price.</h2>
+        <p>Enter your ZIPs and move details. We&rsquo;ll send a full breakdown within a few hours.</p>
+        <a href="#quote" class="btn-primary">Get a Quote</a>
+        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
+      </section>
+    </article>
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__company">
+          <a href="/" class="site-footer__logo">
+            <img src="images/logo/white-on-dark-transparent.svg" alt="Sparkle Moving &amp; Storage" width="140" height="43">
+          </a>
+          <address class="site-footer__address">
+            Northbrook, IL<br>
+            Chicago Metropolitan Area
+          </address>
+          <a href="tel:+1XXXXXXXXXX" class="site-footer__contact-phone">(312) 555-0199</a>
+        </div>
+
+        <div class="site-footer__col">
+          <h4 class="site-footer__col-title">Services</h4>
+          <ul class="site-footer__links">
+            <li><a href="residential-moving.html">Residential Moving</a></li>
+            <li><a href="#">Commercial Moving</a></li>
+            <li><a href="long-distance-moving.html">Long Distance Moving</a></li>
+            <li><a href="#">Junk Removal</a></li>
+            <li><a href="#">Labor Services</a></li>
+            <li><a href="#">Packing Services</a></li>
+            <li><a href="#">Storage Services</a></li>
+            <li><a href="#">Additional Services</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h4 class="site-footer__col-title">Information</h4>
+          <ul class="site-footer__links">
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="how-moving-pricing-works.html">How Moving Pricing Works</a></li>
+            <li><a href="moving-process.html">Moving Process</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="insurance-and-licensing.html">Insurance &amp; Licensing</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h4 class="site-footer__col-title">Company</h4>
+          <ul class="site-footer__links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Affiliate Program</a></li>
+            <li><a href="locations.html">Service Areas</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__cta-col">
+          <p class="site-footer__cta-text">Get your exact moving cost.<br>Takes about 60 seconds.</p>
+          <a href="#quote" class="btn-primary">Get a Quote</a>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">&copy; 2026 Sparkle Moving &amp; Storage. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quote modal -->
+  <dialog class="modal" id="quote-modal" aria-labelledby="quote-modal-title">
+    <div class="modal__panel">
+      <div class="modal__form-wrapper">
+        <header class="modal__header">
+          <h2 class="modal__title" id="quote-modal-title">Tell us a bit more</h2>
+          <button class="modal__close" type="button" aria-label="Close" data-close-modal>&times;</button>
+        </header>
+        <p class="modal__subtitle">We&rsquo;ll send your quote to your inbox within a few hours.</p>
+        <form class="modal__form" id="modal-quote-form">
+          <div class="modal__field">
+            <label for="modal-zip-from">Moving from</label>
+            <input id="modal-zip-from" name="zip_from" type="text" inputmode="numeric" pattern="\d{5}" maxlength="5" required>
+          </div>
+          <div class="modal__field">
+            <label for="modal-zip-to">Moving to</label>
+            <input id="modal-zip-to" name="zip_to" type="text" inputmode="numeric" pattern="\d{5}" maxlength="5" required>
+          </div>
+          <div class="modal__field modal__field--full">
+            <label for="modal-name">Name</label>
+            <input id="modal-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="modal__field">
+            <label for="modal-email">Email</label>
+            <input id="modal-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="modal__field">
+            <label for="modal-phone">Phone</label>
+            <input id="modal-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(555) 555-5555" maxlength="14" required>
+          </div>
+          <div class="modal__field modal__field--full">
+            <label for="modal-address">Pickup address</label>
+            <input id="modal-address" name="address" type="text" autocomplete="street-address" required>
+          </div>
+          <div class="modal__field">
+            <label for="modal-move-type">Type of move</label>
+            <select id="modal-move-type" name="move_type" required>
+              <option value="" disabled selected>Select type</option>
+              <option>Local</option>
+              <option>Long distance</option>
+              <option>Labor only</option>
+            </select>
+          </div>
+          <div class="modal__field">
+            <label for="modal-size">Home size</label>
+            <select id="modal-size" name="size" required>
+              <option value="" disabled selected>Select size</option>
+              <option>Studio</option>
+              <option>1 bedroom</option>
+              <option>2 bedroom</option>
+              <option>3 bedroom</option>
+              <option>4+ bedroom</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary modal__submit">Submit my request<span class="arrow">&rarr;</span></button>
+        </form>
+      </div>
+      <div class="modal__success" hidden>
+        <p class="modal__success-title">Thanks &mdash; request received.</p>
+        <p class="modal__success-text">We&rsquo;ll send your quote shortly.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    (function() {
+      var header = document.getElementById('siteHeader');
+      var hamburger = document.getElementById('hamburgerBtn');
+      var menu = document.getElementById('mobileMenu');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 10) header.classList.add('site-header--scrolled');
+        else header.classList.remove('site-header--scrolled');
+      });
+      hamburger.addEventListener('click', function() { menu.classList.toggle('is-open'); });
+    })();
+
+    (function() {
+      var header = document.getElementById('siteHeader');
+      var triggers = header.querySelectorAll('.site-header__nav-trigger');
+      var OPEN_DELAY = 120, CLOSE_DELAY = 200;
+      var openTimer = null, closeTimer = null, currentId = null;
+      function panelFor(t) { return document.getElementById(t.getAttribute('aria-controls')); }
+      function closeAll() {
+        triggers.forEach(function(t) { t.setAttribute('aria-expanded', 'false'); var li = t.parentNode; if (li) li.classList.remove('is-open'); });
+        header.querySelectorAll('.nav-mega.is-open, .nav-popover.is-open').forEach(function(p) { p.classList.remove('is-open'); });
+        currentId = null;
+      }
+      function openPanel(t) {
+        var id = t.getAttribute('aria-controls'); if (currentId === id) return;
+        closeAll(); var p = panelFor(t); if (!p) return;
+        t.setAttribute('aria-expanded', 'true'); t.parentNode.classList.add('is-open'); p.classList.add('is-open'); currentId = id;
+      }
+      triggers.forEach(function(t) {
+        var p = panelFor(t);
+        t.addEventListener('mouseenter', function() { clearTimeout(closeTimer); clearTimeout(openTimer); openTimer = setTimeout(function() { openPanel(t); }, OPEN_DELAY); });
+        t.addEventListener('mouseleave', function() { clearTimeout(openTimer); clearTimeout(closeTimer); closeTimer = setTimeout(closeAll, CLOSE_DELAY); });
+        t.addEventListener('click', function(e) { e.preventDefault(); clearTimeout(openTimer); if (t.getAttribute('aria-expanded') === 'true') closeAll(); else openPanel(t); });
+        t.addEventListener('keydown', function(e) { if (e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); t.click(); } });
+        if (p) {
+          p.addEventListener('mouseenter', function() { clearTimeout(closeTimer); });
+          p.addEventListener('mouseleave', function() { clearTimeout(closeTimer); closeTimer = setTimeout(closeAll, CLOSE_DELAY); });
+        }
+      });
+      document.addEventListener('click', function(e) { if (!header.contains(e.target) && currentId) closeAll(); });
+      window.addEventListener('scroll', function() { if (currentId) closeAll(); }, { passive: true });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && currentId) { var t = document.querySelector('[aria-controls="' + currentId + '"]'); closeAll(); if (t) t.focus(); } });
+      document.addEventListener('focusin', function(e) { if (!header.contains(e.target) && currentId) closeAll(); });
+    })();
+
+    (function() {
+      var headers = document.querySelectorAll('.site-header__mobile-accordion-header');
+      headers.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var parent = btn.parentNode;
+          var wasOpen = parent.classList.contains('is-open');
+          document.querySelectorAll('.site-header__mobile-accordion.is-open').forEach(function(a) {
+            a.classList.remove('is-open');
+            var b = a.querySelector('.site-header__mobile-accordion-header'); if (b) b.setAttribute('aria-expanded', 'false');
+          });
+          if (!wasOpen) { parent.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true'); }
+        });
+      });
+    })();
+
+    (function() {
+      var modal = document.getElementById('quote-modal');
+      var modalForm = document.getElementById('modal-quote-form');
+      var modalPhone = document.getElementById('modal-phone');
+      var formWrapper = modal.querySelector('.modal__form-wrapper');
+      var successPanel = modal.querySelector('.modal__success');
+      modalPhone.addEventListener('input', function() {
+        var digits = modalPhone.value.replace(/\D/g, '').slice(0, 10);
+        var out = '';
+        if (digits.length > 0) out = '(' + digits.slice(0, 3);
+        if (digits.length >= 4) out += ') ' + digits.slice(3, 6);
+        if (digits.length >= 7) out += '-' + digits.slice(6, 10);
+        modalPhone.value = out;
+      });
+      function openQuoteModal() { modal.showModal(); }
+      document.querySelectorAll('a[href="#quote"]').forEach(function(link) {
+        link.addEventListener('click', function(e) { e.preventDefault(); openQuoteModal(); });
+      });
+      modal.querySelectorAll('[data-close-modal]').forEach(function(el) { el.addEventListener('click', function() { modal.close(); }); });
+      modal.addEventListener('click', function(e) { if (e.target === modal) modal.close(); });
+      modalForm.addEventListener('submit', function(e) {
+        e.preventDefault(); if (!modalForm.reportValidity()) return;
+        formWrapper.hidden = true; successPanel.hidden = false;
+        setTimeout(function() { modal.close(); modalForm.reset(); formWrapper.hidden = false; successPanel.hidden = true; }, 2000);
+      });
+    })();
+  </script>
+
+</body>
+</html>
