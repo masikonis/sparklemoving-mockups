@@ -1,0 +1,115 @@
+/* ==========================================================================
+   Who we're for — two-column "for you / not for you" pattern.
+   Reuses .check-list and .check-list--x for the bullet treatments.
+   ========================================================================== */
+
+.who-its-for {
+  background: var(--color-white);
+  padding: var(--space-3xl) 0;
+  border-top: 1px solid var(--color-navy-08);
+}
+
+.who-its-for__head {
+  max-width: 760px;
+  margin: 0 auto var(--space-2xl);
+  text-align: center;
+}
+
+.who-its-for__eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+}
+
+.who-its-for__headline {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.12;
+  letter-spacing: -0.018em;
+  color: var(--color-navy);
+  margin-bottom: var(--space-md);
+}
+
+.who-its-for__body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-navy-60);
+}
+
+.who-its-for__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  max-width: var(--max-width);
+}
+
+.who-its-for__col {
+  background-color: var(--color-offwhite);
+  border: 1px solid var(--color-navy-08);
+  border-radius: 12px;
+  padding: 32px 32px 36px;
+}
+
+/* Inverted variant: beige section background with white cards inside */
+.who-its-for--beige {
+  background: var(--color-offwhite);
+}
+
+.who-its-for--beige .who-its-for__col {
+  background-color: var(--color-white);
+}
+
+.who-its-for__col-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--color-navy);
+  margin-bottom: var(--space-md);
+}
+
+/* Force the shared .check-list inside this card to a single column */
+.who-its-for__col .check-list {
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 0;
+}
+
+/* Optional centered note block beneath the two cards */
+.who-its-for__footnote {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-navy-60);
+  text-align: center;
+  margin: var(--space-lg) auto 0;
+  max-width: 760px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .who-its-for {
+    padding: var(--space-2xl) 0;
+  }
+
+  .who-its-for__headline {
+    font-size: 28px;
+  }
+
+  .who-its-for__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .who-its-for__col {
+    padding: 24px 24px 28px;
+  }
+}

@@ -79,6 +79,7 @@
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+  scroll-margin-top: 96px; /* clears the fixed header on anchor jumps */
 }
 
 .process-walk__item:last-child {
@@ -188,6 +189,11 @@
   line-height: 1.65;
   color: var(--color-navy-60);
   margin: 0;
+}
+
+/* Spacing between consecutive body paragraphs in a single step */
+.process-walk__step-body + .process-walk__step-body {
+  margin-top: 10px;
 }
 
 /* ---------- Reduced motion: skip the slide/fade ---------- */

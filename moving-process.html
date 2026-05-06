@@ -12,6 +12,25 @@
 
   <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/components/header.css">
+
+  <!-- Page-specific -->
+  <link rel="stylesheet" href="styles/pages/moving-process/process-glance.css">
+
+  <!-- Reused homepage section styles -->
+  <link rel="stylesheet" href="styles/pages/home/stats-bar.css">
+  <link rel="stylesheet" href="styles/pages/home/faq.css">
+  <link rel="stylesheet" href="styles/pages/home/closing-cta.css">
+
+  <!-- Reused pricing/service patterns -->
+  <link rel="stylesheet" href="styles/pages/pricing/hero.css">
+  <link rel="stylesheet" href="styles/pages/pricing/info-blocks.css">
+
+  <!-- Hourly clock pattern lives in the about/who-its-for component -->
+  <link rel="stylesheet" href="styles/pages/about/who-its-for.css">
+
+  <!-- Process timeline component -->
+  <link rel="stylesheet" href="styles/components/process-walk.css">
+
   <link rel="stylesheet" href="styles/components/footer.css">
   <link rel="stylesheet" href="styles/components/modal.css">
 </head>
@@ -177,164 +196,389 @@
     </div>
   </header>
 
-  <main class="page-content">
-    <article>
-      <!-- ====== HERO ====== -->
-      <section>
-        <h1>Here&rsquo;s how a move with us actually goes.</h1>
-        <p>From the first quote to the last item placed. No surprises in between.</p>
-        <a href="#quote" class="btn-primary">Get a Quote</a>
-        <p>Takes about 60 seconds.</p>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
+  <main>
 
-      <!-- ====== STATS BAR ====== -->
-      <section>
-        <ul>
-          <li>Since 2012</li>
-          <li>10,000+ Moves</li>
-          <li>Licensed &amp; Insured</li>
+    <!-- ====== HERO ====== -->
+    <section class="pricing-hero">
+      <div class="container pricing-hero__inner">
+        <div class="pricing-hero__content">
+          <span class="pricing-hero__eyebrow">Moving Process</span>
+          <h1 class="pricing-hero__headline">Here&rsquo;s how a move <em>actually goes.</em></h1>
+          <p class="pricing-hero__body">From the first quote to the last item placed. No surprises in between.</p>
+        </div>
+        <div class="pricing-hero__media">
+          <img src="images/hero-right.webp" alt="Sparkle Moving crew on a Chicago job" width="640" height="400">
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== STATS BAR ====== -->
+    <section class="stats-bar">
+      <div class="container">
+        <ul class="stats-bar__list">
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">2012</span>
+            <span class="stats-bar__label">Established</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">10,000+</span>
+            <span class="stats-bar__label">Moves completed</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">Licensed &amp; Insured</span>
+            <span class="stats-bar__label">Illinois CC-MC</span>
+          </li>
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <!-- ====== AT A GLANCE ====== -->
-      <section>
-        <h2>The whole process, at a glance</h2>
-        <table>
-          <thead>
-            <tr><th>Step</th><th>When</th><th>Who&rsquo;s doing it</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>1. Quote</td><td>About 60 seconds online</td><td>You + our office</td></tr>
-            <tr><td>2. Booking</td><td>Same day or next</td><td>Our office locks the date</td></tr>
-            <tr><td>3. Pre-move week</td><td>2&ndash;7 days out</td><td>Our office files COIs and permits</td></tr>
-            <tr><td>4. Crew arrives</td><td>Move day, on schedule</td><td>Sparkle crew</td></tr>
-            <tr><td>5. Walkthrough</td><td>First 10 minutes</td><td>Crew lead + you</td></tr>
-            <tr><td>6. Loading</td><td>Hourly</td><td>Crew</td></tr>
-            <tr><td>7. Transit</td><td>Hourly</td><td>Crew</td></tr>
-            <tr><td>8. Unload and placement</td><td>Hourly</td><td>Crew + you</td></tr>
-            <tr><td>9. Final invoice</td><td>At completion</td><td>Crew lead</td></tr>
-          </tbody>
-        </table>
-      </section>
+    <!-- ====== AT A GLANCE (clickable summary table) ====== -->
+    <section class="process-glance">
+      <div class="container">
+        <div class="process-glance__head">
+          <span class="process-glance__eyebrow">At a glance</span>
+          <h2 class="process-glance__headline">The whole process, at a glance</h2>
+          <p class="process-glance__body">Tap any step to jump to the details below.</p>
+        </div>
+        <div class="process-glance__table-wrap">
+          <table class="process-glance__table">
+            <thead>
+              <tr>
+                <th>Step</th>
+                <th>When</th>
+                <th>Who&rsquo;s doing it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="process-glance__step-link" href="#step-1">1. Quote</a></td>
+                <td>About 60 seconds online</td>
+                <td>You + our office</td>
+              </tr>
+              <tr>
+                <td><a class="process-glance__step-link" href="#step-2">2. Booking</a></td>
+                <td>Same day or next</td>
+                <td>Our office locks the date</td>
+              </tr>
+              <tr>
+                <td><a class="process-glance__step-link" href="#step-3">3. Pre-move week</a></td>
+                <td>2&ndash;7 days out</td>
+                <td>Our office files COIs and permits</td>
+              </tr>
+              <tr>
+                <td><a class="process-glance__step-link" href="#step-4">4. Crew arrives</a></td>
+                <td>Move day, on schedule</td>
+                <td>Sparkle crew</td>
+              </tr>
+              <tr>
+                <td><a class="process-glance__step-link" href="#step-5">5. Walkthrough</a></td>
+                <td>First 10 minutes</td>
+                <td>Crew lead + you</td>
+              </tr>
+              <tr>
+                <td><a class="process-glance__step-link" href="#step-6">6. Loading</a></td>
+                <td>Hourly</td>
+                <td>Crew</td>
+              </tr>
+              <tr>
+                <td><a class="process-glance__step-link" href="#step-7">7. Transit</a></td>
+                <td>Hourly</td>
+                <td>Crew</td>
+              </tr>
+              <tr>
+                <td><a class="process-glance__step-link" href="#step-8">8. Unload and placement</a></td>
+                <td>Hourly</td>
+                <td>Crew + you</td>
+              </tr>
+              <tr>
+                <td><a class="process-glance__step-link" href="#step-9">9. Final invoice</a></td>
+                <td>At completion</td>
+                <td>Crew lead</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
-      <!-- ====== STEP DETAILS ====== -->
-      <section>
-        <h2>1. Quote</h2>
-        <p>Enter your ZIPs and a few details: home size, type of move, date. About 60 seconds.</p>
-        <p>For local moves, you get a breakdown: crew size, hourly rate, minimum, and an hour range. For long-distance moves, you get a binding quote &mdash; total cost, weight allowance, and delivery window all locked in.</p>
-        <p>If anything&rsquo;s missing or the move&rsquo;s unusual (piano, tight access, freight elevator, two-leg trip), we&rsquo;ll send a couple of follow-up questions before quoting.</p>
-      </section>
+    <!-- ====== STEP DETAILS (process-walk timeline) ====== -->
+    <section class="process-walk" id="process-walk">
+      <div class="container">
+        <div class="process-walk__head">
+          <span class="process-walk__eyebrow">Move timeline</span>
+          <h2 class="process-walk__headline">Step by step, what to expect</h2>
+          <p class="process-walk__body">From the quote form to the final invoice.</p>
+        </div>
+        <ol class="process-walk__list">
+          <li class="process-walk__item" id="step-1">
+            <span class="process-walk__number" aria-hidden="true">1</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Quote.</h3>
+              </div>
+              <p class="process-walk__step-body">Enter your ZIPs and a few details: home size, type of move, date. About 60 seconds.</p>
+              <p class="process-walk__step-body">For local moves, you get a breakdown: crew size, hourly rate, minimum, and an hour range. For long-distance moves, you get a binding quote &mdash; total cost, weight allowance, and delivery window all locked in.</p>
+              <p class="process-walk__step-body">If anything&rsquo;s missing or the move&rsquo;s unusual (piano, tight access, freight elevator, two-leg trip), we&rsquo;ll send a couple of follow-up questions before quoting.</p>
+            </div>
+          </li>
 
-      <section>
-        <h2>2. Booking</h2>
-        <p>You confirm the date and pay nothing upfront. No deposit.</p>
-        <p>Our office sends the booking confirmation, the quote, and a list of anything we need from you: building requirements, COI requests, parking notes.</p>
-      </section>
+          <li class="process-walk__item" id="step-2">
+            <span class="process-walk__number" aria-hidden="true">2</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="5" width="18" height="16" rx="1"/>
+                    <path d="M3 10h18M8 3v4M16 3v4"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Booking.</h3>
+              </div>
+              <p class="process-walk__step-body">You confirm the date and pay nothing upfront. No deposit.</p>
+              <p class="process-walk__step-body">Our office sends the booking confirmation, the quote, and a list of anything we need from you: building requirements, COI requests, parking notes.</p>
+            </div>
+          </li>
 
-      <section>
-        <h2>3. Pre-move week</h2>
-        <p>Building paperwork is on us. We file the COI with your building, book the freight elevator slot, and pull the parking permit if your block needs one. You don&rsquo;t call the building manager.</p>
-        <p>If your dates change, seven days notice or more is no fee. Less than seven days depends on crew availability.</p>
-      </section>
+          <li class="process-walk__item" id="step-3">
+            <span class="process-walk__number" aria-hidden="true">3</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <path d="M9 13l2 2 4-4"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Pre-move week.</h3>
+              </div>
+              <p class="process-walk__step-body">Building paperwork is on us. We file the COI with your building, book the freight elevator slot, and pull the parking permit if your block needs one. You don&rsquo;t call the building manager.</p>
+              <p class="process-walk__step-body">If your dates change, seven days notice or more is no fee. Less than seven days depends on crew availability.</p>
+            </div>
+          </li>
 
-      <section>
-        <h2>4. Crew arrival</h2>
-        <p>The crew arrives within a one-hour window on move day. The crew lead calls ahead with an exact ETA. Same crew that&rsquo;s on the booking, no last-minute substitution.</p>
-      </section>
+          <li class="process-walk__item" id="step-4">
+            <span class="process-walk__number" aria-hidden="true">4</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="6" width="14" height="11" rx="1"/>
+                    <path d="M15 9h4l3 4v4h-7V9z"/>
+                    <circle cx="6" cy="18.5" r="2"/>
+                    <circle cx="18" cy="18.5" r="2"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Crew arrival.</h3>
+              </div>
+              <p class="process-walk__step-body">The crew arrives within a one-hour window on move day. The crew lead calls ahead with an exact ETA. Same crew that&rsquo;s on the booking, no last-minute substitution.</p>
+            </div>
+          </li>
 
-      <section>
-        <h2>5. Walkthrough</h2>
-        <p>Ten minutes, before anything moves. The crew lead walks the home with you, confirms what&rsquo;s going and what&rsquo;s staying, and notes anything fragile or oversized.</p>
-        <p>Floor protection goes down. Door jambs and rails get padded. Then loading starts &mdash; the hourly clock starts here.</p>
-      </section>
+          <li class="process-walk__item" id="step-5">
+            <span class="process-walk__number" aria-hidden="true">5</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Walkthrough.</h3>
+              </div>
+              <p class="process-walk__step-body">Ten minutes, before anything moves. The crew lead walks the home with you, confirms what&rsquo;s going and what&rsquo;s staying, and notes anything fragile or oversized.</p>
+              <p class="process-walk__step-body">Floor protection goes down. Door jambs and rails get padded. Then loading starts &mdash; the hourly clock starts here.</p>
+            </div>
+          </li>
 
-      <section>
-        <h2>6. Loading</h2>
-        <p>Furniture wrapped in blankets. Mattresses and soft goods shrink-wrapped. Boxes loaded in stacks, heaviest at the bottom.</p>
-        <p>Disassembly is included. Beds, tables, dressers, flat-pack furniture come apart and the hardware goes in a labeled bag, taped to the piece.</p>
-        <p>You don&rsquo;t lift anything. If something needs a decision (which couch goes first, what stays), the crew lead asks.</p>
-      </section>
+          <li class="process-walk__item" id="step-6">
+            <span class="process-walk__number" aria-hidden="true">6</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 8L12 3 3 8v8l9 5 9-5V8z"/>
+                    <path d="M3 8l9 5 9-5"/>
+                    <path d="M12 13v8"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Loading.</h3>
+              </div>
+              <p class="process-walk__step-body">Furniture wrapped in blankets. Mattresses and soft goods shrink-wrapped. Boxes loaded in stacks, heaviest at the bottom.</p>
+              <p class="process-walk__step-body">Disassembly is included. Beds, tables, dressers, flat-pack furniture come apart and the hardware goes in a labeled bag, taped to the piece.</p>
+              <p class="process-walk__step-body">You don&rsquo;t lift anything. If something needs a decision (which couch goes first, what stays), the crew lead asks.</p>
+            </div>
+          </li>
 
-      <section>
-        <h2>7. Transit</h2>
-        <p>The crew drives. You don&rsquo;t ride in the truck &mdash; meet us at the destination on your own schedule.</p>
-        <p>For local moves, transit is part of the hourly rate. For long-distance, transit is included in the binding quote, with a delivery window that doesn&rsquo;t move.</p>
-      </section>
+          <li class="process-walk__item" id="step-7">
+            <span class="process-walk__number" aria-hidden="true">7</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 12h18"/>
+                    <path d="M16 6l5 6-5 6"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Transit.</h3>
+              </div>
+              <p class="process-walk__step-body">The crew drives. You don&rsquo;t ride in the truck &mdash; meet us at the destination on your own schedule.</p>
+              <p class="process-walk__step-body">For local moves, transit is part of the hourly rate. For long-distance, transit is included in the binding quote, with a delivery window that doesn&rsquo;t move.</p>
+            </div>
+          </li>
 
-      <section>
-        <h2>8. Unload and placement</h2>
-        <p>Reverse of loading. Floor protection, then placement. The crew lead walks the new place with you and confirms where each piece goes.</p>
-        <p>Reassembly is included. Beds get put back together, tables go back upright, dressers get drawers reset.</p>
-        <p>We don&rsquo;t leave until you&rsquo;ve checked the truck. Final walkthrough catches anything missed.</p>
-      </section>
+          <li class="process-walk__item" id="step-8">
+            <span class="process-walk__number" aria-hidden="true">8</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 11l9-7 9 7"/>
+                    <path d="M5 10v10h14V10"/>
+                    <path d="M10 20v-6h4v6"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Unload and placement.</h3>
+              </div>
+              <p class="process-walk__step-body">Reverse of loading. Floor protection, then placement. The crew lead walks the new place with you and confirms where each piece goes.</p>
+              <p class="process-walk__step-body">Reassembly is included. Beds get put back together, tables go back upright, dressers get drawers reset.</p>
+              <p class="process-walk__step-body">We don&rsquo;t leave until you&rsquo;ve checked the truck. Final walkthrough catches anything missed.</p>
+            </div>
+          </li>
 
-      <section>
-        <h2>9. Final invoice</h2>
-        <p>The crew lead writes up the final invoice on site. Hours worked, travel fee, any add-ons (boxes, supplies). You pay in full at the end &mdash; cash, check, or card. No processing fee on cards.</p>
-        <p>If the crew finishes early, you&rsquo;re billed for actual hours only. If the move runs long, you&rsquo;re billed at the same hourly rate. No overtime multiplier.</p>
-      </section>
+          <li class="process-walk__item" id="step-9">
+            <span class="process-walk__number" aria-hidden="true">9</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 11l3 3L22 4"/>
+                    <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Final invoice.</h3>
+              </div>
+              <p class="process-walk__step-body">The crew lead writes up the final invoice on site. Hours worked, travel fee, any add-ons (boxes, supplies). You pay in full at the end &mdash; cash, check, or card. No processing fee on cards.</p>
+              <p class="process-walk__step-body">If the crew finishes early, you&rsquo;re billed for actual hours only. If the move runs long, you&rsquo;re billed at the same hourly rate. No overtime multiplier.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-      <!-- ====== HOURLY CLOCK ====== -->
-      <section>
-        <h2>The hourly clock &mdash; where it starts and stops</h2>
-        <p>The clock starts when the crew arrives at your pickup and is ready to load. It stops when the last item is placed at the destination and the walkthrough is done.</p>
+    <!-- ====== HOURLY CLOCK (two-column "on the clock / not on the clock") ====== -->
+    <section class="who-its-for who-its-for--beige">
+      <div class="container">
+        <div class="who-its-for__head">
+          <span class="who-its-for__eyebrow">The hourly clock</span>
+          <h2 class="who-its-for__headline">Where it starts. Where it stops.</h2>
+          <p class="who-its-for__body">The clock starts when the crew arrives at your pickup and is ready to load. It stops when the last item is placed at the destination and the walkthrough is done.</p>
+        </div>
+        <div class="who-its-for__grid">
+          <div class="who-its-for__col">
+            <h3 class="who-its-for__col-title">On the clock</h3>
+            <ul class="check-list">
+              <li>Loading at pickup</li>
+              <li>Drive time between addresses</li>
+              <li>Unloading and placement at destination</li>
+              <li>Disassembly and reassembly of standard furniture</li>
+            </ul>
+          </div>
+          <div class="who-its-for__col">
+            <h3 class="who-its-for__col-title">Not on the clock</h3>
+            <ul class="check-list check-list--x">
+              <li>The drive from our warehouse to your pickup</li>
+              <li>The drive from your destination back to our warehouse</li>
+            </ul>
+          </div>
+        </div>
+        <p class="who-its-for__footnote">Both are covered by the one-time travel fee, equal to one hour of crew time. Long-distance moves don&rsquo;t run on a clock &mdash; the binding quote covers everything end to end.</p>
+      </div>
+    </section>
 
-        <h3>On the clock</h3>
-        <ul>
-          <li>Loading at pickup</li>
-          <li>Drive time between addresses</li>
-          <li>Unloading and placement at destination</li>
-          <li>Disassembly and reassembly of standard furniture</li>
-        </ul>
+    <!-- ====== FAQ ====== -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="faq__headline">Frequently asked questions</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">How long does a typical move take?</summary>
+            <div class="faq__answer">
+              <p>1-bedroom: 2&ndash;4 hours, 2-mover crew. 2-bedroom: 4&ndash;6 hours, 3-mover crew. 3-bedroom: 6&ndash;10 hours, 4-mover crew. Your quote shows the estimate for your specific move.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do I need to be there the whole time?</summary>
+            <div class="faq__answer">
+              <p>Yes for the start (walkthrough) and the end (placement and walkthrough). Middle of the day, you don&rsquo;t need to ride in the truck.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do you wrap and protect everything?</summary>
+            <div class="faq__answer">
+              <p>Yes. Wood and upholstered furniture get blanket-wrapped. Mattresses and soft goods get shrink-wrapped. Floor protection goes down at both ends.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What if I find damage after the crew leaves?</summary>
+            <div class="faq__answer">
+              <p>Document it and let us know within 14 days. Claims process is on the <a href="insurance-and-licensing.html">Insurance &amp; Licensing page</a>.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Can I add stops to the move?</summary>
+            <div class="faq__answer">
+              <p>Yes. Extra stops are billed at the same hourly rate &mdash; they&rsquo;re just more crew time. Tell us during the quote so we can plan the route.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What about pianos, safes, and oversized items?</summary>
+            <div class="faq__answer">
+              <p>Quoted separately so you see the cost upfront. See <a href="#">Additional Services</a>.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
 
-        <h3>Not on the clock</h3>
-        <ul>
-          <li>The drive from our warehouse to your pickup</li>
-          <li>The drive from your destination back to our warehouse</li>
-        </ul>
+    <!-- ====== CLOSING CTA (with two dropdowns) ====== -->
+    <section class="closing-cta">
+      <div class="container">
+        <div class="closing-cta__content">
+          <h2 class="closing-cta__headline">Get your exact price.</h2>
+          <p class="closing-cta__subline">Pick your ZIP and home size. Full breakdown within a few hours.</p>
+          <form class="closing-cta__form" action="#quote">
+            <select class="closing-cta__select" name="zip" required>
+              <option value="" disabled selected>Moving from ZIP</option>
+              <option>60601 &mdash; Chicago Loop</option>
+              <option>60201 &mdash; Evanston</option>
+              <option>60540 &mdash; Naperville</option>
+              <option>60173 &mdash; Schaumburg</option>
+              <option>60004 &mdash; Arlington Heights</option>
+              <option>60062 &mdash; Northbrook</option>
+              <option>Other ZIP</option>
+            </select>
+            <select class="closing-cta__select" name="size" required>
+              <option value="" disabled selected>Home size</option>
+              <option>Studio</option>
+              <option>1 bedroom</option>
+              <option>2 bedroom</option>
+              <option>3 bedroom</option>
+              <option>4+ bedroom</option>
+            </select>
+            <a href="#quote" class="btn-primary">Get a Quote<span class="arrow">&rarr;</span></a>
+          </form>
+          <a href="tel:+1XXXXXXXXXX" class="closing-cta__phone">(312) 555-0199</a>
+        </div>
+      </div>
+    </section>
 
-        <p>Both are covered by the one-time travel fee, equal to one hour of crew time.</p>
-        <p>Long-distance moves don&rsquo;t run on a clock. The binding quote covers everything end to end.</p>
-      </section>
-
-      <!-- ====== FAQ ====== -->
-      <section>
-        <h2>FAQ</h2>
-        <details>
-          <summary>How long does a typical move take?</summary>
-          <p>1-bedroom: 2&ndash;4 hours, 2-mover crew. 2-bedroom: 4&ndash;6 hours, 3-mover crew. 3-bedroom: 6&ndash;10 hours, 4-mover crew. Your quote shows the estimate for your specific move.</p>
-        </details>
-        <details>
-          <summary>Do I need to be there the whole time?</summary>
-          <p>Yes for the start (walkthrough) and the end (placement and walkthrough). Middle of the day, you don&rsquo;t need to ride in the truck.</p>
-        </details>
-        <details>
-          <summary>Do you wrap and protect everything?</summary>
-          <p>Yes. Wood and upholstered furniture get blanket-wrapped. Mattresses and soft goods get shrink-wrapped. Floor protection goes down at both ends.</p>
-        </details>
-        <details>
-          <summary>What if I find damage after the crew leaves?</summary>
-          <p>Document it and let us know within 14 days. Claims process is on the <a href="insurance-and-licensing.html">Insurance &amp; Licensing page &rarr;</a>.</p>
-        </details>
-        <details>
-          <summary>Can I add stops to the move?</summary>
-          <p>Yes. Extra stops are billed at the same hourly rate &mdash; they&rsquo;re just more crew time. Tell us during the quote so we can plan the route.</p>
-        </details>
-        <details>
-          <summary>What about pianos, safes, and oversized items?</summary>
-          <p>Quoted separately so you see the cost upfront. See <a href="#">Additional Services &rarr;</a>.</p>
-        </details>
-      </section>
-
-      <!-- ====== CLOSING CTA ====== -->
-      <section>
-        <h2>Get your exact price.</h2>
-        <p>Enter your ZIPs and move details. We&rsquo;ll send a full breakdown within a few hours.</p>
-        <a href="#quote" class="btn-primary">Get a Quote</a>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
-    </article>
   </main>
 
   <!-- ====== FOOTER ====== -->
@@ -551,6 +795,29 @@
         formWrapper.hidden = true; successPanel.hidden = false;
         setTimeout(function() { modal.close(); modalForm.reset(); formWrapper.hidden = false; successPanel.hidden = true; }, 2000);
       });
+    })();
+
+    // Process walk timeline: fade-in + circle "active" state on scroll
+    (function() {
+      var items = document.querySelectorAll('.process-walk__item');
+      if (!items.length) return;
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function(el) {
+          el.classList.add('is-visible');
+          el.classList.add('is-active');
+        });
+        return;
+      }
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            entry.target.classList.add('is-active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.35, rootMargin: '0px 0px -10% 0px' });
+      items.forEach(function(el) { observer.observe(el); });
     })();
   </script>
 

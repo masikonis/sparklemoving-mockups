@@ -12,6 +12,11 @@
   background-color: var(--color-white);
 }
 
+/* Inverted card variant: keep the section bg, flip cards to beige */
+.fees-section--beige-cards .fees-section__item {
+  background-color: var(--color-offwhite);
+}
+
 .fees-section__head {
   max-width: 760px;
   margin: 0 auto 32px;
@@ -60,6 +65,14 @@
 
 .fees-section__grid--4col .fees-section__item {
   padding: 28px 24px;
+}
+
+/* 2-up variant — comparison layout for two parallel concepts */
+.fees-section__grid--2col {
+  grid-template-columns: 1fr 1fr;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .fees-section__item {
@@ -218,6 +231,12 @@
   .fees-section__grid,
   .fees-section__grid--4col {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .fees-section__grid--2col {
+    grid-template-columns: 1fr;
   }
 }
 

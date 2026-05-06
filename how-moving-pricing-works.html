@@ -12,6 +12,20 @@
 
   <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/components/header.css">
+
+  <!-- Reused homepage section styles -->
+  <link rel="stylesheet" href="styles/pages/home/stats-bar.css">
+  <link rel="stylesheet" href="styles/pages/home/faq.css">
+  <link rel="stylesheet" href="styles/pages/home/closing-cta.css">
+
+  <!-- Reused pricing/service patterns -->
+  <link rel="stylesheet" href="styles/pages/pricing/hero.css">
+  <link rel="stylesheet" href="styles/pages/pricing/fees.css">
+  <link rel="stylesheet" href="styles/pages/pricing/info-blocks.css">
+
+  <!-- Icon-list pattern -->
+  <link rel="stylesheet" href="styles/pages/local-residential-moving/why-local.css">
+
   <link rel="stylesheet" href="styles/components/footer.css">
   <link rel="stylesheet" href="styles/components/modal.css">
 </head>
@@ -132,123 +146,437 @@
     </div>
   </header>
 
-  <main class="page-content">
-    <article>
-      <section>
-        <h1>How moving pricing works. The whole picture.</h1>
-        <p>Hourly rates, binding quotes, and the fees most movers don&rsquo;t show until invoice day.</p>
-        <a href="#quote" class="btn-primary">Get a Quote</a>
-        <p>Takes about 60 seconds.</p>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
+  <main>
 
-      <section>
-        <ul>
-          <li>Since 2012</li>
-          <li>10,000+ Moves</li>
-          <li>Licensed &amp; Insured</li>
+    <!-- ====== HERO ====== -->
+    <section class="pricing-hero">
+      <div class="container pricing-hero__inner">
+        <div class="pricing-hero__content">
+          <span class="pricing-hero__eyebrow">How pricing works</span>
+          <h1 class="pricing-hero__headline">How moving pricing works. <em>The whole picture.</em></h1>
+          <p class="pricing-hero__body">Hourly rates, binding quotes, and the fees most movers don&rsquo;t show until invoice day.</p>
+        </div>
+        <div class="pricing-hero__media">
+          <img src="images/hero-right.webp" alt="Sparkle Moving truck on the road" width="640" height="400">
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== STATS BAR ====== -->
+    <section class="stats-bar">
+      <div class="container">
+        <ul class="stats-bar__list">
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">2012</span>
+            <span class="stats-bar__label">Established</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">10,000+</span>
+            <span class="stats-bar__label">Moves completed</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">Licensed &amp; Insured</span>
+            <span class="stats-bar__label">Illinois CC-MC</span>
+          </li>
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <h2>The two pricing models</h2>
-        <p>Almost every move falls into one of two pricing models.</p>
-        <p><strong>Hourly.</strong> Used for local moves. You&rsquo;re billed for crew time, from arrival at pickup to last item placed at the destination. Standard for moves under about 50 miles.</p>
-        <p><strong>Binding (sometimes called flat-rate).</strong> Used for long-distance moves. The mover sends a fixed price upfront based on weight, distance, and truck space. The number doesn&rsquo;t change between quote and delivery.</p>
-        <p>There&rsquo;s also &ldquo;non-binding estimate&rdquo; &mdash; a number that can change at delivery. We don&rsquo;t use it. Most reputable long-distance movers don&rsquo;t either.</p>
-      </section>
+    <!-- ====== THE TWO PRICING MODELS (2-up cards, white section + white cards) ====== -->
+    <section class="fees-section fees-section--white">
+      <div class="container">
+        <div class="fees-section__head">
+          <span class="fees-section__eyebrow">Two pricing models</span>
+          <h2 class="fees-section__headline">Hourly or binding. That&rsquo;s the choice.</h2>
+          <p class="fees-section__body">Almost every move falls into one of two pricing models. Anything else is a non-binding estimate &mdash; we don&rsquo;t use those, and most reputable movers don&rsquo;t either.</p>
+        </div>
+        <div class="fees-section__grid fees-section__grid--2col">
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3 2"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Hourly</h3>
+            <p class="fees-section__item-body">Used for local moves. You&rsquo;re billed for crew time, from arrival at pickup to last item placed at the destination. Standard for moves under about 50 miles.</p>
+          </div>
 
-      <section>
-        <h2>How hourly pricing actually works</h2>
-        <p>Three numbers go into every hourly quote:</p>
-        <p><strong>1. The hourly rate.</strong> Based on crew size. Two movers is one rate. Three movers is a higher rate. Four movers is higher still. The rate is for the full crew, not per mover.</p>
-        <p><strong>2. The minimum.</strong> Most movers set a minimum number of hours. Two-hour minimum for a small crew is standard. Below that, the move isn&rsquo;t worth dispatching.</p>
-        <p><strong>3. The travel fee.</strong> Covers drive time from the mover&rsquo;s warehouse to your pickup, and from your destination back. Some movers bill it as a flat charge. Some hide it inside the hourly rate. Some bill drive time both ways at the full hourly rate, which costs more.</p>
-        <p>Sparkle&rsquo;s travel fee is one flat charge equal to one hour of crew time. Billed once, not each way.</p>
-        <p>For our exact rates, minimums, and travel fee, see the <a href="pricing.html">Pricing page &rarr;</a>.</p>
-      </section>
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L4 5v7c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Binding (flat-rate)</h3>
+            <p class="fees-section__item-body">Used for long-distance moves. The mover sends a fixed price upfront based on weight, distance, and truck space. The number doesn&rsquo;t change between quote and delivery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>How binding quotes actually work</h2>
-        <p>For long-distance moves, the mover takes an inventory of what you&rsquo;re shipping (in person or by video), estimates the weight, and locks in a price.</p>
-        <p>A real binding quote includes:</p>
-        <ul>
-          <li>Total cost</li>
-          <li>Weight allowance (the inventory you described)</li>
-          <li>Pickup date</li>
-          <li>Delivery window (a real range, not &ldquo;two to three weeks&rdquo;)</li>
-          <li>Which truck the load is on (dedicated or shared)</li>
-        </ul>
-        <p>If anything in that list is missing, it&rsquo;s not a binding quote. It&rsquo;s a non-binding estimate dressed up.</p>
-      </section>
+    <!-- ====== HOW HOURLY PRICING WORKS (3 cards, beige) ====== -->
+    <section class="fees-section">
+      <div class="container">
+        <div class="fees-section__head">
+          <span class="fees-section__eyebrow">Hourly pricing</span>
+          <h2 class="fees-section__headline">Three numbers go into every hourly quote.</h2>
+        </div>
+        <div class="fees-section__grid">
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="2" x2="12" y2="22"/>
+                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">The hourly rate</h3>
+            <p class="fees-section__item-body">Based on crew size. Two movers is one rate, three movers a higher rate, four movers higher still. The rate is for the full crew, not per mover.</p>
+          </div>
 
-      <section>
-        <h2>Where the surprises usually come from</h2>
-        <p>Three places, mostly:</p>
-        <p><strong>1. Fees that aren&rsquo;t in the quote.</strong> Fuel surcharge, stairs charge, long-carry charge, &ldquo;heavy item&rdquo; fee for standard furniture, weekend premium, after-hours premium. Each one $50&ndash;$300. They add up.</p>
-        <p><strong>2. Hours that should be free but aren&rsquo;t.</strong> Drive time billed both ways at full rate. Disassembly and reassembly billed separately. Pad and shrink-wrap charged per item.</p>
-        <p><strong>3. The non-binding shuffle.</strong> The mover quotes one weight at booking. At the warehouse, the actual weight comes in higher. The price goes up at delivery. You pay the new number to get your stuff.</p>
-        <p>None of these are illegal. Most movers disclose them somewhere in the contract. The cost is real, just not visible at quote time.</p>
-      </section>
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3 2"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">The minimum</h3>
+            <p class="fees-section__item-body">Most movers set a minimum number of hours. Two-hour minimum for a small crew is standard &mdash; below that, the move isn&rsquo;t worth dispatching.</p>
+          </div>
 
-      <section>
-        <h2>What we do differently</h2>
-        <p><strong>We publish the rates.</strong> Hourly rates, minimums, travel fee &mdash; all on the <a href="pricing.html">Pricing page &rarr;</a>. No quote form to see them.</p>
-        <p><strong>We send a binding quote when we can.</strong> Long-distance moves get a number locked in: cost, weight allowance, delivery window, dedicated truck. Doesn&rsquo;t move between booking and delivery.</p>
-        <p><strong>We bundle the fees you&rsquo;d expect to see.</strong> Stairs are free. Standard furniture disassembly and reassembly is free. Pad and shrink-wrap are free. No fuel surcharge. No weekend or after-hours premium.</p>
-        <p><strong>We list what isn&rsquo;t included.</strong> Travel fee, packing supplies if you want us to pack, specialty items (pianos, safes, items over 400 lbs). All disclosed in your quote, not after.</p>
-        <p><strong>We don&rsquo;t ask for a deposit.</strong> You pay in full at the end of the move, once everything is placed.</p>
-      </section>
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="6" width="14" height="11" rx="1"/>
+                <path d="M15 9h4l3 4v4h-7V9z"/>
+                <circle cx="6" cy="18.5" r="2"/>
+                <circle cx="18" cy="18.5" r="2"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">The travel fee</h3>
+            <p class="fees-section__item-body">Covers drive time from the mover&rsquo;s warehouse to your pickup, and from your destination back. Sparkle&rsquo;s is one flat charge equal to one hour of crew time &mdash; billed once, not each way.</p>
+          </div>
+        </div>
+        <p class="fees-section__footnote">For our exact rates, minimums, and travel fee, see the <a href="pricing.html" class="gold-link">Pricing page<span class="arrow">&rarr;</span></a></p>
+      </div>
+    </section>
 
-      <section>
-        <h2>What to ask any mover before booking</h2>
-        <p>Whether you book with us or not, ask these:</p>
-        <ol>
-          <li><strong>Is the quote binding or non-binding?</strong> If non-binding, ask what would trigger a price change at delivery.</li>
-          <li><strong>What fees aren&rsquo;t in the hourly rate?</strong> Ask specifically about fuel surcharges, weekend premiums, stair fees, long-carry fees, and &ldquo;heavy item&rdquo; charges for standard furniture.</li>
-          <li><strong>How is the travel fee calculated?</strong> Flat hour, billed both ways, or rolled into the hourly rate?</li>
-          <li><strong>Is the truck dedicated or shared?</strong> For long-distance, this is the difference between a 3-day delivery and a 3-week one.</li>
-          <li><strong>Is the crew on payroll or contracted out?</strong> Subcontracted crews have less accountability if something goes wrong.</li>
-          <li><strong>What&rsquo;s the deposit?</strong> Anything over $0&ndash;$200 for a residential move is on the high side. We don&rsquo;t take any.</li>
-        </ol>
-        <p>If a mover hesitates on any of these, that&rsquo;s the answer.</p>
-      </section>
+    <!-- ====== HOW BINDING QUOTES WORK (zigzag, image left, white) ====== -->
+    <section class="info-section">
+      <div class="container info-section__inner info-section__inner--media info-section__inner--media-left info-section__inner--stretch">
+        <div class="info-section__media">
+          <img src="images/view-skyline-from-water-with-sun-setting-it.jpg" alt="A long-distance route at sunset">
+        </div>
+        <div>
+          <div class="info-section__head">
+            <span class="info-section__eyebrow">Binding quotes</span>
+            <h2 class="info-section__headline">What a real binding quote includes.</h2>
+            <p class="info-section__body">For long-distance moves, the mover takes an inventory of what you&rsquo;re shipping (in person or by video), estimates the weight, and locks in a price. If anything below is missing, it&rsquo;s not binding &mdash; it&rsquo;s a non-binding estimate dressed up.</p>
+          </div>
+          <ul class="check-list">
+            <li>Total cost</li>
+            <li>Weight allowance (the inventory you described)</li>
+            <li>Pickup date</li>
+            <li>Delivery window (a real range, not &ldquo;two to three weeks&rdquo;)</li>
+            <li>Which truck the load is on (dedicated or shared)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>FAQ</h2>
-        <details>
-          <summary>Why is hourly pricing standard for local moves?</summary>
-          <p>Local moves vary too much in time and complexity for a flat rate to be fair to either side. Stairs, parking, building access, and how packed the home is all change the time required. Hourly billing keeps the price honest.</p>
-        </details>
-        <details>
-          <summary>Why is binding pricing standard for long-distance?</summary>
-          <p>Long-distance moves have predictable costs once weight and distance are known. The variables are smaller, so a fixed number works. Hourly would be impossible to estimate across multi-day transit.</p>
-        </details>
-        <details>
-          <summary>What&rsquo;s the average cost of a local move in Chicago?</summary>
-          <p>2-bedroom apartment: $800&ndash;$1,500 typical range. Studios run $400&ndash;$900. 3-bedroom houses run $1,500&ndash;$3,000+. Real ranges on the <a href="pricing.html">Pricing page &rarr;</a>.</p>
-        </details>
-        <details>
-          <summary>What&rsquo;s the average cost of a long-distance move from Chicago?</summary>
-          <p>Chicago to Florida starts at $3,800. Chicago to Texas starts at $4,200. Coast-to-coast runs higher. See the <a href="pricing.html">Pricing page &rarr;</a> or <a href="long-distance-moving.html">Long Distance Moving &rarr;</a>.</p>
-        </details>
-        <details>
-          <summary>Do most movers really hide their prices?</summary>
-          <p>Most do. Industry standard is &ldquo;contact us for a quote&rdquo; with no rates visible on the site. The reasons are usually competitive (they don&rsquo;t want to look more expensive) or operational (they don&rsquo;t want to commit to a number on the web). Both are tradeoffs the customer pays for.</p>
-        </details>
-        <details>
-          <summary>Is the cheapest mover usually the most expensive?</summary>
-          <p>Often, yes. The lowball quote tends to come with a non-binding estimate, hidden fees, or a subcontracted crew. The final number arrives at delivery.</p>
-        </details>
-      </section>
+    <!-- ====== WHERE THE SURPRISES COME FROM (3 cards, beige) ====== -->
+    <section class="fees-section">
+      <div class="container">
+        <div class="fees-section__head">
+          <span class="fees-section__eyebrow">Watch out for</span>
+          <h2 class="fees-section__headline">Where the surprises usually come from.</h2>
+          <p class="fees-section__body">None of these are illegal. Most movers disclose them somewhere in the contract. The cost is real, just not visible at quote time.</p>
+        </div>
+        <div class="fees-section__grid">
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <path d="M9 13h6M9 17h4"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Fees that aren&rsquo;t in the quote</h3>
+            <p class="fees-section__item-body">Fuel surcharge, stairs charge, long-carry charge, &ldquo;heavy item&rdquo; fee for standard furniture, weekend premium, after-hours premium. Each one $50&ndash;$300. They add up.</p>
+          </div>
 
-      <section>
-        <h2>Get your exact price.</h2>
-        <p>Enter your ZIPs and move details. We&rsquo;ll send a full breakdown within a few hours.</p>
-        <a href="#quote" class="btn-primary">Get a Quote</a>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
-    </article>
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3 2"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Hours that should be free</h3>
+            <p class="fees-section__item-body">Drive time billed both ways at full rate. Disassembly and reassembly billed separately. Pad and shrink-wrap charged per item.</p>
+          </div>
+
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 8L12 3 3 8v8l9 5 9-5V8z"/>
+                <path d="M3 8l9 5 9-5"/>
+                <path d="M12 13v8"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">The non-binding shuffle</h3>
+            <p class="fees-section__item-body">The mover quotes one weight at booking. At the warehouse, the actual weight comes in higher. The price goes up at delivery. You pay the new number to get your stuff.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== WHAT WE DO DIFFERENTLY (zigzag, image right, white) ====== -->
+    <section class="info-section">
+      <div class="container info-section__inner info-section__inner--media info-section__inner--media-right info-section__inner--stretch">
+        <div class="info-section__media">
+          <img src="images/hero-left.webp" alt="Sparkle moving crew at work">
+        </div>
+        <div>
+          <div class="info-section__head">
+            <span class="info-section__eyebrow">What we do differently</span>
+            <h2 class="info-section__headline">Five rules we run on.</h2>
+          </div>
+          <ul class="icon-list">
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="2" x2="12" y2="22"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">We publish the rates.</h3>
+                <p class="icon-list__body">Hourly rates, minimums, travel fee &mdash; all on the <a href="pricing.html">Pricing page</a>. No quote form to see them.</p>
+              </div>
+            </li>
+
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L4 5v7c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">We send a binding quote when we can.</h3>
+                <p class="icon-list__body">Long-distance moves get a number locked in: cost, weight allowance, delivery window, dedicated truck. Doesn&rsquo;t move between booking and delivery.</p>
+              </div>
+            </li>
+
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 8L12 3 3 8v8l9 5 9-5V8z"/>
+                  <path d="M3 8l9 5 9-5"/>
+                  <path d="M12 13v8"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">We bundle the fees you&rsquo;d expect to see.</h3>
+                <p class="icon-list__body">Stairs are free. Standard furniture disassembly and reassembly is free. Pad and shrink-wrap are free. No fuel surcharge. No weekend or after-hours premium.</p>
+              </div>
+            </li>
+
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <path d="M8 13h8M8 17h6"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">We list what isn&rsquo;t included.</h3>
+                <p class="icon-list__body">Travel fee, packing supplies if you want us to pack, specialty items (pianos, safes, items over 400 lbs). All disclosed in your quote, not after.</p>
+              </div>
+            </li>
+
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 11l3 3L22 4"/>
+                  <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">We don&rsquo;t ask for a deposit.</h3>
+                <p class="icon-list__body">You pay in full at the end of the move, once everything is placed.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== WHAT TO ASK ANY MOVER (3x2 cards, beige) ====== -->
+    <section class="fees-section">
+      <div class="container">
+        <div class="fees-section__head">
+          <span class="fees-section__eyebrow">Six questions</span>
+          <h2 class="fees-section__headline">What to ask any mover before booking.</h2>
+          <p class="fees-section__body">Whether you book with us or not, ask these. If a mover hesitates on any of them, that&rsquo;s the answer.</p>
+        </div>
+        <div class="fees-section__grid">
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L4 5v7c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Is the quote binding or non-binding?</h3>
+            <p class="fees-section__item-body">If non-binding, ask what would trigger a price change at delivery.</p>
+          </div>
+
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="2" x2="12" y2="22"/>
+                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">What fees aren&rsquo;t in the hourly rate?</h3>
+            <p class="fees-section__item-body">Ask about fuel surcharges, weekend premiums, stair fees, long-carry fees, and &ldquo;heavy item&rdquo; charges for standard furniture.</p>
+          </div>
+
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="6" width="14" height="11" rx="1"/>
+                <path d="M15 9h4l3 4v4h-7V9z"/>
+                <circle cx="6" cy="18.5" r="2"/>
+                <circle cx="18" cy="18.5" r="2"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">How is the travel fee calculated?</h3>
+            <p class="fees-section__item-body">Flat hour, billed both ways, or rolled into the hourly rate? Each model costs a different amount.</p>
+          </div>
+
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 8L12 3 3 8v8l9 5 9-5V8z"/>
+                <path d="M3 8l9 5 9-5"/>
+                <path d="M12 13v8"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Is the truck dedicated or shared?</h3>
+            <p class="fees-section__item-body">For long-distance, this is the difference between a 3-day delivery and a 3-week one.</p>
+          </div>
+
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="8" r="3"/>
+                <circle cx="17" cy="9" r="2.5"/>
+                <path d="M3 20c0-3 3-5 6-5s6 2 6 5"/>
+                <path d="M14 20c0-2 2-4 4-4s3.5 1 3.5 4"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Is the crew on payroll or contracted out?</h3>
+            <p class="fees-section__item-body">Subcontracted crews have less accountability if something goes wrong.</p>
+          </div>
+
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="2" x2="12" y2="22"/>
+                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                <circle cx="12" cy="12" r="11" stroke-width="0.5" stroke-dasharray="2 2"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">What&rsquo;s the deposit?</h3>
+            <p class="fees-section__item-body">Anything over $0&ndash;$200 for a residential move is on the high side. We don&rsquo;t take any.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FAQ ====== -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="faq__headline">Frequently asked questions</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">Why is hourly pricing standard for local moves?</summary>
+            <div class="faq__answer">
+              <p>Local moves vary too much in time and complexity for a flat rate to be fair to either side. Stairs, parking, building access, and how packed the home is all change the time required. Hourly billing keeps the price honest.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Why is binding pricing standard for long-distance?</summary>
+            <div class="faq__answer">
+              <p>Long-distance moves have predictable costs once weight and distance are known. The variables are smaller, so a fixed number works. Hourly would be impossible to estimate across multi-day transit.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What&rsquo;s the average cost of a local move in Chicago?</summary>
+            <div class="faq__answer">
+              <p>2-bedroom apartment: $800&ndash;$1,500 typical range. Studios run $400&ndash;$900. 3-bedroom houses run $1,500&ndash;$3,000+. Real ranges on the <a href="pricing.html">Pricing page</a>.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What&rsquo;s the average cost of a long-distance move from Chicago?</summary>
+            <div class="faq__answer">
+              <p>Chicago to Florida starts at $3,800. Chicago to Texas starts at $4,200. Coast-to-coast runs higher. See the <a href="pricing.html">Pricing page</a> or <a href="long-distance-moving.html">Long Distance Moving</a>.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do most movers really hide their prices?</summary>
+            <div class="faq__answer">
+              <p>Most do. Industry standard is &ldquo;contact us for a quote&rdquo; with no rates visible on the site. The reasons are usually competitive (they don&rsquo;t want to look more expensive) or operational (they don&rsquo;t want to commit to a number on the web). Both are tradeoffs the customer pays for.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Is the cheapest mover usually the most expensive?</summary>
+            <div class="faq__answer">
+              <p>Often, yes. The lowball quote tends to come with a non-binding estimate, hidden fees, or a subcontracted crew. The final number arrives at delivery.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CLOSING CTA (with two dropdowns) ====== -->
+    <section class="closing-cta">
+      <div class="container">
+        <div class="closing-cta__content">
+          <h2 class="closing-cta__headline">Get your exact price.</h2>
+          <p class="closing-cta__subline">Pick your ZIP and home size. Full breakdown within a few hours.</p>
+          <form class="closing-cta__form" action="#quote">
+            <select class="closing-cta__select" name="zip" required>
+              <option value="" disabled selected>Moving from ZIP</option>
+              <option>60601 &mdash; Chicago Loop</option>
+              <option>60201 &mdash; Evanston</option>
+              <option>60540 &mdash; Naperville</option>
+              <option>60173 &mdash; Schaumburg</option>
+              <option>60004 &mdash; Arlington Heights</option>
+              <option>60062 &mdash; Northbrook</option>
+              <option>Other ZIP</option>
+            </select>
+            <select class="closing-cta__select" name="size" required>
+              <option value="" disabled selected>Home size</option>
+              <option>Studio</option>
+              <option>1 bedroom</option>
+              <option>2 bedroom</option>
+              <option>3 bedroom</option>
+              <option>4+ bedroom</option>
+            </select>
+            <a href="#quote" class="btn-primary">Get a Quote<span class="arrow">&rarr;</span></a>
+          </form>
+          <a href="tel:+1XXXXXXXXXX" class="closing-cta__phone">(312) 555-0199</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ====== FOOTER ====== -->

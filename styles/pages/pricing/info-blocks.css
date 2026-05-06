@@ -57,6 +57,12 @@
   grid-template-columns: 1.05fr 0.95fr;
 }
 
+/* When --media-right is set, push the media block to the right column
+   regardless of its position in the markup. */
+.info-section__inner--media-right .info-section__media {
+  order: 2;
+}
+
 .info-section__media {
   position: relative;
   border-radius: 14px;

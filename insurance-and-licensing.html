@@ -12,6 +12,24 @@
 
   <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/components/header.css">
+
+  <!-- Reused homepage section styles -->
+  <link rel="stylesheet" href="styles/pages/home/stats-bar.css">
+  <link rel="stylesheet" href="styles/pages/home/faq.css">
+  <link rel="stylesheet" href="styles/pages/home/closing-cta.css">
+
+  <!-- Reused pricing/service patterns -->
+  <link rel="stylesheet" href="styles/pages/pricing/hero.css">
+  <link rel="stylesheet" href="styles/pages/pricing/rate-tables.css">
+  <link rel="stylesheet" href="styles/pages/pricing/fees.css">
+  <link rel="stylesheet" href="styles/pages/pricing/info-blocks.css">
+
+  <!-- Icon-list pattern -->
+  <link rel="stylesheet" href="styles/pages/local-residential-moving/why-local.css">
+
+  <!-- Process timeline (claim process) -->
+  <link rel="stylesheet" href="styles/components/process-walk.css">
+
   <link rel="stylesheet" href="styles/components/footer.css">
   <link rel="stylesheet" href="styles/components/modal.css">
 </head>
@@ -129,115 +147,437 @@
     </div>
   </header>
 
-  <main class="page-content">
-    <article>
-      <section>
-        <h1>Licensed, insured, and on the public registry.</h1>
-        <p>License numbers, insurance limits, claim process. All on the page.</p>
-        <a href="#quote" class="btn-primary">Get a Quote</a>
-        <p>Takes about 60 seconds.</p>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
+  <main>
 
-      <section>
-        <ul>
-          <li>Since 2012</li>
-          <li>10,000+ Moves</li>
-          <li>Licensed &amp; Insured</li>
+    <!-- ====== HERO ====== -->
+    <section class="pricing-hero">
+      <div class="container pricing-hero__inner">
+        <div class="pricing-hero__content">
+          <span class="pricing-hero__eyebrow">Insurance &amp; Licensing</span>
+          <h1 class="pricing-hero__headline">Licensed, insured, and <em>on the public registry.</em></h1>
+          <p class="pricing-hero__body">License numbers, insurance limits, claim process. All on the page.</p>
+        </div>
+        <div class="pricing-hero__media">
+          <img src="images/hero-right.webp" alt="Sparkle Moving truck" width="640" height="400">
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== STATS BAR ====== -->
+    <section class="stats-bar">
+      <div class="container">
+        <ul class="stats-bar__list">
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">2012</span>
+            <span class="stats-bar__label">Established</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">10,000+</span>
+            <span class="stats-bar__label">Moves completed</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">Licensed &amp; Insured</span>
+            <span class="stats-bar__label">Illinois CC-MC</span>
+          </li>
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <h2>Licensing</h2>
-        <table>
-          <thead>
-            <tr><th>Authority</th><th>Number</th><th>Verify</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>USDOT (interstate moving)</td><td>[USDOT #]</td><td><a href="#">FMCSA registry &rarr;</a></td></tr>
-            <tr><td>MC (interstate operating authority)</td><td>[MC #]</td><td><a href="#">FMCSA registry &rarr;</a></td></tr>
-            <tr><td>Illinois Commerce Commission (intrastate moving)</td><td>[ICC MC #]</td><td><a href="#">ICC registry &rarr;</a></td></tr>
-            <tr><td>Illinois business registration</td><td>[IL business ID]</td><td><a href="#">SOS registry &rarr;</a></td></tr>
-          </tbody>
-        </table>
-      </section>
+    <!-- ====== LICENSING (table) ====== -->
+    <section class="rate-section">
+      <div class="container">
+        <div class="rate-section__header">
+          <span class="rate-section__eyebrow">Licensing</span>
+          <h2 class="rate-section__headline">Authorities and registration</h2>
+          <p class="rate-section__body">Every authority we operate under and where to verify the registration yourself.</p>
+        </div>
+        <div class="rate-table">
+          <table class="rate-table__table">
+            <thead>
+              <tr>
+                <th>Authority</th>
+                <th>Number</th>
+                <th>Verify</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>USDOT (interstate moving)</td>
+                <td>[USDOT #]</td>
+                <td><a href="#" class="gold-link">FMCSA registry<span class="arrow">&rarr;</span></a></td>
+              </tr>
+              <tr>
+                <td>MC (interstate operating authority)</td>
+                <td>[MC #]</td>
+                <td><a href="#" class="gold-link">FMCSA registry<span class="arrow">&rarr;</span></a></td>
+              </tr>
+              <tr>
+                <td>Illinois Commerce Commission (intrastate)</td>
+                <td>[ICC MC #]</td>
+                <td><a href="#" class="gold-link">ICC registry<span class="arrow">&rarr;</span></a></td>
+              </tr>
+              <tr>
+                <td>Illinois business registration</td>
+                <td>[IL business ID]</td>
+                <td><a href="#" class="gold-link">SOS registry<span class="arrow">&rarr;</span></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>Insurance</h2>
-        <table>
-          <thead>
-            <tr><th>Coverage</th><th>Carrier</th><th>Policy limit</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Cargo (your belongings in transit)</td><td>[Carrier]</td><td>[$ limit]</td></tr>
-            <tr><td>General liability (property and bodily injury)</td><td>[Carrier]</td><td>[$ limit]</td></tr>
-            <tr><td>Auto liability (truck fleet)</td><td>[Carrier]</td><td>[$ limit]</td></tr>
-            <tr><td>Workers compensation (crew on the job)</td><td>[Carrier]</td><td>[$ limit]</td></tr>
-          </tbody>
-        </table>
-        <p>Certificates of insurance available on request.</p>
-      </section>
+    <!-- ====== INSURANCE (table) ====== -->
+    <section class="rate-section rate-section--offwhite">
+      <div class="container">
+        <div class="rate-section__header">
+          <span class="rate-section__eyebrow">Insurance</span>
+          <h2 class="rate-section__headline">Coverage we carry</h2>
+          <p class="rate-section__body">Active policies on every move. Certificates of insurance available on request.</p>
+        </div>
+        <div class="rate-table">
+          <table class="rate-table__table">
+            <thead>
+              <tr>
+                <th>Coverage</th>
+                <th>Carrier</th>
+                <th>Policy limit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cargo (your belongings in transit)</td>
+                <td>[Carrier]</td>
+                <td>[$ limit]</td>
+              </tr>
+              <tr>
+                <td>General liability (property and bodily injury)</td>
+                <td>[Carrier]</td>
+                <td>[$ limit]</td>
+              </tr>
+              <tr>
+                <td>Auto liability (truck fleet)</td>
+                <td>[Carrier]</td>
+                <td>[$ limit]</td>
+              </tr>
+              <tr>
+                <td>Workers compensation (crew on the job)</td>
+                <td>[Carrier]</td>
+                <td>[$ limit]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="rate-section__footnote">Certificates of insurance available on request &mdash; email <a href="mailto:insurance@sparklemoving.com" class="gold-link">insurance@sparklemoving.com</a>.</p>
+      </div>
+    </section>
 
-      <section>
-        <h2>What basic liability covers</h2>
-        <p>Federal regulation requires every licensed interstate mover to provide a minimum coverage of <strong>$0.60 per pound per item</strong> for damages in transit. It&rsquo;s free, included in every move, and nominal &mdash; a 50-pound TV worth $1,000 is covered for $30 under basic liability.</p>
-        <p>We follow the same minimum on local moves. It&rsquo;s the floor, not the recommendation.</p>
-      </section>
+    <!-- ====== WHAT BASIC LIABILITY COVERS (centered intro) ====== -->
+    <section class="rate-section">
+      <div class="container">
+        <div class="rate-section__header">
+          <span class="rate-section__eyebrow">Released value</span>
+          <h2 class="rate-section__headline">What basic liability actually covers.</h2>
+          <p class="rate-section__body">Federal regulation requires every licensed interstate mover to provide a minimum coverage of <strong>$0.60 per pound per item</strong> for damages in transit. It&rsquo;s free, included in every move, and nominal &mdash; a 50-pound TV worth $1,000 is covered for $30 under basic liability.</p>
+          <p class="rate-section__body">We follow the same minimum on local moves. It&rsquo;s the floor, not the recommendation.</p>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>Higher-value coverage</h2>
-        <p>For high-value items (electronics, art, antiques, anything you&rsquo;d file an actual claim on), we offer full-value protection.</p>
-        <p><strong>How it works.</strong> You declare a value at booking. If an item is lost, damaged, or destroyed, we either repair it, replace it, or pay you the declared value.</p>
-        <p><strong>Cost.</strong> Quoted with the move. Depends on declared value and any high-value items called out separately (jewelry, art, collectibles).</p>
-        <p>If your move includes anything you&rsquo;d hate to replace at the basic-liability rate, ask about full-value protection at the quote stage.</p>
-      </section>
+    <!-- ====== HIGHER-VALUE COVERAGE (image left + icon-list) ====== -->
+    <section class="info-section info-section--offwhite">
+      <div class="container info-section__inner info-section__inner--media info-section__inner--media-left info-section__inner--stretch">
+        <div class="info-section__media">
+          <img src="images/hero-left.webp" alt="Sparkle crew handling household goods carefully">
+        </div>
+        <div>
+          <div class="info-section__head">
+            <span class="info-section__eyebrow">Full-value protection</span>
+            <h2 class="info-section__headline">Higher-value coverage.</h2>
+            <p class="info-section__body">For high-value items &mdash; electronics, art, antiques, anything you&rsquo;d file an actual claim on &mdash; we offer full-value protection. If your move includes anything you&rsquo;d hate to replace at the basic-liability rate, ask at the quote stage.</p>
+          </div>
+          <ul class="icon-list">
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L4 5v7c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">How it works.</h3>
+                <p class="icon-list__body">You declare a value at booking. If an item is lost, damaged, or destroyed, we either repair it, replace it, or pay you the declared value.</p>
+              </div>
+            </li>
 
-      <section>
-        <h2>Certificates of insurance for buildings</h2>
-        <p>Most multi-unit and commercial buildings require a certificate of insurance from the moving company before allowing the freight elevator and dock to be used.</p>
-        <p><strong>What you do:</strong> Send us the building&rsquo;s COI requirements when you book. They usually come from the building manager as a one-page sheet of required limits and named insureds.</p>
-        <p><strong>What we do:</strong> File the COI with our insurance carrier and confirm directly with the building before move day. You don&rsquo;t make the call.</p>
-        <p>This is included. No charge for filing the COI, no upcharge for buildings that require unusual limits.</p>
-      </section>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="2" x2="12" y2="22"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Cost.</h3>
+                <p class="icon-list__body">Quoted with the move. Depends on declared value and any high-value items called out separately (jewelry, art, collectibles).</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>Damage claim process</h2>
-        <p>If something is damaged during the move, here&rsquo;s the path:</p>
-        <ol>
-          <li><strong>Note it on move day if possible.</strong> The crew lead documents it on the final invoice. Photos help.</li>
-          <li><strong>Submit the claim within 14 days.</strong> Email <a href="mailto:claims@sparklemoving.com">claims@sparklemoving.com</a> with the move date, the item, the damage, and photos. A claim form goes back to you within 2 business days.</li>
-          <li><strong>Inspection and resolution.</strong> For small claims, we inspect by photo and resolve directly. For larger claims, we schedule an in-person inspection. Resolution is repair, replacement, or payout &mdash; your choice within the policy.</li>
-          <li><strong>Timeline.</strong> Most claims resolve within 30 days of submission. Larger claims can take longer if a third-party repair quote is needed.</li>
+    <!-- ====== CERTIFICATES OF INSURANCE FOR BUILDINGS (image right + icon-list) ====== -->
+    <section class="info-section">
+      <div class="container info-section__inner info-section__inner--media info-section__inner--media-right info-section__inner--stretch">
+        <div class="info-section__media">
+          <img src="images/step2.webp" alt="Sparkle moving crew at a Chicago high-rise">
+        </div>
+        <div>
+          <div class="info-section__head">
+            <span class="info-section__eyebrow">Building paperwork</span>
+            <h2 class="info-section__headline">Certificates of insurance for buildings.</h2>
+            <p class="info-section__body">Most multi-unit and commercial buildings require a certificate of insurance from the moving company before allowing the freight elevator and dock to be used. This is included &mdash; no charge for filing the COI, no upcharge for buildings that require unusual limits.</p>
+          </div>
+          <ul class="icon-list">
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <path d="M8 13h8M8 17h6"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">What you do.</h3>
+                <p class="icon-list__body">Send us the building&rsquo;s COI requirements when you book. They usually come from the building manager as a one-page sheet of required limits and named insureds.</p>
+              </div>
+            </li>
+
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L4 5v7c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">What we do.</h3>
+                <p class="icon-list__body">File the COI with our insurance carrier and confirm directly with the building before move day. You don&rsquo;t make the call.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== DAMAGE CLAIM PROCESS (timeline) ====== -->
+    <section class="process-walk">
+      <div class="container">
+        <div class="process-walk__head">
+          <span class="process-walk__eyebrow">If something gets damaged</span>
+          <h2 class="process-walk__headline">Damage claim process</h2>
+          <p class="process-walk__body">We&rsquo;d rather resolve a claim than fight it. The process is the proof.</p>
+        </div>
+        <ol class="process-walk__list">
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">1</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <path d="M9 13l2 2 4-4"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Note it on move day if possible.</h3>
+              </div>
+              <p class="process-walk__step-body">The crew lead documents it on the final invoice. Photos help.</p>
+            </div>
+          </li>
+
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">2</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="5" width="18" height="14" rx="2"/>
+                    <path d="M3 7l9 6 9-6"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Submit the claim within 14 days.</h3>
+              </div>
+              <p class="process-walk__step-body">Email <a href="mailto:claims@sparklemoving.com">claims@sparklemoving.com</a> with the move date, the item, the damage, and photos. A claim form goes back to you within 2 business days.</p>
+            </div>
+          </li>
+
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">3</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Inspection and resolution.</h3>
+              </div>
+              <p class="process-walk__step-body">For small claims, we inspect by photo and resolve directly. For larger claims, we schedule an in-person inspection. Resolution is repair, replacement, or payout &mdash; your choice within the policy.</p>
+            </div>
+          </li>
+
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">4</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="5" width="18" height="16" rx="1"/>
+                    <path d="M3 10h18M8 3v4M16 3v4"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Timeline.</h3>
+              </div>
+              <p class="process-walk__step-body">Most claims resolve within 30 days of submission. Larger claims can take longer if a third-party repair quote is needed.</p>
+            </div>
+          </li>
         </ol>
-        <p>We&rsquo;d rather resolve a claim than fight it. The process is the proof.</p>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <h2>Verify our credentials yourself</h2>
-        <p>You don&rsquo;t have to take our word for any of this.</p>
-        <p><strong>Federal (interstate moves).</strong> Search our USDOT or MC number on the <a href="#">FMCSA SAFER registry &rarr;</a>. You&rsquo;ll see registration status, fleet size, inspection history, and any out-of-service orders.</p>
-        <p><strong>Illinois (intrastate moves).</strong> Search our ICC MC number on the <a href="#">Illinois Commerce Commission registry &rarr;</a>. Status, certificate, and any complaints filed are public record.</p>
-        <p><strong>Insurance certificates.</strong> Available on request. Email <a href="mailto:insurance@sparklemoving.com">insurance@sparklemoving.com</a> and we&rsquo;ll send the current COI for your records.</p>
-      </section>
+    <!-- ====== VERIFY OUR CREDENTIALS (3 cards) ====== -->
+    <section class="fees-section">
+      <div class="container">
+        <div class="fees-section__head">
+          <span class="fees-section__eyebrow">Public records</span>
+          <h2 class="fees-section__headline">Verify our credentials yourself.</h2>
+        </div>
+        <div class="fees-section__grid">
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L4 5v7c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Federal registry</h3>
+            <p class="fees-section__item-body">Search our USDOT or MC number on the FMCSA SAFER registry &mdash; registration status, fleet size, inspection history, and any out-of-service orders are all public record.</p>
+          </div>
 
-      <section>
-        <h2>FAQ</h2>
-        <details><summary>Are you registered with the FMCSA?</summary><p>Yes. We hold both a USDOT number and an MC number for interstate moves. Both are listed above and verifiable on the federal registry.</p></details>
-        <details><summary>Are you registered with the Illinois Commerce Commission?</summary><p>Yes. ICC MC number listed above for intrastate (within Illinois) moves.</p></details>
-        <details><summary>What&rsquo;s the difference between USDOT and MC numbers?</summary><p>A USDOT number is required for any commercial vehicle operating in interstate commerce. An MC number is the operating authority that lets a mover transport household goods across state lines for hire. Most legitimate interstate movers carry both. We do.</p></details>
-        <details><summary>Are your trucks owned or leased?</summary><p>Owned. We don&rsquo;t subcontract the move out to a different fleet.</p></details>
-        <details><summary>Are crew members on payroll or contracted?</summary><p>On payroll. The crew that arrives is on Sparkle&rsquo;s payroll and covered by our workers compensation policy.</p></details>
-        <details><summary>Do you offer Released Value Protection or Full-Value Protection?</summary><p>Both. Released Value (basic liability at $0.60/lb) is included free. Full-Value Protection is the upgrade &mdash; quoted at booking based on declared value.</p></details>
-        <details><summary>Where do I file a complaint if it&rsquo;s not resolved with you directly?</summary><p>For interstate moves, the FMCSA accepts complaints at <a href="#">FMCSA complaint portal &rarr;</a>. For Illinois intrastate moves, the ICC accepts complaints at <a href="#">ICC complaint portal &rarr;</a>. We&rsquo;d rather you call us first, but the public process is there.</p></details>
-      </section>
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18"/>
+                <path d="M5 21V10l7-6 7 6v11"/>
+                <path d="M10 21v-6h4v6"/>
+                <path d="M9 9h6"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Illinois Commerce Commission</h3>
+            <p class="fees-section__item-body">Search our ICC MC number on the Illinois Commerce Commission registry. Status, certificate, and any complaints filed are public record.</p>
+          </div>
 
-      <section>
-        <h2>Get your exact price.</h2>
-        <p>Enter your ZIPs and move details. We&rsquo;ll send a full breakdown within a few hours.</p>
-        <a href="#quote" class="btn-primary">Get a Quote</a>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
-    </article>
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <path d="M9 13l2 2 4-4"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Insurance certificates</h3>
+            <p class="fees-section__item-body">Available on request. Email <a href="mailto:insurance@sparklemoving.com">insurance@sparklemoving.com</a> and we&rsquo;ll send the current COI for your records.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FAQ ====== -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="faq__headline">Frequently asked questions</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">Are you registered with the FMCSA?</summary>
+            <div class="faq__answer">
+              <p>Yes. We hold both a USDOT number and an MC number for interstate moves. Both are listed above and verifiable on the federal registry.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Are you registered with the Illinois Commerce Commission?</summary>
+            <div class="faq__answer">
+              <p>Yes. ICC MC number listed above for intrastate (within Illinois) moves.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What&rsquo;s the difference between USDOT and MC numbers?</summary>
+            <div class="faq__answer">
+              <p>A USDOT number is required for any commercial vehicle operating in interstate commerce. An MC number is the operating authority that lets a mover transport household goods across state lines for hire. Most legitimate interstate movers carry both. We do.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Are your trucks owned or leased?</summary>
+            <div class="faq__answer">
+              <p>Owned. We don&rsquo;t subcontract the move out to a different fleet.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Are crew members on payroll or contracted?</summary>
+            <div class="faq__answer">
+              <p>On payroll. The crew that arrives is on Sparkle&rsquo;s payroll and covered by our workers compensation policy.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do you offer Released Value Protection or Full-Value Protection?</summary>
+            <div class="faq__answer">
+              <p>Both. Released Value (basic liability at $0.60/lb) is included free. Full-Value Protection is the upgrade &mdash; quoted at booking based on declared value.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Where do I file a complaint if it&rsquo;s not resolved with you directly?</summary>
+            <div class="faq__answer">
+              <p>For interstate moves, the FMCSA accepts complaints at the <a href="#">FMCSA complaint portal</a>. For Illinois intrastate moves, the ICC accepts complaints at the <a href="#">ICC complaint portal</a>. We&rsquo;d rather you call us first, but the public process is there.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CLOSING CTA (with two dropdowns) ====== -->
+    <section class="closing-cta">
+      <div class="container">
+        <div class="closing-cta__content">
+          <h2 class="closing-cta__headline">Get your exact price.</h2>
+          <p class="closing-cta__subline">Pick your ZIP and home size. Full breakdown within a few hours.</p>
+          <form class="closing-cta__form" action="#quote">
+            <select class="closing-cta__select" name="zip" required>
+              <option value="" disabled selected>Moving from ZIP</option>
+              <option>60601 &mdash; Chicago Loop</option>
+              <option>60201 &mdash; Evanston</option>
+              <option>60540 &mdash; Naperville</option>
+              <option>60173 &mdash; Schaumburg</option>
+              <option>60004 &mdash; Arlington Heights</option>
+              <option>60062 &mdash; Northbrook</option>
+              <option>Other ZIP</option>
+            </select>
+            <select class="closing-cta__select" name="size" required>
+              <option value="" disabled selected>Home size</option>
+              <option>Studio</option>
+              <option>1 bedroom</option>
+              <option>2 bedroom</option>
+              <option>3 bedroom</option>
+              <option>4+ bedroom</option>
+            </select>
+            <a href="#quote" class="btn-primary">Get a Quote<span class="arrow">&rarr;</span></a>
+          </form>
+          <a href="tel:+1XXXXXXXXXX" class="closing-cta__phone">(312) 555-0199</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
@@ -373,6 +713,29 @@
       modal.querySelectorAll('[data-close-modal]').forEach(function(el) { el.addEventListener('click', function() { modal.close(); }); });
       modal.addEventListener('click', function(e) { if (e.target === modal) modal.close(); });
       modalForm.addEventListener('submit', function(e) { e.preventDefault(); if (!modalForm.reportValidity()) return; formWrapper.hidden = true; successPanel.hidden = false; setTimeout(function() { modal.close(); modalForm.reset(); formWrapper.hidden = false; successPanel.hidden = true; }, 2000); });
+    })();
+
+    // Process walk timeline: fade-in + circle "active" state on scroll
+    (function() {
+      var items = document.querySelectorAll('.process-walk__item');
+      if (!items.length) return;
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function(el) {
+          el.classList.add('is-visible');
+          el.classList.add('is-active');
+        });
+        return;
+      }
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            entry.target.classList.add('is-active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.35, rootMargin: '0px 0px -10% 0px' });
+      items.forEach(function(el) { observer.observe(el); });
     })();
   </script>
 

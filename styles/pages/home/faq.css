@@ -22,6 +22,30 @@
   /* Full width of the layout container */
 }
 
+/* Category sub-heading inside an FAQ section (used on the FAQ hub page) */
+.faq__category {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--color-navy);
+  text-align: center;
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-md);
+}
+
+.faq__category:first-of-type {
+  margin-top: 0;
+}
+
+/* When categories are present, the per-item top border on the first item
+   would visually duplicate against the spacing under the category title.
+   Reset that for items that follow a category heading. */
+.faq__category + .faq__list .faq__item:first-child {
+  border-top: 1px solid var(--color-navy-08);
+}
+
 /* Native <details>/<summary> accordion — no JS needed */
 .faq__item {
   border-bottom: 1px solid var(--color-navy-08);

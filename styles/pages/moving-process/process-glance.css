@@ -1,0 +1,157 @@
+/* ==========================================================================
+   At-a-glance summary table for the Moving Process page.
+   Each row's step name is an anchor link to the matching detail block below.
+   ========================================================================== */
+
+.process-glance {
+  background: var(--color-white);
+  padding: var(--space-3xl) 0;
+  border-top: 1px solid var(--color-navy-08);
+}
+
+.process-glance__head {
+  max-width: 760px;
+  margin: 0 auto var(--space-xl);
+  text-align: center;
+}
+
+.process-glance__eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+}
+
+.process-glance__headline {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.12;
+  letter-spacing: -0.018em;
+  color: var(--color-navy);
+}
+
+.process-glance__body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-navy-60);
+  margin-top: var(--space-md);
+}
+
+/* ---------- Table ---------- */
+
+.process-glance__table-wrap {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-navy-08);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(25, 28, 43, 0.06);
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.process-glance__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+}
+
+.process-glance__table thead tr {
+  background-color: var(--color-navy);
+}
+
+.process-glance__table th {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-white-80);
+  padding: 18px 24px;
+  text-align: left;
+}
+
+.process-glance__table tbody tr {
+  border-top: 1px solid var(--color-navy-08);
+  transition: background-color 0.15s ease;
+}
+
+.process-glance__table tbody tr:first-child {
+  border-top: none;
+}
+
+.process-glance__table tbody tr:hover {
+  background-color: var(--color-offwhite);
+}
+
+.process-glance__table td {
+  padding: 18px 24px;
+  font-size: 15px;
+  color: var(--color-navy-60);
+  vertical-align: middle;
+}
+
+/* The first cell holds the anchor link to the matching step section */
+.process-glance__step-link {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-navy);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: -0.005em;
+  transition: color 0.15s ease;
+}
+
+.process-glance__step-link::after {
+  content: '\2192';
+  color: var(--color-gold);
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.process-glance__step-link:hover {
+  color: var(--color-gold);
+}
+
+.process-glance__step-link:hover::after {
+  transform: translateX(4px);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .process-glance {
+    padding: var(--space-2xl) 0;
+  }
+
+  .process-glance__headline {
+    font-size: 28px;
+  }
+
+  .process-glance__table thead {
+    display: none;
+  }
+
+  .process-glance__table tbody tr {
+    display: block;
+    padding: 14px 18px;
+    border-top: 1px solid var(--color-navy-08);
+  }
+
+  .process-glance__table td {
+    display: block;
+    padding: 4px 0;
+  }
+
+  .process-glance__step-link {
+    font-size: 17px;
+    margin-bottom: 4px;
+  }
+}

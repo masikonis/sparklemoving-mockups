@@ -13,6 +13,24 @@
   <!-- Shared chrome -->
   <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/components/header.css">
+
+  <!-- About page-specific -->
+  <link rel="stylesheet" href="styles/pages/about/by-the-numbers.css">
+  <link rel="stylesheet" href="styles/pages/about/who-its-for.css">
+
+  <!-- Reused homepage section styles -->
+  <link rel="stylesheet" href="styles/pages/home/stats-bar.css">
+  <link rel="stylesheet" href="styles/pages/home/faq.css">
+  <link rel="stylesheet" href="styles/pages/home/closing-cta.css">
+
+  <!-- Reused pricing/service patterns -->
+  <link rel="stylesheet" href="styles/pages/pricing/hero.css">
+  <link rel="stylesheet" href="styles/pages/pricing/rate-tables.css">
+  <link rel="stylesheet" href="styles/pages/pricing/info-blocks.css">
+
+  <!-- Icon-list pattern -->
+  <link rel="stylesheet" href="styles/pages/local-residential-moving/why-local.css">
+
   <link rel="stylesheet" href="styles/components/footer.css">
   <link rel="stylesheet" href="styles/components/modal.css">
 </head>
@@ -179,113 +197,368 @@
     </div>
   </header>
 
-  <main class="page-content">
-    <article>
-      <!-- ====== HERO ====== -->
-      <section>
-        <h1>Here&rsquo;s who you&rsquo;re hiring.</h1>
-        <p>Chicago movers since 2012. 10,000+ moves out of Northbrook. Same hourly rate, every day of the week.</p>
-        <a href="#quote" class="btn-primary">Get a Quote</a>
-        <p>Takes about 60 seconds.</p>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
+  <main>
 
-      <!-- ====== STATS BAR ====== -->
-      <section>
-        <ul>
-          <li>Since 2012</li>
-          <li>10,000+ Moves</li>
-          <li>Licensed &amp; Insured</li>
+    <!-- ====== HERO ====== -->
+    <section class="pricing-hero">
+      <div class="container pricing-hero__inner">
+        <div class="pricing-hero__content">
+          <span class="pricing-hero__eyebrow">About Sparkle</span>
+          <h1 class="pricing-hero__headline">Here&rsquo;s <em>who you&rsquo;re hiring.</em></h1>
+          <p class="pricing-hero__body">Chicago movers since 2012. 10,000+ moves out of Northbrook. Same hourly rate, every day of the week.</p>
+        </div>
+        <div class="pricing-hero__media">
+          <img src="images/hero-right.webp" alt="Sparkle Moving crew on a Chicago job" width="640" height="400">
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== STATS BAR ====== -->
+    <section class="stats-bar">
+      <div class="container">
+        <ul class="stats-bar__list">
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">2012</span>
+            <span class="stats-bar__label">Established</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">10,000+</span>
+            <span class="stats-bar__label">Moves completed</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">Licensed &amp; Insured</span>
+            <span class="stats-bar__label">Illinois CC-MC</span>
+          </li>
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <!-- ====== WHAT WE DO ====== -->
-      <section>
-        <h2>What we do</h2>
-        <p>Sparkle Moving &amp; Storage is a Chicago moving company. Local moves across Chicago and 40+ suburbs. Long-distance moves out of Illinois to anywhere in the lower 48. Storage in our Northbrook warehouse when dates don&rsquo;t line up.</p>
-        <p>That&rsquo;s the whole list. We don&rsquo;t sell anything else.</p>
-      </section>
+    <!-- ====== WHAT WE DO ====== -->
+    <section class="rate-section">
+      <div class="container">
+        <div class="rate-section__header">
+          <span class="rate-section__eyebrow">What we do</span>
+          <h2 class="rate-section__headline">A Chicago moving company. Nothing more.</h2>
+          <p class="rate-section__body">Local moves across Chicago and 40+ suburbs. Long-distance moves out of Illinois to anywhere in the lower 48. Storage in our Northbrook warehouse when dates don&rsquo;t line up.</p>
+        </div>
+        <div class="rate-section__media">
+          <img src="images/bottom-cta.jpg" alt="Sparkle moving truck on a Chicago job" width="1200" height="514">
+        </div>
+        <p class="rate-section__footnote">That&rsquo;s the whole list. We don&rsquo;t sell anything else. Full service breakdown on the <a href="residential-moving.html" class="gold-link">Services page<span class="arrow">&rarr;</span></a></p>
+        <div class="rate-section__cta-row">
+          <a href="#quote" class="btn-primary rate-section__cta">Start a Quote<span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
 
-      <!-- ====== HOW WE WORK ====== -->
-      <section>
-        <h2>How we work</h2>
-        <dl>
-          <dt>We publish the prices.</dt>
-          <dd>Hourly rates, minimums, fees, and real totals are all on the <a href="pricing.html">Pricing page &rarr;</a>. No quote form to see the numbers.</dd>
+    <!-- ====== HOW WE WORK ====== -->
+    <section class="info-section info-section--offwhite">
+      <div class="container info-section__inner info-section__inner--media info-section__inner--media-left info-section__inner--stretch">
+        <div class="info-section__media">
+          <img src="images/hero-left.webp" alt="Sparkle Moving crew at work">
+        </div>
+        <div>
+          <div class="info-section__head">
+            <span class="info-section__eyebrow">How we work</span>
+            <h2 class="info-section__headline">Five rules we run on.</h2>
+          </div>
+          <ul class="icon-list">
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="2" x2="12" y2="22"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">We publish the prices.</h3>
+                <p class="icon-list__body">Hourly rates, minimums, fees, and real totals are all on the <a href="pricing.html">Pricing page</a>. No quote form to see the numbers.</p>
+              </div>
+            </li>
 
-          <dt>We send a binding quote when we can.</dt>
-          <dd>Long-distance moves get a number that doesn&rsquo;t change between booking and delivery. Local moves get an hour range, billed at the hourly rate for actual time worked.</dd>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L4 5v7c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">We send a binding quote when we can.</h3>
+                <p class="icon-list__body">Long-distance moves get a number that doesn&rsquo;t change between booking and delivery. Local moves get an hour range, billed at the hourly rate for actual time worked.</p>
+              </div>
+            </li>
 
-          <dt>We send the same crew, start to finish.</dt>
-          <dd>The team that loads is the team that unloads. No handoffs in the middle.</dd>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="8" r="3"/>
+                  <circle cx="17" cy="9" r="2.5"/>
+                  <path d="M3 20c0-3 3-5 6-5s6 2 6 5"/>
+                  <path d="M14 20c0-2 2-4 4-4s3.5 1 3.5 4"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">We send the same crew, start to finish.</h3>
+                <p class="icon-list__body">The team that loads is the team that unloads. No handoffs in the middle.</p>
+              </div>
+            </li>
 
-          <dt>We file the building paperwork.</dt>
-          <dd>COIs, freight elevator slots, parking permits. That work is on our side, not yours.</dd>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <path d="M8 13h8M8 17h6"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">We file the building paperwork.</h3>
+                <p class="icon-list__body">COIs, freight elevator slots, parking permits. That work is on our side, not yours.</p>
+              </div>
+            </li>
 
-          <dt>We don&rsquo;t surprise the invoice.</dt>
-          <dd>No fuel surcharge. No weekend or after-hours premium. No &ldquo;heavy item&rdquo; fee for standard furniture. What&rsquo;s in the quote is what&rsquo;s on the invoice.</dd>
-        </dl>
-      </section>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 11l3 3L22 4"/>
+                  <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">We don&rsquo;t surprise the invoice.</h3>
+                <p class="icon-list__body">No fuel surcharge. No weekend or after-hours premium. No &ldquo;heavy item&rdquo; fee for standard furniture. What&rsquo;s in the quote is what&rsquo;s on the invoice.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-      <!-- ====== BY THE NUMBERS ====== -->
-      <section>
-        <h2>By the numbers</h2>
-        <table>
-          <tbody>
-            <tr><th scope="row">Years in operation</th><td>14 (since 2012)</td></tr>
-            <tr><th scope="row">Moves completed</th><td>10,000+</td></tr>
-            <tr><th scope="row">Suburbs served</th><td>40+</td></tr>
-            <tr><th scope="row">Trucks in the fleet</th><td>[TBD]</td></tr>
-            <tr><th scope="row">Crew members on staff</th><td>[TBD]</td></tr>
-          </tbody>
-        </table>
-      </section>
+    <!-- ====== BY THE NUMBERS ====== -->
+    <section class="by-the-numbers">
+      <div class="container">
+        <div class="by-the-numbers__head">
+          <span class="by-the-numbers__eyebrow">By the numbers</span>
+          <h2 class="by-the-numbers__headline">Fourteen years, a lot of trips.</h2>
+        </div>
+        <div class="by-the-numbers__grid">
+          <div class="by-the-numbers__item">
+            <span class="by-the-numbers__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="16" rx="1"/>
+                <path d="M3 10h18M8 3v4M16 3v4"/>
+              </svg>
+            </span>
+            <div class="by-the-numbers__number">14</div>
+            <div class="by-the-numbers__label">Years in operation</div>
+          </div>
 
-      <!-- ====== WHERE WE ARE ====== -->
-      <section>
-        <h2>Where we are</h2>
-        <p><strong>Headquarters:</strong> Northbrook, IL.</p>
-        <p><strong>Local service area:</strong> Chicago and 40+ surrounding suburbs, including Evanston, Schaumburg, Naperville, and Arlington Heights.</p>
-        <p><strong>Long distance:</strong> Pickup from the Chicago metro. Delivery anywhere in the lower 48. Hawaii, Alaska, and overseas quoted separately.</p>
-        <p><a href="locations.html">See all service areas &rarr;</a></p>
-      </section>
+          <div class="by-the-numbers__item">
+            <span class="by-the-numbers__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 11l3 3L22 4"/>
+                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+              </svg>
+            </span>
+            <div class="by-the-numbers__number">10,000+</div>
+            <div class="by-the-numbers__label">Moves completed</div>
+          </div>
 
-      <!-- ====== WHO WE'RE FOR ====== -->
-      <section>
-        <h2>Who we&rsquo;re for</h2>
-        <p>Mid-market households and small businesses that want a professional move at a fair price. Not the cheapest option in the metro. Not white-glove either.</p>
-        <p>If you want real numbers before you book, dedicated trucks instead of shared loads, and a crew that does what they said they&rsquo;d do, this is the right fit.</p>
-      </section>
+          <div class="by-the-numbers__item">
+            <span class="by-the-numbers__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <div class="by-the-numbers__number">40+</div>
+            <div class="by-the-numbers__label">Suburbs served</div>
+          </div>
 
-      <!-- ====== FAQ ====== -->
-      <section>
-        <h2>FAQ</h2>
-        <details>
-          <summary>When was Sparkle Moving founded?</summary>
-          <p>2012. Headquartered in Northbrook, IL.</p>
-        </details>
-        <details>
-          <summary>How many moves have you done?</summary>
-          <p>Over 10,000 to date.</p>
-        </details>
-        <details>
-          <summary>Are you licensed and insured?</summary>
-          <p>Yes. Full license numbers and insurance details on the <a href="insurance-and-licensing.html">Insurance &amp; Licensing page &rarr;</a>.</p>
-        </details>
-        <details>
-          <summary>Do you own your trucks?</summary>
-          <p>Yes. We don&rsquo;t subcontract crews or trucks. The team that arrives is on Sparkle&rsquo;s payroll.</p>
-        </details>
-      </section>
+          <div class="by-the-numbers__item">
+            <span class="by-the-numbers__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="6" width="14" height="11" rx="1"/>
+                <path d="M15 9h4l3 4v4h-7V9z"/>
+                <circle cx="6" cy="18.5" r="2"/>
+                <circle cx="18" cy="18.5" r="2"/>
+              </svg>
+            </span>
+            <div class="by-the-numbers__number">[TBD]</div>
+            <div class="by-the-numbers__label">Trucks in the fleet</div>
+          </div>
 
-      <!-- ====== CLOSING CTA ====== -->
-      <section>
-        <h2>Get your exact price.</h2>
-        <p>Enter your ZIPs and move details. We&rsquo;ll send a full breakdown within a few hours.</p>
-        <a href="#quote" class="btn-primary">Get a Quote</a>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
-    </article>
+          <div class="by-the-numbers__item">
+            <span class="by-the-numbers__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="8" r="3"/>
+                <circle cx="17" cy="9" r="2.5"/>
+                <path d="M3 20c0-3 3-5 6-5s6 2 6 5"/>
+                <path d="M14 20c0-2 2-4 4-4s3.5 1 3.5 4"/>
+              </svg>
+            </span>
+            <div class="by-the-numbers__number">[TBD]</div>
+            <div class="by-the-numbers__label">Crew members on staff</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== WHERE WE ARE ====== -->
+    <section class="info-section info-section--offwhite">
+      <div class="container info-section__inner info-section__inner--media info-section__inner--media-right info-section__inner--stretch">
+        <div class="info-section__media">
+          <img src="images/step3.webp" alt="Sparkle crew arriving for a delivery">
+        </div>
+        <div>
+          <div class="info-section__head">
+            <span class="info-section__eyebrow">Where we are</span>
+            <h2 class="info-section__headline">From Northbrook, anywhere in the lower 48.</h2>
+          </div>
+          <ul class="icon-list">
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 11l9-7 9 7"/>
+                  <path d="M5 10v10h14V10"/>
+                  <path d="M10 20v-6h4v6"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Headquarters.</h3>
+                <p class="icon-list__body">Northbrook, IL. Where our trucks dispatch from and our warehouse sits.</p>
+              </div>
+            </li>
+
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Local service area.</h3>
+                <p class="icon-list__body">Chicago and 40+ surrounding suburbs, including Evanston, Schaumburg, Naperville, and Arlington Heights.</p>
+              </div>
+            </li>
+
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 12h18"/>
+                  <path d="M16 6l5 6-5 6"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Long distance.</h3>
+                <p class="icon-list__body">Pickup from the Chicago metro. Delivery anywhere in the lower 48. Hawaii, Alaska, and overseas quoted separately.</p>
+              </div>
+            </li>
+          </ul>
+          <p style="margin-top: var(--space-md);"><a href="locations.html" class="gold-link">See all service areas<span class="arrow">&rarr;</span></a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== WHO WE'RE FOR ====== -->
+    <section class="who-its-for">
+      <div class="container">
+        <div class="who-its-for__head">
+          <span class="who-its-for__eyebrow">Who we&rsquo;re for</span>
+          <h2 class="who-its-for__headline">The right fit, honestly described.</h2>
+          <p class="who-its-for__body">Mid-market households and small businesses that want a professional move at a fair price. Not the cheapest option in the metro. Not white-glove either.</p>
+        </div>
+        <div class="who-its-for__grid">
+          <div class="who-its-for__col">
+            <h3 class="who-its-for__col-title">You&rsquo;ll like Sparkle if you want</h3>
+            <ul class="check-list">
+              <li>Real numbers before you book</li>
+              <li>Dedicated trucks, not shared loads</li>
+              <li>A crew that does what they said they&rsquo;d do</li>
+              <li>Building paperwork handled for you</li>
+              <li>The same hourly rate seven days a week</li>
+            </ul>
+          </div>
+          <div class="who-its-for__col">
+            <h3 class="who-its-for__col-title">We&rsquo;re probably not the right fit if</h3>
+            <ul class="check-list check-list--x">
+              <li>You&rsquo;re shopping for the absolute cheapest mover in town</li>
+              <li>You want luxury white-glove service at a premium price</li>
+              <li>You&rsquo;d rather DIY than hire a licensed crew</li>
+              <li>You need same-hour service with no advance notice</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FAQ ====== -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="faq__headline">Frequently asked questions</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">When was Sparkle Moving founded?</summary>
+            <div class="faq__answer">
+              <p>2012. Headquartered in Northbrook, IL.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">How many moves have you done?</summary>
+            <div class="faq__answer">
+              <p>Over 10,000 to date.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Are you licensed and insured?</summary>
+            <div class="faq__answer">
+              <p>Yes. Full license numbers and insurance details on the <a href="insurance-and-licensing.html">Insurance &amp; Licensing page</a>.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do you own your trucks?</summary>
+            <div class="faq__answer">
+              <p>Yes. We don&rsquo;t subcontract crews or trucks. The team that arrives is on Sparkle&rsquo;s payroll.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CLOSING CTA (with two dropdowns) ====== -->
+    <section class="closing-cta">
+      <div class="container">
+        <div class="closing-cta__content">
+          <h2 class="closing-cta__headline">Get your exact price.</h2>
+          <p class="closing-cta__subline">Pick your ZIP and home size. Full breakdown within a few hours.</p>
+          <form class="closing-cta__form" action="#quote">
+            <select class="closing-cta__select" name="zip" required>
+              <option value="" disabled selected>Moving from ZIP</option>
+              <option>60601 &mdash; Chicago Loop</option>
+              <option>60201 &mdash; Evanston</option>
+              <option>60540 &mdash; Naperville</option>
+              <option>60173 &mdash; Schaumburg</option>
+              <option>60004 &mdash; Arlington Heights</option>
+              <option>60062 &mdash; Northbrook</option>
+              <option>Other ZIP</option>
+            </select>
+            <select class="closing-cta__select" name="size" required>
+              <option value="" disabled selected>Home size</option>
+              <option>Studio</option>
+              <option>1 bedroom</option>
+              <option>2 bedroom</option>
+              <option>3 bedroom</option>
+              <option>4+ bedroom</option>
+            </select>
+            <a href="#quote" class="btn-primary">Get a Quote<span class="arrow">&rarr;</span></a>
+          </form>
+          <a href="tel:+1XXXXXXXXXX" class="closing-cta__phone">(312) 555-0199</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ====== FOOTER ====== -->
