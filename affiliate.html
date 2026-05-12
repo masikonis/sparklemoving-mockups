@@ -12,6 +12,28 @@
 
   <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/components/header.css">
+
+  <!-- Reused: shared form + application panel + careers-cta closing block -->
+  <link rel="stylesheet" href="styles/components/form.css">
+  <link rel="stylesheet" href="styles/components/application-form.css">
+  <link rel="stylesheet" href="styles/pages/careers/careers.css">
+
+  <!-- Reused homepage section styles -->
+  <link rel="stylesheet" href="styles/pages/home/stats-bar.css">
+  <link rel="stylesheet" href="styles/pages/home/faq.css">
+
+  <!-- Reused pricing/service patterns -->
+  <link rel="stylesheet" href="styles/pages/pricing/hero.css">
+  <link rel="stylesheet" href="styles/pages/pricing/rate-tables.css">
+  <link rel="stylesheet" href="styles/pages/pricing/fees.css">
+  <link rel="stylesheet" href="styles/pages/pricing/info-blocks.css">
+
+  <!-- Icon-list pattern (Why partner) -->
+  <link rel="stylesheet" href="styles/pages/local-residential-moving/why-local.css">
+
+  <!-- Process walk (How it works) -->
+  <link rel="stylesheet" href="styles/components/process-walk.css">
+
   <link rel="stylesheet" href="styles/components/footer.css">
   <link rel="stylesheet" href="styles/components/modal.css">
 </head>
@@ -129,117 +151,408 @@
     </div>
   </header>
 
-  <main class="page-content">
-    <article>
-      <section>
-        <h1>Refer a move. Earn on it.</h1>
-        <p>Real estate agents, property managers, relocation companies, and individuals. Send us a Chicago move, get paid when it books.</p>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
+  <main>
 
-      <section>
-        <ul>
-          <li>Since 2012</li>
-          <li>10,000+ Moves</li>
-          <li>Licensed &amp; Insured</li>
+    <!-- ====== HERO ====== -->
+    <section class="pricing-hero">
+      <div class="container pricing-hero__inner">
+        <div class="pricing-hero__content">
+          <span class="pricing-hero__eyebrow">Affiliate program</span>
+          <h1 class="pricing-hero__headline">Refer a move.<br><em>Earn on it.</em></h1>
+          <p class="pricing-hero__body">Real estate agents, property managers, relocation companies, and individuals. Send us a Chicago move, get paid when it books.</p>
+          <div style="display:flex;align-items:center;gap:var(--space-md);margin-top:var(--space-lg);flex-wrap:wrap;">
+            <a href="#apply" class="btn-primary" style="font-size:17px;padding:16px 36px;">Apply to partner<span class="arrow">&rarr;</span></a>
+            <a href="mailto:partners@sparklemoving.com" class="btn-secondary" style="font-size:17px;padding:15px 32px;">Email partners</a>
+          </div>
+        </div>
+        <div class="pricing-hero__media">
+          <img src="images/hero-right.webp" alt="Sparkle Moving truck on a Chicago job" width="640" height="400">
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== STATS BAR ====== -->
+    <section class="stats-bar">
+      <div class="container">
+        <ul class="stats-bar__list">
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">2012</span>
+            <span class="stats-bar__label">Established</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">10,000+</span>
+            <span class="stats-bar__label">Moves completed</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">Licensed &amp; Insured</span>
+            <span class="stats-bar__label">Illinois CC-MC</span>
+          </li>
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <h2>How it works</h2>
-        <ol>
-          <li><strong>You sign up.</strong> Quick form below. We send a partner agreement and a personal referral link or code.</li>
-          <li><strong>You refer.</strong> Share the link, share the code, or just send your contact&rsquo;s name to us directly. They get a quote and book a move.</li>
-          <li><strong>You get paid.</strong> [X% of the booked move total / $X flat per booked move &mdash; placeholder]. Paid [Net 30 / monthly &mdash; placeholder] by [check / direct deposit / Stripe &mdash; placeholder].</li>
+    <!-- ====== HOW IT WORKS (3-step timeline) ====== -->
+    <section class="process-walk">
+      <div class="container">
+        <div class="process-walk__head">
+          <span class="process-walk__eyebrow">How it works</span>
+          <h2 class="process-walk__headline">Three steps. That&rsquo;s the whole program.</h2>
+          <p class="process-walk__body">From signing the agreement to seeing your first payout.</p>
+        </div>
+        <ol class="process-walk__list">
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">1</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <path d="M9 13l2 2 4-4"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">You sign up.</h3>
+              </div>
+              <p class="process-walk__step-body">Quick form below. We send a partner agreement and your personal referral link and code.</p>
+            </div>
+          </li>
+
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">2</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">You refer.</h3>
+              </div>
+              <p class="process-walk__step-body">Share the link, share the code, or just send your contact&rsquo;s name. They get a quote and book a move.</p>
+            </div>
+          </li>
+
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">3</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="2" x2="12" y2="22"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">You get paid.</h3>
+              </div>
+              <p class="process-walk__step-body">[X% of the booked move total / $X flat per booked move &mdash; placeholder]. Paid [Net 30 / monthly &mdash; placeholder] by [check / direct deposit / Stripe &mdash; placeholder].</p>
+            </div>
+          </li>
         </ol>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <h2>What you earn</h2>
-        <table>
-          <thead>
-            <tr><th>Move type</th><th>Commission</th><th>Notes</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Local move</td><td>[X% of total]</td><td>Minimum [$X] payout</td></tr>
-            <tr><td>Long-distance move</td><td>[X% of total]</td><td>Minimum [$X] payout</td></tr>
-            <tr><td>Storage</td><td>[X% of monthly fee, first 6 months]</td><td>&mdash;</td></tr>
-          </tbody>
-        </table>
-        <p>[Placeholders &mdash; final terms in the partner agreement.]</p>
-      </section>
+    <!-- ====== WHAT YOU EARN (rate table) ====== -->
+    <section class="rate-section rate-section--offwhite">
+      <div class="container">
+        <div class="rate-section__header">
+          <span class="rate-section__eyebrow">Commission</span>
+          <h2 class="rate-section__headline">What you earn.</h2>
+          <p class="rate-section__body">Rates by move type. Final terms are in the partner agreement.</p>
+        </div>
+        <div class="rate-table">
+          <table class="rate-table__table">
+            <thead>
+              <tr>
+                <th>Move type</th>
+                <th>Commission</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Local move</td>
+                <td>[X% of total]</td>
+                <td>Minimum [$X] payout</td>
+              </tr>
+              <tr>
+                <td>Long-distance move</td>
+                <td>[X% of total]</td>
+                <td>Minimum [$X] payout</td>
+              </tr>
+              <tr>
+                <td>Storage</td>
+                <td>[X% of monthly fee]</td>
+                <td>First 6 months</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="rate-section__footnote">Placeholders &mdash; the final commission schedule is in the partner agreement you receive after signing up.</p>
+      </div>
+    </section>
 
-      <section>
-        <h2>Who this is for</h2>
-        <h3>Real estate agents</h3>
-        <p>Closing on a home is the moment your client most needs a mover they can trust. A reliable referral protects your relationship.</p>
-        <h3>Property managers</h3>
-        <p>Tenants moving in or out. Cleaner turnovers when they use a mover that shows up and doesn&rsquo;t damage the building.</p>
-        <h3>Relocation companies</h3>
-        <p>Inbound Chicago relocations. Predictable pricing for your corporate clients.</p>
-        <h3>Individuals</h3>
-        <p>If you&rsquo;ve moved with us and your friends keep asking who you used, this is how.</p>
-      </section>
+    <!-- ====== WHO IT'S FOR (4 audience cards) ====== -->
+    <section class="fees-section fees-section--white">
+      <div class="container">
+        <div class="fees-section__head">
+          <span class="fees-section__eyebrow">Who this is for</span>
+          <h2 class="fees-section__headline">If you talk to people who move, you&rsquo;re a fit.</h2>
+        </div>
+        <div class="fees-section__grid fees-section__grid--4col">
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 11l9-7 9 7"/>
+                <path d="M5 10v10h14V10"/>
+                <path d="M10 20v-6h4v6"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Real estate agents</h3>
+            <p class="fees-section__item-body">Closing day is when your client most needs a mover they can trust. A reliable referral protects your relationship.</p>
+          </div>
 
-      <section>
-        <h2>Why partner with Sparkle</h2>
-        <p><strong>Real prices, visible on the site.</strong> Your contacts won&rsquo;t get a lowball quote that turns into a higher invoice. The number we send is the number on the bill.</p>
-        <p><strong>Same-day quote turnaround.</strong> Most quotes go out within a few hours. You don&rsquo;t lose the lead while we&rsquo;re &ldquo;putting numbers together.&rdquo;</p>
-        <p><strong>Licensed and insured.</strong> Full credentials on the <a href="insurance-and-licensing.html">Insurance &amp; Licensing page &rarr;</a>. Verifiable on the FMCSA and Illinois Commerce Commission registries.</p>
-        <p><strong>Service area.</strong> Chicago and 40+ suburbs locally. Long distance to anywhere in the lower 48.</p>
-      </section>
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="3" width="14" height="18" rx="1"/>
+                <path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/>
+                <path d="M11 21v-3h2v3"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Property managers</h3>
+            <p class="fees-section__item-body">Cleaner turnovers when tenants use a mover that shows up on time and doesn&rsquo;t damage the building.</p>
+          </div>
 
-      <section>
-        <h2>Sign up</h2>
-        <form>
-          <p><label for="aff-name">Name</label><br><input id="aff-name" name="name" type="text" required></p>
-          <p><label for="aff-email">Email</label><br><input id="aff-email" name="email" type="email" required></p>
-          <p><label for="aff-phone">Phone</label><br><input id="aff-phone" name="phone" type="tel" placeholder="(555) 555-5555" maxlength="14" required></p>
-          <p><label for="aff-company">Company (if applicable)</label><br><input id="aff-company" name="company" type="text"></p>
-          <p><label for="aff-type">Type of partner</label><br>
-            <select id="aff-type" name="partner_type" required>
-              <option value="" disabled selected>Select type</option>
-              <option>Real estate agent</option>
-              <option>Property manager</option>
-              <option>Relocation company</option>
-              <option>Individual</option>
-              <option>Other</option>
-            </select>
-          </p>
-          <p><label for="aff-volume">Approx. referrals per month</label><br>
-            <select id="aff-volume" name="volume" required>
-              <option value="" disabled selected>Select volume</option>
-              <option>Less than 1</option>
-              <option>1&ndash;3</option>
-              <option>4&ndash;10</option>
-              <option>10+</option>
-            </select>
-          </p>
-          <p><label for="aff-notes">Anything else we should know</label><br><textarea id="aff-notes" name="notes" rows="4"></textarea></p>
-          <p><button type="submit" class="btn-primary">Submit application</button></p>
-        </form>
-        <p>We review applications within two business days. Once approved, you&rsquo;ll get the partner agreement, your referral link or code, and a brief orientation by email.</p>
-      </section>
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12h18"/>
+                <path d="M16 6l5 6-5 6"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Relocation companies</h3>
+            <p class="fees-section__item-body">Inbound Chicago relocations. Predictable pricing and binding quotes for your corporate clients.</p>
+          </div>
 
-      <section>
-        <h2>FAQ</h2>
-        <details><summary>When do I get paid?</summary><p>[After the move is completed and the customer&rsquo;s payment clears, typically within Net 30. &mdash; placeholder]</p></details>
-        <details><summary>Do I need to track referrals myself?</summary><p>No. We track referrals on our side using your unique link or code. You get a monthly statement showing referrals, status, and payouts.</p></details>
-        <details><summary>What if my referral cancels or reschedules?</summary><p>Cancelled moves don&rsquo;t pay out. Rescheduled moves still pay when they complete.</p></details>
-        <details><summary>Is there a contract length?</summary><p>The partner agreement is open-ended. Either side can end the partnership with 30 days notice. No exclusivity required.</p></details>
-        <details><summary>Can I refer commercial moves and long-distance moves?</summary><p>Yes. All move types qualify. See the commission table above for rates.</p></details>
-        <details><summary>Do you provide marketing materials?</summary><p>[A short partner pack with logo, talking points, and link/code. &mdash; confirm with Mike on what&rsquo;s included.]</p></details>
-        <details><summary>Is there a minimum number of referrals to stay in the program?</summary><p>No. Some partners refer once a year, some refer weekly. Both are welcome.</p></details>
-        <details><summary>Is this the same as a referral discount for my client?</summary><p>No. Affiliate commissions go to you, not as a discount to the customer. If you want to offer a discount instead of taking the commission, that can be arranged at signup.</p></details>
-      </section>
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="8" r="3"/>
+                <circle cx="17" cy="9" r="2.5"/>
+                <path d="M3 20c0-3 3-5 6-5s6 2 6 5"/>
+                <path d="M14 20c0-2 2-4 4-4s3.5 1 3.5 4"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Individuals</h3>
+            <p class="fees-section__item-body">If your friends keep asking who you used, share your code and earn when they book.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>Apply to the affiliate program.</h2>
-        <p>We review applications within two business days.</p>
-        <p>Or email us directly: <a href="mailto:partners@sparklemoving.com">partners@sparklemoving.com</a></p>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
-    </article>
+    <!-- ====== WHY PARTNER (image left + icon-list) ====== -->
+    <section class="info-section info-section--offwhite">
+      <div class="container info-section__inner info-section__inner--media info-section__inner--media-left info-section__inner--stretch">
+        <div class="info-section__media">
+          <img src="images/hero-left.webp" alt="Sparkle Moving crew loading a truck">
+        </div>
+        <div>
+          <div class="info-section__head">
+            <span class="info-section__eyebrow">Why partner</span>
+            <h2 class="info-section__headline">Why Sparkle is a referral worth making.</h2>
+          </div>
+          <ul class="icon-list">
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="2" x2="12" y2="22"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Real prices, visible on the site.</h3>
+                <p class="icon-list__body">Your contacts won&rsquo;t get a lowball quote that turns into a higher invoice. The number we send is the number on the bill.</p>
+              </div>
+            </li>
+
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M12 7v5l3 2"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Same-day quote turnaround.</h3>
+                <p class="icon-list__body">Most quotes go out within a few hours. You don&rsquo;t lose the lead while we&rsquo;re &ldquo;putting numbers together.&rdquo;</p>
+              </div>
+            </li>
+
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L4 5v7c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Licensed and insured.</h3>
+                <p class="icon-list__body">Full credentials on the <a href="insurance-and-licensing.html">Insurance &amp; Licensing page</a>. Verifiable on the FMCSA and Illinois Commerce Commission registries.</p>
+              </div>
+            </li>
+
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Wide service area.</h3>
+                <p class="icon-list__body">Chicago and 40+ suburbs locally. Long distance to anywhere in the lower 48.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== APPLICATION FORM ====== -->
+    <section class="application" id="apply">
+      <div class="container">
+        <div class="application__inner">
+          <div class="application__head">
+            <span class="application__eyebrow">Sign up</span>
+            <h2 class="application__headline">Apply to the affiliate program.</h2>
+            <p class="application__body">We review applications within two business days. Once approved, you&rsquo;ll get the partner agreement, your referral link and code, and a brief orientation by email.</p>
+          </div>
+          <div class="application__panel">
+            <form class="form" action="#" method="post">
+              <div class="form__row">
+                <div class="form__field">
+                  <label for="aff-name" class="form__label">Name</label>
+                  <input id="aff-name" name="name" type="text" class="form__input" required>
+                </div>
+                <div class="form__field">
+                  <label for="aff-email" class="form__label">Email</label>
+                  <input id="aff-email" name="email" type="email" class="form__input" required>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__field">
+                  <label for="aff-phone" class="form__label">Phone</label>
+                  <input id="aff-phone" name="phone" type="tel" class="form__input" placeholder="(555) 555-5555" maxlength="14" required>
+                </div>
+                <div class="form__field">
+                  <label for="aff-company" class="form__label">Company <span style="text-transform:none;color:var(--color-navy-60);font-weight:400;">(optional)</span></label>
+                  <input id="aff-company" name="company" type="text" class="form__input">
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__field">
+                  <label for="aff-type" class="form__label">Type of partner</label>
+                  <select id="aff-type" name="partner_type" class="form__select" required>
+                    <option value="" disabled selected>Select type</option>
+                    <option>Real estate agent</option>
+                    <option>Property manager</option>
+                    <option>Relocation company</option>
+                    <option>Individual</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form__field">
+                  <label for="aff-volume" class="form__label">Approx. referrals per month</label>
+                  <select id="aff-volume" name="volume" class="form__select" required>
+                    <option value="" disabled selected>Select volume</option>
+                    <option>Less than 1</option>
+                    <option>1&ndash;3</option>
+                    <option>4&ndash;10</option>
+                    <option>10+</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form__field form__field--full">
+                <label for="aff-notes" class="form__label">Anything else we should know</label>
+                <textarea id="aff-notes" name="notes" rows="4" class="form__textarea"></textarea>
+              </div>
+              <button type="submit" class="btn-primary form__submit form__submit--right">Submit application<span class="arrow">&rarr;</span></button>
+              <p class="form__note form__note--center">We review applications within two business days.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FAQ ====== -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="faq__headline">Frequently asked questions</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">When do I get paid?</summary>
+            <div class="faq__answer">
+              <p>[After the move is completed and the customer&rsquo;s payment clears, typically within Net 30. &mdash; placeholder]</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do I need to track referrals myself?</summary>
+            <div class="faq__answer">
+              <p>No. We track referrals on our side using your unique link or code. You get a monthly statement showing referrals, status, and payouts.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What if my referral cancels or reschedules?</summary>
+            <div class="faq__answer">
+              <p>Cancelled moves don&rsquo;t pay out. Rescheduled moves still pay when they complete.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Is there a contract length?</summary>
+            <div class="faq__answer">
+              <p>The partner agreement is open-ended. Either side can end the partnership with 30 days notice. No exclusivity required.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Can I refer commercial moves and long-distance moves?</summary>
+            <div class="faq__answer">
+              <p>Yes. All move types qualify. See the commission table above for rates.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do you provide marketing materials?</summary>
+            <div class="faq__answer">
+              <p>[A short partner pack with logo, talking points, and link/code. &mdash; confirm with Mike on what&rsquo;s included.]</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Is there a minimum number of referrals to stay in the program?</summary>
+            <div class="faq__answer">
+              <p>No. Some partners refer once a year, some refer weekly. Both are welcome.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Is this the same as a referral discount for my client?</summary>
+            <div class="faq__answer">
+              <p>No. Affiliate commissions go to you, not as a discount to the customer. If you want to offer a discount instead of taking the commission, that can be arranged at signup.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== AFFILIATE CLOSING (navy + faded image) ====== -->
+    <section class="careers-cta">
+      <div class="container">
+        <h2 class="careers-cta__headline">Apply to the affiliate program.</h2>
+        <p class="careers-cta__body">We review applications within two business days. Or email us directly &mdash; we read every message.</p>
+        <div class="careers-cta__actions">
+          <a href="#apply" class="btn-primary">Send your application<span class="arrow">&rarr;</span></a>
+          <a href="mailto:partners@sparklemoving.com" class="careers-cta__email">partners@sparklemoving.com</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
@@ -375,6 +688,26 @@
       modal.querySelectorAll('[data-close-modal]').forEach(function(el) { el.addEventListener('click', function() { modal.close(); }); });
       modal.addEventListener('click', function(e) { if (e.target === modal) modal.close(); });
       modalForm.addEventListener('submit', function(e) { e.preventDefault(); if (!modalForm.reportValidity()) return; formWrapper.hidden = true; successPanel.hidden = false; setTimeout(function() { modal.close(); modalForm.reset(); formWrapper.hidden = false; successPanel.hidden = true; }, 2000); });
+    })();
+
+    // Process walk timeline: fade-in + circle "active" state on scroll
+    (function() {
+      var items = document.querySelectorAll('.process-walk__item');
+      if (!items.length) return;
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function(el) { el.classList.add('is-visible'); el.classList.add('is-active'); });
+        return;
+      }
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            entry.target.classList.add('is-active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.35, rootMargin: '0px 0px -10% 0px' });
+      items.forEach(function(el) { observer.observe(el); });
     })();
   </script>
 

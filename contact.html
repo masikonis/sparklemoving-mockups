@@ -12,6 +12,15 @@
 
   <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/components/header.css">
+
+  <!-- Page-specific -->
+  <link rel="stylesheet" href="styles/pages/contact/contact.css">
+  <link rel="stylesheet" href="styles/components/form.css">
+
+  <!-- Reused for FAQ + closing CTA -->
+  <link rel="stylesheet" href="styles/pages/home/faq.css">
+  <link rel="stylesheet" href="styles/pages/home/closing-cta.css">
+
   <link rel="stylesheet" href="styles/components/footer.css">
   <link rel="stylesheet" href="styles/components/modal.css">
 </head>
@@ -129,83 +138,222 @@
     </div>
   </header>
 
-  <main class="page-content">
-    <article>
-      <section>
-        <h1>Talk to us.</h1>
-        <p>Phone, email, or the form below. For a moving quote, use <a href="book-online.html">Get a Quote &rarr;</a> instead &mdash; it&rsquo;s faster.</p>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
+  <main>
 
-      <section>
-        <ul>
-          <li>Since 2012</li>
-          <li>10,000+ Moves</li>
-          <li>Licensed &amp; Insured</li>
-        </ul>
-      </section>
+    <!-- ====== CONTACT HERO (centered head + 3 method cards) ====== -->
+    <section class="contact-hero">
+      <div class="container">
+        <div class="contact-hero__head">
+          <span class="contact-hero__eyebrow">Contact</span>
+          <h1 class="contact-hero__headline">Talk to us.</h1>
+          <p class="contact-hero__body">Phone, email, or the form below. For a moving quote, use <a href="book-online.html">Get a Quote</a> instead &mdash; it&rsquo;s faster.</p>
+        </div>
+        <div class="contact-methods">
+          <a href="tel:+1XXXXXXXXXX" class="contact-method">
+            <span class="contact-method__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </span>
+            <span class="contact-method__label">Phone</span>
+            <span class="contact-method__value">(312) 555-0199</span>
+            <span class="contact-method__meta">Mon&ndash;Sat, 8am&ndash;7pm CT</span>
+          </a>
 
-      <section>
-        <h2>How to reach us</h2>
-        <table>
-          <tbody>
-            <tr><th scope="row">Phone</th><td><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></td><td>[Mon&ndash;Sat, 8am&ndash;7pm CT]</td></tr>
-            <tr><th scope="row">Email</th><td><a href="mailto:contact@sparklemoving.com">contact@sparklemoving.com</a></td><td>Reply within 1 business day</td></tr>
-            <tr><th scope="row">Office</th><td>Northbrook, IL</td><td>By appointment</td></tr>
-          </tbody>
-        </table>
+          <a href="mailto:contact@sparklemoving.com" class="contact-method">
+            <span class="contact-method__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="M3 7l9 6 9-6"/>
+              </svg>
+            </span>
+            <span class="contact-method__label">Email</span>
+            <span class="contact-method__value">contact@sparklemoving.com</span>
+            <span class="contact-method__meta">Reply within 1 business day</span>
+          </a>
 
-        <h3>Specific contacts</h3>
-        <ul>
-          <li><strong>Quotes:</strong> Use the <a href="book-online.html">Book Online &rarr;</a> form. Fastest path.</li>
-          <li><strong>COI requests:</strong> Email <a href="mailto:coi@sparklemoving.com">coi@sparklemoving.com</a> with the building&rsquo;s requirements.</li>
-          <li><strong>Damage claims:</strong> Email <a href="mailto:claims@sparklemoving.com">claims@sparklemoving.com</a>. Process on the <a href="insurance-and-licensing.html">Insurance &amp; Licensing page &rarr;</a>.</li>
-          <li><strong>Careers:</strong> See the <a href="careers.html">Careers page &rarr;</a> or email <a href="mailto:careers@sparklemoving.com">careers@sparklemoving.com</a>.</li>
-          <li><strong>Partnerships and press:</strong> Email <a href="mailto:contact@sparklemoving.com">contact@sparklemoving.com</a> with subject line &ldquo;Partnership.&rdquo;</li>
-        </ul>
-      </section>
+          <a href="#office" class="contact-method">
+            <span class="contact-method__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <span class="contact-method__label">Office</span>
+            <span class="contact-method__value">Northbrook, IL</span>
+            <span class="contact-method__meta">By appointment</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>Office</h2>
-        <address>
-          [Address line 1]<br>
-          [Address line 2]<br>
-          Northbrook, IL [ZIP]
-        </address>
-        <p>[Embedded map of Northbrook HQ.]</p>
-      </section>
+    <!-- ====== SPECIFIC CONTACTS ====== -->
+    <section class="contact-section contact-section--offwhite">
+      <div class="container">
+        <div class="contact-section__head">
+          <span class="contact-section__eyebrow">Route your request</span>
+          <h2 class="contact-section__headline">Specific contacts.</h2>
+          <p class="contact-section__body">Different requests go to different inboxes so they reach the right person faster.</p>
+        </div>
+        <div class="routing">
+          <a href="book-online.html" class="routing__card">
+            <span class="routing__title">Get a moving quote</span>
+            <span class="routing__detail">Use the Book Online form. Fastest path to a real price &mdash; about 60 seconds.</span>
+            <span class="routing__email">book-online.html &rarr;</span>
+          </a>
 
-      <section>
-        <h2>General inquiry form</h2>
-        <p>Have a question that isn&rsquo;t a quote, COI, or claim? Send it here.</p>
-        <form>
-          <p><label for="contact-name">Name</label><br><input id="contact-name" name="name" type="text" required></p>
-          <p><label for="contact-email">Email</label><br><input id="contact-email" name="email" type="email" required></p>
-          <p><label for="contact-phone">Phone (optional)</label><br><input id="contact-phone" name="phone" type="tel" placeholder="(555) 555-5555" maxlength="14"></p>
-          <p><label for="contact-subject">Subject</label><br><input id="contact-subject" name="subject" type="text" required></p>
-          <p><label for="contact-message">Message</label><br><textarea id="contact-message" name="message" rows="5" required></textarea></p>
-          <p><button type="submit" class="btn-primary">Send message</button></p>
-        </form>
-        <p>We respond within one business day.</p>
-      </section>
+          <a href="mailto:coi@sparklemoving.com" class="routing__card">
+            <span class="routing__title">COI requests</span>
+            <span class="routing__detail">Send the building&rsquo;s requirements. We file the COI with our carrier and confirm with the building.</span>
+            <span class="routing__email">coi@sparklemoving.com</span>
+          </a>
 
-      <section>
-        <h2>FAQ</h2>
-        <details><summary>I want a moving quote &mdash; should I use this form?</summary><p>No. Use <a href="book-online.html">Book Online &rarr;</a> or the Get a Quote button. The quote form takes about 60 seconds and gets your request to the right team faster.</p></details>
-        <details><summary>My building needs a certificate of insurance. What do I send?</summary><p>Email <a href="mailto:coi@sparklemoving.com">coi@sparklemoving.com</a> with the building&rsquo;s COI requirements (one-page sheet from the building manager). We file the COI with our carrier and confirm directly with the building.</p></details>
-        <details><summary>Something got damaged on my move. How do I file a claim?</summary><p>See the <a href="insurance-and-licensing.html">Insurance &amp; Licensing page &rarr;</a> for the full process. Short version: email <a href="mailto:claims@sparklemoving.com">claims@sparklemoving.com</a> within 14 days with photos, move date, and the item.</p></details>
-        <details><summary>Are you hiring?</summary><p>See the <a href="careers.html">Careers page &rarr;</a>.</p></details>
-        <details><summary>Can I visit the office?</summary><p>By appointment. Most communication happens by phone or email. If an in-person meeting is useful, email us first to set a time.</p></details>
-        <details><summary>Do you do consultations or in-home estimates?</summary><p>For most local moves, the online quote is enough. For large homes, complex moves, or commercial relocations, an in-home estimate can be scheduled &mdash; mention it in your quote request and we&rsquo;ll arrange a time.</p></details>
-      </section>
+          <a href="mailto:claims@sparklemoving.com" class="routing__card">
+            <span class="routing__title">Damage claims</span>
+            <span class="routing__detail">Email within 14 days with photos, move date, and the item. Full process on the Insurance &amp; Licensing page.</span>
+            <span class="routing__email">claims@sparklemoving.com</span>
+          </a>
 
-      <section>
-        <h2>Get your exact price.</h2>
-        <p>Enter your ZIPs and move details. We&rsquo;ll send a full breakdown within a few hours.</p>
-        <a href="#quote" class="btn-primary">Get a Quote</a>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
-    </article>
+          <a href="careers.html" class="routing__card">
+            <span class="routing__title">Careers</span>
+            <span class="routing__detail">See open positions and the application form. Or email careers@sparklemoving.com directly.</span>
+            <span class="routing__email">careers.html &rarr;</span>
+          </a>
+
+          <a href="mailto:contact@sparklemoving.com?subject=Partnership" class="routing__card">
+            <span class="routing__title">Partnerships &amp; press</span>
+            <span class="routing__detail">Email with the subject line &ldquo;Partnership&rdquo; or &ldquo;Press&rdquo; so it routes to the right person.</span>
+            <span class="routing__email">contact@sparklemoving.com</span>
+          </a>
+
+          <a href="#general-inquiry" class="routing__card">
+            <span class="routing__title">Everything else</span>
+            <span class="routing__detail">General questions &mdash; use the inquiry form below. We respond within one business day.</span>
+            <span class="routing__email">Use the form &darr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== GENERAL INQUIRY FORM + OFFICE (split) ====== -->
+    <section class="contact-section" id="general-inquiry">
+      <div class="container">
+        <div class="contact-split">
+          <div class="contact-split__form">
+            <div class="contact-split__head">
+              <h2>General inquiry</h2>
+              <p>Have a question that isn&rsquo;t a quote, COI, or claim? Send it here. We respond within one business day.</p>
+            </div>
+            <form class="form" action="#" method="post">
+              <div class="form__row">
+                <div class="form__field">
+                  <label for="contact-name" class="form__label">Name</label>
+                  <input id="contact-name" name="name" type="text" class="form__input" required>
+                </div>
+                <div class="form__field">
+                  <label for="contact-email" class="form__label">Email</label>
+                  <input id="contact-email" name="email" type="email" class="form__input" required>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__field">
+                  <label for="contact-phone" class="form__label">Phone <span style="text-transform:none;color:var(--color-navy-60);font-weight:400;">(optional)</span></label>
+                  <input id="contact-phone" name="phone" type="tel" class="form__input" placeholder="(555) 555-5555" maxlength="14">
+                </div>
+                <div class="form__field">
+                  <label for="contact-subject" class="form__label">Subject</label>
+                  <input id="contact-subject" name="subject" type="text" class="form__input" required>
+                </div>
+              </div>
+              <div class="form__field form__field--full">
+                <label for="contact-message" class="form__label">Message</label>
+                <textarea id="contact-message" name="message" rows="5" class="form__textarea" required></textarea>
+              </div>
+              <button type="submit" class="btn-primary form__submit">Send message<span class="arrow">&rarr;</span></button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FAQ ====== -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="faq__headline">Frequently asked questions</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">I want a moving quote &mdash; should I use this form?</summary>
+            <div class="faq__answer">
+              <p>No. Use <a href="book-online.html">Book Online</a> or the Get a Quote button. The quote form takes about 60 seconds and gets your request to the right team faster.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">My building needs a certificate of insurance. What do I send?</summary>
+            <div class="faq__answer">
+              <p>Email <a href="mailto:coi@sparklemoving.com">coi@sparklemoving.com</a> with the building&rsquo;s COI requirements (one-page sheet from the building manager). We file the COI with our carrier and confirm directly with the building.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Something got damaged on my move. How do I file a claim?</summary>
+            <div class="faq__answer">
+              <p>See the <a href="insurance-and-licensing.html">Insurance &amp; Licensing page</a> for the full process. Short version: email <a href="mailto:claims@sparklemoving.com">claims@sparklemoving.com</a> within 14 days with photos, move date, and the item.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Are you hiring?</summary>
+            <div class="faq__answer">
+              <p>See the <a href="careers.html">Careers page</a>.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Can I visit the office?</summary>
+            <div class="faq__answer">
+              <p>By appointment. Most communication happens by phone or email. If an in-person meeting is useful, email us first to set a time.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do you do consultations or in-home estimates?</summary>
+            <div class="faq__answer">
+              <p>For most local moves, the online quote is enough. For large homes, complex moves, or commercial relocations, an in-home estimate can be scheduled &mdash; mention it in your quote request and we&rsquo;ll arrange a time.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CLOSING CTA ====== -->
+    <section class="closing-cta">
+      <div class="container">
+        <div class="closing-cta__content">
+          <h2 class="closing-cta__headline">Get your exact price.</h2>
+          <p class="closing-cta__subline">Pick your ZIP and home size. Full breakdown within a few hours.</p>
+          <form class="closing-cta__form" action="#quote">
+            <select class="closing-cta__select" name="zip" required>
+              <option value="" disabled selected>Moving from ZIP</option>
+              <option>60601 &mdash; Chicago Loop</option>
+              <option>60201 &mdash; Evanston</option>
+              <option>60540 &mdash; Naperville</option>
+              <option>60173 &mdash; Schaumburg</option>
+              <option>60004 &mdash; Arlington Heights</option>
+              <option>60062 &mdash; Northbrook</option>
+              <option>Other ZIP</option>
+            </select>
+            <select class="closing-cta__select" name="size" required>
+              <option value="" disabled selected>Home size</option>
+              <option>Studio</option>
+              <option>1 bedroom</option>
+              <option>2 bedroom</option>
+              <option>3 bedroom</option>
+              <option>4+ bedroom</option>
+            </select>
+            <a href="#quote" class="btn-primary">Get a Quote<span class="arrow">&rarr;</span></a>
+          </form>
+          <a href="tel:+1XXXXXXXXXX" class="closing-cta__phone">(312) 555-0199</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">

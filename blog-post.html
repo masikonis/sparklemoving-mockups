@@ -12,6 +12,14 @@
 
   <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/components/header.css">
+
+  <!-- Blog post reading layout + share rail -->
+  <link rel="stylesheet" href="styles/pages/blog/post.css">
+
+  <!-- Related-posts grid + closing CTA -->
+  <link rel="stylesheet" href="styles/pages/blog/listing.css">
+  <link rel="stylesheet" href="styles/pages/home/closing-cta.css">
+
   <link rel="stylesheet" href="styles/components/footer.css">
   <link rel="stylesheet" href="styles/components/modal.css">
 </head>
@@ -129,112 +137,270 @@
     </div>
   </header>
 
-  <main class="page-content">
-    <article>
-      <nav aria-label="Breadcrumb">
-        <ol>
+  <main>
+
+    <!-- ====== ARTICLE ====== -->
+    <article class="blog-post">
+      <div class="blog-post__container">
+
+        <!-- Breadcrumb -->
+        <ol class="blog-post__breadcrumb" aria-label="Breadcrumb">
           <li><a href="blog.html">Blog</a></li>
           <li><a href="#">Moving Guides</a></li>
           <li>How long does a Chicago move take?</li>
         </ol>
-      </nav>
 
-      <header>
-        <p>
-          <strong>Category:</strong> Moving Guides &middot;
-          <strong>Author:</strong> Sparkle Moving Team &middot;
-          <strong>Published:</strong> [date] &middot;
-          <strong>Read time:</strong> 5 min
-        </p>
-        <h1>How long does a Chicago move take?</h1>
-        <figure>
-          <img src="" alt="Sparkle crew loading furniture into a truck on a residential Chicago street.">
-          <figcaption>[Featured image placeholder]</figcaption>
+        <!-- Article header -->
+        <header>
+          <span class="blog-post__eyebrow">Moving Guides</span>
+          <h1 class="blog-post__title">How long does a Chicago move take?</h1>
+          <div class="blog-post__meta">
+            <span class="blog-post__meta-item"><strong>Sparkle Moving Team</strong></span>
+            <span class="blog-post__meta-item">Published [date]</span>
+            <span class="blog-post__meta-item">5 min read</span>
+          </div>
+        </header>
+
+        <!-- Share rail -->
+        <div class="blog-post__share">
+          <span class="blog-post__share-label">Share</span>
+          <ul class="blog-post__share-icons">
+            <li>
+              <a href="#" class="blog-post__share-icon" aria-label="Share on Twitter">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="blog-post__share-icon" aria-label="Share on Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.13 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.9 3.78-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33V22c4.78-.81 8.43-4.94 8.43-9.94z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="blog-post__share-icon" aria-label="Share on LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.4v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43zM5.34 7.43a2.06 2.06 0 11.01-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.55V9h3.57z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:?subject=How long does a Chicago move take?" class="blog-post__share-icon" aria-label="Share by email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2"/>
+                  <path d="M3 7l9 6 9-6"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <button type="button" class="blog-post__share-icon" aria-label="Copy link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M10 13a5 5 0 007.07 0l3-3a5 5 0 00-7.07-7.07l-1 1"/>
+                  <path d="M14 11a5 5 0 00-7.07 0l-3 3a5 5 0 007.07 7.07l1-1"/>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Featured image -->
+        <figure class="blog-post__featured">
+          <img src="images/hero-left.webp" alt="Sparkle crew loading furniture into a truck on a residential Chicago street">
         </figure>
-      </header>
 
-      <section>
-        <p>Most local moves in Chicago take between two and ten hours, depending on the size of the home and the specifics of the addresses on each end. That&rsquo;s the short answer.</p>
-        <p>Here&rsquo;s the longer one.</p>
+        <!-- Body content -->
+        <div class="blog-post__body">
+          <p>Most local moves in Chicago take between two and ten hours, depending on the size of the home and the specifics of the addresses on each end. That&rsquo;s the short answer.</p>
+          <p>Here&rsquo;s the longer one.</p>
 
-        <h2>The biggest factor: home size</h2>
-        <p>Crew size is matched to home size, and crew size determines pace.</p>
-        <table>
-          <thead>
-            <tr><th>Home size</th><th>Typical crew</th><th>Typical hours</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Studio / 1-bedroom</td><td>2 movers</td><td>2&ndash;4 hours</td></tr>
-            <tr><td>2-bedroom</td><td>3 movers</td><td>4&ndash;6 hours</td></tr>
-            <tr><td>3+ bedroom</td><td>4 movers</td><td>6&ndash;10 hours</td></tr>
-          </tbody>
-        </table>
-        <p>These are local moves, address to address, no storage stop. Long-distance moves don&rsquo;t run on a clock &mdash; they have a delivery window instead. See <a href="long-distance-moving.html">Long Distance Moving &rarr;</a> for how those work.</p>
+          <h2>The biggest factor: home size</h2>
+          <p>Crew size is matched to home size, and crew size determines pace.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Home size</th>
+                <th>Typical crew</th>
+                <th>Typical hours</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Studio / 1-bedroom</td>
+                <td>2 movers</td>
+                <td>2&ndash;4 hours</td>
+              </tr>
+              <tr>
+                <td>2-bedroom</td>
+                <td>3 movers</td>
+                <td>4&ndash;6 hours</td>
+              </tr>
+              <tr>
+                <td>3+ bedroom</td>
+                <td>4 movers</td>
+                <td>6&ndash;10 hours</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>These are local moves, address to address, no storage stop. Long-distance moves don&rsquo;t run on a clock &mdash; they have a delivery window instead. See <a href="long-distance-moving.html">Long Distance Moving</a> for how those work.</p>
 
-        <h2>What changes the time</h2>
-        <p>Three things, mostly:</p>
-        <h3>1. How packed the home is.</h3>
-        <p>A 2-bedroom apartment with everything in boxes ready to go loads faster than a 2-bedroom with last-minute packing happening as the crew works.</p>
-        <h3>2. Building access.</h3>
-        <p>Walk-up to walk-up is faster than freight-elevator-with-COI to freight-elevator-with-COI. Most Chicago high-rises require 30&ndash;60 minutes for elevator booking and dock check-in on each end.</p>
-        <h3>3. Distance between addresses.</h3>
-        <p>A move within Lincoln Park is faster than one from Evanston to Hyde Park. Drive time between addresses is on the clock.</p>
+          <h2>What changes the time</h2>
+          <p>Three things, mostly:</p>
+          <h3>1. How packed the home is.</h3>
+          <p>A 2-bedroom apartment with everything in boxes ready to go loads faster than a 2-bedroom with last-minute packing happening as the crew works.</p>
+          <h3>2. Building access.</h3>
+          <p>Walk-up to walk-up is faster than freight-elevator-with-COI to freight-elevator-with-COI. Most Chicago high-rises require 30&ndash;60 minutes for elevator booking and dock check-in on each end.</p>
+          <h3>3. Distance between addresses.</h3>
+          <p>A move within Lincoln Park is faster than one from Evanston to Hyde Park. Drive time between addresses is on the clock.</p>
 
-        <h2>What&rsquo;s not on the clock</h2>
-        <p>The drive from our warehouse to your pickup, and from your destination back to our warehouse &mdash; those are covered by the one-time travel fee, not the hourly rate. Loading is when the clock starts; final placement is when it stops.</p>
-        <p>Full breakdown on the <a href="pricing.html">Pricing page &rarr;</a>.</p>
+          <!-- Inline image break -->
+          <figure class="blog-post__inline-image">
+            <div class="blog-post__inline-image-wrap">
+              <img src="images/outside-logistics-retailer-warehouse-with-female-manager-using-tablet-computer-worker-loading-delivery-truck-with-cardboard-boxes-online-orders-purchases-ecommerce-goods-merchandise.jpg" alt="Sparkle crew loading boxes into a truck at the warehouse">
+            </div>
+            <figcaption>Loading on the clock starts when the first item leaves the home.</figcaption>
+          </figure>
 
-        <h2>A real example</h2>
-        <p>A 2-bedroom condo in Lakeview moving to a 2-bedroom apartment in Wicker Park, both with elevator buildings, COIs filed in advance, average packing:</p>
-        <ul>
-          <li>30 minutes: walkthrough, floor protection, dolly setup</li>
-          <li>2 hours: load</li>
-          <li>30 minutes: drive</li>
-          <li>2 hours: unload and placement</li>
-          <li>30 minutes: walkthrough and reassemble beds</li>
-        </ul>
-        <p><strong>Total: 5.5 hours, 3 movers, $930 + $169 travel = $1,099.</strong></p>
-        <p>That&rsquo;s a typical day. Yours might run an hour shorter or an hour longer. The quote shows the range, the invoice shows actual time worked.</p>
+          <h2>What&rsquo;s not on the clock</h2>
+          <p>The drive from our warehouse to your pickup, and from your destination back to our warehouse &mdash; those are covered by the one-time travel fee, not the hourly rate. Loading is when the clock starts; final placement is when it stops.</p>
+          <p>Full breakdown on the <a href="pricing.html">Pricing page</a>.</p>
 
-        <h2>When moves run long</h2>
-        <p>Most overruns come from one of these:</p>
-        <ul>
-          <li>Packing not finished when the crew arrives</li>
-          <li>Surprise items not on the inventory (extra closet, basement storage, garage)</li>
-          <li>Building access issues (elevator already booked, dock unavailable)</li>
-          <li>Long-carry situations (parking blocked, no front-door access)</li>
-        </ul>
-        <p>The best way to keep your move on schedule is to walk through your inventory honestly during the quote. Short estimates that overrun aren&rsquo;t bait &mdash; they&rsquo;re usually missing information.</p>
-      </section>
+          <p class="blog-post__pullquote">Short estimates that overrun aren&rsquo;t bait &mdash; they&rsquo;re usually missing information.</p>
 
-      <aside>
-        <p><strong>Want a real estimate for your move?</strong></p>
-        <a href="#quote" class="btn-primary">Start a Quote &rarr;</a>
-        <p>Takes about 60 seconds.</p>
-      </aside>
+          <h2>A real example</h2>
+          <p>A 2-bedroom condo in Lakeview moving to a 2-bedroom apartment in Wicker Park, both with elevator buildings, COIs filed in advance, average packing:</p>
+          <ul>
+            <li>30 minutes: walkthrough, floor protection, dolly setup</li>
+            <li>2 hours: load</li>
+            <li>30 minutes: drive</li>
+            <li>2 hours: unload and placement</li>
+            <li>30 minutes: walkthrough and reassemble beds</li>
+          </ul>
+          <p><strong>Total: 5.5 hours, 3 movers, $930 + $169 travel = $1,099.</strong></p>
+          <p>That&rsquo;s a typical day. Yours might run an hour shorter or an hour longer. The quote shows the range, the invoice shows actual time worked.</p>
 
-      <footer>
-        <h3>About the author</h3>
-        <p><strong>Sparkle Moving Team</strong><br>Chicago movers since 2012. We write these guides based on what we see on actual jobs &mdash; not from search-engine playbooks.</p>
-      </footer>
+          <h2>When moves run long</h2>
+          <p>Most overruns come from one of these:</p>
+          <ul>
+            <li>Packing not finished when the crew arrives</li>
+            <li>Surprise items not on the inventory (extra closet, basement storage, garage)</li>
+            <li>Building access issues (elevator already booked, dock unavailable)</li>
+            <li>Long-carry situations (parking blocked, no front-door access)</li>
+          </ul>
+          <p>The best way to keep your move on schedule is to walk through your inventory honestly during the quote.</p>
 
-      <section>
-        <h2>Related posts</h2>
-        <p><em>Empty state at launch &mdash; populates from CMS by category and tag.</em></p>
-        <ul>
-          <li>What&rsquo;s a COI and which Chicago buildings need one?</li>
-          <li>Hourly vs flat-rate moving quotes: which is fair?</li>
-          <li>Moving from Evanston: parking, permits, and Northwestern dates</li>
-        </ul>
-      </section>
+          <!-- Inline CTA box -->
+          <div class="blog-post__cta">
+            <p class="blog-post__cta-text">Want a real estimate for your move?</p>
+            <a href="#quote" class="btn-primary">Start a Quote<span class="arrow">&rarr;</span></a>
+            <p class="blog-post__cta-note">Takes about 60 seconds.</p>
+          </div>
+        </div>
 
-      <section>
-        <h2>Get your exact price.</h2>
-        <p>Enter your ZIPs and move details. We&rsquo;ll send a full breakdown within a few hours.</p>
-        <a href="#quote" class="btn-primary">Get a Quote</a>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
+        <!-- Author bio -->
+        <div class="blog-post__author">
+          <div class="blog-post__author-avatar" aria-hidden="true">SM</div>
+          <div>
+            <div class="blog-post__author-name">Sparkle Moving Team</div>
+            <p class="blog-post__author-bio">Chicago movers since 2012. We write these guides based on what we see on actual jobs &mdash; not from search-engine playbooks.</p>
+          </div>
+        </div>
+
+      </div>
     </article>
+
+    <!-- ====== RELATED POSTS ====== -->
+    <section class="post-section">
+      <div class="container">
+        <div class="post-section__head">
+          <span class="post-section__eyebrow">Keep reading</span>
+          <h2 class="post-section__headline">Related guides</h2>
+        </div>
+        <div class="post-section__carousel">
+          <button type="button" class="post-section__nav post-section__nav--prev" aria-label="Previous guides">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+          <div class="post-grid">
+          <a href="#" class="post-card">
+            <div class="post-card__image">
+              <img src="images/step1.webp" alt="High-rise building entrance in Chicago">
+            </div>
+            <div class="post-card__body">
+              <span class="post-card__eyebrow">Moving Guides</span>
+              <h3 class="post-card__title">What&rsquo;s a COI and which Chicago buildings need one?</h3>
+              <p class="post-card__excerpt">Most multi-unit buildings require a certificate of insurance before the freight elevator opens.</p>
+              <p class="post-card__meta">Sparkle Moving Team<span class="post-card__meta-separator">&middot;</span>4 min read</p>
+            </div>
+          </a>
+
+          <a href="#" class="post-card">
+            <div class="post-card__image">
+              <img src="images/bottom-cta.jpg" alt="Sparkle moving truck">
+            </div>
+            <div class="post-card__body">
+              <span class="post-card__eyebrow">Moving Guides</span>
+              <h3 class="post-card__title">Hourly vs flat-rate moving quotes: which is fair?</h3>
+              <p class="post-card__excerpt">Two pricing models cover almost every move. Which one fits your situation, and what to watch for.</p>
+              <p class="post-card__meta">Sparkle Moving Team<span class="post-card__meta-separator">&middot;</span>6 min read</p>
+            </div>
+          </a>
+
+          <a href="#" class="post-card">
+            <div class="post-card__image">
+              <img src="images/step3.webp" alt="Sparkle crew during an Evanston move">
+            </div>
+            <div class="post-card__body">
+              <span class="post-card__eyebrow">City Guides</span>
+              <h3 class="post-card__title">Moving from Evanston: parking, permits, and Northwestern dates.</h3>
+              <p class="post-card__excerpt">Evanston has specific rules for residential parking and a packed university calendar.</p>
+              <p class="post-card__meta">Sparkle Moving Team<span class="post-card__meta-separator">&middot;</span>6 min read</p>
+            </div>
+          </a>
+          </div>
+          <button type="button" class="post-section__nav post-section__nav--next" aria-label="Next guides">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CLOSING CTA (with two dropdowns) ====== -->
+    <section class="closing-cta">
+      <div class="container">
+        <div class="closing-cta__content">
+          <h2 class="closing-cta__headline">Get your exact price.</h2>
+          <p class="closing-cta__subline">Pick your ZIP and home size. Full breakdown within a few hours.</p>
+          <form class="closing-cta__form" action="#quote">
+            <select class="closing-cta__select" name="zip" required>
+              <option value="" disabled selected>Moving from ZIP</option>
+              <option>60601 &mdash; Chicago Loop</option>
+              <option>60201 &mdash; Evanston</option>
+              <option>60540 &mdash; Naperville</option>
+              <option>60173 &mdash; Schaumburg</option>
+              <option>60004 &mdash; Arlington Heights</option>
+              <option>60062 &mdash; Northbrook</option>
+              <option>Other ZIP</option>
+            </select>
+            <select class="closing-cta__select" name="size" required>
+              <option value="" disabled selected>Home size</option>
+              <option>Studio</option>
+              <option>1 bedroom</option>
+              <option>2 bedroom</option>
+              <option>3 bedroom</option>
+              <option>4+ bedroom</option>
+            </select>
+            <a href="#quote" class="btn-primary">Get a Quote<span class="arrow">&rarr;</span></a>
+          </form>
+          <a href="tel:+1XXXXXXXXXX" class="closing-cta__phone">(312) 555-0199</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">

@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Component: Application form section
+   A centered headline + body + form panel. Used for careers, affiliate
+   sign-up, and other "apply here" patterns.
+   ========================================================================== */
+
+.application {
+  background-color: var(--color-white);
+  padding: var(--space-3xl) 0;
+  border-top: 1px solid var(--color-navy-08);
+}
+
+.application__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.application__head {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.application__eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+}
+
+.application__headline {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.15;
+  letter-spacing: -0.018em;
+  color: var(--color-navy);
+  margin-bottom: var(--space-sm);
+}
+
+.application__body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-navy-60);
+}
+
+.application__panel {
+  background-color: var(--color-offwhite);
+  border: 1px solid var(--color-navy-08);
+  border-radius: 14px;
+  padding: var(--space-xl);
+}
+
+/* Step indicator inside the form (used by book-online) */
+.application__step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: var(--space-lg) 0 12px;
+}
+
+.application__step:first-child {
+  margin-top: 0;
+}
+
+.application__step-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+  color: var(--color-navy);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.application__step-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.25;
+  color: var(--color-navy);
+  margin: 0;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .application__panel {
+    padding: var(--space-lg);
+  }
+
+  .application__headline {
+    font-size: 28px;
+  }
+}

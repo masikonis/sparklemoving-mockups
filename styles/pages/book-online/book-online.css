@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Book Online — small page-specific bits.
+   Most of the page reuses pricing/info/process patterns; this file only adds
+   the call-us footer block.
+   ========================================================================== */
+
+.alt-call {
+  background-color: var(--color-white);
+  padding: var(--space-2xl) 0;
+  border-top: 1px solid var(--color-navy-08);
+  text-align: center;
+}
+
+.alt-call__eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+}
+
+.alt-call__headline {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: -0.015em;
+  color: var(--color-navy);
+  margin-bottom: var(--space-md);
+}
+
+.alt-call__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--color-navy);
+  letter-spacing: -0.015em;
+  transition: color 0.15s ease;
+}
+
+.alt-call__phone::before {
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23EFC10C' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.alt-call__phone:hover {
+  color: var(--color-gold);
+}
+
+.alt-call__hours {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-navy-60);
+  margin-top: var(--space-sm);
+}

@@ -98,6 +98,19 @@
   line-height: 1.6;
 }
 
+/* Section heading above the footer CTA copy — matches .site-footer__col-title
+   so the body text aligns with the first link in the adjacent columns. */
+.site-footer__cta-text::before {
+  content: 'Plan your move';
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  color: var(--color-white-80);
+  margin-bottom: var(--space-sm);
+}
+
 .site-footer__cta-col .btn-primary {
   display: block;
   text-align: center;

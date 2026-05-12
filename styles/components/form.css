@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Form — shared field/input styling for in-page forms (careers, contact, etc).
+   Modal form keeps its own scoped styles in components/modal.css.
+   ========================================================================== */
+
+.form {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form__field--full {
+  grid-column: 1 / -1;
+}
+
+.form__label {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-navy-60);
+}
+
+.form__input,
+.form__textarea,
+.form__select {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-navy);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-navy-15);
+  border-radius: 8px;
+  padding: 13px 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form__input::placeholder,
+.form__textarea::placeholder {
+  color: var(--color-navy-60);
+  font-weight: 400;
+}
+
+.form__input:hover,
+.form__textarea:hover,
+.form__select:hover {
+  border-color: var(--color-navy);
+}
+
+.form__input:focus,
+.form__textarea:focus,
+.form__select:focus,
+.form__input:focus-visible,
+.form__textarea:focus-visible,
+.form__select:focus-visible {
+  border-color: var(--color-navy);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(25, 28, 43, 0.08);
+}
+
+.form__textarea {
+  resize: vertical;
+  min-height: 140px;
+  font-family: var(--font-body);
+}
+
+/* Select with custom chevron */
+.form__select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 8'><path d='M1 1l6 6 6-6' stroke='%23191C2B' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 12px;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+/* File input */
+.form__file {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-navy);
+}
+
+.form__file::file-selector-button {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--color-navy);
+  background-color: var(--color-offwhite);
+  border: 1px solid var(--color-navy-15);
+  border-radius: 6px;
+  padding: 8px 14px;
+  margin-right: var(--space-sm);
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.form__file::file-selector-button:hover {
+  background-color: var(--color-white);
+  border-color: var(--color-navy);
+}
+
+/* Submit area */
+.form__submit {
+  justify-self: start;
+  margin-top: var(--space-sm);
+}
+
+/* Submit aligned to the right column of a .form__row, full column width */
+.form__submit--right {
+  justify-self: stretch;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__note {
+  grid-column: 1 / -1;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--color-navy-60);
+  margin-top: 4px;
+}
+
+.form__note--center {
+  text-align: center;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  .form__row {
+    grid-template-columns: 1fr;
+  }
+}

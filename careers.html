@@ -12,6 +12,30 @@
 
   <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/components/header.css">
+
+  <!-- Page-specific -->
+  <link rel="stylesheet" href="styles/pages/careers/careers.css">
+  <link rel="stylesheet" href="styles/components/form.css">
+  <link rel="stylesheet" href="styles/components/application-form.css">
+
+  <!-- Reused homepage section styles -->
+  <link rel="stylesheet" href="styles/pages/home/stats-bar.css">
+  <link rel="stylesheet" href="styles/pages/home/faq.css">
+
+  <!-- Reused pricing/service patterns -->
+  <link rel="stylesheet" href="styles/pages/pricing/hero.css">
+  <link rel="stylesheet" href="styles/pages/pricing/fees.css">
+  <link rel="stylesheet" href="styles/pages/pricing/info-blocks.css">
+
+  <!-- Icon-list (What we offer) -->
+  <link rel="stylesheet" href="styles/pages/local-residential-moving/why-local.css">
+
+  <!-- Who-its-for (We do / We don't) -->
+  <link rel="stylesheet" href="styles/pages/about/who-its-for.css">
+
+  <!-- Process walk (hiring timeline) -->
+  <link rel="stylesheet" href="styles/components/process-walk.css">
+
   <link rel="stylesheet" href="styles/components/footer.css">
   <link rel="stylesheet" href="styles/components/modal.css">
 </head>
@@ -129,110 +153,426 @@
     </div>
   </header>
 
-  <main class="page-content">
-    <article>
-      <section>
-        <h1>Work with us.</h1>
-        <p>Crew, drivers, and office roles. Honest pay, real schedules, no resold positions.</p>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
+  <main>
 
-      <section>
-        <ul>
-          <li>Since 2012</li>
-          <li>10,000+ Moves</li>
-          <li>Licensed &amp; Insured</li>
+    <!-- ====== HERO ====== -->
+    <section class="pricing-hero">
+      <div class="container pricing-hero__inner">
+        <div class="pricing-hero__content">
+          <span class="pricing-hero__eyebrow">Careers</span>
+          <h1 class="pricing-hero__headline">Work with us.</h1>
+          <p class="pricing-hero__body">Crew, drivers, and office roles. Honest pay, real schedules, no resold positions. Hiring year-round in Northbrook.</p>
+          <div class="residential-hero__actions" style="display:flex;align-items:center;gap:var(--space-md);margin-top:var(--space-lg);flex-wrap:wrap;">
+            <a href="#positions" class="btn-primary" style="font-size:17px;padding:16px 36px;">See open roles<span class="arrow">&rarr;</span></a>
+            <a href="#apply" class="gold-link" style="font-family:var(--font-heading);font-weight:600;font-size:16px;">Or apply general<span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="pricing-hero__media">
+          <img src="images/hero-left.webp" alt="Sparkle Moving crew at work" width="640" height="400">
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== STATS BAR ====== -->
+    <section class="stats-bar">
+      <div class="container">
+        <ul class="stats-bar__list">
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">2012</span>
+            <span class="stats-bar__label">Established</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">10,000+</span>
+            <span class="stats-bar__label">Moves completed</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">Licensed &amp; Insured</span>
+            <span class="stats-bar__label">Illinois CC-MC</span>
+          </li>
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <h2>Who we hire</h2>
-        <h3>Movers</h3>
-        <p>Field crew. Loading, transit, unloading, placement. Most days are 6&ndash;10 hours. Crews dispatch from our Northbrook warehouse.</p>
-        <h3>Drivers</h3>
-        <p>CDL or non-CDL depending on route. Local routes year-round. Long-distance routes (Chicago to Florida, Chicago to Texas) for drivers willing to do multi-day trips.</p>
-        <h3>Office</h3>
-        <p>Quote desk, dispatch, customer service. Mostly weekday daytime hours.</p>
-      </section>
+    <!-- ====== OPEN POSITIONS (job-board rows) ====== -->
+    <section class="careers-section" id="positions">
+      <div class="container">
+        <div class="careers-section__head">
+          <span class="careers-section__eyebrow">Open positions</span>
+          <h2 class="careers-section__headline">Who we hire.</h2>
+          <p class="careers-section__body">We hire steadily across these three tracks. No specific posting today? Send a general application below and we&rsquo;ll reach out when something fits.</p>
+        </div>
+        <div class="positions">
+          <a href="#apply" class="positions__row">
+            <span class="positions__role">Mover</span>
+            <span class="positions__detail">Field crew &mdash; loading, transit, unloading, placement</span>
+            <span class="positions__badge">Full-time</span>
+            <span class="positions__apply">Apply <span class="positions__apply-arrow" aria-hidden="true">&rarr;</span></span>
+          </a>
+          <a href="#apply" class="positions__row">
+            <span class="positions__role">Driver (CDL)</span>
+            <span class="positions__detail">Long-distance routes &mdash; Chicago to Florida, Chicago to Texas</span>
+            <span class="positions__badge">Full-time</span>
+            <span class="positions__apply">Apply <span class="positions__apply-arrow" aria-hidden="true">&rarr;</span></span>
+          </a>
+          <a href="#apply" class="positions__row">
+            <span class="positions__role">Driver (non-CDL)</span>
+            <span class="positions__detail">Local Chicago metro routes &mdash; year-round</span>
+            <span class="positions__badge">Full-time</span>
+            <span class="positions__apply">Apply <span class="positions__apply-arrow" aria-hidden="true">&rarr;</span></span>
+          </a>
+          <a href="#apply" class="positions__row">
+            <span class="positions__role">Office</span>
+            <span class="positions__detail">Quote desk, dispatch, customer service &mdash; weekday daytime</span>
+            <span class="positions__badge">Full-time</span>
+            <span class="positions__apply">Apply <span class="positions__apply-arrow" aria-hidden="true">&rarr;</span></span>
+          </a>
+        </div>
+        <p class="positions__empty">No specific openings posted right now, but we hire steadily. Send a r&eacute;sum&eacute; below and we&rsquo;ll be in touch when something fits.</p>
+      </div>
+    </section>
 
-      <section>
-        <h2>What we offer</h2>
-        <ul>
-          <li><strong>Pay:</strong> [$X&ndash;$X/hr starting] for movers, [$X&ndash;$X/hr] for drivers, salaried positions for office. Reviewed annually.</li>
-          <li><strong>Schedule:</strong> Predictable. We don&rsquo;t book crews for moves we can&rsquo;t staff properly.</li>
-          <li><strong>Equipment:</strong> Trucks owned by us, maintained on schedule. Standard tools and gear provided.</li>
-          <li><strong>Benefits:</strong> [Health insurance / PTO / 401k details &mdash; placeholders, confirm with Mike]</li>
-          <li><strong>Tips:</strong> Yours. We don&rsquo;t pool. Customers aren&rsquo;t pushed to tip.</li>
-          <li><strong>Time off:</strong> Real time off. We don&rsquo;t pressure crews to work through their planned days.</li>
-        </ul>
-      </section>
+    <!-- ====== WHAT WE OFFER (image left + icon-list) ====== -->
+    <section class="info-section info-section--offwhite">
+      <div class="container info-section__inner info-section__inner--media info-section__inner--media-left info-section__inner--stretch">
+        <div class="info-section__media">
+          <img src="images/hero-right.webp" alt="Sparkle Moving crew gearing up for a job">
+        </div>
+        <div>
+          <div class="info-section__head">
+            <span class="info-section__eyebrow">What we offer</span>
+            <h2 class="info-section__headline">What you can count on.</h2>
+          </div>
+          <ul class="icon-list">
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="2" x2="12" y2="22"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Honest pay.</h3>
+                <p class="icon-list__body">[$X&ndash;$X/hr starting] for movers, [$X&ndash;$X/hr] for drivers, salaried for office. Reviewed annually.</p>
+              </div>
+            </li>
 
-      <section>
-        <h2>What we don&rsquo;t do</h2>
-        <ul>
-          <li>Pay-by-the-job for crew (you&rsquo;re paid for hours worked, not hours billed to the customer)</li>
-          <li>Subcontract crews (everyone on a Sparkle move is on Sparkle&rsquo;s payroll)</li>
-          <li>Load up trucks beyond what a crew can safely move in a shift</li>
-          <li>Book moves that don&rsquo;t have proper equipment or staffing</li>
-        </ul>
-      </section>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="5" width="18" height="16" rx="1"/>
+                  <path d="M3 10h18M8 3v4M16 3v4"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Predictable schedule.</h3>
+                <p class="icon-list__body">We don&rsquo;t book crews for moves we can&rsquo;t staff properly. The schedule we post is the schedule we work.</p>
+              </div>
+            </li>
 
-      <section>
-        <h2>Open positions</h2>
-        <p><em>Empty state if no current openings:</em></p>
-        <blockquote>No specific openings posted right now, but we hire steadily. If you&rsquo;re interested in any of the roles above, send your r&eacute;sum&eacute; through the form below and we&rsquo;ll be in touch when something fits.</blockquote>
-      </section>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="6" width="14" height="11" rx="1"/>
+                  <path d="M15 9h4l3 4v4h-7V9z"/>
+                  <circle cx="6" cy="18.5" r="2"/>
+                  <circle cx="18" cy="18.5" r="2"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Equipment that works.</h3>
+                <p class="icon-list__body">Trucks owned by us, maintained on schedule. Standard tools and gear provided &mdash; you&rsquo;re not improvising with broken gear.</p>
+              </div>
+            </li>
 
-      <section>
-        <h2>Apply</h2>
-        <form>
-          <p><label for="careers-name">Name</label><br><input id="careers-name" name="name" type="text" required></p>
-          <p><label for="careers-email">Email</label><br><input id="careers-email" name="email" type="email" required></p>
-          <p><label for="careers-phone">Phone</label><br><input id="careers-phone" name="phone" type="tel" placeholder="(555) 555-5555" maxlength="14" required></p>
-          <p><label for="careers-position">Position interested in</label><br>
-            <select id="careers-position" name="position" required>
-              <option value="" disabled selected>Select position</option>
-              <option>Mover</option>
-              <option>Driver (CDL)</option>
-              <option>Driver (non-CDL)</option>
-              <option>Office</option>
-              <option>Other</option>
-            </select>
-          </p>
-          <p><label for="careers-experience">Years of moving / driving experience</label><br><input id="careers-experience" name="experience" type="number" min="0" required></p>
-          <p><label for="careers-start">Earliest start date</label><br><input id="careers-start" name="start_date" type="date" required></p>
-          <p><label for="careers-notes">Anything else we should know</label><br><textarea id="careers-notes" name="notes" rows="4"></textarea></p>
-          <p><label for="careers-resume">R&eacute;sum&eacute;</label><br><input id="careers-resume" name="resume" type="file"></p>
-          <p><button type="submit" class="btn-primary">Submit application</button></p>
-        </form>
-        <p>We respond to every application, usually within one week.</p>
-      </section>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L4 5v7c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Health, PTO, and 401k.</h3>
+                <p class="icon-list__body">[Health insurance, PTO, 401k details &mdash; confirm with Mike.]</p>
+              </div>
+            </li>
 
-      <section>
-        <h2>Why Sparkle</h2>
-        <p><strong>You&rsquo;re hired by us, not subcontracted.</strong> The crew that loads is the crew that unloads. Same applies internally &mdash; once you&rsquo;re on the team, you stay on the team for the move. No swap-outs mid-job.</p>
-        <p><strong>The work is steady.</strong> We&rsquo;ve been in business since 2012 and run year-round, including a regular long-distance route schedule. Off-season slowdowns are real but limited.</p>
-        <p><strong>The equipment works.</strong> Trucks, dollies, blankets, straps. All maintained, replaced when needed. You&rsquo;re not improvising with broken gear.</p>
-        <p><strong>The pay is the pay.</strong> No deductions for mistakes, no surprise reductions. What we agree on is what shows up on the paycheck.</p>
-      </section>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 17h2l2-6h10l2 6h2"/>
+                  <path d="M9 11V5h6v6"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Tips are yours.</h3>
+                <p class="icon-list__body">We don&rsquo;t pool tips. Customers aren&rsquo;t pushed to tip. What you earn is what you keep.</p>
+              </div>
+            </li>
 
-      <section>
-        <h2>FAQ</h2>
-        <details><summary>Do I need moving experience?</summary><p>For movers: helpful, not required. We train. For drivers: yes, especially for long-distance routes. For office: depends on the role.</p></details>
-        <details><summary>Do I need a CDL?</summary><p>Only for routes that require one. Many local-mover positions don&rsquo;t.</p></details>
-        <details><summary>What&rsquo;s the application process?</summary><p>Application form &rarr; phone screen &rarr; in-person interview at the Northbrook office &rarr; trial day for field roles. Usually two to three weeks end to end.</p></details>
-        <details><summary>Can I apply if I&rsquo;m currently moving to Chicago?</summary><p>Yes. Tell us your timeline in the application.</p></details>
-        <details><summary>Is this seasonal work?</summary><p>No. We hire year-round. Spring and summer are busiest, but the schedule doesn&rsquo;t drop to zero in winter.</p></details>
-        <details><summary>Do you sponsor visas or work permits?</summary><p>[TBD &mdash; confirm with Mike.]</p></details>
-      </section>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M12 7v5l3 2"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Real time off.</h3>
+                <p class="icon-list__body">When you book time off, you get it. We don&rsquo;t pressure crews to work through planned days.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>Send your application.</h2>
-        <p>We respond within one week.</p>
-        <p>Or email us directly: <a href="mailto:careers@sparklemoving.com">careers@sparklemoving.com</a></p>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
-    </article>
+    <!-- ====== HIRING PROCESS (timeline) ====== -->
+    <section class="process-walk">
+      <div class="container">
+        <div class="process-walk__head">
+          <span class="process-walk__eyebrow">Hiring process</span>
+          <h2 class="process-walk__headline">From application to first day.</h2>
+          <p class="process-walk__body">Usually two to three weeks end to end.</p>
+        </div>
+        <ol class="process-walk__list">
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">1</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Submit the application.</h3>
+              </div>
+              <p class="process-walk__step-body">Use the form below. Attach a r&eacute;sum&eacute; if you have one &mdash; we read every submission.</p>
+            </div>
+          </li>
+
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">2</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Phone screen.</h3>
+              </div>
+              <p class="process-walk__step-body">15&ndash;20 minutes. We talk about the role, schedule, and what you&rsquo;re looking for. You&rsquo;re screening us as much as we&rsquo;re screening you.</p>
+            </div>
+          </li>
+
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">3</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="8" r="3"/>
+                    <circle cx="17" cy="9" r="2.5"/>
+                    <path d="M3 20c0-3 3-5 6-5s6 2 6 5"/>
+                    <path d="M14 20c0-2 2-4 4-4s3.5 1 3.5 4"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">In-person interview.</h3>
+              </div>
+              <p class="process-walk__step-body">At the Northbrook warehouse. Meet the crew lead, see the trucks and the gear, and ask anything still on your mind.</p>
+            </div>
+          </li>
+
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">4</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 8L12 3 3 8v8l9 5 9-5V8z"/>
+                    <path d="M3 8l9 5 9-5"/>
+                    <path d="M12 13v8"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Trial day (field roles).</h3>
+              </div>
+              <p class="process-walk__step-body">Paid trial on a real job. You see how we work; we see how you work. Either side can say it&rsquo;s not a fit afterwards.</p>
+            </div>
+          </li>
+
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">5</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 11l3 3L22 4"/>
+                    <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Offer &amp; first day.</h3>
+              </div>
+              <p class="process-walk__step-body">Written offer with the pay, schedule, and start date. First day is paid onboarding at the Northbrook office.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ====== WE DO / WE DON'T ====== -->
+    <section class="who-its-for who-its-for--beige">
+      <div class="container">
+        <div class="who-its-for__head">
+          <span class="who-its-for__eyebrow">Why Sparkle</span>
+          <h2 class="who-its-for__headline">What that means for you.</h2>
+        </div>
+        <div class="who-its-for__grid">
+          <div class="who-its-for__col">
+            <h3 class="who-its-for__col-title">We do</h3>
+            <ul class="check-list">
+              <li>Pay you for hours worked, not hours billed to the customer</li>
+              <li>Keep everyone on Sparkle&rsquo;s payroll &mdash; no subcontracted crews</li>
+              <li>Staff every job with the right crew size and equipment</li>
+              <li>Maintain trucks and gear on schedule</li>
+              <li>Honor the schedule and PTO we agreed to</li>
+            </ul>
+          </div>
+          <div class="who-its-for__col">
+            <h3 class="who-its-for__col-title">We don&rsquo;t</h3>
+            <ul class="check-list check-list--x">
+              <li>Pay-by-the-job for crew (no rushing through to make rent)</li>
+              <li>Subcontract crews to outside companies</li>
+              <li>Overload trucks beyond what&rsquo;s safe to move in a shift</li>
+              <li>Book moves we can&rsquo;t staff or equip properly</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== APPLICATION FORM ====== -->
+    <section class="application" id="apply">
+      <div class="container">
+        <div class="application__inner">
+          <div class="application__head">
+            <span class="application__eyebrow">Apply</span>
+            <h2 class="application__headline">Send your application.</h2>
+            <p class="application__body">We respond to every application, usually within one week.</p>
+          </div>
+          <div class="application__panel">
+            <form class="form" action="#" method="post">
+              <div class="form__row">
+                <div class="form__field">
+                  <label for="careers-name" class="form__label">Name</label>
+                  <input id="careers-name" name="name" type="text" class="form__input" required>
+                </div>
+                <div class="form__field">
+                  <label for="careers-email" class="form__label">Email</label>
+                  <input id="careers-email" name="email" type="email" class="form__input" required>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__field">
+                  <label for="careers-phone" class="form__label">Phone</label>
+                  <input id="careers-phone" name="phone" type="tel" class="form__input" placeholder="(555) 555-5555" maxlength="14" required>
+                </div>
+                <div class="form__field">
+                  <label for="careers-position" class="form__label">Position</label>
+                  <select id="careers-position" name="position" class="form__select" required>
+                    <option value="" disabled selected>Select a role</option>
+                    <option>Mover</option>
+                    <option>Driver (CDL)</option>
+                    <option>Driver (non-CDL)</option>
+                    <option>Office</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__field">
+                  <label for="careers-experience" class="form__label">Years of experience</label>
+                  <input id="careers-experience" name="experience" type="number" min="0" class="form__input" required>
+                </div>
+                <div class="form__field">
+                  <label for="careers-start" class="form__label">Earliest start date</label>
+                  <input id="careers-start" name="start_date" type="date" class="form__input" required>
+                </div>
+              </div>
+              <div class="form__field form__field--full">
+                <label for="careers-notes" class="form__label">Anything else we should know</label>
+                <textarea id="careers-notes" name="notes" rows="4" class="form__textarea"></textarea>
+              </div>
+              <div class="form__field form__field--full">
+                <label for="careers-resume" class="form__label">R&eacute;sum&eacute;</label>
+                <input id="careers-resume" name="resume" type="file" class="form__file">
+              </div>
+              <button type="submit" class="btn-primary form__submit">Submit application<span class="arrow">&rarr;</span></button>
+              <p class="form__note">We respond to every application, usually within one week.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FAQ ====== -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="faq__headline">Frequently asked questions</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">Do I need moving experience?</summary>
+            <div class="faq__answer">
+              <p>For movers: helpful, not required. We train. For drivers: yes, especially for long-distance routes. For office: depends on the role.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do I need a CDL?</summary>
+            <div class="faq__answer">
+              <p>Only for routes that require one. Many local-mover positions don&rsquo;t.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What&rsquo;s the application process?</summary>
+            <div class="faq__answer">
+              <p>Application form &rarr; phone screen &rarr; in-person interview at the Northbrook office &rarr; paid trial day for field roles. Usually two to three weeks end to end.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Can I apply if I&rsquo;m currently moving to Chicago?</summary>
+            <div class="faq__answer">
+              <p>Yes. Tell us your timeline in the application.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Is this seasonal work?</summary>
+            <div class="faq__answer">
+              <p>No. We hire year-round. Spring and summer are busiest, but the schedule doesn&rsquo;t drop to zero in winter.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do you sponsor visas or work permits?</summary>
+            <div class="faq__answer">
+              <p>[TBD &mdash; confirm with Mike.]</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CAREERS CLOSING (instead of generic CTA) ====== -->
+    <section class="careers-cta">
+      <div class="container">
+        <h2 class="careers-cta__headline">Ready to apply?</h2>
+        <p class="careers-cta__body">We respond within one week. Or email us directly &mdash; we read every message.</p>
+        <div class="careers-cta__actions">
+          <a href="#apply" class="btn-primary">Send your application<span class="arrow">&rarr;</span></a>
+          <a href="mailto:careers@sparklemoving.com" class="careers-cta__email">careers@sparklemoving.com</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
@@ -368,6 +708,26 @@
       modal.querySelectorAll('[data-close-modal]').forEach(function(el) { el.addEventListener('click', function() { modal.close(); }); });
       modal.addEventListener('click', function(e) { if (e.target === modal) modal.close(); });
       modalForm.addEventListener('submit', function(e) { e.preventDefault(); if (!modalForm.reportValidity()) return; formWrapper.hidden = true; successPanel.hidden = false; setTimeout(function() { modal.close(); modalForm.reset(); formWrapper.hidden = false; successPanel.hidden = true; }, 2000); });
+    })();
+
+    // Process walk timeline: fade-in + circle "active" state on scroll
+    (function() {
+      var items = document.querySelectorAll('.process-walk__item');
+      if (!items.length) return;
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function(el) { el.classList.add('is-visible'); el.classList.add('is-active'); });
+        return;
+      }
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            entry.target.classList.add('is-active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.35, rootMargin: '0px 0px -10% 0px' });
+      items.forEach(function(el) { observer.observe(el); });
     })();
   </script>
 

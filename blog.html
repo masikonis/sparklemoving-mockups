@@ -12,6 +12,23 @@
 
   <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/components/header.css">
+
+  <!-- Blog listing -->
+  <link rel="stylesheet" href="styles/pages/blog/listing.css">
+
+  <!-- Reused homepage section styles -->
+  <link rel="stylesheet" href="styles/pages/home/stats-bar.css">
+  <link rel="stylesheet" href="styles/pages/home/faq.css">
+  <link rel="stylesheet" href="styles/pages/home/closing-cta.css">
+
+  <!-- Reused pricing/service patterns -->
+  <link rel="stylesheet" href="styles/pages/pricing/hero.css">
+  <link rel="stylesheet" href="styles/pages/pricing/fees.css">
+  <link rel="stylesheet" href="styles/pages/pricing/info-blocks.css">
+
+  <!-- Who-its-for: Will / Won't comparison -->
+  <link rel="stylesheet" href="styles/pages/about/who-its-for.css">
+
   <link rel="stylesheet" href="styles/components/footer.css">
   <link rel="stylesheet" href="styles/components/modal.css">
 </head>
@@ -129,76 +146,191 @@
     </div>
   </header>
 
-  <main class="page-content">
-    <article>
-      <section>
-        <h1>Moving guides for Chicago.</h1>
-        <p>Honest answers to the questions people actually ask before they book a move. No fluff.</p>
-        <a href="#quote" class="btn-primary">Get a Quote</a>
-        <p>Takes about 60 seconds.</p>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
+  <main>
 
-      <section>
-        <ul>
-          <li>Since 2012</li>
-          <li>10,000+ Moves</li>
-          <li>Licensed &amp; Insured</li>
+    <!-- ====== HERO ====== -->
+    <section class="pricing-hero">
+      <div class="container pricing-hero__inner">
+        <div class="pricing-hero__content">
+          <span class="pricing-hero__eyebrow">Blog</span>
+          <h1 class="pricing-hero__headline">Moving guides <em>for Chicago.</em></h1>
+          <p class="pricing-hero__body">Honest answers to the questions people actually ask before they book a move. No fluff.</p>
+        </div>
+        <div class="pricing-hero__media">
+          <img src="images/hero-right.webp" alt="Sparkle Moving crew at work" width="640" height="400">
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== STATS BAR ====== -->
+    <section class="stats-bar">
+      <div class="container">
+        <ul class="stats-bar__list">
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">2012</span>
+            <span class="stats-bar__label">Established</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">10,000+</span>
+            <span class="stats-bar__label">Moves completed</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">Licensed &amp; Insured</span>
+            <span class="stats-bar__label">Illinois CC-MC</span>
+          </li>
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <h2>Categories</h2>
-        <h3>Moving Guides</h3>
-        <p>How moves work, what they cost, what to pack first, what to leave to the crew. The general questions every move surfaces.</p>
-        <p><a href="#">Browse Moving Guides &rarr;</a></p>
+    <!-- ====== RECENT POSTS (filter row + sample grid) ====== -->
+    <section class="post-section">
+      <div class="container">
+        <div class="post-section__head">
+          <span class="post-section__eyebrow">Recent posts</span>
+          <h2 class="post-section__headline">Fresh guides as we publish them.</h2>
+        </div>
+        <div class="post-section__filter" role="tablist" aria-label="Filter by category">
+          <a href="#" class="post-filter is-active">All</a>
+          <a href="#" class="post-filter">Moving Guides</a>
+          <a href="#" class="post-filter">City Guides</a>
+        </div>
+        <div class="post-grid">
+          <a href="blog-post.html" class="post-card">
+            <div class="post-card__image">
+              <img src="images/hero-left.webp" alt="Sparkle crew loading furniture into a truck on a Chicago street">
+            </div>
+            <div class="post-card__body">
+              <span class="post-card__eyebrow">Moving Guides</span>
+              <h3 class="post-card__title">How long does a Chicago move take?</h3>
+              <p class="post-card__excerpt">Most local moves run two to ten hours, depending on home size and building access. Here&rsquo;s the longer answer.</p>
+              <p class="post-card__meta">Sparkle Moving Team<span class="post-card__meta-separator">&middot;</span>5 min read</p>
+            </div>
+          </a>
 
-        <h3>City Guides</h3>
-        <p>What&rsquo;s specific about moving in or out of each Chicago suburb we serve. Buildings, parking permits, COIs, neighborhood quirks.</p>
-        <p><a href="#">Browse City Guides &rarr;</a></p>
-      </section>
+          <a href="#" class="post-card">
+            <div class="post-card__image">
+              <img src="images/step1.webp" alt="A high-rise building entrance in Chicago">
+            </div>
+            <div class="post-card__body">
+              <span class="post-card__eyebrow">Moving Guides</span>
+              <h3 class="post-card__title">What&rsquo;s a COI and which Chicago buildings need one?</h3>
+              <p class="post-card__excerpt">Most multi-unit buildings require a certificate of insurance before the freight elevator opens. Here&rsquo;s how it works.</p>
+              <p class="post-card__meta">Sparkle Moving Team<span class="post-card__meta-separator">&middot;</span>4 min read</p>
+            </div>
+          </a>
 
-      <section>
-        <h2>Recent posts</h2>
-        <p><em>Empty state at launch.</em></p>
-        <blockquote>First guides go live [TBD]. We&rsquo;d rather publish honest, useful posts than fill the page with thin content.</blockquote>
-        <p>[Recent posts grid auto-populates from the CMS once posts are live.]</p>
-      </section>
+          <a href="#" class="post-card">
+            <div class="post-card__image">
+              <img src="images/step2.webp" alt="Sparkle truck on a Chicago route">
+            </div>
+            <div class="post-card__body">
+              <span class="post-card__eyebrow">City Guides</span>
+              <h3 class="post-card__title">Moving from Evanston: parking, permits, and Northwestern dates.</h3>
+              <p class="post-card__excerpt">Evanston has specific rules for residential parking and a packed university calendar. What to plan around.</p>
+              <p class="post-card__meta">Sparkle Moving Team<span class="post-card__meta-separator">&middot;</span>6 min read</p>
+            </div>
+          </a>
+        </div>
+        <p class="post-section__empty">More guides go live as we publish them. We&rsquo;d rather wait and write something useful than fill the page with thin content.</p>
+      </div>
+    </section>
 
-      <section>
-        <h2>What we&rsquo;ll publish (and what we won&rsquo;t)</h2>
-        <h3>Will:</h3>
-        <ul>
-          <li>How long a 2-bedroom move takes in Chicago</li>
-          <li>What a COI is and which buildings need one</li>
-          <li>Hourly vs flat-rate quotes &mdash; which is fair</li>
-          <li>City guides: moving to/from Evanston, Naperville, Schaumburg, and the rest of the 40+ suburbs</li>
-          <li>What to pack first when moving from a high-rise</li>
-          <li>Long distance moves out of Illinois &mdash; Florida, Texas, and beyond</li>
-        </ul>
-        <h3>Won&rsquo;t:</h3>
-        <ul>
-          <li>Generic &ldquo;10 tips for moving day&rdquo; content</li>
-          <li>AI-spun keyword-stuffed posts</li>
-          <li>Anything written for search engines instead of for people who are about to move</li>
-        </ul>
-      </section>
+    <!-- ====== WHAT WE'LL PUBLISH / WON'T ====== -->
+    <section class="who-its-for who-its-for--beige">
+      <div class="container">
+        <div class="who-its-for__head">
+          <span class="who-its-for__eyebrow">Editorial policy</span>
+          <h2 class="who-its-for__headline">What we&rsquo;ll publish, and what we won&rsquo;t.</h2>
+        </div>
+        <div class="who-its-for__grid">
+          <div class="who-its-for__col">
+            <h3 class="who-its-for__col-title">We will publish</h3>
+            <ul class="check-list">
+              <li>How long a 2-bedroom move takes in Chicago</li>
+              <li>What a COI is and which buildings need one</li>
+              <li>Hourly vs flat-rate quotes &mdash; which is fair</li>
+              <li>City guides for the 40+ suburbs we serve</li>
+              <li>What to pack first when moving from a high-rise</li>
+              <li>Long-distance routes out of Illinois &mdash; Florida, Texas, beyond</li>
+            </ul>
+          </div>
+          <div class="who-its-for__col">
+            <h3 class="who-its-for__col-title">We won&rsquo;t publish</h3>
+            <ul class="check-list check-list--x">
+              <li>Generic &ldquo;10 tips for moving day&rdquo; content</li>
+              <li>AI-spun keyword-stuffed posts</li>
+              <li>Anything written for search engines instead of people about to move</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>FAQ</h2>
-        <details><summary>When do the first posts go live?</summary><p>[TBD]. We&rsquo;re prioritizing service and city pages first, then writing guides for the questions we hear most often during quotes.</p></details>
-        <details><summary>Can I suggest a topic?</summary><p>Yes. Email <a href="mailto:contact@sparklemoving.com">contact@sparklemoving.com</a> with the question you wanted answered before your move. If we hear it more than once, it usually becomes a post.</p></details>
-        <details><summary>Are guides written by Sparkle staff?</summary><p>Yes. Posts are written or reviewed by the Sparkle team &mdash; usually based on what we&rsquo;ve actually seen happen on jobs.</p></details>
-        <details><summary>Can I subscribe to new posts?</summary><p>[Not at launch. May add an email list later.]</p></details>
-      </section>
+    <!-- ====== FAQ ====== -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="faq__headline">Frequently asked questions</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">When do the first posts go live?</summary>
+            <div class="faq__answer">
+              <p>[TBD]. We&rsquo;re prioritizing service and city pages first, then writing guides for the questions we hear most often during quotes.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Can I suggest a topic?</summary>
+            <div class="faq__answer">
+              <p>Yes. Email <a href="mailto:contact@sparklemoving.com">contact@sparklemoving.com</a> with the question you wanted answered before your move. If we hear it more than once, it usually becomes a post.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Are guides written by Sparkle staff?</summary>
+            <div class="faq__answer">
+              <p>Yes. Posts are written or reviewed by the Sparkle team &mdash; usually based on what we&rsquo;ve actually seen happen on jobs.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Can I subscribe to new posts?</summary>
+            <div class="faq__answer">
+              <p>Not at launch. We may add an email list later.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>Get your exact price.</h2>
-        <p>Enter your ZIPs and move details. We&rsquo;ll send a full breakdown within a few hours.</p>
-        <a href="#quote" class="btn-primary">Get a Quote</a>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
-    </article>
+    <!-- ====== CLOSING CTA (with two dropdowns) ====== -->
+    <section class="closing-cta">
+      <div class="container">
+        <div class="closing-cta__content">
+          <h2 class="closing-cta__headline">Get your exact price.</h2>
+          <p class="closing-cta__subline">Pick your ZIP and home size. Full breakdown within a few hours.</p>
+          <form class="closing-cta__form" action="#quote">
+            <select class="closing-cta__select" name="zip" required>
+              <option value="" disabled selected>Moving from ZIP</option>
+              <option>60601 &mdash; Chicago Loop</option>
+              <option>60201 &mdash; Evanston</option>
+              <option>60540 &mdash; Naperville</option>
+              <option>60173 &mdash; Schaumburg</option>
+              <option>60004 &mdash; Arlington Heights</option>
+              <option>60062 &mdash; Northbrook</option>
+              <option>Other ZIP</option>
+            </select>
+            <select class="closing-cta__select" name="size" required>
+              <option value="" disabled selected>Home size</option>
+              <option>Studio</option>
+              <option>1 bedroom</option>
+              <option>2 bedroom</option>
+              <option>3 bedroom</option>
+              <option>4+ bedroom</option>
+            </select>
+            <a href="#quote" class="btn-primary">Get a Quote<span class="arrow">&rarr;</span></a>
+          </form>
+          <a href="tel:+1XXXXXXXXXX" class="closing-cta__phone">(312) 555-0199</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">

@@ -180,6 +180,29 @@
   color: var(--color-navy);
 }
 
+/* Small gold-tinted icon square for table-row labels */
+.rate-table__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  padding: 7px;
+  border-radius: 8px;
+  background-color: var(--color-gold-15);
+  color: var(--color-gold);
+  margin-right: 12px;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.rate-table__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 /* Price column (second) — headline typography */
 .rate-table__table td:nth-child(2) {
   font-family: var(--font-heading);

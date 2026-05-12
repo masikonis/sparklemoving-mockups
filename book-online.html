@@ -12,6 +12,27 @@
 
   <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/components/header.css">
+
+  <!-- Shared form + application panel + step indicators -->
+  <link rel="stylesheet" href="styles/components/form.css">
+  <link rel="stylesheet" href="styles/components/application-form.css">
+
+  <!-- Reused homepage section styles -->
+  <link rel="stylesheet" href="styles/pages/home/stats-bar.css">
+  <link rel="stylesheet" href="styles/pages/home/faq.css">
+  <link rel="stylesheet" href="styles/pages/home/closing-cta.css">
+
+  <!-- Reused pricing/service patterns -->
+  <link rel="stylesheet" href="styles/pages/pricing/hero.css">
+  <link rel="stylesheet" href="styles/pages/pricing/rate-tables.css">
+  <link rel="stylesheet" href="styles/pages/pricing/info-blocks.css">
+
+  <!-- Who-its-for (Will / Won't get) -->
+  <link rel="stylesheet" href="styles/pages/about/who-its-for.css">
+
+  <!-- Process walk (What happens next) -->
+  <link rel="stylesheet" href="styles/components/process-walk.css">
+
   <link rel="stylesheet" href="styles/components/footer.css">
   <link rel="stylesheet" href="styles/components/modal.css">
 </head>
@@ -129,122 +150,333 @@
     </div>
   </header>
 
-  <main class="page-content">
-    <article>
-      <section>
-        <h1>Get your exact moving cost.</h1>
-        <p>Two short steps. We send a full breakdown within a few hours. No deposit, no spam.</p>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
+  <main>
 
-      <section>
-        <ul>
-          <li>Since 2012</li>
-          <li>10,000+ Moves</li>
-          <li>Licensed &amp; Insured</li>
+    <!-- ====== HERO ====== -->
+    <section class="pricing-hero">
+      <div class="container pricing-hero__inner">
+        <div class="pricing-hero__content">
+          <span class="pricing-hero__eyebrow">Book online</span>
+          <h1 class="pricing-hero__headline">Get your <em>exact moving cost.</em></h1>
+          <p class="pricing-hero__body">Two short steps. We send a full breakdown within a few hours. No deposit, no spam, no pressure call.</p>
+          <div style="display:flex;align-items:center;gap:var(--space-md);margin-top:var(--space-lg);flex-wrap:wrap;">
+            <a href="#quote-form" class="btn-primary" style="font-size:17px;padding:16px 36px;">Start your quote<span class="arrow">&rarr;</span></a>
+            <a href="tel:+1XXXXXXXXXX" class="gold-link" style="font-family:var(--font-heading);font-weight:600;font-size:16px;">Or call (312) 555-0199</a>
+          </div>
+        </div>
+        <div class="pricing-hero__media">
+          <img src="images/hero-right.webp" alt="Sparkle Moving truck ready for dispatch" width="640" height="400">
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== STATS BAR ====== -->
+    <section class="stats-bar">
+      <div class="container">
+        <ul class="stats-bar__list">
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">2012</span>
+            <span class="stats-bar__label">Established</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">10,000+</span>
+            <span class="stats-bar__label">Moves completed</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">Licensed &amp; Insured</span>
+            <span class="stats-bar__label">Illinois CC-MC</span>
+          </li>
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <h2>The form</h2>
-        <h3>Step 1 &mdash; Where are you moving?</h3>
-        <form>
-          <p><label for="book-zip-from">Moving from (ZIP)</label><br><input id="book-zip-from" name="zip_from" type="text" inputmode="numeric" pattern="\d{5}" maxlength="5" required></p>
-          <p><label for="book-zip-to">Moving to (ZIP)</label><br><input id="book-zip-to" name="zip_to" type="text" inputmode="numeric" pattern="\d{5}" maxlength="5" required></p>
+    <!-- ====== QUOTE FORM (2-step) ====== -->
+    <section class="application" id="quote-form">
+      <div class="container">
+        <div class="application__inner">
+          <div class="application__head">
+            <span class="application__eyebrow">The form</span>
+            <h2 class="application__headline">Two steps to your quote.</h2>
+            <p class="application__body">Takes about 60 seconds. A real person reviews it &mdash; usually within a few hours during business hours.</p>
+          </div>
+          <div class="application__panel">
+            <form class="form" action="#" method="post">
 
-          <h3>Step 2 &mdash; Tell us a bit more</h3>
-          <p><label for="book-name">Name</label><br><input id="book-name" name="name" type="text" autocomplete="name" required></p>
-          <p><label for="book-email">Email</label><br><input id="book-email" name="email" type="email" autocomplete="email" required></p>
-          <p><label for="book-phone">Phone</label><br><input id="book-phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 555-5555" maxlength="14" required></p>
-          <p><label for="book-address">Pickup address</label><br><input id="book-address" name="address" type="text" autocomplete="street-address" required></p>
-          <p><label for="book-move-type">Type of move</label><br>
-            <select id="book-move-type" name="move_type" required>
-              <option value="" disabled selected>Select type</option>
-              <option>Local</option>
-              <option>Long distance</option>
-              <option>Labor only</option>
-            </select>
-          </p>
-          <p><label for="book-size">Home size</label><br>
-            <select id="book-size" name="size" required>
-              <option value="" disabled selected>Select size</option>
-              <option>Studio</option>
-              <option>1 bedroom</option>
-              <option>2 bedroom</option>
-              <option>3 bedroom</option>
-              <option>4+ bedroom</option>
-            </select>
-          </p>
-          <p><button type="submit" class="btn-primary">Submit my request</button></p>
-        </form>
-      </section>
+              <div class="application__step">
+                <span class="application__step-number">1</span>
+                <h3 class="application__step-title">Where are you moving?</h3>
+              </div>
+              <div class="form__row">
+                <div class="form__field">
+                  <label for="book-zip-from" class="form__label">Moving from (ZIP)</label>
+                  <input id="book-zip-from" name="zip_from" type="text" inputmode="numeric" pattern="\d{5}" maxlength="5" class="form__input" required>
+                </div>
+                <div class="form__field">
+                  <label for="book-zip-to" class="form__label">Moving to (ZIP)</label>
+                  <input id="book-zip-to" name="zip_to" type="text" inputmode="numeric" pattern="\d{5}" maxlength="5" class="form__input" required>
+                </div>
+              </div>
 
-      <section>
-        <h2>What happens next</h2>
-        <ol>
-          <li><strong>You submit.</strong> Takes about 60 seconds.</li>
-          <li><strong>We review.</strong> A real person looks at your ZIPs, dates, and details. Usually within a few hours during business hours.</li>
-          <li><strong>You get a breakdown.</strong> For local moves: crew size, hourly rate, hour range, total estimate. For long-distance moves: a binding quote with weight allowance and delivery window.</li>
+              <div class="application__step">
+                <span class="application__step-number">2</span>
+                <h3 class="application__step-title">Tell us a bit more.</h3>
+              </div>
+              <div class="form__row">
+                <div class="form__field">
+                  <label for="book-name" class="form__label">Name</label>
+                  <input id="book-name" name="name" type="text" autocomplete="name" class="form__input" required>
+                </div>
+                <div class="form__field">
+                  <label for="book-email" class="form__label">Email</label>
+                  <input id="book-email" name="email" type="email" autocomplete="email" class="form__input" required>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__field">
+                  <label for="book-phone" class="form__label">Phone</label>
+                  <input id="book-phone" name="phone" type="tel" autocomplete="tel" class="form__input" placeholder="(555) 555-5555" maxlength="14" required>
+                </div>
+                <div class="form__field">
+                  <label for="book-address" class="form__label">Pickup address</label>
+                  <input id="book-address" name="address" type="text" autocomplete="street-address" class="form__input" required>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__field">
+                  <label for="book-move-type" class="form__label">Type of move</label>
+                  <select id="book-move-type" name="move_type" class="form__select" required>
+                    <option value="" disabled selected>Select type</option>
+                    <option>Local</option>
+                    <option>Long distance</option>
+                    <option>Labor only</option>
+                  </select>
+                </div>
+                <div class="form__field">
+                  <label for="book-size" class="form__label">Home size</label>
+                  <select id="book-size" name="size" class="form__select" required>
+                    <option value="" disabled selected>Select size</option>
+                    <option>Studio</option>
+                    <option>1 bedroom</option>
+                    <option>2 bedroom</option>
+                    <option>3 bedroom</option>
+                    <option>4+ bedroom</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form__row">
+                <span></span>
+                <button type="submit" class="btn-primary form__submit form__submit--right">Submit my request<span class="arrow">&rarr;</span></button>
+              </div>
+              <p class="form__note form__note--center">No deposit. No spam. We send the breakdown by email &mdash; the call is on you.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== WHAT HAPPENS NEXT (timeline) ====== -->
+    <section class="process-walk">
+      <div class="container">
+        <div class="process-walk__head">
+          <span class="process-walk__eyebrow">What happens next</span>
+          <h2 class="process-walk__headline">Three steps from submit to breakdown.</h2>
+          <p class="process-walk__body">No back-and-forth required if the basics are clear.</p>
+        </div>
+        <ol class="process-walk__list">
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">1</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">You submit.</h3>
+              </div>
+              <p class="process-walk__step-body">Takes about 60 seconds.</p>
+            </div>
+          </li>
+
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">2</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">We review.</h3>
+              </div>
+              <p class="process-walk__step-body">A real person looks at your ZIPs, dates, and details. Usually within a few hours during business hours. If anything&rsquo;s missing or unusual, we send one or two follow-up questions before quoting.</p>
+            </div>
+          </li>
+
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">3</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="5" width="18" height="14" rx="2"/>
+                    <path d="M3 7l9 6 9-6"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">You get the breakdown.</h3>
+              </div>
+              <p class="process-walk__step-body">For local moves: crew size, hourly rate, hour range, total estimate. For long-distance moves: a binding quote with weight allowance and delivery window.</p>
+            </div>
+          </li>
         </ol>
-        <p>No back-and-forth required if the basics are clear. If anything&rsquo;s missing or unusual, we send one or two follow-up questions before quoting.</p>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <h2>What you won&rsquo;t get</h2>
-        <ul>
-          <li>A deposit request &mdash; we don&rsquo;t take any</li>
-          <li>Spam emails &mdash; your address is used only for the quote</li>
-          <li>A pressure call &mdash; we send the breakdown by email; the call is on you</li>
-          <li>A bait-and-switch &mdash; the quote is the basis for the invoice, not a starting point</li>
-        </ul>
-      </section>
+    <!-- ====== WHAT YOU GET / WON'T GET ====== -->
+    <section class="who-its-for who-its-for--beige">
+      <div class="container">
+        <div class="who-its-for__head">
+          <span class="who-its-for__eyebrow">What to expect</span>
+          <h2 class="who-its-for__headline">What you will and won&rsquo;t get.</h2>
+        </div>
+        <div class="who-its-for__grid">
+          <div class="who-its-for__col">
+            <h3 class="who-its-for__col-title">You will get</h3>
+            <ul class="check-list">
+              <li>A real person reviewing your submission, not an autoresponder</li>
+              <li>A breakdown by email within a few hours during business hours</li>
+              <li>An hour-range estimate (local) or a binding quote (long distance)</li>
+              <li>Follow-up questions only if the move is unusual</li>
+            </ul>
+          </div>
+          <div class="who-its-for__col">
+            <h3 class="who-its-for__col-title">You won&rsquo;t get</h3>
+            <ul class="check-list check-list--x">
+              <li>A deposit request &mdash; we don&rsquo;t take any</li>
+              <li>Spam emails &mdash; your address is used only for the quote</li>
+              <li>A pressure call &mdash; the call back is on you</li>
+              <li>A bait-and-switch &mdash; the quote is the basis for the invoice</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>How accurate is the quote?</h2>
-        <p>For local moves, the estimate is an hour range. The final invoice reflects actual time worked, billed at the hourly rate from the quote. No overtime multiplier. If the crew finishes early, you&rsquo;re billed for actual hours only.</p>
-        <p>For long-distance moves, the quote is binding &mdash; total cost, weight allowance, and delivery window all locked in. Doesn&rsquo;t change between quote and delivery.</p>
-        <p>For more on how we structure quotes, see <a href="how-moving-pricing-works.html">How Moving Pricing Works &rarr;</a>.</p>
-      </section>
+    <!-- ====== HOW ACCURATE IS THE QUOTE (centered head) ====== -->
+    <section class="rate-section">
+      <div class="container">
+        <div class="rate-section__header">
+          <span class="rate-section__eyebrow">Accuracy</span>
+          <h2 class="rate-section__headline">How accurate is the quote?</h2>
+          <p class="rate-section__body">For <strong>local moves</strong>, the estimate is an hour range. The final invoice reflects actual time worked, billed at the hourly rate from the quote. No overtime multiplier. If the crew finishes early, you&rsquo;re billed for actual hours only.</p>
+          <p class="rate-section__body">For <strong>long-distance moves</strong>, the quote is binding &mdash; total cost, weight allowance, and delivery window all locked in. Doesn&rsquo;t change between quote and delivery.</p>
+        </div>
+        <p class="rate-section__footnote">For more on how we structure quotes, see <a href="how-moving-pricing-works.html" class="gold-link">How Moving Pricing Works<span class="arrow">&rarr;</span></a></p>
+      </div>
+    </section>
 
-      <section>
-        <h2>Pricing reminder</h2>
-        <p>So you know what to expect.</p>
-        <table>
-          <thead>
-            <tr><th>Home size</th><th>Typical total</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Studio / 1-bedroom</td><td>$400&ndash;$900</td></tr>
-            <tr><td>2-bedroom</td><td>$800&ndash;$1,500</td></tr>
-            <tr><td>3+ bedroom</td><td>$1,500&ndash;$3,000+</td></tr>
-          </tbody>
-        </table>
-        <p>Long-distance routes start at $3,800 (Chicago to Florida) and $4,200 (Chicago to Texas). Full pricing on the <a href="pricing.html">Pricing page &rarr;</a>.</p>
-      </section>
+    <!-- ====== PRICING REMINDER (mini rate table) ====== -->
+    <section class="rate-section rate-section--offwhite">
+      <div class="container">
+        <div class="rate-section__header">
+          <span class="rate-section__eyebrow">Pricing reminder</span>
+          <h2 class="rate-section__headline">Typical totals for local moves.</h2>
+        </div>
+        <div class="rate-table">
+          <table class="rate-table__table">
+            <thead>
+              <tr>
+                <th>Home size</th>
+                <th>Typical total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Studio / 1-bedroom</td>
+                <td>$400&ndash;$900</td>
+              </tr>
+              <tr>
+                <td>2-bedroom</td>
+                <td>$800&ndash;$1,500</td>
+              </tr>
+              <tr>
+                <td>3+ bedroom</td>
+                <td>$1,500&ndash;$3,000+</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="rate-section__footnote">Long-distance routes start at $3,800 (Chicago to Florida) and $4,200 (Chicago to Texas). Full pricing on the <a href="pricing.html" class="gold-link">Pricing page<span class="arrow">&rarr;</span></a></p>
+      </div>
+    </section>
 
-      <section>
-        <h2>What customers say</h2>
-        <p><em>Three short reviews &mdash; one Local, one Long distance, one Labor only &mdash; pulled from the Reviews feed once NiceJob is wired and tagged by move type. Empty state at launch.</em></p>
-        <p><a href="reviews.html">Browse all reviews &rarr;</a></p>
-      </section>
+    <!-- ====== FAQ ====== -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="faq__headline">Frequently asked questions</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">Do I need to know my exact moving date?</summary>
+            <div class="faq__answer">
+              <p>No. Approximate is fine. We can adjust the date once your plans are confirmed, with seven days notice or more.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What if my dates change after I book?</summary>
+            <div class="faq__answer">
+              <p>Seven days notice or more: no fee. Less than seven days: depends on crew availability.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do you call me after I submit?</summary>
+            <div class="faq__answer">
+              <p>Only if the request is missing something or the move is unusual. Otherwise the quote comes by email.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">How long does the quote take to arrive?</summary>
+            <div class="faq__answer">
+              <p>Usually a few hours during business hours. Always within one business day.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do you take weekend or holiday bookings?</summary>
+            <div class="faq__answer">
+              <p>Yes. Same hourly rate every day of the week. No weekend or holiday surcharge.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Can I get a binding quote for a local move?</summary>
+            <div class="faq__answer">
+              <p>Local moves are billed hourly because the time required varies with access, packing, and other on-site factors. The estimate is an hour range, billed at the rate in the quote. The final invoice can come in below the range if the crew finishes early.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">My move is unusual (piano, two-leg, freight elevator, COI). Should I still use this form?</summary>
+            <div class="faq__answer">
+              <p>Yes. Submit the basics here and we&rsquo;ll follow up with the specific questions for your situation.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>FAQ</h2>
-        <details><summary>Do I need to know my exact moving date?</summary><p>No. Approximate is fine. We can adjust the date once your plans are confirmed, with seven days notice or more.</p></details>
-        <details><summary>What if my dates change after I book?</summary><p>Seven days notice or more: no fee. Less than seven days: depends on crew availability.</p></details>
-        <details><summary>Do you call me after I submit?</summary><p>Only if the request is missing something or the move is unusual. Otherwise the quote comes by email.</p></details>
-        <details><summary>How long does the quote take to arrive?</summary><p>Usually a few hours during business hours. Always within one business day.</p></details>
-        <details><summary>Do you take weekend or holiday bookings?</summary><p>Yes. Same hourly rate every day of the week. No weekend or holiday surcharge.</p></details>
-        <details><summary>Can I get a binding quote for a local move?</summary><p>Local moves are billed hourly because the time required varies with access, packing, and other on-site factors. The estimate is an hour range, billed at the rate in the quote. The final invoice can come in below the range if the crew finishes early.</p></details>
-        <details><summary>My move is unusual (piano, two-leg, freight elevator, COI). Should I still use this form?</summary><p>Yes. Submit the basics here and we&rsquo;ll follow up with the specific questions for your situation.</p></details>
-      </section>
+    <!-- ====== CLOSING CTA (call us directly) ====== -->
+    <section class="closing-cta">
+      <div class="container">
+        <div class="closing-cta__content">
+          <h2 class="closing-cta__headline">Or talk to a person.</h2>
+          <p class="closing-cta__subline">Mon&ndash;Sat, 8am&ndash;7pm CT.</p>
+          <div class="closing-cta__actions">
+            <a href="tel:+1XXXXXXXXXX" class="closing-cta__phone">(312) 555-0199</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>Or call us directly.</h2>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-        <p>Hours: [Mon&ndash;Sat, 8am&ndash;7pm CT]</p>
-      </section>
-    </article>
   </main>
 
   <footer class="site-footer">
@@ -380,6 +612,26 @@
       modal.querySelectorAll('[data-close-modal]').forEach(function(el) { el.addEventListener('click', function() { modal.close(); }); });
       modal.addEventListener('click', function(e) { if (e.target === modal) modal.close(); });
       modalForm.addEventListener('submit', function(e) { e.preventDefault(); if (!modalForm.reportValidity()) return; formWrapper.hidden = true; successPanel.hidden = false; setTimeout(function() { modal.close(); modalForm.reset(); formWrapper.hidden = false; successPanel.hidden = true; }, 2000); });
+    })();
+
+    // Process walk timeline: fade-in + circle "active" state on scroll
+    (function() {
+      var items = document.querySelectorAll('.process-walk__item');
+      if (!items.length) return;
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function(el) { el.classList.add('is-visible'); el.classList.add('is-active'); });
+        return;
+      }
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            entry.target.classList.add('is-active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.35, rootMargin: '0px 0px -10% 0px' });
+      items.forEach(function(el) { observer.observe(el); });
     })();
   </script>
 

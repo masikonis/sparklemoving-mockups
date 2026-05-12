@@ -12,6 +12,28 @@
 
   <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/components/header.css">
+
+  <!-- Page-specific: who-its-for pattern for the included/not-included split -->
+  <link rel="stylesheet" href="styles/pages/about/who-its-for.css">
+
+  <!-- Reused homepage section styles -->
+  <link rel="stylesheet" href="styles/pages/home/stats-bar.css">
+  <link rel="stylesheet" href="styles/pages/home/faq.css">
+  <link rel="stylesheet" href="styles/pages/home/closing-cta.css">
+
+  <!-- Reused pricing/service patterns -->
+  <link rel="stylesheet" href="styles/pages/pricing/hero.css">
+  <link rel="stylesheet" href="styles/pages/pricing/rate-tables.css">
+  <link rel="stylesheet" href="styles/pages/pricing/fees.css">
+  <link rel="stylesheet" href="styles/pages/pricing/sample-bill.css">
+  <link rel="stylesheet" href="styles/pages/pricing/info-blocks.css">
+
+  <!-- Icon-list pattern -->
+  <link rel="stylesheet" href="styles/pages/local-residential-moving/why-local.css">
+
+  <!-- Process timeline for the route walkthrough -->
+  <link rel="stylesheet" href="styles/components/process-walk.css">
+
   <link rel="stylesheet" href="styles/components/footer.css">
   <link rel="stylesheet" href="styles/components/modal.css">
 </head>
@@ -129,164 +151,603 @@
     </div>
   </header>
 
-  <main class="page-content">
-    <article>
-      <section>
-        <h1>Chicago to Florida movers. From $3,800.</h1>
-        <p>Binding quote. Dedicated truck. Real delivery window. The route we run most often after Chicago to Texas.</p>
-        <a href="#quote" class="btn-primary">Get a Quote</a>
-        <p>Takes about 60 seconds.</p>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
+  <main>
 
-      <section>
-        <ul>
-          <li>Since 2012</li>
-          <li>10,000+ Moves</li>
-          <li>Licensed &amp; Insured</li>
+    <!-- ====== HERO ====== -->
+    <section class="pricing-hero">
+      <div class="container pricing-hero__inner">
+        <div class="pricing-hero__content">
+          <span class="pricing-hero__eyebrow">Chicago to Florida</span>
+          <h1 class="pricing-hero__headline">Chicago to Florida movers. <em>From $3,800.</em></h1>
+          <p class="pricing-hero__body">Binding quote. Dedicated truck. Real delivery window. The route we run most often after Chicago to Texas.</p>
+        </div>
+        <div class="pricing-hero__media">
+          <img src="images/view-skyline-from-water-with-sun-setting-it.jpg" alt="Sunset over the water at a Florida destination" width="640" height="400">
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== STATS BAR ====== -->
+    <section class="stats-bar">
+      <div class="container">
+        <ul class="stats-bar__list">
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">2012</span>
+            <span class="stats-bar__label">Established</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">10,000+</span>
+            <span class="stats-bar__label">Moves completed</span>
+          </li>
+          <li class="stats-bar__item">
+            <span class="stats-bar__number">Licensed &amp; Insured</span>
+            <span class="stats-bar__label">Illinois CC-MC</span>
+          </li>
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <h2>The route at a glance</h2>
-        <table>
-          <tbody>
-            <tr><th scope="row">Pickup</th><td>Chicago metro (40+ suburbs)</td></tr>
-            <tr><th scope="row">Delivery</th><td>All of Florida &mdash; Miami, Orlando, Tampa, Jacksonville, the Panhandle</td></tr>
-            <tr><th scope="row">Distance</th><td>~1,200&ndash;1,400 miles</td></tr>
-            <tr><th scope="row">Transit time</th><td>3&ndash;5 days</td></tr>
-            <tr><th scope="row">Pricing model</th><td>Binding quote</td></tr>
-            <tr><th scope="row">Truck</th><td>Dedicated, no co-mingled inventory</td></tr>
-            <tr><th scope="row">Delivery window</th><td>3-day window, fixed at booking</td></tr>
-          </tbody>
-        </table>
-      </section>
+    <!-- ====== ROUTE AT A GLANCE (key-value table) ====== -->
+    <section class="rate-section">
+      <div class="container">
+        <div class="rate-section__header">
+          <span class="rate-section__eyebrow">The route</span>
+          <h2 class="rate-section__headline">At a glance.</h2>
+        </div>
+        <div class="rate-table">
+          <table class="rate-table__table">
+            <tbody>
+              <tr>
+                <td>
+                  <span class="rate-table__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                      <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                  </span>
+                  Pickup
+                </td>
+                <td>Chicago metro (40+ suburbs)</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="rate-table__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 11l9-7 9 7"/>
+                      <path d="M5 10v10h14V10"/>
+                      <path d="M10 20v-6h4v6"/>
+                    </svg>
+                  </span>
+                  Delivery
+                </td>
+                <td>All of Florida &mdash; Miami, Orlando, Tampa, Jacksonville, the Panhandle</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="rate-table__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 12h18"/>
+                      <path d="M16 6l5 6-5 6"/>
+                      <path d="M8 18l-5-6 5-6"/>
+                    </svg>
+                  </span>
+                  Distance
+                </td>
+                <td>~1,200&ndash;1,400 miles</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="rate-table__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="9"/>
+                      <path d="M12 7v5l3 2"/>
+                    </svg>
+                  </span>
+                  Transit time
+                </td>
+                <td>3&ndash;5 days</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="rate-table__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="12" y1="2" x2="12" y2="22"/>
+                      <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                    </svg>
+                  </span>
+                  Pricing model
+                </td>
+                <td>Binding quote</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="rate-table__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="1" y="6" width="14" height="11" rx="1"/>
+                      <path d="M15 9h4l3 4v4h-7V9z"/>
+                      <circle cx="6" cy="18.5" r="2"/>
+                      <circle cx="18" cy="18.5" r="2"/>
+                    </svg>
+                  </span>
+                  Truck
+                </td>
+                <td>Dedicated, no co-mingled inventory</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="rate-table__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="5" width="18" height="16" rx="1"/>
+                      <path d="M3 10h18M8 3v4M16 3v4"/>
+                    </svg>
+                  </span>
+                  Delivery window
+                </td>
+                <td>3-day window, fixed at booking</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>Real prices for Chicago to Florida moves</h2>
-        <p>Long-distance pricing isn&rsquo;t billed hourly. You get a binding quote based on weight, distance, and truck space. The number you see is the number on the invoice.</p>
-        <table>
-          <thead>
-            <tr><th>Home size</th><th>Starting from</th><th>Typical range</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Studio / 1-bedroom</td><td>$3,800</td><td>$3,800&ndash;$5,500</td></tr>
-            <tr><td>2-bedroom</td><td>$5,500</td><td>$5,500&ndash;$8,000</td></tr>
-            <tr><td>3+ bedroom</td><td>$8,000</td><td>$8,000&ndash;$13,000+</td></tr>
-          </tbody>
-        </table>
-        <p>Larger homes, oversized items (pianos, safes), and packing services adjust the quote. Full pricing model on the <a href="pricing.html">Pricing page &rarr;</a>.</p>
-        <a href="#quote" class="btn-primary">Get a Quote</a>
-      </section>
+    <!-- ====== REAL PRICES (rate table) ====== -->
+    <section class="rate-section rate-section--offwhite">
+      <div class="container">
+        <div class="rate-section__header">
+          <span class="rate-section__eyebrow">Real prices</span>
+          <h2 class="rate-section__headline">Binding quotes by home size.</h2>
+          <p class="rate-section__body">Long-distance pricing isn&rsquo;t billed hourly. You get a binding quote based on weight, distance, and truck space. The number you see is the number on the invoice.</p>
+        </div>
+        <div class="rate-table">
+          <table class="rate-table__table">
+            <thead>
+              <tr>
+                <th>Home size</th>
+                <th>Starting from</th>
+                <th>Typical range</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Studio / 1-bedroom</td>
+                <td>$3,800</td>
+                <td>$3,800&ndash;$5,500</td>
+              </tr>
+              <tr>
+                <td>2-bedroom</td>
+                <td>$5,500</td>
+                <td>$5,500&ndash;$8,000</td>
+              </tr>
+              <tr>
+                <td>3+ bedroom</td>
+                <td>$8,000</td>
+                <td>$8,000&ndash;$13,000+</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="rate-section__footnote">Larger homes, oversized items (pianos, safes), and packing services adjust the quote. Full pricing model on the <a href="pricing.html" class="gold-link">Pricing page<span class="arrow">&rarr;</span></a></p>
+        <div class="rate-section__cta-row">
+          <a href="#quote" class="btn-primary rate-section__cta">Start a Quote<span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2>Florida cities we deliver to</h2>
-        <p>We deliver anywhere in Florida. Most-moved-to destinations on this route:</p>
-        <h3>South Florida</h3>
-        <p>Miami, Fort Lauderdale, Boca Raton, West Palm Beach, Naples, Fort Myers</p>
-        <h3>Central Florida</h3>
-        <p>Orlando, Tampa, St. Petersburg, Sarasota, Lakeland, Kissimmee</p>
-        <h3>North Florida</h3>
-        <p>Jacksonville, Gainesville, Tallahassee, Pensacola, Panama City</p>
-        <p>If your destination isn&rsquo;t listed, it&rsquo;s still covered &mdash; just ask at the quote stage.</p>
-      </section>
+    <!-- ====== FLORIDA CITIES (3 region cards) ====== -->
+    <section class="fees-section fees-section--white">
+      <div class="container">
+        <div class="fees-section__head">
+          <span class="fees-section__eyebrow">Where in Florida</span>
+          <h2 class="fees-section__headline">Florida cities we deliver to.</h2>
+          <p class="fees-section__body">We deliver anywhere in Florida. The most-moved-to destinations on this route, by region.</p>
+        </div>
+        <div class="fees-section__grid">
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">South Florida</h3>
+            <p class="fees-section__item-body">Miami, Fort Lauderdale, Boca Raton, West Palm Beach, Naples, Fort Myers.</p>
+          </div>
 
-      <section>
-        <h2>How a Chicago to Florida move works</h2>
-        <h3>1. Quote and inventory</h3>
-        <p>Tell us what you&rsquo;re moving. For long-distance, we take an inventory by phone or short video &mdash; what furniture, how many boxes, anything oversized. The inventory drives the binding quote.</p>
-        <h3>2. Pickup</h3>
-        <p>Crew arrives in Chicago on the agreed date. Loading takes a full day for most homes. Same crew loads as drives, in most cases.</p>
-        <h3>3. Transit</h3>
-        <p>3&ndash;5 days, depending on Florida destination. South Florida is the longer end, North Florida is the shorter end. The truck is yours alone &mdash; no co-mingled inventory, no detour to drop off another customer&rsquo;s load.</p>
-        <h3>4. Delivery</h3>
-        <p>3-day delivery window, locked in at the time of booking. We confirm the exact day 24&ndash;48 hours ahead. Unloading takes a full day. Reassembly included.</p>
-        <h3>5. Final invoice</h3>
-        <p>The number on the invoice matches the binding quote. No fuel surcharge, no weight surprise, no last-minute additions.</p>
-      </section>
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Central Florida</h3>
+            <p class="fees-section__item-body">Orlando, Tampa, St. Petersburg, Sarasota, Lakeland, Kissimmee.</p>
+          </div>
 
-      <section>
-        <h2>Why this route specifically</h2>
-        <p><strong>We run it regularly.</strong> Chicago to Florida is one of our most-booked long-distance routes. That means predictable scheduling and steady availability &mdash; not a one-off &ldquo;let us see if we can fit it in.&rdquo;</p>
-        <p><strong>Return runs.</strong> Trucks coming back from Florida often run the route in reverse. If you&rsquo;re moving Florida to Chicago, the same dedicated-truck binding-quote model applies.</p>
-        <p><strong>No shared loads.</strong> Some long-distance movers wait until they have enough cargo to fill a truck before they leave. That&rsquo;s how three-week delivery windows happen. Our trucks leave on the date you booked, full or not.</p>
-        <p><strong>Real delivery windows.</strong> Three-day window at booking, not &ldquo;sometime in two to three weeks.&rdquo; If we&rsquo;d miss the window, we tell you the moment we know &mdash; not at delivery.</p>
-      </section>
+          <div class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 11l9-7 9 7"/>
+                <path d="M5 10v10h14V10"/>
+                <path d="M10 20v-6h4v6"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">North Florida</h3>
+            <p class="fees-section__item-body">Jacksonville, Gainesville, Tallahassee, Pensacola, Panama City.</p>
+          </div>
+        </div>
+        <p class="fees-section__footnote">If your destination isn&rsquo;t listed, it&rsquo;s still covered &mdash; just ask at the quote stage.</p>
+      </div>
+    </section>
 
-      <section>
-        <h2>What&rsquo;s included</h2>
-        <ul>
-          <li>Dedicated truck (yours alone)</li>
-          <li>Same crew or coordinated handoff (single point of contact the whole route)</li>
-          <li>Furniture wrapping (blankets for wood and upholstered, shrink wrap for mattresses)</li>
-          <li>Disassembly at pickup, reassembly at delivery</li>
-          <li>Standard liability coverage (full-value protection available &mdash; see <a href="insurance-and-licensing.html">Insurance &amp; Licensing &rarr;</a>)</li>
-          <li>Every Florida destination &mdash; no surcharge for any specific city in the state</li>
-        </ul>
+    <!-- ====== HOW A MOVE WORKS (timeline) ====== -->
+    <section class="process-walk">
+      <div class="container">
+        <div class="process-walk__head">
+          <span class="process-walk__eyebrow">Move timeline</span>
+          <h2 class="process-walk__headline">How a Chicago to Florida move works</h2>
+          <p class="process-walk__body">From inventory call to delivery day.</p>
+        </div>
+        <ol class="process-walk__list">
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">1</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 11l3 3L22 4"/>
+                    <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Quote and inventory.</h3>
+              </div>
+              <p class="process-walk__step-body">Tell us what you&rsquo;re moving. For long-distance, we take an inventory by phone or short video &mdash; what furniture, how many boxes, anything oversized. The inventory drives the binding quote.</p>
+            </div>
+          </li>
 
-        <h2>What&rsquo;s not included</h2>
-        <ul>
-          <li>Packing supplies, if you want us to pack (quoted with the move)</li>
-          <li>Specialty items like pianos, safes, or items over 400 lbs (quoted separately)</li>
-          <li>Storage at either end (available, see <a href="#">Storage Services &rarr;</a>)</li>
-        </ul>
-      </section>
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">2</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 8L12 3 3 8v8l9 5 9-5V8z"/>
+                    <path d="M3 8l9 5 9-5"/>
+                    <path d="M12 13v8"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Pickup.</h3>
+              </div>
+              <p class="process-walk__step-body">Crew arrives in Chicago on the agreed date. Loading takes a full day for most homes. Same crew loads as drives, in most cases.</p>
+            </div>
+          </li>
 
-      <section>
-        <h2>Real timeline example</h2>
-        <p>A 2-bedroom move from Lincoln Park, Chicago, to Tampa, Florida:</p>
-        <ul>
-          <li><strong>Day 1:</strong> Pickup in Chicago. Crew arrives 8 AM, loads through the day, on the road by late afternoon.</li>
-          <li><strong>Days 2&ndash;3:</strong> Transit. Driver checks in daily.</li>
-          <li><strong>Day 4 or 5:</strong> Delivery in Tampa. Unload, placement, reassembly. Done by evening.</li>
-        </ul>
-        <p>Total: 4&ndash;5 days door to door. Binding quote: ~$6,200.</p>
-        <p>Your specific timeline depends on pickup date, delivery city, and route conditions.</p>
-      </section>
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">3</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="6" width="14" height="11" rx="1"/>
+                    <path d="M15 9h4l3 4v4h-7V9z"/>
+                    <circle cx="6" cy="18.5" r="2"/>
+                    <circle cx="18" cy="18.5" r="2"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Transit.</h3>
+              </div>
+              <p class="process-walk__step-body">3&ndash;5 days, depending on Florida destination. South Florida is the longer end, North Florida is the shorter end. The truck is yours alone &mdash; no co-mingled inventory, no detour to drop off another customer&rsquo;s load.</p>
+            </div>
+          </li>
 
-      <section>
-        <h2>What customers say about this route</h2>
-        <p><em>Three Florida-route reviews &mdash; pulled from the Reviews feed once NiceJob is wired and tagged by route. Empty state at launch.</em></p>
-        <blockquote>Reviews specific to Chicago to Florida moves go here.</blockquote>
-        <p><a href="reviews.html">Browse all reviews &rarr;</a></p>
-      </section>
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">4</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 11l9-7 9 7"/>
+                    <path d="M5 10v10h14V10"/>
+                    <path d="M10 20v-6h4v6"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Delivery.</h3>
+              </div>
+              <p class="process-walk__step-body">3-day delivery window, locked in at the time of booking. We confirm the exact day 24&ndash;48 hours ahead. Unloading takes a full day. Reassembly included.</p>
+            </div>
+          </li>
 
-      <section>
-        <h2>FAQ</h2>
-        <details><summary>How is a binding quote different from a non-binding estimate?</summary><p>A binding quote locks in price, weight allowance, and delivery window. It doesn&rsquo;t change between booking and delivery. Most long-distance movers give non-binding estimates that go up at delivery. Ours doesn&rsquo;t.</p></details>
-        <details><summary>Will my stuff be on a shared truck?</summary><p>No. Every Sparkle long-distance move uses a dedicated truck. Nothing else on it.</p></details>
-        <details><summary>How long does Chicago to Florida actually take?</summary><p>3&ndash;5 days transit. South Florida (Miami, Naples) is the longer end at 4&ndash;5 days. North Florida (Jacksonville, Tallahassee) is shorter at 3 days. Pickup and delivery each take a full day.</p></details>
-        <details><summary>Do you handle reverse moves (Florida to Chicago)?</summary><p>Yes. Same model &mdash; dedicated truck, binding quote, real delivery window. Quoted from the Florida pickup ZIP.</p></details>
-        <details><summary>Can I track the truck during transit?</summary><p>Yes. The driver checks in daily. You can call or text the crew lead anytime during the route.</p></details>
-        <details><summary>What if my dates change?</summary><p>Seven days notice or more: no fee. Less than seven days: depends on truck availability and route.</p></details>
-        <details><summary>Is everything insured during the long drive?</summary><p>Standard liability coverage is included. Higher-value coverage is available for high-value items, quoted with the move. See <a href="insurance-and-licensing.html">Insurance &amp; Licensing &rarr;</a>.</p></details>
-        <details><summary>Do you do partial loads or shared trucks for cheaper rates?</summary><p>No. We don&rsquo;t co-mingle loads. The dedicated-truck model is what makes the delivery window real.</p></details>
-      </section>
+          <li class="process-walk__item">
+            <span class="process-walk__number" aria-hidden="true">5</span>
+            <div class="process-walk__content">
+              <div class="process-walk__step-header">
+                <span class="process-walk__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <path d="M9 13l2 2 4-4"/>
+                  </svg>
+                </span>
+                <h3 class="process-walk__step-title">Final invoice.</h3>
+              </div>
+              <p class="process-walk__step-body">The number on the invoice matches the binding quote. No fuel surcharge, no weight surprise, no last-minute additions.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-      <section>
-        <h2>Other long-distance routes</h2>
-        <p>We run several long-distance routes from Chicago. The most common:</p>
-        <ul>
-          <li><a href="#"><strong>Chicago to Texas &rarr;</strong></a> &mdash; Dallas, Austin, Houston, San Antonio. From $4,200.</li>
-          <li><a href="cross-country-moving.html"><strong>Cross-Country Moving &rarr;</strong></a> &mdash; East Coast, West Coast, Pacific Northwest.</li>
-          <li><a href="#"><strong>Interstate Moving &rarr;</strong></a> &mdash; Any state-line move from Illinois.</li>
-        </ul>
-        <p>Or see the full <a href="long-distance-moving.html">Long Distance Moving &rarr;</a> hub.</p>
-      </section>
+    <!-- ====== WHY THIS ROUTE (info-section + icon-list) ====== -->
+    <section class="info-section info-section--offwhite">
+      <div class="container info-section__inner info-section__inner--media info-section__inner--media-left info-section__inner--stretch">
+        <div class="info-section__media">
+          <img src="images/hero-left.webp" alt="Sparkle truck on a long-haul route">
+        </div>
+        <div>
+          <div class="info-section__head">
+            <span class="info-section__eyebrow">Why this route</span>
+            <h2 class="info-section__headline">Why Chicago to Florida specifically.</h2>
+          </div>
+          <ul class="icon-list">
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="5" width="18" height="16" rx="1"/>
+                  <path d="M3 10h18M8 3v4M16 3v4"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">We run it regularly.</h3>
+                <p class="icon-list__body">One of our most-booked long-distance routes &mdash; predictable scheduling and steady availability, not a one-off &ldquo;let us see if we can fit it in.&rdquo;</p>
+              </div>
+            </li>
 
-      <section>
-        <h2>Service area</h2>
-        <p><strong>Pickup from Chicago and 40+ suburbs.</strong> Delivery anywhere in Florida.</p>
-        <p><a href="locations.html">See all service areas &rarr;</a></p>
-      </section>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 12h18"/>
+                  <path d="M16 6l5 6-5 6"/>
+                  <path d="M8 18l-5-6 5-6"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Return runs.</h3>
+                <p class="icon-list__body">Trucks coming back from Florida often run the route in reverse. Moving Florida to Chicago? Same dedicated-truck binding-quote model.</p>
+              </div>
+            </li>
 
-      <section>
-        <h2>Get your exact price for Chicago to Florida.</h2>
-        <p>Enter your ZIPs and move details. We&rsquo;ll send a binding quote within a few hours.</p>
-        <a href="#quote" class="btn-primary">Get a Quote</a>
-        <p><a href="tel:+1XXXXXXXXXX">(312) 555-0199</a></p>
-      </section>
-    </article>
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="6" width="14" height="11" rx="1"/>
+                  <path d="M15 9h4l3 4v4h-7V9z"/>
+                  <circle cx="6" cy="18.5" r="2"/>
+                  <circle cx="18" cy="18.5" r="2"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">No shared loads.</h3>
+                <p class="icon-list__body">Some long-distance movers wait until they have enough cargo to fill a truck before leaving. That&rsquo;s how three-week windows happen. Our trucks leave on the date you booked, full or not.</p>
+              </div>
+            </li>
+
+            <li class="icon-list__item">
+              <span class="icon-list__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M12 7v5l3 2"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="icon-list__title">Real delivery windows.</h3>
+                <p class="icon-list__body">Three-day window at booking, not &ldquo;sometime in two to three weeks.&rdquo; If we&rsquo;d miss it, we tell you the moment we know &mdash; not at delivery.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== WHAT'S INCLUDED / NOT INCLUDED ====== -->
+    <section class="who-its-for">
+      <div class="container">
+        <div class="who-its-for__head">
+          <span class="who-its-for__eyebrow">Coverage</span>
+          <h2 class="who-its-for__headline">What&rsquo;s in the binding quote, and what isn&rsquo;t.</h2>
+        </div>
+        <div class="who-its-for__grid">
+          <div class="who-its-for__col">
+            <h3 class="who-its-for__col-title">What&rsquo;s included</h3>
+            <ul class="check-list">
+              <li>Dedicated truck (yours alone)</li>
+              <li>Same crew or coordinated handoff &mdash; single point of contact</li>
+              <li>Furniture wrapping (blankets, shrink wrap for mattresses)</li>
+              <li>Disassembly at pickup, reassembly at delivery</li>
+              <li>Standard liability coverage</li>
+              <li>Any Florida destination, no city surcharge</li>
+            </ul>
+          </div>
+          <div class="who-its-for__col">
+            <h3 class="who-its-for__col-title">What&rsquo;s not included</h3>
+            <ul class="check-list check-list--x">
+              <li>Packing supplies, if you want us to pack (quoted with the move)</li>
+              <li>Specialty items like pianos, safes, or items over 400 lbs (quoted separately)</li>
+              <li>Storage at either end (available, see Storage Services)</li>
+            </ul>
+          </div>
+        </div>
+        <p class="who-its-for__footnote">Full-value protection is available for high-value items &mdash; see the <a href="insurance-and-licensing.html" class="gold-link">Insurance &amp; Licensing page<span class="arrow">&rarr;</span></a></p>
+      </div>
+    </section>
+
+    <!-- ====== REAL TIMELINE EXAMPLE (sample-bill card) ====== -->
+    <section class="sample-bill">
+      <div class="container">
+        <div class="sample-bill__head">
+          <span class="sample-bill__eyebrow">Sample timeline</span>
+          <h2 class="sample-bill__headline">A 2-bedroom from Lincoln Park to Tampa.</h2>
+          <p class="sample-bill__body">Door to door, what it actually looks like.</p>
+        </div>
+        <div class="sample-bill__card">
+          <table class="sample-bill__table">
+            <tbody>
+              <tr>
+                <td>Day 1 &mdash; Pickup in Chicago</td>
+                <td>Crew arrives 8 AM</td>
+              </tr>
+              <tr>
+                <td>Days 2&ndash;3 &mdash; Transit</td>
+                <td>Driver checks in daily</td>
+              </tr>
+              <tr>
+                <td>Day 4 or 5 &mdash; Delivery in Tampa</td>
+                <td>Done by evening</td>
+              </tr>
+              <tr>
+                <th>Total</th>
+                <td>~$6,200</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sample-bill__footnote">Your specific timeline depends on pickup date, delivery city, and route conditions.</p>
+      </div>
+    </section>
+
+    <!-- ====== FAQ ====== -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="faq__headline">Frequently asked questions</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">How is a binding quote different from a non-binding estimate?</summary>
+            <div class="faq__answer">
+              <p>A binding quote locks in price, weight allowance, and delivery window. It doesn&rsquo;t change between booking and delivery. Most long-distance movers give non-binding estimates that go up at delivery. Ours doesn&rsquo;t.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Will my stuff be on a shared truck?</summary>
+            <div class="faq__answer">
+              <p>No. Every Sparkle long-distance move uses a dedicated truck. Nothing else on it.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">How long does Chicago to Florida actually take?</summary>
+            <div class="faq__answer">
+              <p>3&ndash;5 days transit. South Florida (Miami, Naples) is the longer end at 4&ndash;5 days. North Florida (Jacksonville, Tallahassee) is shorter at 3 days. Pickup and delivery each take a full day.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do you handle reverse moves (Florida to Chicago)?</summary>
+            <div class="faq__answer">
+              <p>Yes. Same model &mdash; dedicated truck, binding quote, real delivery window. Quoted from the Florida pickup ZIP.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Can I track the truck during transit?</summary>
+            <div class="faq__answer">
+              <p>Yes. The driver checks in daily. You can call or text the crew lead anytime during the route.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">What if my dates change?</summary>
+            <div class="faq__answer">
+              <p>Seven days notice or more: no fee. Less than seven days: depends on truck availability and route.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Is everything insured during the long drive?</summary>
+            <div class="faq__answer">
+              <p>Standard liability coverage is included. Higher-value coverage is available for high-value items, quoted with the move. See <a href="insurance-and-licensing.html">Insurance &amp; Licensing</a>.</p>
+            </div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Do you do partial loads or shared trucks for cheaper rates?</summary>
+            <div class="faq__answer">
+              <p>No. We don&rsquo;t co-mingle loads. The dedicated-truck model is what makes the delivery window real.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== OTHER ROUTES (3 cards) ====== -->
+    <section class="fees-section fees-section--white">
+      <div class="container">
+        <div class="fees-section__head">
+          <span class="fees-section__eyebrow">Other routes</span>
+          <h2 class="fees-section__headline">We run several routes from Chicago.</h2>
+        </div>
+        <div class="fees-section__grid">
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.1 8.3 22 9.3 17 14.1 18.2 21 12 17.8 5.8 21 7 14.1 2 9.3 8.9 8.3 12 2"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Chicago to Texas</h3>
+            <p class="fees-section__item-body">Dallas, Austin, Houston, San Antonio. From $4,200.</p>
+          </a>
+
+          <a href="cross-country-moving.html" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12h18"/>
+                <path d="M16 6l5 6-5 6"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Cross-Country Moving</h3>
+            <p class="fees-section__item-body">East Coast, West Coast, Pacific Northwest. Dedicated truck, binding quote.</p>
+          </a>
+
+          <a href="#" class="fees-section__item">
+            <span class="fees-section__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 3l-6 3v15l6-3 6 3 6-3V3l-6 3-6-3z"/>
+                <path d="M9 3v15M15 6v15"/>
+              </svg>
+            </span>
+            <h3 class="fees-section__item-title">Interstate Moving</h3>
+            <p class="fees-section__item-body">Cross any state line, large or small. Same dedicated-truck binding-quote model.</p>
+          </a>
+        </div>
+        <p class="fees-section__footnote">Any state-line move from Illinois. See the <a href="long-distance-moving.html" class="gold-link">Long Distance Moving hub<span class="arrow">&rarr;</span></a></p>
+      </div>
+    </section>
+
+    <!-- ====== CLOSING CTA (with two dropdowns) ====== -->
+    <section class="closing-cta">
+      <div class="container">
+        <div class="closing-cta__content">
+          <h2 class="closing-cta__headline">Get your exact price.</h2>
+          <p class="closing-cta__subline">Pick your ZIP and home size. Binding quote within a few hours.</p>
+          <form class="closing-cta__form" action="#quote">
+            <select class="closing-cta__select" name="zip" required>
+              <option value="" disabled selected>Moving from ZIP</option>
+              <option>60601 &mdash; Chicago Loop</option>
+              <option>60201 &mdash; Evanston</option>
+              <option>60540 &mdash; Naperville</option>
+              <option>60173 &mdash; Schaumburg</option>
+              <option>60004 &mdash; Arlington Heights</option>
+              <option>60062 &mdash; Northbrook</option>
+              <option>Other ZIP</option>
+            </select>
+            <select class="closing-cta__select" name="size" required>
+              <option value="" disabled selected>Home size</option>
+              <option>Studio</option>
+              <option>1 bedroom</option>
+              <option>2 bedroom</option>
+              <option>3 bedroom</option>
+              <option>4+ bedroom</option>
+            </select>
+            <a href="#quote" class="btn-primary">Get a Quote<span class="arrow">&rarr;</span></a>
+          </form>
+          <a href="tel:+1XXXXXXXXXX" class="closing-cta__phone">(312) 555-0199</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
@@ -422,6 +883,26 @@
       modal.querySelectorAll('[data-close-modal]').forEach(function(el) { el.addEventListener('click', function() { modal.close(); }); });
       modal.addEventListener('click', function(e) { if (e.target === modal) modal.close(); });
       modalForm.addEventListener('submit', function(e) { e.preventDefault(); if (!modalForm.reportValidity()) return; formWrapper.hidden = true; successPanel.hidden = false; setTimeout(function() { modal.close(); modalForm.reset(); formWrapper.hidden = false; successPanel.hidden = true; }, 2000); });
+    })();
+
+    // Process walk timeline: fade-in + circle "active" state on scroll
+    (function() {
+      var items = document.querySelectorAll('.process-walk__item');
+      if (!items.length) return;
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function(el) { el.classList.add('is-visible'); el.classList.add('is-active'); });
+        return;
+      }
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            entry.target.classList.add('is-active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.35, rootMargin: '0px 0px -10% 0px' });
+      items.forEach(function(el) { observer.observe(el); });
     })();
   </script>
 
