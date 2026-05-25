@@ -222,6 +222,79 @@
   margin-top: 4px;
 }
 
+/* ---------- Google Maps section ---------- */
+
+.contact-map {
+  background-color: var(--color-white);
+  padding: var(--space-3xl) 0;
+  border-top: 1px solid var(--color-navy-08);
+}
+
+.contact-map__head {
+  max-width: 760px;
+  margin: 0 auto var(--space-xl);
+  text-align: center;
+}
+
+.contact-map__eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+}
+
+.contact-map__headline {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.12;
+  letter-spacing: -0.018em;
+  color: var(--color-navy);
+}
+
+.contact-map__body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-navy-60);
+  margin-top: var(--space-sm);
+}
+
+.contact-map__embed {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 21 / 9;
+  background-color: var(--color-offwhite);
+  box-shadow: 0 18px 40px rgba(25, 28, 43, 0.08);
+}
+
+.contact-map__embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .contact-map {
+    padding: var(--space-2xl) 0;
+  }
+
+  .contact-map__headline {
+    font-size: 28px;
+  }
+
+  .contact-map__embed {
+    aspect-ratio: 4 / 3;
+  }
+}
+
 /* ---------- Form + Office split layout ---------- */
 
 .contact-split {
