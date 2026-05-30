@@ -46,8 +46,8 @@
 }
 
 .hero__media-side {
-  aspect-ratio: 3 / 5;
-  margin-top: 36px;
+  /* Match the main image's height by stretching to the grid row */
+  height: 100%;
 }
 
 .hero__media-main img,
