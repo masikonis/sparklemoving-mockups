@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Refresh CSS cache-busting tokens, then stage any HTML the refresh touched.
+set -euo pipefail
+root="$(git rev-parse --show-toplevel)"
+"$root/cache-bust.sh" >/dev/null
+git add -u -- '*.html'
