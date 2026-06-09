@@ -36,6 +36,7 @@
 
   <link rel="stylesheet" href="styles/components/footer.css">
   <link rel="stylesheet" href="styles/components/modal.css">
+  <link rel="stylesheet" href="styles/components/sticky-bar.css">
 </head>
 <body>
 
@@ -66,6 +67,7 @@
         <a href="tel:+1XXXXXXXXXX" class="site-header__phone">(312) 555-0199</a>
         <a href="#quote" class="btn-primary site-header__cta">Get a Quote</a>
       </nav>
+      <a href="tel:+1XXXXXXXXXX" class="site-header__phone-mobile" aria-label="Call Sparkle Moving"><span class="site-header__phone-mobile-icon" aria-hidden="true"></span></a>
       <button class="site-header__hamburger" id="hamburgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
 
@@ -606,6 +608,12 @@
       <div class="site-footer__bottom"><p class="site-footer__copyright">&copy; 2026 Sparkle Moving &amp; Storage. All rights reserved.</p></div>
     </div>
   </footer>
+
+  <!-- Sticky mobile action bar -->
+  <div class="sticky-bar" aria-label="Quick actions">
+    <a href="tel:+1XXXXXXXXXX" class="sticky-bar__call">Call Now</a>
+    <a href="#quote" class="btn-primary sticky-bar__quote">Get a Quote</a>
+  </div>
 
   <dialog class="modal" id="quote-modal" aria-labelledby="quote-modal-title">
     <div class="modal__panel">
